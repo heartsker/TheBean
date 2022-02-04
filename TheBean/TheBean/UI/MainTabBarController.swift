@@ -14,10 +14,7 @@ class MainTabBarController: BeanTabBarController {
         super.viewDidLoad()
         
         // MARK: Add Navigation Controllers to the main TabBar here:
-        setViewControllers([
-            RecipesNavigationController(),
-            TimerNavigationController()
-        ], animated: true)
+        
     }
     
     
