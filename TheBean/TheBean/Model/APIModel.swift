@@ -11,7 +11,7 @@ import Alamofire
 class APIModel {
     func getRecipesList() {
 //    https://sampleapis.com/api-list/coffee
-        let url = "https://sampleapis.com/api-list/coffee"
+//        let url = "https://sampleapis.com/api-list/coffee"
 //        AF.request(url).responseDecodable { (response: DataResponse<T>) in
 //            
 //        }
