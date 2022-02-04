@@ -6,14 +6,21 @@
 //
 
 import Foundation
-//import Alamofire
+import Alamofire
 
 class APIModel {
     func getRecipesList() {
 //    https://sampleapis.com/api-list/coffee
-//        let url = "https://sampleapis.com/api-list/coffee"
-//        AF.request(url).responseDecodable { (response: DataResponse<T>) in
-//            
-//        }
+        let url = "https://sampleapis.com/api-list/coffee"
+        
+        AF.request(url)
+            .validate(statusCode: 200 ..< 300)
+            .responseDecodable { (response: DataResponse<Recipe, AFError>) in
+//                    guard response.result.isSuccess else {
+//                      print("🥶 Error on login: \(String(describing: response.error))")
+//                      return
+//                    }
+//                    completion(response.result)
+                }
     }
 }
