@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A901017927A809CA00CEF909 /* BeanModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A901017727A809CA00CEF909 /* BeanModel.xcdatamodeld */; };
+		A901017B27A80A9900CEF909 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901017A27A80A9900CEF909 /* APIModel.swift */; };
+		A901017E27A80BED00CEF909 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A901017D27A80BED00CEF909 /* Alamofire */; };
 		A9464E4C27A3E3C600E66A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9464E4B27A3E3C600E66A19 /* AppDelegate.swift */; };
 		A9464E4E27A3E3C600E66A19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9464E4D27A3E3C600E66A19 /* SceneDelegate.swift */; };
 		A9464E5527A3E3C600E66A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9464E5427A3E3C600E66A19 /* Assets.xcassets */; };
@@ -14,6 +17,7 @@
 		A9464E6327A3E3C600E66A19 /* TheBeanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9464E6227A3E3C600E66A19 /* TheBeanTests.swift */; };
 		A9464E6D27A3E3C600E66A19 /* TheBeanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9464E6C27A3E3C600E66A19 /* TheBeanUITests.swift */; };
 		A9464E6F27A3E3C600E66A19 /* TheBeanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9464E6E27A3E3C600E66A19 /* TheBeanUITestsLaunchTests.swift */; };
+		A988567F27A88749006BD90B /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988567E27A88749006BD90B /* Recipe.swift */; };
 		A9E366FE27A3EEEE00DF0B1A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E366FD27A3EEEE00DF0B1A /* MainTabBarController.swift */; };
 		A9E3670027A3EFE300DF0B1A /* TimerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E366FF27A3EFE300DF0B1A /* TimerNavigationController.swift */; };
 		A9E3670227A3F0BE00DF0B1A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E3670127A3F0BE00DF0B1A /* TimerViewController.swift */; };
@@ -42,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A901017627A8084600CEF909 /* TheBean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheBean.entitlements; sourceTree = "<group>"; };
+		A901017827A809CA00CEF909 /* BeanModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeanModel.xcdatamodel; sourceTree = "<group>"; };
+		A901017A27A80A9900CEF909 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		A9464E4827A3E3C600E66A19 /* TheBean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheBean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9464E4B27A3E3C600E66A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9464E4D27A3E3C600E66A19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +60,7 @@
 		A9464E6827A3E3C600E66A19 /* TheBeanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheBeanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9464E6C27A3E3C600E66A19 /* TheBeanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBeanUITests.swift; sourceTree = "<group>"; };
 		A9464E6E27A3E3C600E66A19 /* TheBeanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBeanUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A988567E27A88749006BD90B /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		A9E366FD27A3EEEE00DF0B1A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A9E366FF27A3EFE300DF0B1A /* TimerNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNavigationController.swift; sourceTree = "<group>"; };
 		A9E3670127A3F0BE00DF0B1A /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A901017E27A80BED00CEF909 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +120,7 @@
 		A9464E4A27A3E3C600E66A19 /* TheBean */ = {
 			isa = PBXGroup;
 			children = (
+				A901017627A8084600CEF909 /* TheBean.entitlements */,
 				A9EEDF3A27A7E6E30049C08D /* App */,
 				A9EEDF3827A7E6C90049C08D /* UI */,
 				A9EEDF3927A7E6D30049C08D /* Model */,
@@ -154,6 +164,8 @@
 		A9EEDF3927A7E6D30049C08D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A901017A27A80A9900CEF909 /* APIModel.swift */,
+				A988567E27A88749006BD90B /* Recipe.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +175,7 @@
 			children = (
 				A9464E4D27A3E3C600E66A19 /* SceneDelegate.swift */,
 				A9464E4B27A3E3C600E66A19 /* AppDelegate.swift */,
+				A901017727A809CA00CEF909 /* BeanModel.xcdatamodeld */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -193,6 +206,9 @@
 			dependencies = (
 			);
 			name = TheBean;
+			packageProductDependencies = (
+				A901017D27A80BED00CEF909 /* Alamofire */,
+			);
 			productName = TheBean;
 			productReference = A9464E4827A3E3C600E66A19 /* TheBean.app */;
 			productType = "com.apple.product-type.application";
@@ -265,6 +281,9 @@
 				Base,
 			);
 			mainGroup = A9464E3F27A3E3C600E66A19;
+			packageReferences = (
+				A901017C27A80BED00CEF909 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = A9464E4927A3E3C600E66A19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -311,10 +330,13 @@
 				A9EEDF3C27A7EAD40049C08D /* BeanTabBarController.swift in Sources */,
 				A9E366FE27A3EEEE00DF0B1A /* MainTabBarController.swift in Sources */,
 				A9EEDF4027A7EC0D0049C08D /* BeanNavigationController.swift in Sources */,
+				A901017B27A80A9900CEF909 /* APIModel.swift in Sources */,
 				A9464E4C27A3E3C600E66A19 /* AppDelegate.swift in Sources */,
 				A9E3670027A3EFE300DF0B1A /* TimerNavigationController.swift in Sources */,
 				A9EEDF4527A7EE4B0049C08D /* RecipesNavigationController.swift in Sources */,
 				A9E3670227A3F0BE00DF0B1A /* TimerViewController.swift in Sources */,
+				A901017927A809CA00CEF909 /* BeanModel.xcdatamodeld in Sources */,
+				A988567F27A88749006BD90B /* Recipe.swift in Sources */,
 				A9EEDF4727A7EE910049C08D /* RecipesViewController.swift in Sources */,
 				A9464E4E27A3E3C600E66A19 /* SceneDelegate.swift in Sources */,
 			);
@@ -485,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TheBean/TheBean.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XHRWYM4T65;
@@ -513,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TheBean/TheBean.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XHRWYM4T65;
@@ -652,6 +676,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A901017C27A80BED00CEF909 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A901017D27A80BED00CEF909 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A901017C27A80BED00CEF909 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		A901017727A809CA00CEF909 /* BeanModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A901017827A809CA00CEF909 /* BeanModel.xcdatamodel */,
+			);
+			currentVersion = A901017827A809CA00CEF909 /* BeanModel.xcdatamodel */;
+			path = BeanModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A9464E4027A3E3C600E66A19 /* Project object */;
 }
