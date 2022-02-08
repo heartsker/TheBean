@@ -5,22 +5,37 @@
 //  Created by Daniel Pustotin on 31.01.2022.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 
 class APIModel {
+    
+    //    web: https://sampleapis.com/api-list/coffee
+    
+    //Verification of successful receipt of data:
     func getRecipesList() {
-//    https://sampleapis.com/api-list/coffee
-        let url = "https://sampleapis.com/api-list/coffee"
-        
-        AF.request(url)
+        let url = URL(string: "https://api.sampleapis.com/coffee/hot")
+        AF.request(url!)
             .validate(statusCode: 200 ..< 300)
-            .responseDecodable { (response: DataResponse<Recipe, AFError>) in
-//                    guard response.result.isSuccess else {
-//                      print("🥶 Error on login: \(String(describing: response.error))")
-//                      return
-//                    }
-//                    completion(response.result)
-                }
+            .responseDecodable { (response: DataResponse<[Recipe], AFError>) in
+                let result = response.result
+                print(result)
+            }
     }
+    
+    //Not finalized for the project:
+    func getRecipesList(completion: @escaping (Result<[Recipe], AFError>) -> Void) {
+        let url = URL(string: "https://api.sampleapis.com/coffee/hot")
+        AF.request(url!)
+            .validate(statusCode: 200 ..< 300)
+            .responseDecodable { (response: DataResponse<[Recipe], AFError>) in
+            guard case .success = response.result else {
+                print("Error")
+                return
+            }
+            print(response.result)
+            completion(response.result)
+        }
+    }
+
 }

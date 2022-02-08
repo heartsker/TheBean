@@ -5,7 +5,6 @@
 //  Created by Daniel Pustotin on 28.01.2022.
 //
 
-import Foundation
 import UIKit
 
 class TimerNavigationController: UINavigationController {
