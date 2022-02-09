@@ -13,7 +13,7 @@ class MainTabBarController: BeanTabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
+        
         setupTabBar()
     }
     
@@ -29,10 +29,9 @@ class MainTabBarController: BeanTabBarController {
         
         recipesVC.tabBarItem.image = UIImage(systemName: "book")
         timerVC.tabBarItem.image = UIImage(systemName: "timer")
-=======
+        
         apiModel.getRecipesList()
         // MARK: Add Navigation Controllers to the main TabBar here:
->>>>>>> Account
         
         viewControllers = [navRecipesVC, navTimerVC]
     }
