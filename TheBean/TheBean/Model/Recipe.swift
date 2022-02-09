@@ -5,36 +5,35 @@
 //  Created by Daniel Pustotin on 01.02.2022.
 //
 
-import Foundation
 import UIKit
 
-class Recipe: Decodable {
-    
-    private enum CodingKeys: String, CodingKey {
-        case title
-        case info
-        case image
-    }
-    
+struct Recipe: Codable {
     var title: String
-    var info: String
-    var image: UIImage
+    var description: String
+//  var info: String (no api)
+//  var image: UIImage (no api)
     
-    init(_ title: String, _ info: String, img image: UIImage) {
-        self.title = title
-        self.info = info
-        self.image = image
+    enum CodingKeys: String, CodingKey {
+        case title = "title"
+        case description = "description"
+//      case image
     }
     
-    required init(from decoder: Decoder) throws {
+    init(_ title: String, _ description: String) {
+        self.title = title
+        self.description = description
+//      self.image = image
+    }
+    
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         title = try container.decode(String.self, forKey: .title)
-        info = try container.decode(String.self, forKey: .info)
-        let imageData = try container.decode(Data.self, forKey: .image)
-        if let img = UIImage(data: imageData) {
-            image = img
-        } else {
-            image = UIImage()
-        }
+        description = try container.decode(String.self, forKey: .description)
+//        let imageData = try container.decode(Data.self, forKey: .image)
+//        if let img = UIImage(data: imageData) {
+//            image = img
+//        } else {
+//            image = UIImage()
+//        }
     }
 }
