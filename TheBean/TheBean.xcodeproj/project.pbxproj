@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9733BEA27AD9F0B00936F6D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A9733BE927AD9F0B00936F6D /* Alamofire */; };
 		A98B33D827AD9BD200EFA685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33D727AD9BD200EFA685 /* AppDelegate.swift */; };
 		A98B33DA27AD9BD200EFA685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33D927AD9BD200EFA685 /* SceneDelegate.swift */; };
 		A98B33DC27AD9BD200EFA685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33DB27AD9BD200EFA685 /* ViewController.swift */; };
@@ -22,8 +23,6 @@
 		A98B341F27AD9C9200EFA685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A98B341427AD9C9200EFA685 /* Assets.xcassets */; };
 		A98B342027AD9C9200EFA685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98B341527AD9C9200EFA685 /* LaunchScreen.storyboard */; };
 		A98B342127AD9C9200EFA685 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341727AD9C9200EFA685 /* MainTabBarController.swift */; };
-		A98B342227AD9C9200EFA685 /* RecipesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341827AD9C9200EFA685 /* RecipesNavigationController.swift */; };
-		A98B342327AD9C9200EFA685 /* TimerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341927AD9C9200EFA685 /* TimerNavigationController.swift */; };
 		A98B342427AD9C9200EFA685 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341A27AD9C9200EFA685 /* TimerViewController.swift */; };
 		A98B342527AD9C9200EFA685 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,8 +64,6 @@
 		A98B341427AD9C9200EFA685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A98B341627AD9C9200EFA685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A98B341727AD9C9200EFA685 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		A98B341827AD9C9200EFA685 /* RecipesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesNavigationController.swift; sourceTree = "<group>"; };
-		A98B341927AD9C9200EFA685 /* TimerNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerNavigationController.swift; sourceTree = "<group>"; };
 		A98B341A27AD9C9200EFA685 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9733BEA27AD9F0B00936F6D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,8 +161,6 @@
 				A98B341427AD9C9200EFA685 /* Assets.xcassets */,
 				A98B341527AD9C9200EFA685 /* LaunchScreen.storyboard */,
 				A98B341727AD9C9200EFA685 /* MainTabBarController.swift */,
-				A98B341827AD9C9200EFA685 /* RecipesNavigationController.swift */,
-				A98B341927AD9C9200EFA685 /* TimerNavigationController.swift */,
 				A98B341A27AD9C9200EFA685 /* TimerViewController.swift */,
 				A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */,
 			);
@@ -197,6 +193,9 @@
 			dependencies = (
 			);
 			name = TheBean;
+			packageProductDependencies = (
+				A9733BE927AD9F0B00936F6D /* Alamofire */,
+			);
 			productName = TheBean;
 			productReference = A98B33D427AD9BD200EFA685 /* TheBean.app */;
 			productType = "com.apple.product-type.application";
@@ -269,6 +268,9 @@
 				Base,
 			);
 			mainGroup = A98B33CB27AD9BD200EFA685;
+			packageReferences = (
+				A9733BE827AD9F0B00936F6D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = A98B33D527AD9BD200EFA685 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,13 +320,11 @@
 				A98B33D827AD9BD200EFA685 /* AppDelegate.swift in Sources */,
 				A98B341D27AD9C9200EFA685 /* BeanNavigationController.swift in Sources */,
 				A98B33DA27AD9BD200EFA685 /* SceneDelegate.swift in Sources */,
-				A98B342327AD9C9200EFA685 /* TimerNavigationController.swift in Sources */,
 				A98B342527AD9C9200EFA685 /* RecipesViewController.swift in Sources */,
 				A98B33E227AD9BD200EFA685 /* TheBean.xcdatamodeld in Sources */,
 				A98B340E27AD9C7A00EFA685 /* APIModel.swift in Sources */,
 				A98B342427AD9C9200EFA685 /* TimerViewController.swift in Sources */,
 				A98B340D27AD9C7A00EFA685 /* Recipe.swift in Sources */,
-				A98B342227AD9C9200EFA685 /* RecipesNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -478,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -660,6 +660,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A9733BE827AD9F0B00936F6D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A9733BE927AD9F0B00936F6D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9733BE827AD9F0B00936F6D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A98B33E027AD9BD200EFA685 /* TheBean.xcdatamodeld */ = {
