@@ -25,6 +25,7 @@
 		A98B342427AD9C9200EFA685 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341A27AD9C9200EFA685 /* TimerViewController.swift */; };
 		A98B342527AD9C9200EFA685 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */; };
 		A9C4C8C827B540AC007F8BA6 /* UIVIewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4C8C727B540AC007F8BA6 /* UIVIewControllerExtension.swift */; };
+		C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		A98B341A27AD9C9200EFA685 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		A9C4C8C727B540AC007F8BA6 /* UIVIewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewControllerExtension.swift; sourceTree = "<group>"; };
+		C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				A98B341727AD9C9200EFA685 /* MainTabBarController.swift */,
 				A98B341A27AD9C9200EFA685 /* TimerViewController.swift */,
 				A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */,
+				C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				A98B340E27AD9C7A00EFA685 /* APIModel.swift in Sources */,
 				A98B342427AD9C9200EFA685 /* TimerViewController.swift in Sources */,
 				A98B340D27AD9C7A00EFA685 /* Recipe.swift in Sources */,
+				C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
