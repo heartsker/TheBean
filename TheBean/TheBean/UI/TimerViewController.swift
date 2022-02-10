@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TimerViewController: BeanViewController {
+class TimerViewController: UIViewController {
     
     private lazy var label: UILabel = {
         let label = UILabel()
@@ -20,6 +20,8 @@ class TimerViewController: BeanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        setupAppearance()
         
         setupSubviews()
         setupConstraints()

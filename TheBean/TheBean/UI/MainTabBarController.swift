@@ -7,12 +7,14 @@
 
 import UIKit
 
-class MainTabBarController: BeanTabBarController {
+class MainTabBarController: UITabBarController {
     
     let apiModel = APIModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupAppearance()
         
         setupTabBar()
     }

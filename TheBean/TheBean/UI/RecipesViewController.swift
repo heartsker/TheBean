@@ -7,19 +7,22 @@
 
 import UIKit
 
-class RecipesViewController: BeanViewController {
+class RecipesViewController: UIViewController {
     
     private lazy var button: UIButton = {
         let button = UIButton()
         button.setTitle("That is recipe", for: .normal)
         button.titleLabel!.font = UIFont(name: "Arial", size: 50)
-        button.titleLabel!.textColor = .secondarySystemBackground
+        button.titleLabel!.textColor = .black
         button.addTarget(self, action: #selector(buttonClick(sender:)), for: .touchUpInside)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupAppearance()
+        
         title = "Recipes"
         view.addSubview(button)
         setupConstraints()
