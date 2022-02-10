@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StatisticsViewController: UIViewController {
+class StatisticsViewController: TheBeanVC {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -34,6 +34,10 @@ class StatisticsViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupAppearance()
+        
         setupViews()
         setupConstraints()
     }
@@ -46,7 +50,7 @@ class StatisticsViewController: UIViewController {
         stackView.addArrangedSubview(logoTheBeanImageView)
     }
     
-    private func setupConstraints() {
+    override func setupConstraints() {
         scrollView.snp.makeConstraints { (make) in
             make.edges.equalTo(view)
         }

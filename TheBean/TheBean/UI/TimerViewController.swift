@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TimerViewController: UIViewController {
+class TimerViewController: TheBeanVC {
     
     private lazy var label: UILabel = {
         let label = UILabel()
@@ -21,18 +21,13 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        setupAppearance()
-        
-        setupSubviews()
-        setupConstraints()
-//        view.backgroundColor = .red
     }
     
-    func setupSubviews() {
+    override func setupSubviews() {
         view.addSubview(label)
     }
     
-    func setupConstraints() {
+    override func setupConstraints() {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true

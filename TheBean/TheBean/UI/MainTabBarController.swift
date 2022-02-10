@@ -14,8 +14,6 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAppearance()
-        
         apiModel.getRecipesList()
         
         setupTabBar()
