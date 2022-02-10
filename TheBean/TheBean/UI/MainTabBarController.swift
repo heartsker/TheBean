@@ -7,12 +7,14 @@
 
 import UIKit
 
-class MainTabBarController: BeanTabBarController {
+class MainTabBarController: UITabBarController {
     
     let apiModel = APIModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        apiModel.getRecipesList()
         
         setupTabBar()
     }
@@ -20,20 +22,23 @@ class MainTabBarController: BeanTabBarController {
     private func setupTabBar() {
         let recipesVC = RecipesViewController()
         let timerVC = TimerViewController()
+        let statisticsVC = StatisticsViewController()
         
-        let navRecipesVC = UINavigationController(rootViewController: recipesVC)
-        let navTimerVC = UINavigationController(rootViewController: timerVC)
+        let recipesNVC = UINavigationController(rootViewController: recipesVC)
+        let statisticsNVC = UINavigationController(rootViewController: statisticsVC)
+        let timerNVC = UINavigationController(rootViewController: timerVC)
         
         recipesVC.title = "Recipes"
+        statisticsVC.title = "Statistics"
         timerVC.title = "Timer"
         
         recipesVC.tabBarItem.image = UIImage(systemName: "book")
         timerVC.tabBarItem.image = UIImage(systemName: "timer")
+        statisticsVC.tabBarItem.image = UIImage(systemName: "doc")
         
-        apiModel.getRecipesList()
         // MARK: Add Navigation Controllers to the main TabBar here:
         
-        viewControllers = [navRecipesVC, navTimerVC]
+        viewControllers = [recipesNVC, statisticsNVC, timerNVC]
     }
     
     
