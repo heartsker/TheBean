@@ -30,8 +30,8 @@ class MainTabBarController: UITabBarController {
         timerVC.title = "Timer"
         
         recipesVC.tabBarItem.image = UIImage(systemName: "book")
+        statisticsVC.tabBarItem.image = UIImage(systemName: "chart.bar.xaxis")
         timerVC.tabBarItem.image = UIImage(systemName: "timer")
-        statisticsVC.tabBarItem.image = UIImage(systemName: "doc")
         
         // MARK: Add Navigation Controllers to the main TabBar here:
         

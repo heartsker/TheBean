@@ -20,7 +20,7 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAppearance(title: "Times", tabBarItem: "timer")
+        setupAppearance(title: "Timer", tabBarItem: "timer")
         
         setupSubviews()
         setupConstraints()

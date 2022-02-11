@@ -18,7 +18,7 @@ class StatisticsViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
-        stackView.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1)
+        stackView.insertCustomizedViewIntoStack(background: UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1), cornerRadius: 20)
         return stackView
     }()
     
@@ -42,6 +42,14 @@ class StatisticsViewController: UIViewController {
         return stackView
     }()
     
+    private let recommendationsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Personal recommendations:"
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,6 +66,7 @@ class StatisticsViewController: UIViewController {
         
         contentView.addSubview(headerStackView)
         contentView.addSubview(userInfoStackView)
+        contentView.addSubview(recommendationsLabel)
         
         headerStackView.addArrangedSubview(logoTheBeanImageView)
     }
@@ -88,8 +97,13 @@ class StatisticsViewController: UIViewController {
         userInfoStackView.snp.makeConstraints { make in
             make.height.equalTo(212)
             make.width.equalTo(315)
-            make.top.equalTo(headerStackView.snp.bottom).inset(9)
+            make.top.equalTo(headerStackView.snp.bottom).inset(-9)
             make.centerX.equalTo(contentView)
+        }
+        
+        recommendationsLabel.snp.makeConstraints { make in
+            make.top.equalTo(userInfoStackView.snp.bottom).inset(-40)
+            make.left.equalTo(40)
         }
     }
     
