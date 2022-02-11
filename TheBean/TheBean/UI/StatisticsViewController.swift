@@ -18,7 +18,7 @@ class StatisticsViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
-        stackView.backgroundColor = UIColor(red: 245/255, green: 175/255, blue: 255/255, alpha: 1)
+        stackView.backgroundColor = UIColor(red: 223/255, green: 197/255, blue: 175/255, alpha: 1)
         return stackView
     }()
     
@@ -28,8 +28,6 @@ class StatisticsViewController: UIViewController {
         imageView.image = image
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
-//        imageView.frame.size.width = 39
-//        imageView.frame.size.height = 39
         return imageView
     }()
     
@@ -51,6 +49,53 @@ class StatisticsViewController: UIViewController {
         return label
     }()
     
+    private let leadPositionStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.backgroundColor = UIColor(red: 223/255, green: 197/255, blue: 175/255, alpha: 1)
+        return stackView
+    }()
+    
+    private let globalStatisticsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Global statistics:"
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return label
+    }()
+    
+    private let popularDrinkStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.backgroundColor = UIColor(red: 223/255, green: 197/255, blue: 175/255, alpha: 1)
+        stackView.layer.cornerRadius = 20
+        return stackView
+    }()
+    
+    private let averageNumberStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.backgroundColor = UIColor(red: 223/255, green: 197/255, blue: 175/255, alpha: 1)
+        stackView.layer.cornerRadius = 20
+        return stackView
+    }()
+    
+    private let recipesAppStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.backgroundColor = UIColor(red: 223/255, green: 197/255, blue: 175/255, alpha: 1)
+        stackView.layer.cornerRadius = 20
+        return stackView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,6 +113,11 @@ class StatisticsViewController: UIViewController {
         contentView.addSubview(headerStackView)
         contentView.addSubview(userInfoStackView)
         contentView.addSubview(recommendationsLabel)
+        contentView.addSubview(leadPositionStackView)
+        contentView.addSubview(globalStatisticsLabel)
+        contentView.addSubview(popularDrinkStackView)
+        contentView.addSubview(averageNumberStackView)
+        contentView.addSubview(recipesAppStackView)
         
         headerStackView.addArrangedSubview(logoTheBeanImageView)
     }
@@ -89,8 +139,8 @@ class StatisticsViewController: UIViewController {
         }
         
         logoTheBeanImageView.snp.makeConstraints { make in
-//            make.width.equalTo(39)
-//            make.height.equalTo(39)
+            make.width.equalTo(39)
+            make.height.equalTo(39)
             make.top.equalTo(headerStackView.snp.bottom).inset(35)
             make.left.equalTo(headerStackView.snp.right).inset(28)
         }
@@ -104,7 +154,40 @@ class StatisticsViewController: UIViewController {
         
         recommendationsLabel.snp.makeConstraints { make in
             make.top.equalTo(userInfoStackView.snp.bottom).inset(-40)
-            make.left.equalTo(40)
+            make.left.equalTo(30)
+        }
+        
+        leadPositionStackView.snp.makeConstraints { make in
+            make.top.equalTo(recommendationsLabel.snp.bottom).inset(-18)
+            make.centerX.equalTo(contentView)
+            make.width.equalTo(contentView)
+            make.height.equalTo(140)
+        }
+        
+        globalStatisticsLabel.snp.makeConstraints { make in
+            make.top.equalTo(leadPositionStackView.snp.bottom).inset(-27)
+            make.left.equalTo(30)
+        }
+        
+        popularDrinkStackView.snp.makeConstraints { make in
+            make.top.equalTo(globalStatisticsLabel.snp.bottom).inset(-18)
+            make.centerX.equalTo(contentView)
+            make.width.equalTo(315)
+            make.height.equalTo(192)
+        }
+        
+        averageNumberStackView.snp.makeConstraints { make in
+            make.top.equalTo(popularDrinkStackView.snp.bottom).inset(-8)
+            make.centerX.equalTo(contentView)
+            make.width.equalTo(315)
+            make.height.equalTo(192)
+        }
+        
+        recipesAppStackView.snp.makeConstraints { make in
+            make.top.equalTo(averageNumberStackView.snp.bottom).inset(-8)
+            make.centerX.equalTo(contentView)
+            make.width.equalTo(315)
+            make.height.equalTo(192)
         }
     }
     
