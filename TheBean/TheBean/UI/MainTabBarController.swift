@@ -25,16 +25,14 @@ class MainTabBarController: UITabBarController {
         let statisticsNVC = UINavigationController(rootViewController: statisticsVC)
         let timerNVC = UINavigationController(rootViewController: timerVC)
         
-        recipesVC.title = "Recipes"
-        statisticsVC.title = "Statistics"
-        timerVC.title = "Timer"
+        recipesVC.setupTabBar("Recipes", image: "book")
+        statisticsVC.setupTabBar("Statistics", image: "chart.bar.xaxis")
+        timerVC.setupTabBar("Timer", image: "timer")
         
-        recipesVC.tabBarItem.image = UIImage(systemName: "book")
-        statisticsVC.tabBarItem.image = UIImage(systemName: "chart.bar.xaxis")
-        timerVC.tabBarItem.image = UIImage(systemName: "timer")
+        tabBar.unselectedItemTintColor = .brown
+        tabBar.tintColor = .black
         
         // MARK: Add Navigation Controllers to the main TabBar here:
-        
         viewControllers = [recipesNVC, statisticsNVC, timerNVC]
     }
     

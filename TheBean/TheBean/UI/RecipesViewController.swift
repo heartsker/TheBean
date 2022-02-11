@@ -25,7 +25,7 @@ class RecipesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAppearance(title: "Recipes", tabBarItem: "book")
+        setupAppearance()
         
         setupSubviews()
         setupConstraints()

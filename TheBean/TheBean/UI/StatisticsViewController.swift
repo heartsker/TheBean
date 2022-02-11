@@ -99,7 +99,7 @@ class StatisticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAppearance(title: "Statistics", tabBarItem: "chart.bar.xaxis")
+        setupAppearance()
         
         setupSubiews()
         setupConstraints()

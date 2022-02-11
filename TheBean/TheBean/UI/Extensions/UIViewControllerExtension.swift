@@ -8,11 +8,13 @@
 import UIKit
 
 extension UIViewController {
-    func setupAppearance(title: String = "Title",
-                         tabBarItem: String = "question") {
-        view.backgroundColor = UIColor(named: "Background")
+    
+    func setupTabBar(_ title: String = "What?", image: String = "question") {
         self.title = title
-        self.tabBarItem.image = UIImage(systemName: tabBarItem)
-        self.tabBarItem.standardAppearance?.selectionIndicatorTintColor = .black
+        tabBarItem.image = UIImage(systemName: image)
+    }
+    
+    func setupAppearance() {
+        view.backgroundColor = UIColor(named: "Background")
     }
 }
