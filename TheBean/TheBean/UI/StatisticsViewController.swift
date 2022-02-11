@@ -44,18 +44,22 @@ class StatisticsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAppearance()
-        setupViews()
+        
+        setupAppearance(title: "Statistics", tabBarItem: "chart.bar.xaxis")
+        
+        setupSubiews()
         setupConstraints()
     }
     
-    private func setupViews() {
-        view.backgroundColor = .white
+    private func setupSubiews() {
         view.addSubview(scrollView)
+        
         scrollView.addSubview(contentView)
+        
         contentView.addSubview(headerStackView)
-        headerStackView.addArrangedSubview(logoTheBeanImageView)
         contentView.addSubview(userInfoStackView)
+        
+        headerStackView.addArrangedSubview(logoTheBeanImageView)
     }
     
     private func setupConstraints() {

@@ -18,13 +18,16 @@ class RecipesViewController: UIViewController {
         return button
     }()
     
+    @objc func buttonClick(sender: UIButton!) {
+        navigationController?.pushViewController(TimerViewController(), animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAppearance()
+        setupAppearance(title: "Recipes", tabBarItem: "book")
         
-        title = "Recipes"
-        view.addSubview(button)
+        setupSubviews()
         setupConstraints()
     }
     
@@ -34,7 +37,7 @@ class RecipesViewController: UIViewController {
         button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-    @objc func buttonClick(sender: UIButton!) {
-        navigationController?.pushViewController(TimerViewController(), animated: true)
+    private func setupSubviews() {
+        view.addSubview(button)
     }
 }

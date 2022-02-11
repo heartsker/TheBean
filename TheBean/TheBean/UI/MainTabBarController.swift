@@ -8,13 +8,12 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-    
-    let apiModel = APIModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupAppearance()
+        
         setupTabBar()
-        apiModel.getRecipesList()
     }
     
     private func setupTabBar() {
