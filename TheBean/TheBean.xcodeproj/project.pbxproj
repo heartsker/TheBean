@@ -11,7 +11,6 @@
 		A974D2D627AEDBD100776474 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A974D2D527AEDBD100776474 /* Account.swift */; };
 		A974D2D827AEDCCD00776474 /* DrinkKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = A974D2D727AEDCCD00776474 /* DrinkKind.swift */; };
 		A980FFB227B55B0900FD4A12 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A980FFB127B55B0900FD4A12 /* SnapKit */; };
-		A980FFB427B55CA900FD4A12 /* TheBeanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980FFB327B55CA900FD4A12 /* TheBeanVC.swift */; };
 		A98B33D827AD9BD200EFA685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33D727AD9BD200EFA685 /* AppDelegate.swift */; };
 		A98B33DA27AD9BD200EFA685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33D927AD9BD200EFA685 /* SceneDelegate.swift */; };
 		A98B33DC27AD9BD200EFA685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33DB27AD9BD200EFA685 /* ViewController.swift */; };
@@ -27,6 +26,7 @@
 		A98B342427AD9C9200EFA685 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341A27AD9C9200EFA685 /* TimerViewController.swift */; };
 		A98B342527AD9C9200EFA685 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */; };
 		C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */; };
+		C78BAE9527B64AE800CEB291 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78BAE9427B64AE800CEB291 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,6 @@
 /* Begin PBXFileReference section */
 		A974D2D527AEDBD100776474 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		A974D2D727AEDCCD00776474 /* DrinkKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkKind.swift; sourceTree = "<group>"; };
-		A980FFB327B55CA900FD4A12 /* TheBeanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBeanVC.swift; sourceTree = "<group>"; };
 		A98B33D427AD9BD200EFA685 /* TheBean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheBean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98B33D727AD9BD200EFA685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A98B33D927AD9BD200EFA685 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		A98B341A27AD9C9200EFA685 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		C78BAE9427B64AE800CEB291 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,7 @@
 		A98B340F27AD9C9200EFA685 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A9C4C8C627B54095007F8BA6 /* CustomVC */,
+				C78BAE9327B648D200CEB291 /* Extensions */,
 				A98B341427AD9C9200EFA685 /* Assets.xcassets */,
 				A98B341527AD9C9200EFA685 /* LaunchScreen.storyboard */,
 				A98B341727AD9C9200EFA685 /* MainTabBarController.swift */,
@@ -182,12 +182,12 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		A9C4C8C627B54095007F8BA6 /* CustomVC */ = {
+		C78BAE9327B648D200CEB291 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A980FFB327B55CA900FD4A12 /* TheBeanVC.swift */,
+				C78BAE9427B64AE800CEB291 /* UIView.swift */,
 			);
-			path = CustomVC;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,8 +338,8 @@
 				A98B33E227AD9BD200EFA685 /* TheBean.xcdatamodeld in Sources */,
 				A98B340E27AD9C7A00EFA685 /* APIModel.swift in Sources */,
 				A98B342427AD9C9200EFA685 /* TimerViewController.swift in Sources */,
+				C78BAE9527B64AE800CEB291 /* UIView.swift in Sources */,
 				A98B340D27AD9C7A00EFA685 /* Recipe.swift in Sources */,
-				A980FFB427B55CA900FD4A12 /* TheBeanVC.swift in Sources */,
 				C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

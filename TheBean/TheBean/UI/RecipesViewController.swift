@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecipesViewController: TheBeanVC {
+class RecipesViewController: UIViewController {
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -28,7 +28,7 @@ class RecipesViewController: TheBeanVC {
         setupConstraints()
     }
     
-    override func setupConstraints() {
+    private func setupConstraints() {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true

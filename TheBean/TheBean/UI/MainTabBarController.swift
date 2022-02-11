@@ -13,10 +13,8 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        apiModel.getRecipesList()
-        
         setupTabBar()
+        apiModel.getRecipesList()
     }
     
     private func setupTabBar() {
