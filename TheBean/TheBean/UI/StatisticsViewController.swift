@@ -38,7 +38,7 @@ class StatisticsViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
-        stackView.backgroundColor = UIColor(red: 223/255, green: 197/255, blue: 175/255, alpha: 1)
+        stackView.insertCustomizedViewIntoStack(background: UIColor(red: 223/255, green: 197/255, blue: 175/255, alpha: 1), cornerRadius: 20)
         return stackView
     }()
     
