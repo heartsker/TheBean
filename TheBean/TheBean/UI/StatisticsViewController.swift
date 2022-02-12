@@ -215,6 +215,29 @@ class StatisticsViewController: UIViewController {
         UILabel("Global statistics:", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .medium))
     }()
     
+    // TODO: (AC) - highlight the application name in bold
+    private let popularDrinkLabel: UILabel = {
+        UILabel("Latte-is the most popular drink among The Bean users",
+                color: .materialMedium, font: UIFont.systemFont(ofSize: 16, weight: .medium))
+    }()
+    
+    private let averageNumberLabel: UILabel = {
+        let label =  UILabel("4-is an average number of cups per day",
+        color: .white, font: UIFont.systemFont(ofSize: 16, weight: .medium))
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        return label
+    }()
+    
+    // TODO: (AC) - highlight the application name in bold
+    private let recipesAppLabel: UILabel = {
+        let label =  UILabel("129 recipes are mastered by The Bean users",
+        color: .white, font: UIFont.systemFont(ofSize: 16, weight: .medium))
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        return label
+    }()
+    
     private let popularDrinkStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.distribution = .equalSpacing
@@ -233,12 +256,6 @@ class StatisticsViewController: UIViewController {
         return imageView
     }()
     
-    // TODO: (AC) - highlight the application name in bold
-    private let popularDrinkLabel: UILabel = {
-        UILabel("Latte-is the most popular drink among The Bean users",
-                color: .materialMedium, font: UIFont.systemFont(ofSize: 16, weight: .medium))
-    }()
-    
     private let averageNumberCupsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.distribution = .equalSpacing
@@ -252,51 +269,12 @@ class StatisticsViewController: UIViewController {
         let stackView = UIStackView()
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
-        stackView.backgroundColor = .materialHeavy
+        stackView.backgroundColor = .materialLight
         stackView.layer.cornerRadius = 20
         return stackView
     }()
     
-    private let averageNumberLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Latte-is the most popular drink among The Bean users"
-        label.textColor = .materialSecondary
-        label.numberOfLines = 3
-        label.textAlignment = .center
-        label.font = UIFont.mullerMedium
-        label.font = label.font.withSize(16)
-        return label
-    }()
-    
-    private let averageNumberCupsStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.distribution = .equalSpacing
-        stackView.axis = .horizontal
-        stackView.backgroundColor = .materialPrimary
-        stackView.layer.cornerRadius = 20
-        return stackView
-    }()
-    
-    private let averageNumberCupsInternalStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.distribution = .equalSpacing
-        stackView.axis = .horizontal
-        stackView.backgroundColor = .materialSecondary
-        stackView.layer.cornerRadius = 20
-        return stackView
-    }()
-    
-    private let averageNumberLabel: UILabel = {
-        let label = UILabel()
-        label.text = "4-is an average number of cups per day"
-        label.textColor = .white
-        label.numberOfLines = 2
-        label.textAlignment = .center
-        label.font = UIFont.mullerMedium
-        label.font = label.font.withSize(16)
-        return label
-    }()
-    
+    // TODO: (AC) - check cups size (maybe need to increase)
     private let firstCupCoffeeImageView: UIImageView = {
         let imageView = UIImageView()
         let image = UIImage(named: "Cup")
@@ -340,18 +318,6 @@ class StatisticsViewController: UIViewController {
         stackView.backgroundColor = .highlightPrimary
         stackView.layer.cornerRadius = 20
         return stackView
-    }()
-    
-    // TODO: (AC) - highlight the application name in bold
-    private let recipesAppLabel: UILabel = {
-        let label = UILabel()
-        label.text = "129 recipes are mastered by The Bean users"
-        label.textColor = .materialSecondary
-        label.numberOfLines = 2
-        label.textAlignment = .center
-        label.font = UIFont.mullerMedium
-        label.font = label.font.withSize(16)
-        return label
     }()
     
     private let recipesAppCoffeeBeanImageView: UIImageView = {
