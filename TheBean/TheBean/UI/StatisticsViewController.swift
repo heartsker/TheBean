@@ -8,6 +8,9 @@
 import UIKit
 import SnapKit
 
+// TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
+// FIXME: (AC) - Too many views - should consider inheritance structure for views.
+
 class StatisticsViewController: UIViewController {
     
     private lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 800)
@@ -68,12 +71,7 @@ class StatisticsViewController: UIViewController {
     }()
     
     private let usernameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Wane Smith"
-        label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        return label
+        UILabel("Wane Smith", color: .materialHeavy, font: UIFont.systemFont(ofSize: 24, weight: .bold))
     }()
     
     private let avatarImageView: UIImageView = {
@@ -106,66 +104,31 @@ class StatisticsViewController: UIViewController {
     }()
     
     private let scoreLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Score"
-        label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        return label
+        UILabel("Score", color: .materialMedium, font: UIFont.systemFont(ofSize: 18, weight: .bold))
     }()
     
     private let cupsDrunkLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Cups drunk"
-        label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        return label
+        UILabel("Cups drunk", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
     }()
     
     private let cupsDrunkLabelResult: UILabel = {
-        let label = UILabel()
-        label.text = "54"
-        label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        return label
+        UILabel("54", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
     }()
     
     private let recipesMasteredLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Recipes mastered"
-        label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        return label
+        UILabel("Recipes mastered", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
     }()
     
     private let recipesMasteredLabelResult: UILabel = {
-        let label = UILabel()
-        label.text = "24"
-        label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        return label
+        UILabel("24", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
     }()
     
     private let healthScoreLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Health score"
-        label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        return label
+        UILabel("Health score", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
     }()
     
     private let healthScoreLabelResult: UILabel = {
-        let label = UILabel()
-        label.text = "38"
-        label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        return label
+        UILabel("38", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
     }()
     
     private let userLevelStackView: UIStackView = {
@@ -200,22 +163,11 @@ class StatisticsViewController: UIViewController {
     }()
     
     private let userLevelLabel: UILabel = {
-        let label = UILabel()
-        label.text = "39"
-        label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 36, weight: .medium)
-        return label
+        UILabel("39", color: .materialMedium, font: UIFont.systemFont(ofSize: 36, weight: .medium))
     }()
     
-    // TODO: (AC) - There is a ton of duplicating code here. Should consider replacing it with UILabel extension.
     private let recommendationsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Personal recommendations:"
-        label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        return label
+        UILabel("Personal recommendations:", color: .materialHeavy, font: UIFont.systemFont(ofSize: 18, weight: .medium))
     }()
     
     private let leadPositionStackView: UIStackView = {
@@ -255,39 +207,19 @@ class StatisticsViewController: UIViewController {
     }()
     
     private let latteLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Latte"
-        label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        return label
+        UILabel("Latte", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .medium))
     }()
     
     private let flatLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Flat white"
-        label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        return label
+        UILabel("Flat white", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .medium))
     }()
     
     private let americanoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Americano"
-        label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        return label
+        UILabel("Americano", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .medium))
     }()
     
     private let globalStatisticsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Global statistics:"
-        // TODO: (AC) - replace colors using new UIColor extension with our app color theme
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        return label
+        UILabel("Global statistics:", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .medium))
     }()
     
     private let popularDrinkStackView: UIStackView = {
@@ -310,12 +242,8 @@ class StatisticsViewController: UIViewController {
     }()
     
     private let popularDrinkLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Latte-is the most popular drink among The Bean users"
-        // TODO: (AC) - replace colors using new UIColor extension with our app color theme
-        label.textColor = .materialSecondary
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        return label
+        UILabel("Latte-is the most popular drink among The Bean users",
+                color: .materialMedium, font: UIFont.systemFont(ofSize: 16, weight: .medium))
     }()
     
     private let averageNumberStackView: UIStackView = {

@@ -29,9 +29,9 @@ class MainTabBarController: UITabBarController {
         statisticsVC.setupTabBar("Statistics", image: "chart.bar.xaxis")
         timerVC.setupTabBar("Timer", image: "timer")
         
-        tabBar.tintColor = .materialPrimary
-        tabBar.unselectedItemTintColor = .materialSecondary
-        tabBar.backgroundColor = .highlightPrimary
+        tabBar.tintColor = .materialHeavy
+        tabBar.unselectedItemTintColor = .materialMedium
+        tabBar.backgroundColor = .hightlightSecondary
         
         // MARK: Add Navigation Controllers to the main TabBar here:
         viewControllers = [recipesNVC, statisticsNVC, timerNVC]

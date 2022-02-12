@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIFont {
+    static let medium: UIFont = UIFont()
+}
