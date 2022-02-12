@@ -68,7 +68,7 @@ class StatisticsViewController: UIViewController {
     }()
     
     private let usernameLabel: UILabel = {
-        UILabel("Wane Smith", color: .materialHeavy, font: UIFont.systemFont(ofSize: 24, weight: .bold))
+        UILabel(text: "Wane Smith", color: .materialHeavy, font: UIFont.systemFont(ofSize: 24, weight: .bold))
     }()
     
     private let avatarImageView: UIImageView = {
@@ -99,31 +99,39 @@ class StatisticsViewController: UIViewController {
     }()
     
     private let scoreLabel: UILabel = {
-        UILabel("Score", color: .materialMedium, font: UIFont.systemFont(ofSize: 18, weight: .bold))
+        UILabel(text: "Score", color: .materialMedium, font: UIFont.systemFont(ofSize: 18, weight: .bold))
     }()
     
     private let cupsDrunkLabel: UILabel = {
-        UILabel("Cups drunk", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
+        UILabel(text: "Cups drunk", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
     }()
     
     private let cupsDrunkLabelResult: UILabel = {
-        UILabel("54", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
+        UILabel(text: "54", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
     }()
     
     private let recipesMasteredLabel: UILabel = {
-        UILabel("Recipes mastered", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
+        UILabel(text: "Recipes mastered", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
     }()
     
     private let recipesMasteredLabelResult: UILabel = {
-        UILabel("24", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
+        UILabel(text: "24", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
     }()
     
     private let healthScoreLabel: UILabel = {
-        UILabel("Health score", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
+        UILabel(text: "Health score", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
     }()
     
     private let healthScoreLabelResult: UILabel = {
-        UILabel("38", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .medium))
+        UILabel(text: "38", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
+    }()
+    
+    private let userLevelLabel: UILabel = {
+        UILabel(text: "39", color: .materialHeavy, font: UIFont.systemFont(ofSize: 36, weight: .medium))
+    }()
+    
+    private let recommendationsLabel: UILabel = {
+        UILabel(text: "Personal recommendations:", color: .materialHeavy, font: UIFont.systemFont(ofSize: 18, weight: .medium))
     }()
     
     private let userLevelStackView: UIStackView = {
@@ -135,7 +143,7 @@ class StatisticsViewController: UIViewController {
         return stackView
     }()
     
-    // !!! FIX: I don't know how to do it:
+    // !!! TODO: I don't know how to do it (ring!):
     private let userLevelImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -154,14 +162,6 @@ class StatisticsViewController: UIViewController {
         imageView.frame.size.height = 68
         imageView.layer.cornerRadius = imageView.frame.height/2
         return imageView
-    }()
-    
-    private let userLevelLabel: UILabel = {
-        UILabel("39", color: .materialMedium, font: UIFont.systemFont(ofSize: 36, weight: .medium))
-    }()
-    
-    private let recommendationsLabel: UILabel = {
-        UILabel("Personal recommendations:", color: .materialHeavy, font: UIFont.systemFont(ofSize: 18, weight: .medium))
     }()
     
     private let leadPositionStackView: UIStackView = {
@@ -200,29 +200,32 @@ class StatisticsViewController: UIViewController {
     }()
     
     private let latteLabel: UILabel = {
-        UILabel("Latte", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .medium))
+        UILabel(text: "Latte", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .light))
     }()
     
     private let flatLabel: UILabel = {
-        UILabel("Flat white", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .medium))
+        UILabel(text: "Flat white", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .light))
     }()
     
     private let americanoLabel: UILabel = {
-        UILabel("Americano", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .medium))
+        UILabel(text: "Americano", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .light))
     }()
     
     private let globalStatisticsLabel: UILabel = {
-        UILabel("Global statistics:", color: .materialHeavy, font: UIFont.systemFont(ofSize: 14, weight: .medium))
+        UILabel(text: "Global statistics:", color: .materialHeavy, font: UIFont.systemFont(ofSize: 18, weight: .medium))
     }()
     
     // TODO: (AC) - highlight the application name in bold
     private let popularDrinkLabel: UILabel = {
-        UILabel("Latte-is the most popular drink among The Bean users",
+        let label = UILabel(text: "Latte-is the most popular drink among The Bean users",
                 color: .materialMedium, font: UIFont.systemFont(ofSize: 16, weight: .medium))
+        label.numberOfLines = 3
+        label.textAlignment = .center
+        return label
     }()
     
     private let averageNumberLabel: UILabel = {
-        let label =  UILabel("4-is an average number of cups per day",
+        let label =  UILabel(text: "4-is an average number of cups per day",
         color: .white, font: UIFont.systemFont(ofSize: 16, weight: .medium))
         label.numberOfLines = 2
         label.textAlignment = .center
@@ -231,7 +234,7 @@ class StatisticsViewController: UIViewController {
     
     // TODO: (AC) - highlight the application name in bold
     private let recipesAppLabel: UILabel = {
-        let label =  UILabel("129 recipes are mastered by The Bean users",
+        let label =  UILabel(text: "129 recipes are mastered by The Bean users",
         color: .white, font: UIFont.systemFont(ofSize: 16, weight: .medium))
         label.numberOfLines = 2
         label.textAlignment = .center

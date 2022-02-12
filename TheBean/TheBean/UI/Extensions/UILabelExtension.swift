@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 extension UILabel {
-    convenience init(_ text: String, color: UIColor, font: UIFont) {
+    convenience init(text: String, color: UIColor, font: UIFont) {
         self.init()
-        self.text = "Cups drunk"
+        self.text = text
         self.textColor = color
         self.font = font
     }
