@@ -10,8 +10,24 @@ import SnapKit
 
 class StatisticsViewController: UIViewController {
     
-    private let scrollView = UIScrollView()
-    private let contentView = UIView()
+    private lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 800)
+    
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .background
+//        scrollView.frame = self.scrollView.bounds
+        scrollView.contentSize = contentSize
+        return scrollView
+    }()
+    
+    private lazy var contentView: UIView = {
+        let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = .background
+        contentView.frame.size = contentSize
+        return contentView
+    }()
 
     private let headerStackView: UIStackView = {
         let stackView = UIStackView()
@@ -284,6 +300,24 @@ class StatisticsViewController: UIViewController {
         return stackView
     }()
     
+    private let baristaHandsImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "BaristaHands")
+        imageView.image = image
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let popularDrinkLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Latte-is the most popular drink among The Bean users"
+        // TODO: (AC) - replace colors using new UIColor extension with our app color theme
+        label.textColor = .materialSecondary
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        return label
+    }()
+    
     private let averageNumberStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -318,8 +352,6 @@ class StatisticsViewController: UIViewController {
         
         scrollView.addSubview(contentView)
         
-        headerStackView.addSubview(logoTheBeanImageView)
-        
         contentView.addSubview(headerStackView)
         contentView.addSubview(userCardStackView)
         contentView.addSubview(recommendationsLabel)
@@ -328,6 +360,8 @@ class StatisticsViewController: UIViewController {
         contentView.addSubview(popularDrinkStackView)
         contentView.addSubview(averageNumberStackView)
         contentView.addSubview(recipesAppStackView)
+        
+        headerStackView.addSubview(logoTheBeanImageView)
         
         userCardStackView.addSubview(usernameStackView)
         userCardStackView.addSubview(userDataStackView)
@@ -357,6 +391,8 @@ class StatisticsViewController: UIViewController {
         leadPositionStackView.addSubview(flatLabel)
         leadPositionStackView.addSubview(americanoLabel)
         
+        recipesAppStackView.addSubview(baristaHandsImageView)
+        recipesAppStackView.addSubview(popularDrinkLabel)
     }
     
     private func setupConstraints() {
@@ -533,6 +569,18 @@ class StatisticsViewController: UIViewController {
             make.centerX.equalTo(contentView)
             make.width.equalTo(315)
             make.height.equalTo(192)
+        }
+        
+        baristaHandsImageView.snp.makeConstraints { make in
+            make.width.equalTo(110)
+            make.height.equalTo(165)
+            make.top.equalTo(14)
+            make.left.equalTo(18)
+        }
+        
+        popularDrinkLabel.snp.makeConstraints { make in
+            make.top.equalTo(57)
+            make.left.equalTo(baristaHandsImageView.snp.right).inset(14)
         }
         
         averageNumberStackView.snp.makeConstraints { make in
