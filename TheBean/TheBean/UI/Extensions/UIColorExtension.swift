@@ -5,7 +5,6 @@
 //  Created by Daniel Pustotin on 12.02.2022.
 //
 
-import Foundation
 import UIKit
 
 extension UIColor {
@@ -14,4 +13,5 @@ extension UIColor {
     static let hightlightSecondary: UIColor = .init(named: "HighlightSecondary")!
     static let materialPrimary:     UIColor = .init(named: "MaterialPrimary")!
     static let materialSecondary:   UIColor = .init(named: "MaterialSecondary")!
+    static let accentColor:         UIColor = .init(named: "AccentColor")!
 }

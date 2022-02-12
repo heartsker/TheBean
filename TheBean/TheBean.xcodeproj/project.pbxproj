@@ -28,7 +28,8 @@
 		A9AEDE4E27B7AFF500CCD338 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEDE4D27B7AFF500CCD338 /* UIColorExtension.swift */; };
 		C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */; };
 		C78BAE9527B64AE800CEB291 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78BAE9427B64AE800CEB291 /* UIViewControllerExtension.swift */; };
-		C78BAE9927B66BDE00CEB291 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78BAE9827B66BDE00CEB291 /* UIStackViewExtension.swift */; };
+		C7A2F2A127B7B45D003CFB27 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */; };
+		C7A2F2A327B7B47A003CFB27 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2F2A227B7B47A003CFB27 /* UILabelExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +73,8 @@
 		A9AEDE4D27B7AFF500CCD338 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		C78BAE9427B64AE800CEB291 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		C78BAE9827B66BDE00CEB291 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
+		C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		C7A2F2A227B7B47A003CFB27 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,8 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				C78BAE9427B64AE800CEB291 /* UIViewControllerExtension.swift */,
-				C78BAE9827B66BDE00CEB291 /* UIStackViewExtension.swift */,
 				A9AEDE4D27B7AFF500CCD338 /* UIColorExtension.swift */,
+				C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */,
+				C7A2F2A227B7B47A003CFB27 /* UILabelExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -336,6 +339,8 @@
 			files = (
 				A98B33DC27AD9BD200EFA685 /* ViewController.swift in Sources */,
 				A974D2D827AEDCCD00776474 /* DrinkKind.swift in Sources */,
+				C7A2F2A327B7B47A003CFB27 /* UILabelExtension.swift in Sources */,
+				C7A2F2A127B7B45D003CFB27 /* UIFontExtension.swift in Sources */,
 				A9AEDE4E27B7AFF500CCD338 /* UIColorExtension.swift in Sources */,
 				A98B342127AD9C9200EFA685 /* MainTabBarController.swift in Sources */,
 				A98B33D827AD9BD200EFA685 /* AppDelegate.swift in Sources */,
@@ -346,7 +351,6 @@
 				A98B340E27AD9C7A00EFA685 /* APIModel.swift in Sources */,
 				A98B342427AD9C9200EFA685 /* TimerViewController.swift in Sources */,
 				C78BAE9527B64AE800CEB291 /* UIViewControllerExtension.swift in Sources */,
-				C78BAE9927B66BDE00CEB291 /* UIStackViewExtension.swift in Sources */,
 				A98B340D27AD9C7A00EFA685 /* Recipe.swift in Sources */,
 				C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */,
 			);
