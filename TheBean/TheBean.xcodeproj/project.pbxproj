@@ -30,6 +30,10 @@
 		C78BAE9527B64AE800CEB291 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78BAE9427B64AE800CEB291 /* UIViewControllerExtension.swift */; };
 		C7A2F2A127B7B45D003CFB27 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */; };
 		C7A2F2A327B7B47A003CFB27 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2F2A227B7B47A003CFB27 /* UILabelExtension.swift */; };
+		C7A2F2A727B7FB21003CFB27 /* Muller-Trial-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7A2F2A627B7FB21003CFB27 /* Muller-Trial-Medium.ttf */; };
+		C7A2F2A927B7FB51003CFB27 /* Muller-Trial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7A2F2A827B7FB51003CFB27 /* Muller-Trial-Regular.ttf */; };
+		C7A2F2AB27B7FB5A003CFB27 /* Muller-Trial-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7A2F2AA27B7FB5A003CFB27 /* Muller-Trial-Light.ttf */; };
+		C7A2F2AD27B7FB78003CFB27 /* Muller-Trial-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7A2F2AC27B7FB78003CFB27 /* Muller-Trial-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		C78BAE9427B64AE800CEB291 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		C7A2F2A227B7B47A003CFB27 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		C7A2F2A627B7FB21003CFB27 /* Muller-Trial-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Medium.ttf"; sourceTree = "<group>"; };
+		C7A2F2A827B7FB51003CFB27 /* Muller-Trial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Regular.ttf"; sourceTree = "<group>"; };
+		C7A2F2AA27B7FB5A003CFB27 /* Muller-Trial-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Light.ttf"; sourceTree = "<group>"; };
+		C7A2F2AC27B7FB78003CFB27 /* Muller-Trial-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +185,7 @@
 		A98B340F27AD9C9200EFA685 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C7A2F2A527B7FAC6003CFB27 /* Fonts */,
 				C78BAE9327B648D200CEB291 /* Extensions */,
 				A98B341427AD9C9200EFA685 /* Assets.xcassets */,
 				A98B341527AD9C9200EFA685 /* LaunchScreen.storyboard */,
@@ -197,6 +206,17 @@
 				C7A2F2A227B7B47A003CFB27 /* UILabelExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C7A2F2A527B7FAC6003CFB27 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C7A2F2AA27B7FB5A003CFB27 /* Muller-Trial-Light.ttf */,
+				C7A2F2A827B7FB51003CFB27 /* Muller-Trial-Regular.ttf */,
+				C7A2F2A627B7FB21003CFB27 /* Muller-Trial-Medium.ttf */,
+				C7A2F2AC27B7FB78003CFB27 /* Muller-Trial-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,7 +331,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7A2F2AB27B7FB5A003CFB27 /* Muller-Trial-Light.ttf in Resources */,
+				C7A2F2AD27B7FB78003CFB27 /* Muller-Trial-Bold.ttf in Resources */,
 				A98B342027AD9C9200EFA685 /* LaunchScreen.storyboard in Resources */,
+				C7A2F2A927B7FB51003CFB27 /* Muller-Trial-Regular.ttf in Resources */,
+				C7A2F2A727B7FB21003CFB27 /* Muller-Trial-Medium.ttf in Resources */,
 				A98B341F27AD9C9200EFA685 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,16 +14,13 @@ class StatisticsViewController: UIViewController {
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .background
-//        scrollView.frame = self.scrollView.bounds
         scrollView.contentSize = contentSize
         return scrollView
     }()
     
     private lazy var contentView: UIView = {
         let contentView = UIView()
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.backgroundColor = .background
         contentView.frame.size = contentSize
         return contentView
@@ -31,7 +28,6 @@ class StatisticsViewController: UIViewController {
 
     private let headerStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
         stackView.backgroundColor = .background
@@ -49,7 +45,6 @@ class StatisticsViewController: UIViewController {
     
     private let userCardStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .vertical
         stackView.backgroundColor = .highlightPrimary
@@ -59,7 +54,6 @@ class StatisticsViewController: UIViewController {
     
     private let usernameStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
         stackView.backgroundColor = .highlightPrimary
@@ -71,8 +65,8 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "Wane Smith"
         label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.font = UIFont.mullerBold
+        label.font = label.font.withSize(24)
         return label
     }()
     
@@ -87,7 +81,6 @@ class StatisticsViewController: UIViewController {
     
     private let userDataStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
         stackView.backgroundColor = .highlightPrimary
@@ -97,7 +90,6 @@ class StatisticsViewController: UIViewController {
     
     private let userCoffeeDataStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .vertical
         stackView.backgroundColor = .highlightPrimary
@@ -109,8 +101,8 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "Score"
         label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.mullerBold
+        label.font = label.font.withSize(18)
         return label
     }()
     
@@ -118,8 +110,8 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "Cups drunk"
         label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        label.font = UIFont.mullerLight
+        label.font = label.font.withSize(13)
         return label
     }()
     
@@ -127,8 +119,8 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "54"
         label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        label.font = UIFont.mullerLight
+        label.font = label.font.withSize(13)
         return label
     }()
     
@@ -136,8 +128,8 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "Recipes mastered"
         label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        label.font = UIFont.mullerLight
+        label.font = label.font.withSize(13)
         return label
     }()
     
@@ -145,8 +137,8 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "24"
         label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        label.font = UIFont.mullerLight
+        label.font = label.font.withSize(13)
         return label
     }()
     
@@ -154,8 +146,8 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "Health score"
         label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        label.font = UIFont.mullerLight
+        label.font = label.font.withSize(13)
         return label
     }()
     
@@ -163,14 +155,13 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "38"
         label.textColor = .materialSecondary
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        label.font = UIFont.mullerLight
+        label.font = label.font.withSize(13)
         return label
     }()
     
     private let userLevelStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .vertical
         stackView.backgroundColor = .highlightPrimary
@@ -178,7 +169,7 @@ class StatisticsViewController: UIViewController {
         return stackView
     }()
     
-    // !!! I don't know how to do it:
+    // !!! FIX: I don't know how to do it:
     private let userLevelImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -203,24 +194,22 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "39"
         label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 36, weight: .medium)
+        label.font = UIFont.mullerRegular
+        label.font = label.font.withSize(36)
         return label
     }()
     
-    // TODO: (AC) - There is a ton of duplicating code here. Should consider replacing it with UILabel extension.
     private let recommendationsLabel: UILabel = {
         let label = UILabel()
         label.text = "Personal recommendations:"
         label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.mullerBold
+        label.font = label.font.withSize(18)
         return label
     }()
     
     private let leadPositionStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
         stackView.backgroundColor = .background
@@ -258,8 +247,8 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "Latte"
         label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.font = UIFont.mullerLight
+        label.font = label.font.withSize(14)
         return label
     }()
     
@@ -267,8 +256,8 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "Flat white"
         label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.font = UIFont.mullerLight
+        label.font = label.font.withSize(14)
         return label
     }()
     
@@ -276,23 +265,21 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "Americano"
         label.textColor = .black
-        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        label.font = UIFont.mullerLight
+        label.font = label.font.withSize(14)
         return label
     }()
     
     private let globalStatisticsLabel: UILabel = {
         let label = UILabel()
         label.text = "Global statistics:"
-        // TODO: (AC) - replace colors using new UIColor extension with our app color theme
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.mullerBold
+        label.font = label.font.withSize(18)
         return label
     }()
     
     private let popularDrinkStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
         stackView.backgroundColor = .highlightPrimary
@@ -312,25 +299,41 @@ class StatisticsViewController: UIViewController {
     private let popularDrinkLabel: UILabel = {
         let label = UILabel()
         label.text = "Latte-is the most popular drink among The Bean users"
-        // TODO: (AC) - replace colors using new UIColor extension with our app color theme
         label.textColor = .materialSecondary
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.font = UIFont.mullerMedium
+        label.font = label.font.withSize(16)
         return label
     }()
     
-    private let averageNumberStackView: UIStackView = {
+    private let averageNumberCupsStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
-        stackView.backgroundColor = .highlightPrimary
+        stackView.backgroundColor = .materialPrimary
         stackView.layer.cornerRadius = 20
         return stackView
     }()
     
+    private let averageNumberCupsInternalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.backgroundColor = .materialSecondary
+        stackView.layer.cornerRadius = 20
+        return stackView
+    }()
+    
+    private let averageNumberLabel: UILabel = {
+        let label = UILabel()
+        label.text = "4-is an average number of cups per day"
+        label.textColor = .white
+        label.font = UIFont.mullerMedium
+        label.font = label.font.withSize(16)
+        return label
+    }()
+    
     private let recipesAppStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
         stackView.backgroundColor = .highlightPrimary
@@ -358,7 +361,7 @@ class StatisticsViewController: UIViewController {
         contentView.addSubview(leadPositionStackView)
         contentView.addSubview(globalStatisticsLabel)
         contentView.addSubview(popularDrinkStackView)
-        contentView.addSubview(averageNumberStackView)
+        contentView.addSubview(averageNumberCupsStackView)
         contentView.addSubview(recipesAppStackView)
         
         headerStackView.addSubview(logoTheBeanImageView)
@@ -391,8 +394,11 @@ class StatisticsViewController: UIViewController {
         leadPositionStackView.addSubview(flatLabel)
         leadPositionStackView.addSubview(americanoLabel)
         
-        recipesAppStackView.addSubview(baristaHandsImageView)
-        recipesAppStackView.addSubview(popularDrinkLabel)
+        popularDrinkStackView.addSubview(baristaHandsImageView)
+        popularDrinkStackView.addSubview(popularDrinkLabel)
+        
+        averageNumberCupsStackView.addSubview(averageNumberCupsInternalStackView)
+        averageNumberCupsStackView.addSubview(averageNumberLabel)
     }
     
     private func setupConstraints() {
@@ -402,7 +408,8 @@ class StatisticsViewController: UIViewController {
         
         contentView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            make.width.equalTo(self.scrollView)
+            make.width.equalTo(scrollView)
+            make.height.equalToSuperview()
         }
         
         headerStackView.snp.makeConstraints { make in
@@ -498,7 +505,7 @@ class StatisticsViewController: UIViewController {
         userLevelImageView.snp.makeConstraints { make in
             make.width.equalTo(88)
             make.height.equalTo(81)
-            make.top.equalTo(35)
+            make.bottom.equalTo(-36)
             make.right.equalTo(-23)
         }
         
@@ -583,15 +590,27 @@ class StatisticsViewController: UIViewController {
             make.left.equalTo(baristaHandsImageView.snp.right).inset(14)
         }
         
-        averageNumberStackView.snp.makeConstraints { make in
+        averageNumberCupsStackView.snp.makeConstraints { make in
             make.top.equalTo(popularDrinkStackView.snp.bottom).inset(-8)
             make.centerX.equalTo(contentView)
             make.width.equalTo(315)
             make.height.equalTo(192)
         }
         
+        averageNumberCupsInternalStackView.snp.makeConstraints { make in
+            make.top.equalTo(125)
+            make.width.equalTo(315)
+            make.height.equalTo(75)
+            make.centerX.equalTo(averageNumberCupsStackView)
+        }
+        
+        averageNumberLabel.snp.makeConstraints { make in
+            make.top.equalTo(27)
+            make.centerX.equalTo(averageNumberCupsStackView)
+        }
+        
         recipesAppStackView.snp.makeConstraints { make in
-            make.top.equalTo(averageNumberStackView.snp.bottom).inset(-8)
+            make.top.equalTo(averageNumberCupsStackView.snp.bottom).inset(-8)
             make.centerX.equalTo(contentView)
             make.width.equalTo(315)
             make.height.equalTo(192)
