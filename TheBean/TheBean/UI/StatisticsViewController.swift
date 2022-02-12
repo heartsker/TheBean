@@ -10,6 +10,7 @@ import SnapKit
 
 // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
 // FIXME: (AC) - Too many views - should consider inheritance structure for views.
+// FIXME: (AC) - Update color names according to assets folder
 
 class StatisticsViewController: UIViewController {
     
