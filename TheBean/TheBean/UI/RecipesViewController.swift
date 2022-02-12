@@ -13,7 +13,7 @@ class RecipesViewController: UIViewController {
         let button = UIButton()
         button.setTitle("That is recipe", for: .normal)
         button.titleLabel!.font = UIFont(name: "Arial", size: 50)
-        button.titleLabel!.textColor = .black
+        button.setTitleColor(.materialPrimary, for: .normal)
         button.addTarget(self, action: #selector(buttonClick(sender:)), for: .touchUpInside)
         return button
     }()

@@ -13,7 +13,7 @@ class TimerViewController: UIViewController {
         let label = UILabel()
         label.text = "That is timer"
         label.font = UIFont(name: "Arial", size: 50)
-        label.textColor = .secondarySystemBackground
+        label.textColor = .materialPrimary
         return label
     }()
 
