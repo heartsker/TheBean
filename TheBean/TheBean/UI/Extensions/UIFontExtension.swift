@@ -5,9 +5,7 @@
 //  Created by Alina on 12.02.2022.
 //
 
-import Foundation
 import UIKit
-
 
 extension UIFont {
     static let mullerLight:          UIFont = .init(name: "Muller-Trial-Light", size: 10)!

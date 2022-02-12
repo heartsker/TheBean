@@ -255,6 +255,33 @@ class StatisticsViewController: UIViewController {
     
     private let averageNumberLabel: UILabel = {
         let label = UILabel()
+        label.text = "Latte-is the most popular drink among The Bean users"
+        label.textColor = .materialSecondary
+        label.font = UIFont.mullerMedium
+        label.font = label.font.withSize(16)
+        return label
+    }()
+    
+    private let averageNumberCupsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.backgroundColor = .materialPrimary
+        stackView.layer.cornerRadius = 20
+        return stackView
+    }()
+    
+    private let averageNumberCupsInternalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.backgroundColor = .materialSecondary
+        stackView.layer.cornerRadius = 20
+        return stackView
+    }()
+    
+    private let averageNumberLabel: UILabel = {
+        let label = UILabel()
         label.text = "4-is an average number of cups per day"
         label.textColor = .white
         label.font = UIFont.mullerMedium
