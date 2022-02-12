@@ -14,6 +14,8 @@ import SnapKit
 
 class StatisticsViewController: UIViewController {
     
+    // TODO: (AC) - FIX SCROLLVIEW (NEED AUTO CONTENTVIEW HEIGHT)
+    
     private lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 800)
     
     private lazy var scrollView: UIScrollView = {
@@ -231,6 +233,7 @@ class StatisticsViewController: UIViewController {
         return imageView
     }()
     
+    // TODO: (AC) - highlight the application name in bold
     private let popularDrinkLabel: UILabel = {
         UILabel("Latte-is the most popular drink among The Bean users",
                 color: .materialMedium, font: UIFont.systemFont(ofSize: 16, weight: .medium))
@@ -258,6 +261,8 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "Latte-is the most popular drink among The Bean users"
         label.textColor = .materialSecondary
+        label.numberOfLines = 3
+        label.textAlignment = .center
         label.font = UIFont.mullerMedium
         label.font = label.font.withSize(16)
         return label
@@ -285,9 +290,47 @@ class StatisticsViewController: UIViewController {
         let label = UILabel()
         label.text = "4-is an average number of cups per day"
         label.textColor = .white
+        label.numberOfLines = 2
+        label.textAlignment = .center
         label.font = UIFont.mullerMedium
         label.font = label.font.withSize(16)
         return label
+    }()
+    
+    private let firstCupCoffeeImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "Cup")
+        imageView.image = image
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let secondCupCoffeeImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "Cup")
+        imageView.image = image
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let thirdCupCoffeeImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "Cup")
+        imageView.image = image
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let fourthCupCoffeeImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "Cup")
+        imageView.image = image
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     
     private let recipesAppStackView: UIStackView = {
@@ -297,6 +340,36 @@ class StatisticsViewController: UIViewController {
         stackView.backgroundColor = .highlightPrimary
         stackView.layer.cornerRadius = 20
         return stackView
+    }()
+    
+    // TODO: (AC) - highlight the application name in bold
+    private let recipesAppLabel: UILabel = {
+        let label = UILabel()
+        label.text = "129 recipes are mastered by The Bean users"
+        label.textColor = .materialSecondary
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        label.font = UIFont.mullerMedium
+        label.font = label.font.withSize(16)
+        return label
+    }()
+    
+    private let recipesAppCoffeeBeanImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "CoffeeBean")
+        imageView.image = image
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let recipesAppCoffeeMilkImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "CoffeeMilk")
+        imageView.image = image
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     
     override func viewDidLoad() {
@@ -357,6 +430,14 @@ class StatisticsViewController: UIViewController {
         
         averageNumberCupsStackView.addSubview(averageNumberCupsInternalStackView)
         averageNumberCupsStackView.addSubview(averageNumberLabel)
+        averageNumberCupsStackView.addSubview(firstCupCoffeeImageView)
+        averageNumberCupsStackView.addSubview(secondCupCoffeeImageView)
+        averageNumberCupsStackView.addSubview(thirdCupCoffeeImageView)
+        averageNumberCupsStackView.addSubview(fourthCupCoffeeImageView)
+        
+        recipesAppStackView.addSubview(recipesAppLabel)
+        recipesAppStackView.addSubview(recipesAppCoffeeBeanImageView)
+        recipesAppStackView.addSubview(recipesAppCoffeeMilkImageView)
     }
     
     private func setupConstraints() {
@@ -545,7 +626,8 @@ class StatisticsViewController: UIViewController {
         
         popularDrinkLabel.snp.makeConstraints { make in
             make.top.equalTo(57)
-            make.left.equalTo(baristaHandsImageView.snp.right).inset(14)
+            make.left.equalTo(baristaHandsImageView.snp.right).inset(-14)
+            make.right.equalTo(-18)
         }
         
         averageNumberCupsStackView.snp.makeConstraints { make in
@@ -564,14 +646,63 @@ class StatisticsViewController: UIViewController {
         
         averageNumberLabel.snp.makeConstraints { make in
             make.top.equalTo(27)
-            make.centerX.equalTo(averageNumberCupsStackView)
+            make.left.equalTo(68)
+            make.right.equalTo(-67)
+        }
+        
+        // TODO: (AC) - correct cups size (they are small on screen) and fix code repetition
+        firstCupCoffeeImageView.snp.makeConstraints { make in
+            make.width.equalTo(55)
+            make.height.equalTo(73)
+            make.top.equalTo(96)
+            make.left.equalTo(21)
+        }
+        
+        secondCupCoffeeImageView.snp.makeConstraints { make in
+            make.width.equalTo(55)
+            make.height.equalTo(73)
+            make.top.equalTo(96)
+            make.left.equalTo(firstCupCoffeeImageView.snp.right).inset(-17)
+        }
+        
+        thirdCupCoffeeImageView.snp.makeConstraints { make in
+            make.width.equalTo(55)
+            make.height.equalTo(73)
+            make.top.equalTo(96)
+            make.left.equalTo(secondCupCoffeeImageView.snp.right).inset(-17)
+        }
+        
+        fourthCupCoffeeImageView.snp.makeConstraints { make in
+            make.width.equalTo(55)
+            make.height.equalTo(73)
+            make.top.equalTo(96)
+            make.right.equalTo(-23)
         }
         
         recipesAppStackView.snp.makeConstraints { make in
-            make.top.equalTo(averageNumberCupsStackView.snp.bottom).inset(-8)
+            make.top.equalTo(averageNumberCupsInternalStackView.snp.bottom).inset(-8)
             make.centerX.equalTo(contentView)
             make.width.equalTo(315)
             make.height.equalTo(192)
+        }
+        
+        recipesAppLabel.snp.makeConstraints { make in
+            make.top.equalTo(27)
+            make.left.equalTo(64)
+            make.right.equalTo(-62)
+        }
+        
+        recipesAppCoffeeBeanImageView.snp.makeConstraints { make in
+            make.width.equalTo(125)
+            make.height.equalTo(118)
+            make.top.equalTo(65)
+        }
+        
+        recipesAppCoffeeMilkImageView.snp.makeConstraints { make in
+            make.width.equalTo(125)
+            make.height.equalTo(108)
+            make.top.equalTo(70)
+            make.left.equalTo(recipesAppCoffeeBeanImageView.snp.right).inset(-65)
         }
     }
     
