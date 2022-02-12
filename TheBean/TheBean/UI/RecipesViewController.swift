@@ -14,6 +14,7 @@ class RecipesViewController: UIViewController {
         button.setTitle("That is recipe", for: .normal)
         button.titleLabel!.font = UIFont(name: "Arial", size: 50)
         button.setTitleColor(.materialPrimary, for: .normal)
+        // TODO: (AC) - Should consider replacing addTarget to addAction
         button.addTarget(self, action: #selector(buttonClick(sender:)), for: .touchUpInside)
         return button
     }()

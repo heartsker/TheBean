@@ -41,10 +41,12 @@ class StatisticsViewController: UIViewController {
         return stackView
     }()
     
+    // TODO: (AC) - There is a ton of duplicating code here. Should consider replacing it with UILabel extension.
     private let recommendationsLabel: UILabel = {
         let label = UILabel()
         label.text = "Personal recommendations:"
         label.textColor = .black
+        // TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return label
     }()
@@ -61,6 +63,7 @@ class StatisticsViewController: UIViewController {
     private let globalStatisticsLabel: UILabel = {
         let label = UILabel()
         label.text = "Global statistics:"
+        // TODO: (AC) - replace colors using new UIColor extension with our app color theme
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return label
