@@ -10,10 +10,7 @@ import UIKit
 class RecipesViewController: UIViewController {
     
     private lazy var button: UIButton = {
-        let button = UIButton()
-        button.setTitle("That is recipe", for: .normal)
-        button.titleLabel!.font = UIFont(name: "Arial", size: 50)
-        button.setTitleColor(.materialHeavy, for: .normal)
+        let button = UIButton(text: "That is recipe", color: .materialHeavy, font: .bold)
         // TODO: (AC) - Should consider replacing addTarget to addAction
         button.addTarget(self, action: #selector(buttonClick(sender:)), for: .touchUpInside)
         return button

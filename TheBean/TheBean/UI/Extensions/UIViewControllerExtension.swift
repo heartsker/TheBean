@@ -15,6 +15,6 @@ extension UIViewController {
     }
     
     func setupAppearance() {
-        view.backgroundColor = UIColor(named: "Background")
+        view.backgroundColor = .background
     }
 }

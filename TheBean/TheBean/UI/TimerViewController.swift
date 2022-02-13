@@ -10,11 +10,7 @@ import UIKit
 class TimerViewController: UIViewController {
     
     private lazy var label: UILabel = {
-        let label = UILabel()
-        label.text = "That is timer"
-        label.font = UIFont(name: "Arial", size: 50)
-        label.textColor = .materialHeavy
-        return label
+        UILabel(text: "That is timer", color: .materialHeavy, font: .bold)
     }()
 
     override func viewDidLoad() {
