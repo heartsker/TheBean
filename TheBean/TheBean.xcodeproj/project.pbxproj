@@ -18,7 +18,6 @@
 		A980FFB227B55B0900FD4A12 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A980FFB127B55B0900FD4A12 /* SnapKit */; };
 		A98B33D827AD9BD200EFA685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33D727AD9BD200EFA685 /* AppDelegate.swift */; };
 		A98B33DA27AD9BD200EFA685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33D927AD9BD200EFA685 /* SceneDelegate.swift */; };
-		A98B33DC27AD9BD200EFA685 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33DB27AD9BD200EFA685 /* ViewController.swift */; };
 		A98B33E227AD9BD200EFA685 /* TheBean.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A98B33E027AD9BD200EFA685 /* TheBean.xcdatamodeld */; };
 		A98B33F227AD9BD300EFA685 /* TheBeanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33F127AD9BD300EFA685 /* TheBeanTests.swift */; };
 		A98B33FC27AD9BD300EFA685 /* TheBeanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B33FB27AD9BD300EFA685 /* TheBeanUITests.swift */; };
@@ -65,7 +64,6 @@
 		A98B33D427AD9BD200EFA685 /* TheBean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheBean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98B33D727AD9BD200EFA685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A98B33D927AD9BD200EFA685 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A98B33DB27AD9BD200EFA685 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A98B33E127AD9BD200EFA685 /* TheBean.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheBean.xcdatamodel; sourceTree = "<group>"; };
 		A98B33E827AD9BD300EFA685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A98B33ED27AD9BD300EFA685 /* TheBeanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheBeanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,11 +154,10 @@
 		A98B33D627AD9BD200EFA685 /* TheBean */ = {
 			isa = PBXGroup;
 			children = (
-				A98B33D727AD9BD200EFA685 /* AppDelegate.swift */,
-				A98B33D927AD9BD200EFA685 /* SceneDelegate.swift */,
-				A98B33DB27AD9BD200EFA685 /* ViewController.swift */,
 				A98B33E827AD9BD300EFA685 /* Info.plist */,
 				A98B33E027AD9BD200EFA685 /* TheBean.xcdatamodeld */,
+				A98B33D727AD9BD200EFA685 /* AppDelegate.swift */,
+				A98B33D927AD9BD200EFA685 /* SceneDelegate.swift */,
 				A98B340F27AD9C9200EFA685 /* UI */,
 				A98B340A27AD9C7A00EFA685 /* Model */,
 			);
@@ -364,7 +361,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A98B33DC27AD9BD200EFA685 /* ViewController.swift in Sources */,
 				A974D2D827AEDCCD00776474 /* DrinkKind.swift in Sources */,
 				C7A2F2A327B7B47A003CFB27 /* UILabelExtension.swift in Sources */,
 				C7A2F2A127B7B45D003CFB27 /* UIFontExtension.swift in Sources */,
