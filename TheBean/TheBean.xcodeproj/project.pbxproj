@@ -30,6 +30,9 @@
 		A98B342427AD9C9200EFA685 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341A27AD9C9200EFA685 /* TimerViewController.swift */; };
 		A98B342527AD9C9200EFA685 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */; };
 		A9AEDE4E27B7AFF500CCD338 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEDE4D27B7AFF500CCD338 /* UIColorExtension.swift */; };
+		A9DC1E3227DDE50700CE6078 /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC1E3127DDE50700CE6078 /* UIScrollViewExtension.swift */; };
+		A9DC1E3527DDE61000CE6078 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC1E3427DDE61000CE6078 /* CardView.swift */; };
+		A9DC1E3727DDE72600CE6078 /* AccountStatisticsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC1E3627DDE72600CE6078 /* AccountStatisticsCardView.swift */; };
 		C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */; };
 		C78BAE9527B64AE800CEB291 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78BAE9427B64AE800CEB291 /* UIViewControllerExtension.swift */; };
 		C7A2F2A127B7B45D003CFB27 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */; };
@@ -79,6 +82,9 @@
 		A98B341A27AD9C9200EFA685 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		A9AEDE4D27B7AFF500CCD338 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		A9DC1E3127DDE50700CE6078 /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
+		A9DC1E3427DDE61000CE6078 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		A9DC1E3627DDE72600CE6078 /* AccountStatisticsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountStatisticsCardView.swift; sourceTree = "<group>"; };
 		C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		C78BAE9427B64AE800CEB291 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
@@ -202,9 +208,19 @@
 				A98B341727AD9C9200EFA685 /* MainTabBarController.swift */,
 				A98B341A27AD9C9200EFA685 /* TimerViewController.swift */,
 				A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */,
-				C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */,
+				A9DC1E3327DDE5AC00CE6078 /* Statistics */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A9DC1E3327DDE5AC00CE6078 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */,
+				A9DC1E3427DDE61000CE6078 /* CardView.swift */,
+				A9DC1E3627DDE72600CE6078 /* AccountStatisticsCardView.swift */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 		C78BAE9327B648D200CEB291 /* Extensions */ = {
@@ -215,6 +231,7 @@
 				C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */,
 				C7A2F2A227B7B47A003CFB27 /* UILabelExtension.swift */,
 				A95ECF8C27B93AA400E940A7 /* UIButtonExtension.swift */,
+				A9DC1E3127DDE50700CE6078 /* UIScrollViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,8 +378,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9DC1E3727DDE72600CE6078 /* AccountStatisticsCardView.swift in Sources */,
 				A974D2D827AEDCCD00776474 /* DrinkKind.swift in Sources */,
 				C7A2F2A327B7B47A003CFB27 /* UILabelExtension.swift in Sources */,
+				A9DC1E3227DDE50700CE6078 /* UIScrollViewExtension.swift in Sources */,
 				C7A2F2A127B7B45D003CFB27 /* UIFontExtension.swift in Sources */,
 				A9AEDE4E27B7AFF500CCD338 /* UIColorExtension.swift in Sources */,
 				A98B342127AD9C9200EFA685 /* MainTabBarController.swift in Sources */,
@@ -370,6 +389,7 @@
 				A95ECF8D27B93AA400E940A7 /* UIButtonExtension.swift in Sources */,
 				A974D2D627AEDBD100776474 /* Account.swift in Sources */,
 				A98B33DA27AD9BD200EFA685 /* SceneDelegate.swift in Sources */,
+				A9DC1E3527DDE61000CE6078 /* CardView.swift in Sources */,
 				A98B342527AD9C9200EFA685 /* RecipesViewController.swift in Sources */,
 				A98B33E227AD9BD200EFA685 /* TheBean.xcdatamodeld in Sources */,
 				A98B340E27AD9C7A00EFA685 /* APIModel.swift in Sources */,

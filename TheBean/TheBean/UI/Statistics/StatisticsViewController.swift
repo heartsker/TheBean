@@ -12,23 +12,25 @@ import SnapKit
 // FIXME: (AC) - Too many views - should consider inheritance structure for views.
 // FIXME: (AC) - Update color names according to assets folder
 
+let account: Account = Account()
+
 class StatisticsViewController: UIViewController {
     
     // TODO: (AC) - FIX SCROLLVIEW (NEED AUTO CONTENTVIEW HEIGHT)
     
-    private lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 800)
+//    private lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .background
-        scrollView.contentSize = contentSize
+//        scrollView.contentSize = contentSize
         return scrollView
     }()
     
     private lazy var contentView: UIView = {
         let contentView = UIView()
         contentView.backgroundColor = .background
-        contentView.frame.size = contentSize
+//        contentView.frame.size = contentSize
         return contentView
     }()
 
@@ -80,88 +82,8 @@ class StatisticsViewController: UIViewController {
         return imageView
     }()
     
-    private let userDataStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.distribution = .equalSpacing
-        stackView.axis = .horizontal
-        stackView.backgroundColor = .highlightPrimary
-        stackView.layer.cornerRadius = 20
-        return stackView
-    }()
-    
-    private let userCoffeeDataStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.distribution = .equalSpacing
-        stackView.axis = .vertical
-        stackView.backgroundColor = .highlightPrimary
-        stackView.layer.cornerRadius = 20
-        return stackView
-    }()
-    
-    private let scoreLabel: UILabel = {
-        UILabel(text: "Score", color: .materialMedium, font: UIFont.systemFont(ofSize: 18, weight: .bold))
-    }()
-    
-    private let cupsDrunkLabel: UILabel = {
-        UILabel(text: "Cups drunk", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
-    }()
-    
-    private let cupsDrunkLabelResult: UILabel = {
-        UILabel(text: "54", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
-    }()
-    
-    private let recipesMasteredLabel: UILabel = {
-        UILabel(text: "Recipes mastered", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
-    }()
-    
-    private let recipesMasteredLabelResult: UILabel = {
-        UILabel(text: "24", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
-    }()
-    
-    private let healthScoreLabel: UILabel = {
-        UILabel(text: "Health score", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
-    }()
-    
-    private let healthScoreLabelResult: UILabel = {
-        UILabel(text: "38", color: .materialMedium, font: UIFont.systemFont(ofSize: 13, weight: .light))
-    }()
-    
-    private let userLevelLabel: UILabel = {
-        UILabel(text: "39", color: .materialHeavy, font: UIFont.systemFont(ofSize: 36, weight: .medium))
-    }()
-    
-    private let recommendationsLabel: UILabel = {
+    lazy private var recommendationsLabel: UILabel = {
         UILabel(text: "Personal recommendations:", color: .materialHeavy, font: UIFont.systemFont(ofSize: 18, weight: .medium))
-    }()
-    
-    private let userLevelStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.distribution = .equalSpacing
-        stackView.axis = .vertical
-        stackView.backgroundColor = .highlightPrimary
-        stackView.layer.cornerRadius = 20
-        return stackView
-    }()
-    
-    // !!! TODO: I don't know how to do it (ring!):
-    private let userLevelImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .accentColor
-        imageView.frame.size.height = 81
-        imageView.layer.cornerRadius = imageView.frame.height/2
-        return imageView
-    }()
-    
-    private let insideCircleImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .highlightPrimary
-        imageView.frame.size.height = 68
-        imageView.layer.cornerRadius = imageView.frame.height/2
-        return imageView
     }()
     
     private let leadPositionStackView: UIStackView = {
@@ -341,6 +263,10 @@ class StatisticsViewController: UIViewController {
         return imageView
     }()
     
+    lazy private var accountStatistics: UIView = {
+        AccountStatisticsCardView(account, frame: .zero)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -355,8 +281,7 @@ class StatisticsViewController: UIViewController {
         
         scrollView.addSubview(contentView)
         
-        contentView.addSubview(headerStackView)
-        contentView.addSubview(userCardStackView)
+        contentView.addSubview(accountStatistics)
         contentView.addSubview(recommendationsLabel)
         contentView.addSubview(leadPositionStackView)
         contentView.addSubview(globalStatisticsLabel)
@@ -367,25 +292,6 @@ class StatisticsViewController: UIViewController {
         headerStackView.addSubview(logoTheBeanImageView)
         
         userCardStackView.addSubview(usernameStackView)
-        userCardStackView.addSubview(userDataStackView)
-        
-        usernameStackView.addSubview(usernameLabel)
-        usernameStackView.addSubview(avatarImageView)
-        
-        userDataStackView.addSubview(userCoffeeDataStackView)
-        userDataStackView.addSubview(userLevelStackView)
-        
-        userCoffeeDataStackView.addSubview(scoreLabel)
-        userCoffeeDataStackView.addSubview(cupsDrunkLabel)
-        userCoffeeDataStackView.addSubview(cupsDrunkLabelResult)
-        userCoffeeDataStackView.addSubview(recipesMasteredLabel)
-        userCoffeeDataStackView.addSubview(recipesMasteredLabelResult)
-        userCoffeeDataStackView.addSubview(healthScoreLabel)
-        userCoffeeDataStackView.addSubview(healthScoreLabelResult)
-        
-        userLevelStackView.addSubview(userLevelImageView)
-        userLevelImageView.addSubview(insideCircleImageView)
-        insideCircleImageView.addSubview(userLevelLabel)
         
         leadPositionStackView.addSubview(latteImageView)
         leadPositionStackView.addSubview(flatImageView)
@@ -458,76 +364,76 @@ class StatisticsViewController: UIViewController {
             make.right.equalTo(-40)
         }
         
-        userDataStackView.snp.makeConstraints { make in
-            make.height.equalTo(148)
-            make.width.equalTo(userCardStackView)
-            make.top.equalTo(64)
-            make.centerX.equalTo(userCardStackView)
-        }
-        
-        userCoffeeDataStackView.snp.makeConstraints { make in
-            make.height.equalTo(userDataStackView)
-            make.width.equalTo(165)
-        }
-        
-        scoreLabel.snp.makeConstraints { make in
-            make.left.equalTo(23)
-        }
-        
-        cupsDrunkLabel.snp.makeConstraints { make in
-            make.top.equalTo(scoreLabel.snp.bottom).inset(-20)
-            make.left.equalTo(23)
-        }
-        
-        cupsDrunkLabelResult.snp.makeConstraints { make in
-            make.top.equalTo(scoreLabel.snp.bottom).inset(-20)
-            make.left.equalTo(cupsDrunkLabel.snp.right).inset(-58)
-        }
-        
-        recipesMasteredLabel.snp.makeConstraints { make in
-            make.top.equalTo(cupsDrunkLabel.snp.bottom).inset(-12)
-            make.left.equalTo(23)
-        }
-        
-        recipesMasteredLabelResult.snp.makeConstraints { make in
-            make.top.equalTo(cupsDrunkLabel.snp.bottom).inset(-12)
-            make.left.equalTo(cupsDrunkLabel.snp.right).inset(-58)
-        }
-        
-        healthScoreLabel.snp.makeConstraints { make in
-            make.top.equalTo(recipesMasteredLabel.snp.bottom).inset(-12)
-            make.left.equalTo(23)
-        }
-        
-        healthScoreLabelResult.snp.makeConstraints { make in
-            make.top.equalTo(recipesMasteredLabel.snp.bottom).inset(-12)
-            make.left.equalTo(cupsDrunkLabel.snp.right).inset(-58)
-        }
-        
-        userLevelStackView.snp.makeConstraints { make in
-            make.height.equalTo(userDataStackView)
-            make.width.equalTo(145)
-            make.left.equalTo(170)
-        }
-        
-        userLevelImageView.snp.makeConstraints { make in
-            make.width.equalTo(88)
-            make.height.equalTo(81)
-            make.bottom.equalTo(-36)
-            make.right.equalTo(-23)
-        }
-        
-        insideCircleImageView.snp.makeConstraints { make in
-            make.width.equalTo(75)
-            make.height.equalTo(68)
-            make.centerX.equalTo(userLevelImageView)
-            make.centerY.equalTo(userLevelImageView)
-        }
-        
-        userLevelLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(userLevelImageView)
-            make.centerY.equalTo(userLevelImageView)
-        }
+//        userDataStackView.snp.makeConstraints { make in
+//            make.height.equalTo(148)
+//            make.width.equalTo(userCardStackView)
+//            make.top.equalTo(64)
+//            make.centerX.equalTo(userCardStackView)
+//        }
+//        
+//        userCoffeeDataStackView.snp.makeConstraints { make in
+//            make.height.equalTo(userDataStackView)
+//            make.width.equalTo(165)
+//        }
+//        
+//        scoreLabel.snp.makeConstraints { make in
+//            make.left.equalTo(23)
+//        }
+//        
+//        cupsDrunkLabel.snp.makeConstraints { make in
+//            make.top.equalTo(scoreLabel.snp.bottom).inset(-20)
+//            make.left.equalTo(23)
+//        }
+//        
+//        cupsDrunkLabelResult.snp.makeConstraints { make in
+//            make.top.equalTo(scoreLabel.snp.bottom).inset(-20)
+//            make.left.equalTo(cupsDrunkLabel.snp.right).inset(-58)
+//        }
+//        
+//        recipesMasteredLabel.snp.makeConstraints { make in
+//            make.top.equalTo(cupsDrunkLabel.snp.bottom).inset(-12)
+//            make.left.equalTo(23)
+//        }
+//        
+//        recipesMasteredLabelResult.snp.makeConstraints { make in
+//            make.top.equalTo(cupsDrunkLabel.snp.bottom).inset(-12)
+//            make.left.equalTo(cupsDrunkLabel.snp.right).inset(-58)
+//        }
+//        
+//        healthScoreLabel.snp.makeConstraints { make in
+//            make.top.equalTo(recipesMasteredLabel.snp.bottom).inset(-12)
+//            make.left.equalTo(23)
+//        }
+//        
+//        healthScoreLabelResult.snp.makeConstraints { make in
+//            make.top.equalTo(recipesMasteredLabel.snp.bottom).inset(-12)
+//            make.left.equalTo(cupsDrunkLabel.snp.right).inset(-58)
+//        }
+//        
+//        userLevelStackView.snp.makeConstraints { make in
+//            make.height.equalTo(userDataStackView)
+//            make.width.equalTo(145)
+//            make.left.equalTo(170)
+//        }
+//        
+//        userLevelImageView.snp.makeConstraints { make in
+//            make.width.equalTo(88)
+//            make.height.equalTo(81)
+//            make.bottom.equalTo(-36)
+//            make.right.equalTo(-23)
+//        }
+//        
+//        insideCircleImageView.snp.makeConstraints { make in
+//            make.width.equalTo(75)
+//            make.height.equalTo(68)
+//            make.centerX.equalTo(userLevelImageView)
+//            make.centerY.equalTo(userLevelImageView)
+//        }
+//        
+//        userLevelLabel.snp.makeConstraints { make in
+//            make.centerX.equalTo(userLevelImageView)
+//            make.centerY.equalTo(userLevelImageView)
+//        }
         
         recommendationsLabel.snp.makeConstraints { make in
             make.top.equalTo(userCardStackView.snp.bottom).inset(-40)
@@ -673,6 +579,8 @@ class StatisticsViewController: UIViewController {
             make.top.equalTo(70)
             make.left.equalTo(recipesAppCoffeeBeanImageView.snp.right).inset(-65)
         }
+        
+        scrollView.resizeScrollViewContentSize()
     }
     
 }
