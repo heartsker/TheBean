@@ -10,6 +10,7 @@ import UIKit
 
 class BodyStackView: UIStackView {
     
+    // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         distribution = .equalSpacing
@@ -24,7 +25,8 @@ class BodyStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Scores
+    // MARK: - Subviews
+    // MARK: Scores
     lazy private var scoresStackView: UIStackView = {
         ScoresStackView()
     }()
@@ -34,10 +36,12 @@ class BodyStackView: UIStackView {
         addSubview(levelStackView)
     }
     
+    // MARK: Level label
     lazy private var userLevelLabel: UILabel = {
         UILabel(text: "\(account.level)", color: .materialHeavy, font: UIFont.systemFont(ofSize: 36, weight: .medium))
     }()
     
+    // MARK: Level stack
     lazy private var levelStackView: UIStackView = {
         let level = UIStackView()
         level.distribution = .equalSpacing

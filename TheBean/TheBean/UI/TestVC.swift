@@ -28,7 +28,8 @@ class TestVC: UIViewController {
     
     private func setupConstraints() {
         subview.snp.makeConstraints { make in
-            make.edges.equalTo(view)
+            make.width.equalTo(400)
+            make.height.equalTo(400)
             make.centerX.equalTo(view)
             make.centerY.equalTo(view)
         }
