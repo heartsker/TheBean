@@ -16,8 +16,6 @@ class HeadingStaskView: UIStackView {
         
         distribution = .equalSpacing
         axis = .horizontal
-        backgroundColor = .highlightPrimary
-        layer.cornerRadius = 20
         
         setupSubiews()
         setupConstraints()
