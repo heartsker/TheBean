@@ -8,13 +8,13 @@
 import UIKit
 
 class RecipesNavigationController: BeanNavigationController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tabBarItem.title = "Recipes"
         tabBarItem.image = UIImage(systemName: "book")
-        
+
         setViewControllers([RecipesViewController()], animated: true)
     }
 }

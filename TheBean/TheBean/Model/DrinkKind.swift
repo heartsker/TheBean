@@ -5,11 +5,9 @@
 //  Created by Daniel Pustotin on 05.02.2022.
 //
 
-import Foundation
-
 enum DrinkKind: String {
     case latte
-    case flat_white
+    case flatWhite
     case americano
     case espresso
 }

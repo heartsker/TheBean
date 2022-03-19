@@ -8,13 +8,13 @@
 import UIKit
 
 class TimerNavigationController: UINavigationController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tabBarItem.title = "Timer"
         tabBarItem.image = UIImage(systemName: "timer")
-    
+
         setViewControllers([TimerViewController()], animated: true)
     }
 }
