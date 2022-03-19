@@ -24,7 +24,7 @@ class StatisticsContentView: UIStackView, BaseViewProtocol {
 
     // MARK: - Subviews
     private lazy var personalRecomendationsView = {
-        PersonalRecomendationsView()
+        RecomendationsView()
     }()
 
     private lazy var globalStatisticsView = {
@@ -33,14 +33,14 @@ class StatisticsContentView: UIStackView, BaseViewProtocol {
 
     // MARK: - Setup
     func setupAppearance() {
-        self.axis = .vertical
-        self.distribution = .fill
+        axis = .vertical
+        distribution = .fill
     }
 
     func setupSubviews() {
-        self.addArrangedSubview(personalRecomendationsView)
-        self.setCustomSpacing(46, after: personalRecomendationsView)
-        self.addArrangedSubview(globalStatisticsView)
+        addArrangedSubview(personalRecomendationsView)
+        setCustomSpacing(46, after: personalRecomendationsView)
+        addArrangedSubview(globalStatisticsView)
     }
 
     func setupConstraints() {

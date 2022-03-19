@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MostPopularDrinkCard: UIStackView, BaseViewProtocol, CardRepresentable {
+class MostPopularDrinkCard: UIStackView, CardRepresentable {
     // MARK: - Properties
     let image: UIImage?
     let text: String
@@ -30,24 +30,33 @@ class MostPopularDrinkCard: UIStackView, BaseViewProtocol, CardRepresentable {
 
     // MARK: - Subviews
     private lazy var imageView: UIImageView = {
-        let imageView = UIImageView(image: self.image)
+        let imageView = UIImageView(image: image)
         imageView.layer.cornerRadius = 20
         return imageView
     }()
 
-    private lazy var label: GlobalStatisticsCardLabel = {
-        GlobalStatisticsCardLabel(labelText: text, isTextStyleDark: true)
+    private lazy var label: UILabel = {
+        let string = NSMutableAttributedString(string: text)
+        string.addAttribute(.foregroundColor, value: UIColor.materialMedium, range: NSRange(text) ?? NSRange())
+
+        let label = UILabel()
+        label.font = .medium(16)
+        label.attributedText = string
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.lineBreakMode = .byClipping
+        return label
     }()
 
     // MARK: - Setup
     func setupAppearance() {
-        self.backgroundColor = .highlightPrimary
-        self.layer.cornerRadius = 20
+        backgroundColor = .highlightPrimary
+        layer.cornerRadius = 20
     }
 
     func setupSubviews() {
-        self.addSubview(imageView)
-        self.addSubview(label)
+        addSubview(imageView)
+        addSubview(label)
     }
 
     func setupConstraints() {

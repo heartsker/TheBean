@@ -9,8 +9,8 @@ import UIKit
 import Alamofire
 
 class APIModel {
-    
-    //Verification of successful receipt of data:
+
+    // Verification of successful receipt of data:
     func getRecipesList() {
         let url = URL(string: "https://api.sampleapis.com/coffee/hot")
         AF.request(url!)
@@ -20,8 +20,8 @@ class APIModel {
                 print(result)
             }
     }
-    
-    //Not finalized for the project:
+
+    // Not finalized for the project:
     func getRecipesList(completion: @escaping (Result<[Recipe], AFError>) -> Void) {
         let url = URL(string: "https://api.sampleapis.com/coffee/hot")
         AF.request(url!)

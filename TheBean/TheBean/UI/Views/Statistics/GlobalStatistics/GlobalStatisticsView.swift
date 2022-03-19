@@ -32,8 +32,8 @@ class GlobalStatisticsView: UIStackView, BaseViewProtocol {
 
     // MARK: - Setup
     func setupAppearance() {
-        self.axis = .vertical
-        self.distribution = .fill
+        axis = .vertical
+        distribution = .fill
     }
 
     func setupSubviews() {

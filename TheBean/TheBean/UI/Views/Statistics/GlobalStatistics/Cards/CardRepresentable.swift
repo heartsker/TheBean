@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol CardRepresentable {
+protocol CardRepresentable: BaseViewProtocol {
     var card: UIView { get }
 }

@@ -12,19 +12,19 @@ struct Recipe: Codable {
     var description: String
 //  var info: String (no api)
 //  var image: UIImage (no api)
-    
+
     enum CodingKeys: String, CodingKey {
-        case title = "title"
-        case description = "description"
+        case title
+        case description
 //      case image
     }
-    
+
     init(_ title: String, _ description: String) {
         self.title = title
         self.description = description
 //      self.image = image
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         title = try container.decode(String.self, forKey: .title)

@@ -1,5 +1,5 @@
 //
-//  PersonalRecomendationsBlockStackView.swift
+//  RecomendationsView.swift
 //  TheBean
 //
 //  Created by Илья Чуб on 15.03.2022.
@@ -7,13 +7,15 @@
 
 import UIKit
 
-class PersonalRecomendationsView: UIStackView, BaseViewProtocol {
+class RecomendationsView: UIStackView, BaseViewProtocol {
+    // MARK: Properties
     let recomendations = [
         ("Latte", UIImage(named: "Latte")!),
         ("Flat White", UIImage(named: "Flat")!),
         ("Americano", UIImage(named: "Americano")!)
     ]
 
+    // MARK: Initialization
     init() {
         super.init(frame: .zero)
         setup()
@@ -23,8 +25,13 @@ class PersonalRecomendationsView: UIStackView, BaseViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private lazy var label = BlockLabel(text: "Personal recommendations:")
-    private lazy var stackView = ThreeRecomendationCoffeeStackView(recomendations: recomendations)
+    // MARK: Subviews
+    private lazy var label = {
+        BlockLabel(text: "Personal recommendations:")
+    }()
+
+    private lazy var topRecomendations = { TopRecomendationsView(recomendations: recomendations)
+    }()
 
     // MARK: - Setup
     func setupAppearance() {
@@ -34,7 +41,7 @@ class PersonalRecomendationsView: UIStackView, BaseViewProtocol {
 
     func setupSubviews() {
         addArrangedSubview(label)
-        addArrangedSubview(stackView)
+        addArrangedSubview(topRecomendations)
     }
 
     func setupConstraints() {

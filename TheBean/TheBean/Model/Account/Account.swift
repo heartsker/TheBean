@@ -11,7 +11,7 @@ final class Account {
     private var _username: String?
     private(set) var email: String?
     var picture: UIImage?
-    
+
     private(set) var username: String {
         get {
             _username ?? ""
@@ -34,7 +34,7 @@ final class Account {
     var recipesCount: Int {
         drinkHistory.keys.count
     }
-    
+
     /// The drink that user took the most number of times.
     var favouriteDrink: DrinkKind? {
         drinkHistory.max(by: {$0.value > $1.value})?.key

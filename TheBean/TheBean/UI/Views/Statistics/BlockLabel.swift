@@ -1,5 +1,5 @@
 //
-//  BlocksLabel.swift
+//  BlockLabel.swift
 //  TheBean
 //
 //  Created by Илья Чуб on 15.03.2022.
@@ -22,8 +22,8 @@ class BlockLabel: UILabel, BaseViewProtocol {
 
     // MARK: - Setup
     func setupAppearance() {
-        self.textColor = .materialHeavy
-        self.font = .init(name: "Muller-Trial-Bold", size: 18)
+        textColor = .materialHeavy
+        font = .init(name: "Muller-Trial-Bold", size: 18)
     }
 
     func setupSubviews() {
