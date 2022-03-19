@@ -22,7 +22,7 @@ class PersonalRecomendationsBlockStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var label = RecommendationsLabel()
+    private lazy var label = BlockLabel(text: "Personal recommendations:")
     private lazy var stackView = ThreeRecomendationCoffeeStackView(recomendations: recomendations)
     
     private func settings() {

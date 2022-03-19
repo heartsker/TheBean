@@ -8,13 +8,21 @@
 import UIKit
 import SnapKit
 
-// TODO: (AC) - Replace UIFont inits with constants for our app - in UIFont extension
-// FIXME: (AC) - Too many views - should consider inheritance structure for views.
-// FIXME: (AC) - Update color names according to assets folder
-
-let account: Account = Account()
 
 class StatisticsViewController: UIViewController {
+    
+    let account: Account = Account()
+    let recomendationsForUser = [
+        ("Latte", UIImage(named: "Latte")!),
+        ("Flat White", UIImage(named: "Flat")!),
+        ("Americano", UIImage(named: "Americano")!)
+    ]
+
+    let globalStatisticsCards: [GlobalStatisticsCardProtocol] = [
+        GlobalStatisticsCardMostPopularDrincView(text: "Latte - is the most popular drink among The Bean users"),
+        GlobalStatisticsCardMostPopularDrincView(text: "Latte - is the most popular drink among The Bean users"),
+        GlobalStatisticsCardMostPopularDrincView(text: "Latte - is the most popular drink among The Bean users")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +30,16 @@ class StatisticsViewController: UIViewController {
     }
     
     private lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
+        let scrollView = UIScrollView(frame: self.view.bounds)
         scrollView.backgroundColor = .background
-        scrollView.resizeScrollViewContentSize()
         return scrollView
     }()
     
-    private lazy var personalRecomendationsBlockStackView = PersonalRecomendationsBlockStackView(recomendations: [
-        ("Latte", UIImage(named: "Latte")!),
-        ("Flat White", UIImage(named: "Flat")!),
-        ("Americano", UIImage(named: "Americano")!)
-    ])
+    private lazy var statisticsContentStackView = StatisticsContentStackView(
+        account: account,
+        recomendationsForUser: recomendationsForUser,
+        globalStatisticsCards: globalStatisticsCards
+    )
     
     private func settings() {
         setupAppearance()
@@ -42,26 +49,29 @@ class StatisticsViewController: UIViewController {
     
     private func setupSubiews() {
         view.addSubview(scrollView)
-        scrollView.addSubview(personalRecomendationsBlockStackView)
+        scrollView.addSubview(statisticsContentStackView)
     }
     
     private func setupConstraints() {
         scrollView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview()
             make.bottom.top.equalToSuperview()
         }
         
-        personalRecomendationsBlockStackView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
+        statisticsContentStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(20)
+            make.width.equalToSuperview().inset(20)
         }
+
+        resizeScrollViewContentSize()
     }
     
+    private func resizeScrollViewContentSize() {
+        self.view.layoutIfNeeded()
+        scrollView.resizeScrollViewContentSize()
+    }
 }
-//
-//    // TODO: (AC) - FIX SCROLLVIEW (NEED AUTO CONTENTVIEW HEIGHT)
-//
-////    private lazy var contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
-//
+
 //    private lazy var contentView: UIView = {
 //        let contentView = UIView()
 //        contentView.backgroundColor = .background

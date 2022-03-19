@@ -24,7 +24,7 @@ class RecomendationCoffeeStackView: UIStackView {
     }
     
     private lazy var imageView = RecomendationCoffeeImageView(image: image)
-    private lazy var labelView = RecomendationCoffeeLabel(text: text)
+    private lazy var labelView = RecomendationLabel(text: text)
     
     private func settings() {
         setupSelf()

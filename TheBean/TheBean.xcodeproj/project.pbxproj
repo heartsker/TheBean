@@ -42,12 +42,19 @@
 		C7A2F2A127B7B45D003CFB27 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */; };
 		C7A2F2A327B7B47A003CFB27 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A2F2A227B7B47A003CFB27 /* UILabelExtension.swift */; };
 		D360756527E0AB9900F97C47 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360756427E0AB9900F97C47 /* AvatarImageView.swift */; };
-		D360756727E0AD1700F97C47 /* RecomendationCoffeeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360756627E0AD1700F97C47 /* RecomendationCoffeeLabel.swift */; };
+		D360756727E0AD1700F97C47 /* RecomendationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360756627E0AD1700F97C47 /* RecomendationLabel.swift */; };
 		D360756927E0DE2600F97C47 /* RecomendationCoffeeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360756827E0DE2600F97C47 /* RecomendationCoffeeImageView.swift */; };
 		D360756B27E0E07E00F97C47 /* RecomendationCoffeeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360756A27E0E07E00F97C47 /* RecomendationCoffeeStackView.swift */; };
 		D360756D27E0E54600F97C47 /* ThreeRecomendationCoffeeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360756C27E0E54600F97C47 /* ThreeRecomendationCoffeeStackView.swift */; };
-		D360757027E0E9A900F97C47 /* RecomendationsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360756F27E0E9A800F97C47 /* RecomendationsLabel.swift */; };
 		D360757227E0EB1000F97C47 /* PersonalRecomendationsBlockStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360757127E0EB1000F97C47 /* PersonalRecomendationsBlockStackView.swift */; };
+		D360757727E10A2500F97C47 /* BlocksLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360757627E10A2500F97C47 /* BlocksLabel.swift */; };
+		D360757927E10ACF00F97C47 /* GlobalStatisticsBlockStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360757827E10ACF00F97C47 /* GlobalStatisticsBlockStackView.swift */; };
+		D360757D27E1E12200F97C47 /* GlobalStatisticsCardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360757C27E1E12200F97C47 /* GlobalStatisticsCardProtocol.swift */; };
+		D360758127E1E9A800F97C47 /* GlobalStatisticsCardMostPopularDrincView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360758027E1E9A800F97C47 /* GlobalStatisticsCardMostPopularDrincView.swift */; };
+		D3E8699F27E2648600177238 /* StatisticsContentStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E8699E27E2648600177238 /* StatisticsContentStackView.swift */; };
+		D3E869A127E336F100177238 /* GlobalStatisticsCardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E869A027E336F100177238 /* GlobalStatisticsCardLabel.swift */; };
+		D3E869A327E3489000177238 /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E869A227E3489000177238 /* CGFloatExtension.swift */; };
+		D3E869A527E348C000177238 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E869A427E348C000177238 /* DoubleExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,12 +112,19 @@
 		C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		C7A2F2A227B7B47A003CFB27 /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		D360756427E0AB9900F97C47 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
-		D360756627E0AD1700F97C47 /* RecomendationCoffeeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationCoffeeLabel.swift; sourceTree = "<group>"; };
+		D360756627E0AD1700F97C47 /* RecomendationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationLabel.swift; sourceTree = "<group>"; };
 		D360756827E0DE2600F97C47 /* RecomendationCoffeeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationCoffeeImageView.swift; sourceTree = "<group>"; };
 		D360756A27E0E07E00F97C47 /* RecomendationCoffeeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationCoffeeStackView.swift; sourceTree = "<group>"; };
 		D360756C27E0E54600F97C47 /* ThreeRecomendationCoffeeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeRecomendationCoffeeStackView.swift; sourceTree = "<group>"; };
-		D360756F27E0E9A800F97C47 /* RecomendationsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationsLabel.swift; sourceTree = "<group>"; };
 		D360757127E0EB1000F97C47 /* PersonalRecomendationsBlockStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalRecomendationsBlockStackView.swift; sourceTree = "<group>"; };
+		D360757627E10A2500F97C47 /* BlocksLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocksLabel.swift; sourceTree = "<group>"; };
+		D360757827E10ACF00F97C47 /* GlobalStatisticsBlockStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStatisticsBlockStackView.swift; sourceTree = "<group>"; };
+		D360757C27E1E12200F97C47 /* GlobalStatisticsCardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStatisticsCardProtocol.swift; sourceTree = "<group>"; };
+		D360758027E1E9A800F97C47 /* GlobalStatisticsCardMostPopularDrincView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStatisticsCardMostPopularDrincView.swift; sourceTree = "<group>"; };
+		D3E8699E27E2648600177238 /* StatisticsContentStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsContentStackView.swift; sourceTree = "<group>"; };
+		D3E869A027E336F100177238 /* GlobalStatisticsCardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStatisticsCardLabel.swift; sourceTree = "<group>"; };
+		D3E869A227E3489000177238 /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
+		D3E869A427E348C000177238 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */,
+				D3E8699E27E2648600177238 /* StatisticsContentStackView.swift */,
+				D360757627E10A2500F97C47 /* BlocksLabel.swift */,
+				D360757327E109CC00F97C47 /* GlobalStatisticsBlock */,
 				D360756E27E0E90C00F97C47 /* PersonalRecomendationsBlock */,
 				A9395EB227DE22FD001E95A6 /* Subviews */,
 			);
@@ -265,6 +282,8 @@
 				C78BAE9427B64AE800CEB291 /* UIViewControllerExtension.swift */,
 				A9AEDE4D27B7AFF500CCD338 /* UIColorExtension.swift */,
 				C7A2F2A027B7B45D003CFB27 /* UIFontExtension.swift */,
+				D3E869A227E3489000177238 /* CGFloatExtension.swift */,
+				D3E869A427E348C000177238 /* DoubleExtension.swift */,
 				C7A2F2A227B7B47A003CFB27 /* UILabelExtension.swift */,
 				A95ECF8C27B93AA400E940A7 /* UIButtonExtension.swift */,
 				A9DC1E3127DDE50700CE6078 /* UIScrollViewExtension.swift */,
@@ -276,13 +295,23 @@
 			isa = PBXGroup;
 			children = (
 				D360757127E0EB1000F97C47 /* PersonalRecomendationsBlockStackView.swift */,
-				D360756F27E0E9A800F97C47 /* RecomendationsLabel.swift */,
 				D360756C27E0E54600F97C47 /* ThreeRecomendationCoffeeStackView.swift */,
 				D360756A27E0E07E00F97C47 /* RecomendationCoffeeStackView.swift */,
 				D360756827E0DE2600F97C47 /* RecomendationCoffeeImageView.swift */,
-				D360756627E0AD1700F97C47 /* RecomendationCoffeeLabel.swift */,
+				D360756627E0AD1700F97C47 /* RecomendationLabel.swift */,
 			);
 			path = PersonalRecomendationsBlock;
+			sourceTree = "<group>";
+		};
+		D360757327E109CC00F97C47 /* GlobalStatisticsBlock */ = {
+			isa = PBXGroup;
+			children = (
+				D360757827E10ACF00F97C47 /* GlobalStatisticsBlockStackView.swift */,
+				D360758027E1E9A800F97C47 /* GlobalStatisticsCardMostPopularDrincView.swift */,
+				D3E869A027E336F100177238 /* GlobalStatisticsCardLabel.swift */,
+				D360757C27E1E12200F97C47 /* GlobalStatisticsCardProtocol.swift */,
+			);
+			path = GlobalStatisticsBlock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,31 +458,38 @@
 			files = (
 				A9DC1E3727DDE72600CE6078 /* AccountStatisticsCardView.swift in Sources */,
 				A974D2D827AEDCCD00776474 /* DrinkKind.swift in Sources */,
+				D360757D27E1E12200F97C47 /* GlobalStatisticsCardProtocol.swift in Sources */,
 				A9395EBC27DE2984001E95A6 /* TestVC.swift in Sources */,
 				A9395EB627DE2401001E95A6 /* HeadingStackView.swift in Sources */,
 				C7A2F2A327B7B47A003CFB27 /* UILabelExtension.swift in Sources */,
 				A9DC1E3227DDE50700CE6078 /* UIScrollViewExtension.swift in Sources */,
+				D3E869A127E336F100177238 /* GlobalStatisticsCardLabel.swift in Sources */,
 				D360757227E0EB1000F97C47 /* PersonalRecomendationsBlockStackView.swift in Sources */,
 				C7A2F2A127B7B45D003CFB27 /* UIFontExtension.swift in Sources */,
+				D3E869A527E348C000177238 /* DoubleExtension.swift in Sources */,
+				D3E869A327E3489000177238 /* CGFloatExtension.swift in Sources */,
 				A9AEDE4E27B7AFF500CCD338 /* UIColorExtension.swift in Sources */,
 				A98B342127AD9C9200EFA685 /* MainTabBarController.swift in Sources */,
-				D360756727E0AD1700F97C47 /* RecomendationCoffeeLabel.swift in Sources */,
+				D360757727E10A2500F97C47 /* BlocksLabel.swift in Sources */,
+				D360756727E0AD1700F97C47 /* RecomendationLabel.swift in Sources */,
 				A9395EBA27DE2651001E95A6 /* ScoresStackView.swift in Sources */,
 				A98B33D827AD9BD200EFA685 /* AppDelegate.swift in Sources */,
 				A95ECF8D27B93AA400E940A7 /* UIButtonExtension.swift in Sources */,
 				A974D2D627AEDBD100776474 /* Account.swift in Sources */,
 				A98B33DA27AD9BD200EFA685 /* SceneDelegate.swift in Sources */,
+				D360757927E10ACF00F97C47 /* GlobalStatisticsBlockStackView.swift in Sources */,
 				A9395EB827DE2518001E95A6 /* BodyStackView.swift in Sources */,
 				A98B342527AD9C9200EFA685 /* RecipesViewController.swift in Sources */,
 				A98B33E227AD9BD200EFA685 /* TheBean.xcdatamodeld in Sources */,
 				A98B340E27AD9C7A00EFA685 /* APIModel.swift in Sources */,
+				D360758127E1E9A800F97C47 /* GlobalStatisticsCardMostPopularDrincView.swift in Sources */,
 				A98B342427AD9C9200EFA685 /* TimerViewController.swift in Sources */,
 				D360756B27E0E07E00F97C47 /* RecomendationCoffeeStackView.swift in Sources */,
 				D360756927E0DE2600F97C47 /* RecomendationCoffeeImageView.swift in Sources */,
 				C78BAE9527B64AE800CEB291 /* UIViewControllerExtension.swift in Sources */,
 				D360756D27E0E54600F97C47 /* ThreeRecomendationCoffeeStackView.swift in Sources */,
 				A98B340D27AD9C7A00EFA685 /* Recipe.swift in Sources */,
-				D360757027E0E9A900F97C47 /* RecomendationsLabel.swift in Sources */,
+				D3E8699F27E2648600177238 /* StatisticsContentStackView.swift in Sources */,
 				D360756527E0AB9900F97C47 /* AvatarImageView.swift in Sources */,
 				A9395EB427DE2385001E95A6 /* StatisticsStackView.swift in Sources */,
 				C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */,

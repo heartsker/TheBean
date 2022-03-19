@@ -1,5 +1,5 @@
 //
-//  RecomendationCoffeeLabel.swift
+//  RecomendationLabel.swift
 //  TheBean
 //
 //  Created by Илья Чуб on 15.03.2022.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-class RecomendationCoffeeLabel: UILabel {
+class RecomendationLabel: UILabel {
     init(text: String) {
         super.init(frame: .zero)
         setupSelf(text: text)
