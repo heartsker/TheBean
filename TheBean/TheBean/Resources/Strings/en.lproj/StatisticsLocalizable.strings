@@ -1,0 +1,10 @@
+/* 
+  StatisticsLocalizable.strings
+  TheBean
+
+  Created by Илья Чуб on 21.03.2022.
+  
+*/
+
+"personalRecommendations" = "Personal recommendations:";
+"globalStatistics" = "Global statistics:";

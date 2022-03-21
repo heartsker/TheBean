@@ -25,8 +25,7 @@ class StatisticsViewController: UIViewController, BaseViewProtocol {
         return scrollView
     }()
 
-    private lazy var statisticsContentView = { StatisticsContentView(account: account)
-    }()
+    private lazy var statisticsContentView = { StatisticsContentView(account: account) }()
 
     // MARK: - Setup
     func setupSubviews() {

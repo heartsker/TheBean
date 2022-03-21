@@ -27,7 +27,7 @@ class GlobalStatisticsView: UIStackView, BaseViewProtocol {
 
     // MARK: - Subviews
     private lazy var label = {
-        BlockLabel(text: "Global Statistics:")
+        BlockLabel(text: StatisticConstants.Text.globalStatistics)
     }()
 
     // MARK: - Setup

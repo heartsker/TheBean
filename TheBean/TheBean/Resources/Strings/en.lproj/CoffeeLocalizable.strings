@@ -1,0 +1,11 @@
+/* 
+  CoffeeLocalizable.strings
+  TheBean
+
+  Created by Илья Чуб on 21.03.2022.
+  
+*/
+
+"latte" = "Latte";
+"flat White" = "Flat White";
+"americano" = "Americano";
