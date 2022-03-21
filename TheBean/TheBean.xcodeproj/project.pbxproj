@@ -33,6 +33,7 @@
 		A98EFE5A27E6514500468AA9 /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98EFE5927E6514500468AA9 /* BaseViewProtocol.swift */; };
 		A98EFE5E27E6528A00468AA9 /* SetupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98EFE5D27E6528A00468AA9 /* SetupAppearance.swift */; };
 		A9AEDE4E27B7AFF500CCD338 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEDE4D27B7AFF500CCD338 /* AppColors.swift */; };
+		A9C9D1C527E8748E004A69D8 /* GoldenRatioConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C9D1C427E8748E004A69D8 /* GoldenRatioConstraints.swift */; };
 		A9DC1E3227DDE50700CE6078 /* ResizeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC1E3127DDE50700CE6078 /* ResizeContent.swift */; };
 		B7CDDD2A9E5D6E79BD356D71 /* Pods_TheBean_TheBeanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44222FCF56E6EA1DFDB0BF7F /* Pods_TheBean_TheBeanUITests.framework */; };
 		C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */; };
@@ -111,6 +112,7 @@
 		A98EFE5927E6514500468AA9 /* BaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
 		A98EFE5D27E6528A00468AA9 /* SetupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAppearance.swift; sourceTree = "<group>"; };
 		A9AEDE4D27B7AFF500CCD338 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		A9C9D1C427E8748E004A69D8 /* GoldenRatioConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenRatioConstraints.swift; sourceTree = "<group>"; };
 		A9DC1E3127DDE50700CE6078 /* ResizeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeContent.swift; sourceTree = "<group>"; };
 		AF1883720F1CFBF970A20963 /* Pods-TheBean-TheBeanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean-TheBeanUITests.debug.xcconfig"; path = "Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		A98EFE5B27E6524000468AA9 /* GoldenRatio */ = {
 			isa = PBXGroup;
 			children = (
+				A9C9D1C427E8748E004A69D8 /* GoldenRatioConstraints.swift */,
 				D3E869A227E3489000177238 /* GoldenRatioComponents.swift */,
 				D3E869A427E348C000177238 /* Phi.swift */,
 			);
@@ -321,7 +324,6 @@
 		A98EFE5C27E6525300468AA9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				A98EFE5B27E6524000468AA9 /* GoldenRatio */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -383,6 +385,7 @@
 				A98EFE6027E652FF00468AA9 /* UIScrollView */,
 				C7A2F2A227B7B47A003CFB27 /* UILabelInitialization.swift */,
 				A95ECF8C27B93AA400E940A7 /* UIButtonInitialization.swift */,
+				A98EFE5B27E6524000468AA9 /* GoldenRatio */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				D3A5222A27E878DE0084879D /* CoffeeConstants.swift in Sources */,
 				D3E869A327E3489000177238 /* GoldenRatioComponents.swift in Sources */,
 				A9AEDE4E27B7AFF500CCD338 /* AppColors.swift in Sources */,
+				A9C9D1C527E8748E004A69D8 /* GoldenRatioConstraints.swift in Sources */,
 				A98B342127AD9C9200EFA685 /* MainTabBarController.swift in Sources */,
 				D360757727E10A2500F97C47 /* BlockLabel.swift in Sources */,
 				D3A5222227E86FCB0084879D /* GeneralConstants.swift in Sources */,

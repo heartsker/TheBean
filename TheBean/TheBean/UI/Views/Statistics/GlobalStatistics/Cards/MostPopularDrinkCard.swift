@@ -45,6 +45,7 @@ class MostPopularDrinkCard: UIStackView, CardRepresentable {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.lineBreakMode = .byClipping
+        label.backgroundColor = .white
         return label
     }()
 
@@ -74,7 +75,7 @@ class MostPopularDrinkCard: UIStackView, CardRepresentable {
         label.snp.makeConstraints { make in
             make.left.equalTo(imageView.snp.right).offset(14)
             make.right.equalToSuperview().inset(18)
-            make.centerY.equalToSuperview()
+            make.goldenRatio(from: snp.top, in: .Y, size: 192, bigger: true)
         }
     }
 }
