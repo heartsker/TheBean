@@ -1,3 +1,5 @@
+![coffee](https://user-images.githubusercontent.com/51203539/160007650-3f1aef5a-b351-458e-909b-c19bd10844d6.png)
+
 > Вы любите кофе? У нас это есть!
 > 
 > Love coffee? We got you!
