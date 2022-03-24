@@ -53,6 +53,9 @@
 		D3A5222227E86FCB0084879D /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5222127E86FCB0084879D /* GeneralConstants.swift */; };
 		D3A5222527E8782E0084879D /* CoffeeLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3A5222727E8782E0084879D /* CoffeeLocalizable.strings */; };
 		D3A5222A27E878DE0084879D /* CoffeeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5222927E878DE0084879D /* CoffeeConstants.swift */; };
+		D3C9F6CF27E9D695002AAB87 /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C9F6CE27E9D695002AAB87 /* StringProtocolExtension.swift */; };
+		D3C9F6D127E9D977002AAB87 /* CardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C9F6D027E9D977002AAB87 /* CardLabel.swift */; };
+		D3C9F6D327E9DF16002AAB87 /* AverageNumberCupsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C9F6D227E9DF16002AAB87 /* AverageNumberCupsCard.swift */; };
 		D3E8699F27E2648600177238 /* StatisticsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E8699E27E2648600177238 /* StatisticsContentView.swift */; };
 		D3E869A327E3489000177238 /* GoldenRatioComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E869A227E3489000177238 /* GoldenRatioComponents.swift */; };
 		D3E869A527E348C000177238 /* Phi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E869A427E348C000177238 /* Phi.swift */; };
@@ -136,6 +139,9 @@
 		D3A5222627E8782E0084879D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CoffeeLocalizable.strings; sourceTree = "<group>"; };
 		D3A5222827E878310084879D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CoffeeLocalizable.strings; sourceTree = "<group>"; };
 		D3A5222927E878DE0084879D /* CoffeeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeConstants.swift; sourceTree = "<group>"; };
+		D3C9F6CE27E9D695002AAB87 /* StringProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExtension.swift; sourceTree = "<group>"; };
+		D3C9F6D027E9D977002AAB87 /* CardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabel.swift; sourceTree = "<group>"; };
+		D3C9F6D227E9DF16002AAB87 /* AverageNumberCupsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageNumberCupsCard.swift; sourceTree = "<group>"; };
 		D3E8699E27E2648600177238 /* StatisticsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsContentView.swift; sourceTree = "<group>"; };
 		D3E869A227E3489000177238 /* GoldenRatioComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenRatioComponents.swift; sourceTree = "<group>"; };
 		D3E869A427E348C000177238 /* Phi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phi.swift; sourceTree = "<group>"; };
@@ -305,8 +311,10 @@
 		A98EFE5827E64E1300468AA9 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				D360757C27E1E12200F97C47 /* CardRepresentable.swift */,
+				D3C9F6D027E9D977002AAB87 /* CardLabel.swift */,
 				D360758027E1E9A800F97C47 /* MostPopularDrinkCard.swift */,
+				D3C9F6D227E9DF16002AAB87 /* AverageNumberCupsCard.swift */,
+				D360757C27E1E12200F97C47 /* CardRepresentable.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -386,6 +394,7 @@
 				C7A2F2A227B7B47A003CFB27 /* UILabelInitialization.swift */,
 				A95ECF8C27B93AA400E940A7 /* UIButtonInitialization.swift */,
 				A98EFE5B27E6524000468AA9 /* GoldenRatio */,
+				D3C9F6CE27E9D695002AAB87 /* StringProtocolExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -673,12 +682,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A98EFE5A27E6514500468AA9 /* BaseViewProtocol.swift in Sources */,
+				D3C9F6D327E9DF16002AAB87 /* AverageNumberCupsCard.swift in Sources */,
 				A974D2D827AEDCCD00776474 /* DrinkKind.swift in Sources */,
 				D360757D27E1E12200F97C47 /* CardRepresentable.swift in Sources */,
 				A9395EBC27DE2984001E95A6 /* TestVC.swift in Sources */,
 				C7A2F2A327B7B47A003CFB27 /* UILabelInitialization.swift in Sources */,
 				A9DC1E3227DDE50700CE6078 /* ResizeContent.swift in Sources */,
 				D360757227E0EB1000F97C47 /* RecomendationsView.swift in Sources */,
+				D3C9F6D127E9D977002AAB87 /* CardLabel.swift in Sources */,
 				C7A2F2A127B7B45D003CFB27 /* AppFonts.swift in Sources */,
 				D3E869A527E348C000177238 /* Phi.swift in Sources */,
 				D3A5222A27E878DE0084879D /* CoffeeConstants.swift in Sources */,
@@ -704,6 +715,7 @@
 				D360756D27E0E54600F97C47 /* TopRecomendationsView.swift in Sources */,
 				A98B340D27AD9C7A00EFA685 /* Recipe.swift in Sources */,
 				D3A5221E27E86F240084879D /* StatisticsConstants.swift in Sources */,
+				D3C9F6CF27E9D695002AAB87 /* StringProtocolExtension.swift in Sources */,
 				D3E8699F27E2648600177238 /* StatisticsContentView.swift in Sources */,
 				D360756527E0AB9900F97C47 /* AvatarImageView.swift in Sources */,
 				C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */,

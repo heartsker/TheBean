@@ -25,7 +25,9 @@ class StatisticsViewController: UIViewController, BaseViewProtocol {
         return scrollView
     }()
 
-    private lazy var statisticsContentView = { StatisticsContentView(account: account) }()
+    private lazy var statisticsContentView = {
+        StatisticsContentView(account: account)
+    }()
 
     // MARK: - Setup
     func setupSubviews() {
@@ -34,7 +36,7 @@ class StatisticsViewController: UIViewController, BaseViewProtocol {
     }
 
     func setupConstraints() {
-        view.layoutIfNeeded()
+//        view.layoutIfNeeded()
 
         statisticsContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(20)

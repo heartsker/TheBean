@@ -12,6 +12,7 @@ extension UIColor {
     static let background:          UIColor = .init(named: "Background")!
     static let highlightPrimary:    UIColor = .init(named: "HighlightPrimary")!
     static let hightlightSecondary: UIColor = .init(named: "HighlightSecondary")!
+    static let hightlightThirdly:   UIColor = .init(named: "HighlightThirdly")!
     static let materialHeavy:       UIColor = .init(named: "MaterialHeavy")!
     static let materialMedium:      UIColor = .init(named: "MaterialMedium")!
     static let materialLight:       UIColor = .init(named: "MaterialLight")!

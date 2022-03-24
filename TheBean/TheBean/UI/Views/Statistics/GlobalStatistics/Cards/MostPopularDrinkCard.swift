@@ -36,17 +36,7 @@ class MostPopularDrinkCard: UIStackView, CardRepresentable {
     }()
 
     private lazy var label: UILabel = {
-        let string = NSMutableAttributedString(string: text)
-        string.addAttribute(.foregroundColor, value: UIColor.materialMedium, range: NSRange(text) ?? NSRange())
-        let label = UILabel()
-        label.font = .medium(16)
-        label.textColor = .materialMedium
-        label.attributedText = string
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.lineBreakMode = .byClipping
-        label.backgroundColor = .white
-        return label
+        CardLabel(text: text, isWhite: false)
     }()
 
     // MARK: - Setup

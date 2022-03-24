@@ -10,9 +10,9 @@ import UIKit
 class RecomendationsView: UIStackView, BaseViewProtocol {
     // MARK: Properties
     let recomendations = [
-        (CoffeeConstants.Text.latte, UIImage(named: "Latte")!),
-        (CoffeeConstants.Text.flatWhite, UIImage(named: "Flat")!),
-        (CoffeeConstants.Text.americano, UIImage(named: "Americano")!)
+        ("Latte", UIImage(named: "Latte")!),
+        ("Flat White", UIImage(named: "Flat")!),
+        ("Americano", UIImage(named: "Americano")!)
     ]
 
     // MARK: Initialization
