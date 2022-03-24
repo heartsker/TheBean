@@ -1,6 +1,6 @@
 ## Организация
 ---
-[Wiki](https://www.notion.so/Wiki-9f0c404e44c7475bae2d27f8aa8354f8)
+[Wiki](https://github.com/Nephew-Ustas/Nephew-Ustas/blob/main/Pages/Wiki.md)
 
 [Жизненный цикл разработки](https://www.notion.so/b7b24935ea524ef5b1fdc56af6b88b82)
 
