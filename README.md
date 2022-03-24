@@ -1,19 +1,3 @@
-## Организация
----
-[Wiki](https://github.com/Nephew-Ustas/Nephew-Ustas/blob/main/Pages/Wiki.md)
-
-[Жизненный цикл разработки](https://www.notion.so/b7b24935ea524ef5b1fdc56af6b88b82)
-
-[FAQ](https://www.notion.so/FAQ-e386d8dbccc5458fb3b93fcdefee9029)
-
-## Инфраструктура
----
-[Github](https://www.notion.so/Github-51c53947607449ee9c22a065a8825656)
-
-## Workflow
----
-[Roadmap](https://www.notion.so/6d6a26cddf3047ba8eba206c8b9c824a)
-
 # Описание
 ---
 > Вы любите кофе? У нас это есть!
