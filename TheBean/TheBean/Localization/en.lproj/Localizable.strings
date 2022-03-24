@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  TheBean
+
+  Created by Daniel Pustotin on 25.03.2022.
+  
+*/
+
+"app.name" = "The Bean";
+
+"coffee" = "coffee";
+"coffee.latte" = "latte";
+"coffee.flatwhite" = "flat white";
+"coffee.americano" = "americano";

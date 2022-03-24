@@ -41,13 +41,13 @@ class AverageNumberCupsCard: UIStackView, CardRepresentable {
         view.backgroundColor = .hightlightThirdly
         return view
     }()
-    
+
     private lazy var cupsStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.distribution = .equalSpacing
-        for i in stride(from: 0, to: numberOfCups, by: 1) {
-            
+        for _ in stride(from: 0, to: numberOfCups, by: 1) {
+
         }
         return stack
     }()
