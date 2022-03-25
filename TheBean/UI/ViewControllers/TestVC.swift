@@ -6,11 +6,32 @@
 //
 
 import UIKit
+import SnapKit
 
-class TestVC: UIViewController, BaseViewProtocol {
+class TestVC: UIViewController, IBaseView {
+    // MARK: - Properties
+    private lazy var label: UIView = {
+        let label = UILabel()
+        label.text = AppLocalization.name
+        return label
+    }()
 
-    // MARK: Setup
-    func setupSubviews() {}
+    // MARK: - Initialization
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    func setupConstraints() {}
+        setup()
+    }
+
+    // MARK: - Setup
+    func setupSubviews() {
+        view.addSubview(label)
+    }
+
+    func setupConstraints() {
+        label.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.height.equalTo(100)
+        }
+    }
 }

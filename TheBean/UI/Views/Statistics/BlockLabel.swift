@@ -8,11 +8,12 @@
 import UIKit
 import SnapKit
 
-class BlockLabel: UILabel, BaseViewProtocol {
+class BlockLabel: UILabel, IBaseView {
     // MARK: - Initialization
     init(text: String) {
         super.init(frame: .zero)
         self.text = text
+
         setup()
     }
 
