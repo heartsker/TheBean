@@ -39,6 +39,9 @@
 		A9BD388B27EDBD9B00794F3B /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD388A27EDBD9B00794F3B /* AppImages.swift */; };
 		A9C9D1C527E8748E004A69D8 /* GoldenRatioConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C9D1C427E8748E004A69D8 /* GoldenRatioConstraints.swift */; };
 		A9DC1E3227DDE50700CE6078 /* ResizeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC1E3127DDE50700CE6078 /* ResizeContent.swift */; };
+		A9FBEBB127EDE36600C88EDC /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBEBB027EDE36600C88EDC /* AccountViewController.swift */; };
+		A9FBEBB427EDE67100C88EDC /* AccountContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBEBB327EDE67100C88EDC /* AccountContentView.swift */; };
+		A9FBEBB627EDE72700C88EDC /* AccountTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBEBB527EDE72700C88EDC /* AccountTitleView.swift */; };
 		B7CDDD2A9E5D6E79BD356D71 /* Pods_TheBean_TheBeanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44222FCF56E6EA1DFDB0BF7F /* Pods_TheBean_TheBeanUITests.framework */; };
 		C70AE1F727B556820062DFF4 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */; };
 		C78BAE9527B64AE800CEB291 /* SetupTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78BAE9427B64AE800CEB291 /* SetupTabBar.swift */; };
@@ -121,6 +124,9 @@
 		A9BD388A27EDBD9B00794F3B /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
 		A9C9D1C427E8748E004A69D8 /* GoldenRatioConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenRatioConstraints.swift; sourceTree = "<group>"; };
 		A9DC1E3127DDE50700CE6078 /* ResizeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeContent.swift; sourceTree = "<group>"; };
+		A9FBEBB027EDE36600C88EDC /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		A9FBEBB327EDE67100C88EDC /* AccountContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountContentView.swift; sourceTree = "<group>"; };
+		A9FBEBB527EDE72700C88EDC /* AccountTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTitleView.swift; sourceTree = "<group>"; };
 		AF1883720F1CFBF970A20963 /* Pods-TheBean-TheBeanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean-TheBeanUITests.debug.xcconfig"; path = "Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		C78BAE9427B64AE800CEB291 /* SetupTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTabBar.swift; sourceTree = "<group>"; };
@@ -365,8 +371,10 @@
 			children = (
 				A98EFE5927E6514500468AA9 /* BaseViewProtocol.swift */,
 				A98B341A27AD9C9200EFA685 /* TimerViewController.swift */,
+				A9FBEBB027EDE36600C88EDC /* AccountViewController.swift */,
 				A98B341727AD9C9200EFA685 /* MainTabBarController.swift */,
 				A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */,
+				C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */,
 				A9395EBB27DE2984001E95A6 /* TestVC.swift */,
 			);
 			path = ViewControllers;
@@ -375,6 +383,7 @@
 		A98EFE6227E653A100468AA9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A9FBEBB227EDE65600C88EDC /* Account */,
 				A9DC1E3327DDE5AC00CE6078 /* Statistics */,
 			);
 			path = Views;
@@ -383,7 +392,6 @@
 		A9DC1E3327DDE5AC00CE6078 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */,
 				D3E8699E27E2648600177238 /* StatisticsContentView.swift */,
 				D360757627E10A2500F97C47 /* BlockLabel.swift */,
 				D360757327E109CC00F97C47 /* GlobalStatistics */,
@@ -391,6 +399,15 @@
 				A9395EB227DE22FD001E95A6 /* Subviews */,
 			);
 			path = Statistics;
+			sourceTree = "<group>";
+		};
+		A9FBEBB227EDE65600C88EDC /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				A9FBEBB327EDE67100C88EDC /* AccountContentView.swift */,
+				A9FBEBB527EDE72700C88EDC /* AccountTitleView.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		C78BAE9327B648D200CEB291 /* Extensions */ = {
@@ -685,6 +702,7 @@
 			files = (
 				A98EFE5A27E6514500468AA9 /* BaseViewProtocol.swift in Sources */,
 				D3C9F6D327E9DF16002AAB87 /* AverageNumberCupsCard.swift in Sources */,
+				A9FBEBB127EDE36600C88EDC /* AccountViewController.swift in Sources */,
 				A974D2D827AEDCCD00776474 /* DrinkKind.swift in Sources */,
 				D360757D27E1E12200F97C47 /* CardRepresentable.swift in Sources */,
 				A9395EBC27DE2984001E95A6 /* TestVC.swift in Sources */,
@@ -696,6 +714,8 @@
 				D3C9F6D127E9D977002AAB87 /* CardLabel.swift in Sources */,
 				C7A2F2A127B7B45D003CFB27 /* AppFonts.swift in Sources */,
 				D3E869A527E348C000177238 /* Phi.swift in Sources */,
+				A9FBEBB427EDE67100C88EDC /* AccountContentView.swift in Sources */,
+				A9FBEBB627EDE72700C88EDC /* AccountTitleView.swift in Sources */,
 				D3E869A327E3489000177238 /* GoldenRatioComponents.swift in Sources */,
 				A9AEDE4E27B7AFF500CCD338 /* AppColors.swift in Sources */,
 				A9C9D1C527E8748E004A69D8 /* GoldenRatioConstraints.swift in Sources */,

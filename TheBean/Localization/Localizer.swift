@@ -18,6 +18,7 @@ enum Localizer: String {
     case controllerRecipes = "controller.recipes"
     case controllerStatistics = "controller.statistics"
     case controllerTimer = "controller.timer"
+    case controllerAccount = "controller.account"
     case controllerTest = "controller.test"
 
     case statisticsPersonalRecommendations = "statistics.personalRecommendations"

@@ -8,8 +8,8 @@
 import UIKit
 
 extension UIViewController {
-    func setupTabBar(_ title: String = "What?", image: String = "question") {
-        self.title = title
+    func setupTabBar(_ title: Localizer, image: String = "question") {
+        self.title = ^title
         tabBarItem.image = UIImage(systemName: image)
     }
 }

@@ -16,6 +16,7 @@
 "controller.recipes" = "recipes";
 "controller.statistics" = "statistics";
 "controller.timer" = "timer";
+"controller.account" = "account";
 "controller.test" = "test";
 
 "statistics.personalRecommendations" = "personal recommendations";
