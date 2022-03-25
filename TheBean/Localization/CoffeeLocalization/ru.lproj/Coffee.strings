@@ -1,0 +1,12 @@
+/*
+  Coffee.strings
+  TheBean
+
+  Created by Daniel Pustotin on 25.03.2022.
+  
+*/
+
+"coffee" = "кофе";
+"latte" = "латте";
+"flatwhite" = "флэт вайт";
+"americano" = "американо";

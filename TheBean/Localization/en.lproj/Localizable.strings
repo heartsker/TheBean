@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  TheBean
+
+  Created by Daniel Pustotin on 25.03.2022.
+  
+*/
+
+"controller.recipes" = "recipes";
+"controller.statistics" = "statistics";
+"controller.timer" = "timer";
+"controller.test" = "test";
+
+"statistics.personalRecommendations" = "personal recommendations";
+"statistics.globalStatistics" = "global statistics";
