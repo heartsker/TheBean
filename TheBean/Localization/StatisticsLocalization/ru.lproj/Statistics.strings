@@ -1,0 +1,13 @@
+/*
+  Statistics.strings
+  TheBean
+
+  Created by Daniel Pustotin on 25.03.2022.
+  
+*/
+
+"personal.recomendations" = "персональные рекомендации";
+
+"global.statistics" = "глобальная статискика";
+"most.popular.drink.suffix" = " - самый популярный напиток среди пользователей TheBean";
+"average.cups.per.day" = " - среднее количество выпитых за день чашек";

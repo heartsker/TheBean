@@ -6,13 +6,6 @@
   
 */
 
-"app.name" = "The Bean";
-
-"coffee" = "coffee";
-"coffee.latte" = "latte";
-"coffee.flatwhite" = "flat white";
-"coffee.americano" = "americano";
-
 "controller.recipes" = "recipes";
 "controller.statistics" = "statistics";
 "controller.timer" = "timer";

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AvatarImageView: UIImageView, BaseViewProtocol {
+class AvatarImageView: UIImageView, IBaseView {
     // MARK: - Properties
     var avatarImage: UIImage
 

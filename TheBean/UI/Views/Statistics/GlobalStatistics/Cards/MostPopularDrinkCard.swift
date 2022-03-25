@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MostPopularDrinkCard: UIStackView, CardRepresentable {
+class MostPopularDrinkCard: UIView, ICardRepresentable {
     // MARK: - Properties
     let image: UIImage?
     let text: String
@@ -19,8 +19,9 @@ class MostPopularDrinkCard: UIStackView, CardRepresentable {
     // MARK: - Initialization
     required init(text: String) {
         self.text = text
-        image = UIImage(named: "BaristaHands")
+        image = UIImage(named: "coffee.barista.hands")
         super.init(frame: .zero)
+
         setup()
     }
 
@@ -29,13 +30,13 @@ class MostPopularDrinkCard: UIStackView, CardRepresentable {
     }
 
     // MARK: - Subviews
-    private lazy var imageView: UIImageView = {
+    private lazy var imageView: UIView = {
         let imageView = UIImageView(image: image)
         imageView.layer.cornerRadius = 20
         return imageView
     }()
 
-    private lazy var label: UILabel = {
+    private lazy var label = {
         CardLabel(text: text, isWhite: false)
     }()
 

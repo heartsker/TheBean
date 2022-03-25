@@ -7,16 +7,17 @@
 
 import UIKit
 
-class GlobalStatisticsView: UIStackView, BaseViewProtocol {
+class GlobalStatisticsView: UIStackView, IBaseView {
     // MARK: Properties
-    let globalStatisticsCards: [CardRepresentable] = [
-        MostPopularDrinkCard(text: "Latte - is the most popular drink among The Bean users"),
-        AverageNumberCupsCard(text: "4 - is an average number of cups per day", numberOfCups: 1)
+    let globalStatisticsCards: [ICardRepresentable] = [
+        MostPopularDrinkCard(text: ^CoffeeLocalization.latte + StatisticsLocalization.mostPopularDrinkSuffix),
+        AverageNumberCupsCard(text: "4" + StatisticsLocalization.averageCupsPerDay, numberOfCups: 1)
     ]
 
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
+
         setup()
     }
 
@@ -26,7 +27,7 @@ class GlobalStatisticsView: UIStackView, BaseViewProtocol {
 
     // MARK: - Subviews
     private lazy var label = {
-        BlockLabel(text: ^Localizer.statisticsGlobalStatistics)
+        BlockLabel(text: ^StatisticsLocalization.globalStatistics)
     }()
 
     // MARK: - Setup

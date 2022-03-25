@@ -8,10 +8,7 @@
 
 "app.name" = "Зе рно";
 
-"coffee" = "кофе";
-"coffee.latte" = "латте";
-"coffee.flatwhite" = "флэт вайт";
-"coffee.americano" = "американо";
+
 
 "controller.recipes" = "рецепты";
 "controller.statistics" = "статистика";

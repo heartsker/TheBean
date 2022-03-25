@@ -7,16 +7,16 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, IBaseView {
+    // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupAppearance()
-
-        setupTabBar()
+        setup()
     }
 
-    private func setupTabBar() {
+    // MARK: - Subviews
+    func setupSubviews() {
         let recipesVC = RecipesViewController()
         let timerVC = TimerViewController()
         let statisticsVC = StatisticsViewController()
@@ -25,13 +25,13 @@ class MainTabBarController: UITabBarController {
         let statisticsNVC = UINavigationController(rootViewController: statisticsVC)
         let timerNVC = UINavigationController(rootViewController: timerVC)
 
-        recipesVC.setupTabBar(^Localizer.controllerRecipes, image: "book")
-        statisticsVC.setupTabBar(^Localizer.controllerStatistics, image: "chart.bar.xaxis")
-        timerVC.setupTabBar(^Localizer.controllerTimer, image: "timer")
+        recipesVC.setupTabBar(^ControllerLocalization.recipes, image: "book")
+        statisticsVC.setupTabBar(^ControllerLocalization.statistics, image: "chart.bar.xaxis")
+        timerVC.setupTabBar(^ControllerLocalization.timer, image: "timer")
         // MARK: Test
         let testVC = TestVC()
         let testNVC = UINavigationController(rootViewController: testVC)
-        testVC.setupTabBar(^Localizer.controllerTest, image: "wrench.and.screwdriver")
+        testVC.setupTabBar(^ControllerLocalization.test, image: "wrench.and.screwdriver")
 
         tabBar.tintColor = .materialHeavy
         tabBar.unselectedItemTintColor = .materialMedium
@@ -40,4 +40,6 @@ class MainTabBarController: UITabBarController {
         // MARK: Add Navigation Controllers to the main TabBar here:
         viewControllers = [testNVC, recipesNVC, statisticsNVC, timerNVC]
     }
+
+    func setupConstraints() {}
 }

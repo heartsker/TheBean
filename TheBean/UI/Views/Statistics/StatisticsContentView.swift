@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StatisticsContentView: UIStackView, BaseViewProtocol {
+class StatisticsContentView: UIStackView, IBaseView {
     // MARK: - Properties
     let account: Account
 
@@ -15,6 +15,7 @@ class StatisticsContentView: UIStackView, BaseViewProtocol {
     init(account: Account) {
         self.account = account
         super.init(frame: .zero)
+
         setup()
     }
 

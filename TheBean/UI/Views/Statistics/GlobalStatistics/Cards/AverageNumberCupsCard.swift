@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AverageNumberCupsCard: UIStackView, CardRepresentable {
+class AverageNumberCupsCard: UIView, ICardRepresentable {
     // MARK: - Properties
     let cupImage: UIImage?
     let numberOfCups: Int

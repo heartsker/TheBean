@@ -8,13 +8,14 @@
 import UIKit
 import SnapKit
 
-class StatisticsViewController: UIViewController, BaseViewProtocol {
+class StatisticsViewController: UIViewController, IBaseView {
     // MARK: - Properties
     let account: Account = Account()
 
     // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setup()
     }
 

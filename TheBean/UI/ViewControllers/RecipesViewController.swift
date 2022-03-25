@@ -7,34 +7,34 @@
 
 import UIKit
 
-class RecipesViewController: UIViewController {
-
+class RecipesViewController: UIViewController, IBaseView {
+    // MARK: - Properties
     private lazy var button: UIButton = {
         let button = UIButton(text: "That is recipe", color: .materialHeavy, font: .bold)
         button.addTarget(self, action: #selector(buttonClick(sender:)), for: .touchUpInside)
         return button
     }()
 
+    // MARK: - Methods
     @objc func buttonClick(sender: UIButton!) {
         navigationController?.pushViewController(TimerViewController(), animated: true)
     }
 
+    // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupAppearance()
-
-        setupSubviews()
-        setupConstraints()
+        setup()
     }
 
-    private func setupConstraints() {
+    // MARK: - Subviews
+    func setupSubviews() {
+        view.addSubview(button)
+    }
+
+    func setupConstraints() {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    }
-
-    private func setupSubviews() {
-        view.addSubview(button)
     }
 }
