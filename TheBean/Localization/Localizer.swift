@@ -14,6 +14,15 @@ enum Localizer: String {
     case coffeeLatte = "coffee.latte"
     case coffeeFlatwhite = "coffee.flatwhite"
     case coffeeAmericano = "coffee.americano"
+
+    case controllerRecipes = "controller.recipes"
+    case controllerStatistics = "controller.statistics"
+    case controllerTimer = "controller.timer"
+    case controllerTest = "controller.test"
+
+    case statisticsPersonalRecommendations = "statistics.personalRecommendations"
+
+    case statisticsGlobalStatistics = "statistics.globalStatistics"
 }
 
 prefix operator ^

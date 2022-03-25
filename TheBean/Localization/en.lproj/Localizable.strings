@@ -12,3 +12,11 @@
 "coffee.latte" = "latte";
 "coffee.flatwhite" = "flat white";
 "coffee.americano" = "americano";
+
+"controller.recipes" = "recipes";
+"controller.statistics" = "statistics";
+"controller.timer" = "timer";
+"controller.test" = "test";
+
+"statistics.personalRecommendations" = "personal recommendations";
+"statistics.globalStatistics" = "global statistics";

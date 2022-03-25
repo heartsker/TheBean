@@ -26,7 +26,7 @@ class GlobalStatisticsView: UIStackView, BaseViewProtocol {
 
     // MARK: - Subviews
     private lazy var label = {
-        BlockLabel(text: StatisticConstants.Text.globalStatistics)
+        BlockLabel(text: ^Localizer.statisticsGlobalStatistics)
     }()
 
     // MARK: - Setup
@@ -46,6 +46,5 @@ class GlobalStatisticsView: UIStackView, BaseViewProtocol {
         }
     }
 
-    func setupConstraints() {
-    }
+    func setupConstraints() {}
 }

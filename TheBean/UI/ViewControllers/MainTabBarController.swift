@@ -25,13 +25,13 @@ class MainTabBarController: UITabBarController {
         let statisticsNVC = UINavigationController(rootViewController: statisticsVC)
         let timerNVC = UINavigationController(rootViewController: timerVC)
 
-        recipesVC.setupTabBar("Recipes", image: "book")
-        statisticsVC.setupTabBar("Statistics", image: "chart.bar.xaxis")
-        timerVC.setupTabBar("Timer", image: "timer")
+        recipesVC.setupTabBar(^Localizer.controllerRecipes, image: "book")
+        statisticsVC.setupTabBar(^Localizer.controllerStatistics, image: "chart.bar.xaxis")
+        timerVC.setupTabBar(^Localizer.controllerTimer, image: "timer")
         // MARK: Test
         let testVC = TestVC()
         let testNVC = UINavigationController(rootViewController: testVC)
-        testVC.setupTabBar("Test", image: "wrench.and.screwdriver")
+        testVC.setupTabBar(^Localizer.controllerTest, image: "wrench.and.screwdriver")
 
         tabBar.tintColor = .materialHeavy
         tabBar.unselectedItemTintColor = .materialMedium

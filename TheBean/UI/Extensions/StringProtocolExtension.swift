@@ -5,6 +5,7 @@
 //  Created by Илья Чуб on 22.03.2022.
 //
 
+// TODO: (IC) Do we need this extension?
 extension StringProtocol where Index == String.Index {
     func index(of string: Self, options: String.CompareOptions = []) -> Index? {
         return range(of: string, options: options)?.lowerBound

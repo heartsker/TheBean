@@ -42,6 +42,5 @@ class TopRecomendationsView: UIStackView, BaseViewProtocol {
         }
     }
 
-    func setupConstraints() {
-    }
+    func setupConstraints() {}
 }

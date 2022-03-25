@@ -43,6 +43,5 @@ class StatisticsContentView: UIStackView, BaseViewProtocol {
         addArrangedSubview(globalStatisticsView)
     }
 
-    func setupConstraints() {
-    }
+    func setupConstraints() {}
 }

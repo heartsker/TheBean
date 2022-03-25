@@ -36,7 +36,6 @@ class StatisticsViewController: UIViewController, BaseViewProtocol {
     }
 
     func setupConstraints() {
-//        view.layoutIfNeeded()
 
         statisticsContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(20)

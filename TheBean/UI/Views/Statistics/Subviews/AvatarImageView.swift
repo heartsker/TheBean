@@ -29,9 +29,7 @@ class AvatarImageView: UIImageView, BaseViewProtocol {
         self.contentMode = .scaleAspectFit
     }
 
-    func setupSubviews() {
-    }
+    func setupSubviews() {}
 
-    func setupConstraints() {
-    }
+    func setupConstraints() {}
 }

@@ -10,9 +10,9 @@ import UIKit
 class RecomendationsView: UIStackView, BaseViewProtocol {
     // MARK: Properties
     let recomendations = [
-        (^Localizer.coffeeLatte, UIImage(named: "Latte")!),
-        (^Localizer.coffeeFlatwhite, UIImage(named: "Flat")!),
-        (^Localizer.coffeeAmericano, UIImage(named: "Americano")!)
+        (^Localizer.coffeeLatte, UIImage(appName: Localizer.coffeeLatte)),
+        (^Localizer.coffeeFlatwhite, UIImage(appName: Localizer.coffeeFlatwhite)),
+        (^Localizer.coffeeAmericano, UIImage(appName: Localizer.coffeeAmericano))
     ]
 
     // MARK: Initialization
@@ -27,7 +27,7 @@ class RecomendationsView: UIStackView, BaseViewProtocol {
 
     // MARK: Subviews
     private lazy var label = {
-        BlockLabel(text: StatisticConstants.Text.personalRecomendations)
+        BlockLabel(text: ^Localizer.statisticsPersonalRecommendations)
     }()
 
     private lazy var topRecomendations = { TopRecomendationsView(recomendations: recomendations)

@@ -5,9 +5,9 @@
 //  Created by Илья Чуб on 22.03.2022.
 //
 
-import Foundation
 import UIKit
 
+// TODO: (IC) Add comments
 class CardLabel: UILabel, BaseViewProtocol {
     let isWhite: Bool
 
@@ -29,7 +29,10 @@ class CardLabel: UILabel, BaseViewProtocol {
     }
 
     func setupAppearance() {
-        guard let text = super.text else {return}
+        guard let text = super.text else {
+            return
+        }
+
         let color: UIColor = isWhite ? .white : .materialMedium
         let font: UIFont = isWhite ? .bold(16) : .medium(16)
 
@@ -42,20 +45,13 @@ class CardLabel: UILabel, BaseViewProtocol {
                             value: font,
                             range: NSRange(text.startIndex ..< text.endIndex, in: text))
 
-        let companyNameStartIndex = text.index(of: GeneralConstants.Text.companyName)
-        let companyNameEndIndex = text.endIndex(of: GeneralConstants.Text.companyName)
-
-        if companyNameStartIndex != nil && companyNameEndIndex != nil {
-            string.addAttribute(.font,
-                                value: UIFont.bold(16),
-                                range: NSRange( companyNameStartIndex! ..< companyNameEndIndex!, in: text))
-        }
-
         attributedText = string
         textAlignment = .center
         numberOfLines = 0
         lineBreakMode = .byClipping
     }
+
     func setupSubviews() {}
+
     func setupConstraints() {}
 }

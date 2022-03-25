@@ -26,9 +26,7 @@ class BlockLabel: UILabel, BaseViewProtocol {
         font = .init(name: "Muller-Trial-Bold", size: 18)
     }
 
-    func setupSubviews() {
-    }
+    func setupSubviews() {}
 
-    func setupConstraints() {
-    }
+    func setupConstraints() {}
 }

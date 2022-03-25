@@ -12,3 +12,11 @@
 "coffee.latte" = "латте";
 "coffee.flatwhite" = "флэт вайт";
 "coffee.americano" = "американо";
+
+"controller.recipes" = "рецепты";
+"controller.statistics" = "статистика";
+"controller.timer" = "таймер";
+"controller.test" = "тест";
+
+"statistics.personalRecommendations" = "персональные рекомендации";
+"statistics.globalStatistics" = "глобальная статистика";

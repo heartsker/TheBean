@@ -36,6 +36,7 @@
 		A98EFE5A27E6514500468AA9 /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98EFE5927E6514500468AA9 /* BaseViewProtocol.swift */; };
 		A98EFE5E27E6528A00468AA9 /* SetupAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98EFE5D27E6528A00468AA9 /* SetupAppearance.swift */; };
 		A9AEDE4E27B7AFF500CCD338 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AEDE4D27B7AFF500CCD338 /* AppColors.swift */; };
+		A9BD388B27EDBD9B00794F3B /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD388A27EDBD9B00794F3B /* AppImages.swift */; };
 		A9C9D1C527E8748E004A69D8 /* GoldenRatioConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C9D1C427E8748E004A69D8 /* GoldenRatioConstraints.swift */; };
 		A9DC1E3227DDE50700CE6078 /* ResizeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DC1E3127DDE50700CE6078 /* ResizeContent.swift */; };
 		B7CDDD2A9E5D6E79BD356D71 /* Pods_TheBean_TheBeanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44222FCF56E6EA1DFDB0BF7F /* Pods_TheBean_TheBeanUITests.framework */; };
@@ -51,9 +52,6 @@
 		D360757927E10ACF00F97C47 /* GlobalStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360757827E10ACF00F97C47 /* GlobalStatisticsView.swift */; };
 		D360757D27E1E12200F97C47 /* CardRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360757C27E1E12200F97C47 /* CardRepresentable.swift */; };
 		D360758127E1E9A800F97C47 /* MostPopularDrinkCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D360758027E1E9A800F97C47 /* MostPopularDrinkCard.swift */; };
-		D3A5221E27E86F240084879D /* StatisticsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5221D27E86F240084879D /* StatisticsConstants.swift */; };
-		D3A5222227E86FCB0084879D /* GeneralConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5222127E86FCB0084879D /* GeneralConstants.swift */; };
-		D3A5222A27E878DE0084879D /* CoffeeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5222927E878DE0084879D /* CoffeeConstants.swift */; };
 		D3C9F6CF27E9D695002AAB87 /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C9F6CE27E9D695002AAB87 /* StringProtocolExtension.swift */; };
 		D3C9F6D127E9D977002AAB87 /* CardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C9F6D027E9D977002AAB87 /* CardLabel.swift */; };
 		D3C9F6D327E9DF16002AAB87 /* AverageNumberCupsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C9F6D227E9DF16002AAB87 /* AverageNumberCupsCard.swift */; };
@@ -120,6 +118,7 @@
 		A98EFE5927E6514500468AA9 /* BaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
 		A98EFE5D27E6528A00468AA9 /* SetupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAppearance.swift; sourceTree = "<group>"; };
 		A9AEDE4D27B7AFF500CCD338 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		A9BD388A27EDBD9B00794F3B /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
 		A9C9D1C427E8748E004A69D8 /* GoldenRatioConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenRatioConstraints.swift; sourceTree = "<group>"; };
 		A9DC1E3127DDE50700CE6078 /* ResizeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeContent.swift; sourceTree = "<group>"; };
 		AF1883720F1CFBF970A20963 /* Pods-TheBean-TheBeanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean-TheBeanUITests.debug.xcconfig"; path = "Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,9 +135,6 @@
 		D360757827E10ACF00F97C47 /* GlobalStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStatisticsView.swift; sourceTree = "<group>"; };
 		D360757C27E1E12200F97C47 /* CardRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRepresentable.swift; sourceTree = "<group>"; };
 		D360758027E1E9A800F97C47 /* MostPopularDrinkCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularDrinkCard.swift; sourceTree = "<group>"; };
-		D3A5221D27E86F240084879D /* StatisticsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsConstants.swift; sourceTree = "<group>"; };
-		D3A5222127E86FCB0084879D /* GeneralConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralConstants.swift; sourceTree = "<group>"; };
-		D3A5222927E878DE0084879D /* CoffeeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeConstants.swift; sourceTree = "<group>"; };
 		D3C9F6CE27E9D695002AAB87 /* StringProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExtension.swift; sourceTree = "<group>"; };
 		D3C9F6D027E9D977002AAB87 /* CardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabel.swift; sourceTree = "<group>"; };
 		D3C9F6D227E9DF16002AAB87 /* AverageNumberCupsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageNumberCupsCard.swift; sourceTree = "<group>"; };
@@ -316,6 +312,7 @@
 				A98B341527AD9C9200EFA685 /* LaunchScreen.storyboard */,
 				A98B341427AD9C9200EFA685 /* Assets.xcassets */,
 				A9AEDE4D27B7AFF500CCD338 /* AppColors.swift */,
+				A9BD388A27EDBD9B00794F3B /* AppImages.swift */,
 				C7A2F2A027B7B45D003CFB27 /* AppFonts.swift */,
 				A9074BA727B94F9900BFF644 /* AssetsFonts */,
 				C78BAE9327B648D200CEB291 /* Extensions */,
@@ -448,9 +445,6 @@
 		D3A5222027E86F6E0084879D /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				D3A5222127E86FCB0084879D /* GeneralConstants.swift */,
-				D3A5221D27E86F240084879D /* StatisticsConstants.swift */,
-				D3A5222927E878DE0084879D /* CoffeeConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -698,16 +692,15 @@
 				A9DC1E3227DDE50700CE6078 /* ResizeContent.swift in Sources */,
 				A9546D7927ED132E00370F99 /* Localizer.swift in Sources */,
 				D360757227E0EB1000F97C47 /* RecomendationsView.swift in Sources */,
+				A9BD388B27EDBD9B00794F3B /* AppImages.swift in Sources */,
 				D3C9F6D127E9D977002AAB87 /* CardLabel.swift in Sources */,
 				C7A2F2A127B7B45D003CFB27 /* AppFonts.swift in Sources */,
 				D3E869A527E348C000177238 /* Phi.swift in Sources */,
-				D3A5222A27E878DE0084879D /* CoffeeConstants.swift in Sources */,
 				D3E869A327E3489000177238 /* GoldenRatioComponents.swift in Sources */,
 				A9AEDE4E27B7AFF500CCD338 /* AppColors.swift in Sources */,
 				A9C9D1C527E8748E004A69D8 /* GoldenRatioConstraints.swift in Sources */,
 				A98B342127AD9C9200EFA685 /* MainTabBarController.swift in Sources */,
 				D360757727E10A2500F97C47 /* BlockLabel.swift in Sources */,
-				D3A5222227E86FCB0084879D /* GeneralConstants.swift in Sources */,
 				A98B33D827AD9BD200EFA685 /* AppDelegate.swift in Sources */,
 				A95ECF8D27B93AA400E940A7 /* UIButtonInitialization.swift in Sources */,
 				A974D2D627AEDBD100776474 /* Account.swift in Sources */,
@@ -723,7 +716,6 @@
 				C78BAE9527B64AE800CEB291 /* SetupTabBar.swift in Sources */,
 				D360756D27E0E54600F97C47 /* TopRecomendationsView.swift in Sources */,
 				A98B340D27AD9C7A00EFA685 /* Recipe.swift in Sources */,
-				D3A5221E27E86F240084879D /* StatisticsConstants.swift in Sources */,
 				D3C9F6CF27E9D695002AAB87 /* StringProtocolExtension.swift in Sources */,
 				A96F5EB727ED257300A270B8 /* FirstUppercased.swift in Sources */,
 				D3E8699F27E2648600177238 /* StatisticsContentView.swift in Sources */,
