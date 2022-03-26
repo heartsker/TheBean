@@ -1,6 +1,8 @@
 RED := $(shell tput -Txterm setaf 1)
 GREEN := $(shell tput -Txterm setaf 2)
+YELLOW := $(shell tput -Txterm setaf 3)
 BLUE := $(shell tput -Txterm setaf 4)
+MAGENTA := $(shell tput -Txterm setaf 5)
 WHITE := $(shell tput -Txterm setaf 7)
 RESET := $(shell tput -Txterm sgr0)
 
@@ -13,6 +15,8 @@ help:
 	@echo '		${RED}make${RESET} ${GREEN}help${RESET}'
 	@echo '	${BLUE}Initialize the project${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}init${RESET}'
+	@echo '	${BLUE}Make a commit and push to the origin${RESET}:'
+	@echo '		${RED}make${RESET} ${GREEN}git${RESET} ${YELLOW}t="text"${RESET} ${MAGENTA}[b="body"]${RESET}'
 
 # Initialize the project
 init:
@@ -22,7 +26,8 @@ init:
 	@echo '${RED}Linter:${RESET}'
 	Pods/Swiftlint/swiftlint
 
-commit:
+# Make a commit and push to the origin
+git:
 	git add .
 	git commit -m "$t" -m "$b"
 	git push --set-upstream origin
