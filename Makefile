@@ -3,7 +3,6 @@ GREEN := $(shell tput -Txterm setaf 2)
 BLUE := $(shell tput -Txterm setaf 4)
 WHITE := $(shell tput -Txterm setaf 7)
 RESET := $(shell tput -Txterm sgr0)
-BRANCH := $(git rev-parse --abbrev-ref HEAD)
 
 # Show help
 help:
@@ -26,5 +25,5 @@ init:
 commit:
 	git add .
 	git commit -m "$t" -m "$b"
-	git push --set-upstream origin ${BRANCH}
+	git push --set-upstream origin
 
