@@ -23,10 +23,7 @@ init:
 	Pods/Swiftlint/swiftlint
 
 commit:
-	@echo "$t"
-	@echo "$b"
-	BRANCH=$$(git rev-parse --abbrev-ref HEAD);
 	git add .
 	git commit -m "$t" -m "$b"
-	git push --set-upstream origin $$BRANCH
+	git push --set-upstream origin $$(git rev-parse --abbrev-ref HEAD)
 
