@@ -25,5 +25,5 @@ init:
 commit:
 	git add .
 	git commit -m "$t" -m "$b"
-	git push --set-upstream origin $$(git rev-parse --abbrev-ref HEAD)
+	git push --set-upstream origin '$(git rev-parse --abbrev-ref HEAD)'
 
