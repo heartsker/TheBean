@@ -12,7 +12,6 @@
 		A9074BBA27B94F9900BFF644 /* Muller-Trial-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9074BB027B94F9900BFF644 /* Muller-Trial-Medium.ttf */; };
 		A9074BBD27B94F9900BFF644 /* Muller-Trial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9074BB427B94F9900BFF644 /* Muller-Trial-Regular.ttf */; };
 		A9395EBC27DE2984001E95A6 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9395EBB27DE2984001E95A6 /* TestVC.swift */; };
-		A9546D8427ED19C800370F99 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9546D8627ED19C800370F99 /* Localizable.strings */; };
 		A95ECF8D27B93AA400E940A7 /* UIButtonInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95ECF8C27B93AA400E940A7 /* UIButtonInitialization.swift */; };
 		A96F5EB727ED257300A270B8 /* FirstUppercased.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96F5EB627ED257300A270B8 /* FirstUppercased.swift */; };
 		A9733BEA27AD9F0B00936F6D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A9733BE927AD9F0B00936F6D /* Alamofire */; };
@@ -98,8 +97,6 @@
 		A9074BB027B94F9900BFF644 /* Muller-Trial-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Medium.ttf"; sourceTree = "<group>"; };
 		A9074BB427B94F9900BFF644 /* Muller-Trial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Regular.ttf"; sourceTree = "<group>"; };
 		A9395EBB27DE2984001E95A6 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
-		A9546D8527ED19C800370F99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A9546D8727ED19E500370F99 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A95ECF8C27B93AA400E940A7 /* UIButtonInitialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonInitialization.swift; sourceTree = "<group>"; };
 		A96F5EB627ED257300A270B8 /* FirstUppercased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUppercased.swift; sourceTree = "<group>"; };
 		A974D2D527AEDBD100776474 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -494,7 +491,6 @@
 				A97B9ECA27EE545900B3859F /* StatisticsLocalization */,
 				A97B9EBD27EE529B00B3859F /* CoffeeLocalization */,
 				A97B9EBA27EE520F00B3859F /* AppLocalization */,
-				A9546D8627ED19C800370F99 /* Localizable.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -627,7 +623,6 @@
 				A98B342027AD9C9200EFA685 /* LaunchScreen.storyboard in Resources */,
 				A9074BB627B94F9900BFF644 /* Muller-Trial-Bold.ttf in Resources */,
 				A97B9ED127EE552400B3859F /* Statistics.strings in Resources */,
-				A9546D8427ED19C800370F99 /* Localizable.strings in Resources */,
 				A97B9EC627EE535600B3859F /* Coffee.strings in Resources */,
 				A97B9EB627EE518700B3859F /* App.strings in Resources */,
 				A9074BBA27B94F9900BFF644 /* Muller-Trial-Medium.ttf in Resources */,
@@ -821,15 +816,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A9546D8627ED19C800370F99 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9546D8527ED19C800370F99 /* en */,
-				A9546D8727ED19E500370F99 /* ru */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		A97B9EB827EE518700B3859F /* App.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
