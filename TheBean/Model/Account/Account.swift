@@ -9,15 +9,24 @@ import UIKit
 
 final class Account {
     private var _username: String?
-    private(set) var email: String?
+    private var _email: String?
     var picture: UIImage?
 
     private(set) var username: String {
         get {
-            _username ?? ""
+            _username ?? "heartsker"
         }
         set {
             _username = newValue
+        }
+    }
+
+    private(set) var email: String {
+        get {
+            _email ?? "heartsker@gmail.com"
+        }
+        set {
+            _email = newValue
         }
     }
 

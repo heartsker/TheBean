@@ -26,13 +26,6 @@ class AccountContentView: UIStackView, BaseViewProtocol {
     private lazy var titleView = {
         AccountTitleView(account: account)
     }()
-    private lazy var personalRecomendationsView = {
-        RecomendationsView()
-    }()
-
-    private lazy var globalStatisticsView = {
-        GlobalStatisticsView()
-    }()
 
     // MARK: - Setup
     func setupAppearance() {
@@ -47,6 +40,9 @@ class AccountContentView: UIStackView, BaseViewProtocol {
     func setupConstraints() {
         titleView.snp.makeConstraints { make in
             make.center.equalToSuperview()
+            make.height.equalTo(110)
+            make.width.equalTo(110)
         }
+        titleView.setupConstraints()
     }
 }

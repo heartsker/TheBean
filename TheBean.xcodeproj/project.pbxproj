@@ -370,12 +370,12 @@
 			isa = PBXGroup;
 			children = (
 				A98EFE5927E6514500468AA9 /* BaseViewProtocol.swift */,
-				A98B341A27AD9C9200EFA685 /* TimerViewController.swift */,
-				A9FBEBB027EDE36600C88EDC /* AccountViewController.swift */,
 				A98B341727AD9C9200EFA685 /* MainTabBarController.swift */,
+				A9395EBB27DE2984001E95A6 /* TestVC.swift */,
 				A98B341B27AD9C9200EFA685 /* RecipesViewController.swift */,
 				C70AE1F627B556820062DFF4 /* StatisticsViewController.swift */,
-				A9395EBB27DE2984001E95A6 /* TestVC.swift */,
+				A98B341A27AD9C9200EFA685 /* TimerViewController.swift */,
+				A9FBEBB027EDE36600C88EDC /* AccountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

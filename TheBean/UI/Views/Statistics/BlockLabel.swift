@@ -23,6 +23,7 @@ class BlockLabel: UILabel, BaseViewProtocol {
     // MARK: - Setup
     func setupAppearance() {
         textColor = .materialHeavy
+        // TODO: (IC) Replace with UIFont.bold
         font = .init(name: "Muller-Trial-Bold", size: 18)
     }
 
