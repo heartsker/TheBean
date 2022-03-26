@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A98B33D327AD9BD200EFA685"
+               BlueprintIdentifier = "B0D5CB9E455A8BF210636ABE"
                BuildableName = "TheBean.app"
                BlueprintName = "TheBean"
                ReferencedContainer = "container:TheBean.xcodeproj">
@@ -27,12 +27,21 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B0D5CB9E455A8BF210636ABE"
+            BuildableName = "TheBean.app"
+            BlueprintName = "TheBean"
+            ReferencedContainer = "container:TheBean.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A98B33EC27AD9BD300EFA685"
+               BlueprintIdentifier = "410942C407D9F8C5441CAF2F"
                BuildableName = "TheBeanTests.xctest"
                BlueprintName = "TheBeanTests"
                ReferencedContainer = "container:TheBean.xcodeproj">
@@ -42,7 +51,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A98B33F627AD9BD300EFA685"
+               BlueprintIdentifier = "00B617A07F9EFA7A29F9D962"
                BuildableName = "TheBeanUITests.xctest"
                BlueprintName = "TheBeanUITests"
                ReferencedContainer = "container:TheBean.xcodeproj">
@@ -64,7 +73,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A98B33D327AD9BD200EFA685"
+            BlueprintIdentifier = "B0D5CB9E455A8BF210636ABE"
             BuildableName = "TheBean.app"
             BlueprintName = "TheBean"
             ReferencedContainer = "container:TheBean.xcodeproj">
@@ -81,7 +90,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A98B33D327AD9BD200EFA685"
+            BlueprintIdentifier = "B0D5CB9E455A8BF210636ABE"
             BuildableName = "TheBean.app"
             BlueprintName = "TheBean"
             ReferencedContainer = "container:TheBean.xcodeproj">
