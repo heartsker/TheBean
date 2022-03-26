@@ -25,7 +25,7 @@ class AccountTitleView: UIStackView, BaseViewProtocol {
 
     // MARK: - Subviews
     private lazy var imageView: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "account.profile.picture"))
+        let image = UIImageView(image: UIImage(named: "logo"))
         return image
     }()
 
