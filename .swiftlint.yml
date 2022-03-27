@@ -2,4 +2,4 @@ identifier_name:
   excluded:
     - i
 excluded:
-  - Pods/
+  - Pods
