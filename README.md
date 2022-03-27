@@ -24,10 +24,10 @@ TheBean - это великолепное приложение для всех �
 Чтобы добавить новый сервис локализации, необходимо исполнить требования `ILocalizable` и добавить требуемые строки:
 
 ```swift
-class AppLocalization: ILocalizable {
-    static let table: String = "App"
-    static let name = AppLocalization.localize("name")
-}
+    class AppLocalization: ILocalizable {
+        static let table: String = "App"
+        static let name = AppLocalization.localize("name")
+    }
 ```
 
 после этого в соответствующей таблице `App.strings` нужно определить локализацию строк:

@@ -1,0 +1,27 @@
+name: TheBean
+options:
+  bundleIdPrefix: heartsker
+  deploymentTarget:
+    iOS: 13.0
+targets:
+  TheBean:
+    type: application
+    platform: iOS
+    sources: 
+      - path: TheBean
+    settings:
+      DEVELOPMENT_TEAM: XHRWYM4T65
+    scheme:
+      testTargets:
+      - TheBeanTests
+      - TheBeanUITests
+  TheBeanTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: TheBeanTests
+  TheBeanUITests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: TheBeanUITests

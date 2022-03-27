@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Account" representedClassName="Account" syncable="YES" codeGenerationType="class"/>
+    <configuration name="Cloud" usedWithCloudKit="YES">
+        <memberEntity name="Account"/>
+    </configuration>
+    <elements>
+        <element name="Account" positionX="-54" positionY="-308.80078125" width="128" height="29"/>
+    </elements>
+</model>
