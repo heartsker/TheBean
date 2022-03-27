@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TestVC: UIViewController, BaseViewProtocol {
+class TestVC: UIViewController, IBaseView {
 
     // MARK: Setup
     func setupSubviews() {}

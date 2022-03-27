@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountContentView: UIStackView, BaseViewProtocol {
+class AccountContentView: UIStackView, IBaseView {
     // MARK: - Properties
     let account: Account
 

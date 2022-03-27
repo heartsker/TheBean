@@ -1,11 +1,11 @@
 //
-//  BaseViewProtocol.swift
+//  IBaseView.swift
 //  TheBean
 //
 //  Created by Daniel Pustotin on 19.03.2022.
 //
 
-protocol BaseViewProtocol {
+protocol IBaseView {
     func setupAppearance()
     func setupSubviews()
     func setupConstraints()
@@ -13,7 +13,7 @@ protocol BaseViewProtocol {
     func setup()
 }
 
-extension BaseViewProtocol {
+extension IBaseView {
     func setup() {
         setupAppearance()
         setupSubviews()

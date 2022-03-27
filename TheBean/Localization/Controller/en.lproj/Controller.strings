@@ -1,0 +1,13 @@
+/* 
+  Controller.strings
+  TheBean
+
+  Created by Daniel Pustotin on 27.03.2022.
+  
+*/
+
+"recipes" = "recipes";
+"statistics" = "statistics";
+"timer" = "timer";
+"account" = "account";
+"test" = "test";

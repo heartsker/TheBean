@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoffeeBlockView: UIStackView, BaseViewProtocol {
+class CoffeeBlockView: UIStackView, IBaseView {
     // MARK: - Properties
     var text: String
     var image: UIImage

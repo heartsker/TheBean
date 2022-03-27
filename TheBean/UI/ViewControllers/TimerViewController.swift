@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TimerViewController: UIViewController, BaseViewProtocol {
+class TimerViewController: UIViewController, IBaseView {
     // MARK: - Properties
     private lazy var label: UILabel = {
         UILabel(text: "That is timer", color: .materialHeavy, font: .bold)

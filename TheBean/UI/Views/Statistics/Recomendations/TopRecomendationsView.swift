@@ -8,7 +8,7 @@
 import SnapKit
 import UIKit
 
-class TopRecomendationsView: UIStackView, BaseViewProtocol {
+class TopRecomendationsView: UIStackView, IBaseView {
     // MARK: - Properties
     var recomendations: [(text: String, image: UIImage)]
 

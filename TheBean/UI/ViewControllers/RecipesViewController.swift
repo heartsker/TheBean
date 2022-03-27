@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecipesViewController: UIViewController, BaseViewProtocol {
+class RecipesViewController: UIViewController, IBaseView {
 
     // MARK: - Properties
     private lazy var button: UIButton = {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AverageNumberCupsCard: UIStackView, CardRepresentable {
+class AverageNumberCupsCard: UIStackView, ICardRepresentable {
     // MARK: - Properties
     let cupImage: UIImage?
     let numberOfCups: Int
@@ -22,7 +22,7 @@ class AverageNumberCupsCard: UIStackView, CardRepresentable {
     required init(text: String, numberOfCups: Int) {
         self.text = text
         self.numberOfCups = numberOfCups
-        cupImage = UIImage(named: "Cup")
+        cupImage = UIImage(named: "coffee.cup")
         super.init(frame: .zero)
         setup()
     }

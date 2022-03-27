@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MostPopularDrinkCard: UIStackView, CardRepresentable {
+class MostPopularDrinkCard: UIStackView, ICardRepresentable {
     // MARK: - Properties
     let image: UIImage?
     let text: String
@@ -19,7 +19,7 @@ class MostPopularDrinkCard: UIStackView, CardRepresentable {
     // MARK: - Initialization
     required init(text: String) {
         self.text = text
-        image = UIImage(named: "BaristaHands")
+        image = UIImage(named: "coffee.barista.hands")
         super.init(frame: .zero)
         setup()
     }

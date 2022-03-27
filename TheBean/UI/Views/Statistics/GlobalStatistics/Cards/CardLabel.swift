@@ -8,7 +8,7 @@
 import UIKit
 
 // TODO: (IC) Add comments
-class CardLabel: UILabel, BaseViewProtocol {
+class CardLabel: UILabel, IBaseView {
     let isWhite: Bool
 
     init(text: String, isWhite: Bool) {

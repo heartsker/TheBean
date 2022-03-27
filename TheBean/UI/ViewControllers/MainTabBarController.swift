@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController, BaseViewProtocol {
+class MainTabBarController: UITabBarController, IBaseView {
     // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +27,15 @@ class MainTabBarController: UITabBarController, BaseViewProtocol {
         let timerNVC = UINavigationController(rootViewController: timerVC)
         let accountNVC = UINavigationController(rootViewController: accountVC)
 
-        recipesVC.setupTabBar(Localizer.controllerRecipes, image: "book")
-        statisticsVC.setupTabBar(Localizer.controllerStatistics, image: "chart.bar.xaxis")
-        timerVC.setupTabBar(Localizer.controllerTimer, image: "timer")
-        accountVC.setupTabBar(Localizer.controllerAccount, image: "person")
+        recipesVC.setupTabBar(^ControllerLocalization.recipes, image: "book")
+        statisticsVC.setupTabBar(^ControllerLocalization.statistics, image: "chart.bar.xaxis")
+        timerVC.setupTabBar(^ControllerLocalization.timer, image: "timer")
+        accountVC.setupTabBar(^ControllerLocalization.account, image: "person")
 
         // MARK: Test
         let testVC = TestVC()
         let testNVC = UINavigationController(rootViewController: testVC)
-        testVC.setupTabBar(Localizer.controllerTest, image: "wrench.and.screwdriver")
+        testVC.setupTabBar(^ControllerLocalization.test, image: "wrench.and.screwdriver")
 
         tabBar.tintColor = .materialHeavy
         tabBar.unselectedItemTintColor = .materialMedium
