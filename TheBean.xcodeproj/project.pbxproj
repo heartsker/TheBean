@@ -18,19 +18,18 @@
 		302C7129117F1A1D126D3C6A /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA90068F1C64D7A8784185A /* TestVC.swift */; };
 		311447463D7BB7DB4365690B /* App.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78E3A7F865269FA09ACF6F1D /* App.strings */; };
 		34E7C10471AA197C1F98FB4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD366BD051FEC0CEE550147 /* LaunchScreen.storyboard */; };
+		35B3F46FAC7268340228113C /* Pods_TheBean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC2E255C78FCD346D927450 /* Pods_TheBean.framework */; };
 		36615298F42F1FEF9226A30A /* FirstUppercased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F533B3A2D840239629202E1 /* FirstUppercased.swift */; };
 		392EC7AB6C320B7F8F917AEF /* Muller-Trial-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C354A32226D094CE5FD5D8A7 /* Muller-Trial-Bold.ttf */; };
 		3D82F8AE5C620F866A0B3101 /* GoldenRatioConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED9E93E814725CC45CA9AC5 /* GoldenRatioConstraints.swift */; };
 		42901380D47E1AFBB40E7D9F /* IBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDF445C0C523FB6D377D467 /* IBaseView.swift */; };
 		441D31F61C5A9778C7A444AC /* TheBean.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 727E2170346CB6C32DF7EC63 /* TheBean.xcdatamodeld */; };
 		495195F565A1C2A8B176DD49 /* CoffeeLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88A32D84E50A618D1B9F20D /* CoffeeLocalization.swift */; };
-		4C7DEA514B797A0319B1EA78 /* Pods_TheBean.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E33DAF0FC04F2ACC77F7B6B /* Pods_TheBean.framework */; };
 		5ADCBC34BE10313CF8CEECD5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA626ED887D3E1DB5AEE5E53 /* MainTabBarController.swift */; };
 		604CC70F5767027AC97056C1 /* GoldenRatioComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8E9A68FFDF5FC739BDB240 /* GoldenRatioComponents.swift */; };
 		65AE6FAF288BE16EB424D05D /* Muller-Trial-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBF3DE72178FADC3409784F3 /* Muller-Trial-Light.ttf */; };
 		6794A62B3714570812E5A4D2 /* ICardRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B946F4E67B628B6CFFA7FE22 /* ICardRepresentable.swift */; };
 		6A0620117EF31FDE7635B9A4 /* UILabelInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA03E4117168B8DFABDA4B1C /* UILabelInitialization.swift */; };
-		6A166A2854C419B22A4C01EA /* Pods_TheBean_TheBeanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13946979E821267870CF834 /* Pods_TheBean_TheBeanUITests.framework */; };
 		6E9A452A1A911C3477F5DCC3 /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F76D9BF573646D3EFD9F50 /* StringProtocolExtension.swift */; };
 		719E0365B4B0D287720A1E3D /* StatisticsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4528ACC5F702A83B3E2065B0 /* StatisticsContentView.swift */; };
 		7C1F61C806CB5095A9BE9B5B /* ILocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B79A2AF5F31C8228E569CA /* ILocalizable.swift */; };
@@ -45,7 +44,6 @@
 		A4BDE1B14ACA139C435EDF54 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F56D90BB47A3D1B38B0FBB8 /* StatisticsViewController.swift */; };
 		B1E81DCB6C1FD3D86F9E4506 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C20C6DF2462F1E379FF4322 /* AvatarImageView.swift */; };
 		B26F60B372C2B659BC55728E /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305F6DB7BDB4976AFFDEFD66 /* TimerViewController.swift */; };
-		B7FB592CE2592A82671E7623 /* Pods_TheBeanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E287C787A1D64982186C9279 /* Pods_TheBeanTests.framework */; };
 		C701FB540BC91659D53A0E1A /* MostPopularDrinkCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAB663BC5E376F248C9AB29 /* MostPopularDrinkCard.swift */; };
 		C87D07B58C08D2684018D689 /* Phi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3D490D2AA0CDA746ADB00D /* Phi.swift */; };
 		C96CA9547078D10D598B79B1 /* DrinkKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA930C7B6C6983B66E2CE7 /* DrinkKind.swift */; };
@@ -71,14 +69,14 @@
 		098CF7FA657CB6CE4462EF86 /* AverageNumberCupsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageNumberCupsCard.swift; sourceTree = "<group>"; };
 		0CD75040296DCF4033E86F0E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/App.strings; sourceTree = "<group>"; };
 		13CE7842BA7A15F8B8705510 /* GlobalStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStatisticsView.swift; sourceTree = "<group>"; };
-		159479AFDE4DB83EC14F6C46 /* Pods-TheBean-TheBeanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean-TheBeanUITests.debug.xcconfig"; path = "Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		18645126E6BF2B44B7EAEED2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1CA1249681944A4135115940 /* SetupAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAppearance.swift; sourceTree = "<group>"; };
 		2291A1E4AD66A33BD5B16DE6 /* UIButtonInitialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonInitialization.swift; sourceTree = "<group>"; };
 		24B8914413A885460D263FFA /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		25C8F8E8CD87E43DF9F11D11 /* Pods-TheBean-TheBeanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean-TheBeanUITests.debug.xcconfig"; path = "Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2782A80E7F5207EA0786E1BA /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		281A5240A9CC85357D685541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		297D032B221358BFAB9FD49A /* TheBean.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = TheBean.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		281A5240A9CC85357D685541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		297D032B221358BFAB9FD49A /* TheBean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheBean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F533B3A2D840239629202E1 /* FirstUppercased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUppercased.swift; sourceTree = "<group>"; };
 		305F6DB7BDB4976AFFDEFD66 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		3F56D90BB47A3D1B38B0FBB8 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
@@ -89,15 +87,15 @@
 		50D3E4D368544CF28D6E156A /* RecomendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationsView.swift; sourceTree = "<group>"; };
 		55B79A2AF5F31C8228E569CA /* ILocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalizable.swift; sourceTree = "<group>"; };
 		59F701ADA1C717208E818640 /* TheBeanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBeanTests.swift; sourceTree = "<group>"; };
+		5AC2E255C78FCD346D927450 /* Pods_TheBean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheBean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C20C6DF2462F1E379FF4322 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		610F5CA09FEB59D70B8A6E3F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Coffee.strings; sourceTree = "<group>"; };
+		664291FA088F6D227B5F21C7 /* Pods-TheBeanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBeanTests.debug.xcconfig"; path = "Target Support Files/Pods-TheBeanTests/Pods-TheBeanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C0998B5E7DF942FF7DDA4AC /* Muller-Trial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Regular.ttf"; sourceTree = "<group>"; };
 		6DCB650F84C471E1FAFC3BBC /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
-		6E33DAF0FC04F2ACC77F7B6B /* Pods_TheBean.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheBean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		753D4B3AFEAB3E58EB5DB547 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		7DAB663BC5E376F248C9AB29 /* MostPopularDrinkCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostPopularDrinkCard.swift; sourceTree = "<group>"; };
 		7EEAEE820D7D9DDA82F1B47F /* CoffeeBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBlockView.swift; sourceTree = "<group>"; };
-		85D147C7EB96887E47094A97 /* Pods-TheBeanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBeanTests.release.xcconfig"; path = "Target Support Files/Pods-TheBeanTests/Pods-TheBeanTests.release.xcconfig"; sourceTree = "<group>"; };
 		88406D69E98CF0F78A596087 /* SetupTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupTabBar.swift; sourceTree = "<group>"; };
 		8984411ADA2F41B8822D8EB1 /* TheBeanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheBeanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8BF4267BED4C6596D98A57C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,64 +103,60 @@
 		8FDF445C0C523FB6D377D467 /* IBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBaseView.swift; sourceTree = "<group>"; };
 		904342EBDEE873EEB212A12E /* ControllerLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerLocalization.swift; sourceTree = "<group>"; };
 		94DC780343C7AA427FA3421B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/App.strings; sourceTree = "<group>"; };
-		950CEC97294DAE9731007AEF /* Pods-TheBean-TheBeanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean-TheBeanUITests.release.xcconfig"; path = "Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		973F0688CA0E4DFAAF0D8910 /* AppLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalization.swift; sourceTree = "<group>"; };
 		9EDA930C7B6C6983B66E2CE7 /* DrinkKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkKind.swift; sourceTree = "<group>"; };
 		A175C842FDE950162CAB743F /* TheBeanTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TheBeanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53F8D19E51CAAFD36DEC34A /* ResizeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeContent.swift; sourceTree = "<group>"; };
 		A82599BC3CD381D5B7D99FA2 /* StatisticsLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsLocalization.swift; sourceTree = "<group>"; };
+		A8EFF6C1FB9406FD9BA782BD /* Pods-TheBean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean.release.xcconfig"; path = "Target Support Files/Pods-TheBean/Pods-TheBean.release.xcconfig"; sourceTree = "<group>"; };
+		AAA55802ABBF805483EBFE8F /* Pods-TheBeanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBeanTests.release.xcconfig"; path = "Target Support Files/Pods-TheBeanTests/Pods-TheBeanTests.release.xcconfig"; sourceTree = "<group>"; };
 		ADFA8003573250E25B2731E1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Statistics.strings; sourceTree = "<group>"; };
 		AE19DC4EE826CB80B7A74BCA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Controller.strings; sourceTree = "<group>"; };
-		AE58BF522B7EFD083E6B2BC7 /* Pods-TheBean.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean.release.xcconfig"; path = "Target Support Files/Pods-TheBean/Pods-TheBean.release.xcconfig"; sourceTree = "<group>"; };
 		AED9E93E814725CC45CA9AC5 /* GoldenRatioConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenRatioConstraints.swift; sourceTree = "<group>"; };
 		AF4B500A6409AE04CBC5E9A0 /* Muller-Trial-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Medium.ttf"; sourceTree = "<group>"; };
 		B1129D8816C65BA81DCA70B2 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		B4DAED0A818DF2C8371740FA /* TopRecomendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRecomendationsView.swift; sourceTree = "<group>"; };
+		B5D906FF40B9AF0B5AEA3AEC /* Pods-TheBean-TheBeanUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean-TheBeanUITests.release.xcconfig"; path = "Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B946F4E67B628B6CFFA7FE22 /* ICardRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICardRepresentable.swift; sourceTree = "<group>"; };
 		BA03E4117168B8DFABDA4B1C /* UILabelInitialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelInitialization.swift; sourceTree = "<group>"; };
 		BA626ED887D3E1DB5AEE5E53 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BCED3039489D7DAF97FED3C9 /* TheBeanUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = TheBeanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C13946979E821267870CF834 /* Pods_TheBean_TheBeanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheBean_TheBeanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C354A32226D094CE5FD5D8A7 /* Muller-Trial-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Bold.ttf"; sourceTree = "<group>"; };
-		C4AD7894BBDD7C1A341894A9 /* Pods-TheBeanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBeanTests.debug.xcconfig"; path = "Target Support Files/Pods-TheBeanTests/Pods-TheBeanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C88A32D84E50A618D1B9F20D /* CoffeeLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLocalization.swift; sourceTree = "<group>"; };
 		D12FD4EB92EF65E510599E4B /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		D1ED6D419B1CA6A26A09C942 /* Pods-TheBean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean.debug.xcconfig"; path = "Target Support Files/Pods-TheBean/Pods-TheBean.debug.xcconfig"; sourceTree = "<group>"; };
 		D93F826D0D15F87DA3CC1BA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D951B1216AA2A811D5BEE812 /* CardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabel.swift; sourceTree = "<group>"; };
 		DBC8250C0A44653CB31A3CAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Controller.strings; sourceTree = "<group>"; };
 		DC76AE0D2DDFC6BB1E552044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD52DC313EB3C511F6F0E967 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Coffee.strings; sourceTree = "<group>"; };
-		E287C787A1D64982186C9279 /* Pods_TheBeanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheBeanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BE5C506B3058E71F50227C /* BlockLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockLabel.swift; sourceTree = "<group>"; };
 		EA3D490D2AA0CDA746ADB00D /* Phi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phi.swift; sourceTree = "<group>"; };
 		EA8E9A68FFDF5FC739BDB240 /* GoldenRatioComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenRatioComponents.swift; sourceTree = "<group>"; };
 		EBF3DE72178FADC3409784F3 /* Muller-Trial-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Light.ttf"; sourceTree = "<group>"; };
 		F2160E5AC641223ED023CFA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE401E8970DCAFEC08C67B53 /* Pods-TheBean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBean.debug.xcconfig"; path = "Target Support Files/Pods-TheBean/Pods-TheBean.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		629A14651720751923149755 /* Frameworks */ = {
+		72F61438192721FB86881D97 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A166A2854C419B22A4C01EA /* Pods_TheBean_TheBeanUITests.framework in Frameworks */,
+				35B3F46FAC7268340228113C /* Pods_TheBean.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8DCA63B2F07EC95C926B3540 /* Frameworks */ = {
+		B4599E8AD719C16B664B8C12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7FB592CE2592A82671E7623 /* Pods_TheBeanTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB34367373AD1BDCF58AC8A6 /* Frameworks */ = {
+		F2F403E3B4F48D9F8E4CF6FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7DEA514B797A0319B1EA78 /* Pods_TheBean.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,10 +204,7 @@
 		286F4CDB7CE4D8578A3A51CB /* TheBean */ = {
 			isa = PBXGroup;
 			children = (
-				DC76AE0D2DDFC6BB1E552044 /* AppDelegate.swift */,
-				281A5240A9CC85357D685541 /* Info.plist */,
-				F2160E5AC641223ED023CFA6 /* SceneDelegate.swift */,
-				727E2170346CB6C32DF7EC63 /* TheBean.xcdatamodeld */,
+				A9D3AD5627EFA7E90065E9DA /* Resources */,
 				DE98B940858E8491B7549A7E /* Extensions */,
 				3C0D08E9C380B1530ED51047 /* Localization */,
 				A3137DAB20BB14074DD3999A /* Model */,
@@ -273,29 +264,6 @@
 			path = GlobalStatistics;
 			sourceTree = "<group>";
 		};
-		51F8858A3D432786C5316707 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FE401E8970DCAFEC08C67B53 /* Pods-TheBean.debug.xcconfig */,
-				AE58BF522B7EFD083E6B2BC7 /* Pods-TheBean.release.xcconfig */,
-				159479AFDE4DB83EC14F6C46 /* Pods-TheBean-TheBeanUITests.debug.xcconfig */,
-				950CEC97294DAE9731007AEF /* Pods-TheBean-TheBeanUITests.release.xcconfig */,
-				C4AD7894BBDD7C1A341894A9 /* Pods-TheBeanTests.debug.xcconfig */,
-				85D147C7EB96887E47094A97 /* Pods-TheBeanTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		549FAA42BAC37BAC49654749 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6E33DAF0FC04F2ACC77F7B6B /* Pods_TheBean.framework */,
-				C13946979E821267870CF834 /* Pods_TheBean_TheBeanUITests.framework */,
-				E287C787A1D64982186C9279 /* Pods_TheBeanTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		55DD89B57256F96C8C21EF3B /* StatisticsLocalization */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +309,14 @@
 			path = GoldenRatio;
 			sourceTree = "<group>";
 		};
+		82327B33042D6B5D92FD954F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AC2E255C78FCD346D927450 /* Pods_TheBean.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8457E624337BC828F6594E10 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,8 +335,8 @@
 				23D4405C5E85E2423E5FD245 /* TheBeanTests */,
 				723ED092F0788E2FEF516E21 /* TheBeanUITests */,
 				113B601C10151012A377AC49 /* Products */,
-				51F8858A3D432786C5316707 /* Pods */,
-				549FAA42BAC37BAC49654749 /* Frameworks */,
+				E5DACC2E159470D8D3016DAB /* Pods */,
+				82327B33042D6B5D92FD954F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -373,6 +349,16 @@
 				6558F7D54E096913AD4DAB52 /* Account */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A9D3AD5627EFA7E90065E9DA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DC76AE0D2DDFC6BB1E552044 /* AppDelegate.swift */,
+				281A5240A9CC85357D685541 /* Info.plist */,
+				727E2170346CB6C32DF7EC63 /* TheBean.xcdatamodeld */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		BDD116315B1CFE5A1D2D80BB /* AssetsFonts */ = {
@@ -399,6 +385,7 @@
 			children = (
 				D12FD4EB92EF65E510599E4B /* AppColors.swift */,
 				6DCB650F84C471E1FAFC3BBC /* AppFonts.swift */,
+				F2160E5AC641223ED023CFA6 /* SceneDelegate.swift */,
 				8BF4267BED4C6596D98A57C9 /* Assets.xcassets */,
 				0FD366BD051FEC0CEE550147 /* LaunchScreen.storyboard */,
 				BDD116315B1CFE5A1D2D80BB /* AssetsFonts */,
@@ -434,6 +421,19 @@
 				B4DAED0A818DF2C8371740FA /* TopRecomendationsView.swift */,
 			);
 			path = Recomendations;
+			sourceTree = "<group>";
+		};
+		E5DACC2E159470D8D3016DAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1ED6D419B1CA6A26A09C942 /* Pods-TheBean.debug.xcconfig */,
+				A8EFF6C1FB9406FD9BA782BD /* Pods-TheBean.release.xcconfig */,
+				25C8F8E8CD87E43DF9F11D11 /* Pods-TheBean-TheBeanUITests.debug.xcconfig */,
+				B5D906FF40B9AF0B5AEA3AEC /* Pods-TheBean-TheBeanUITests.release.xcconfig */,
+				664291FA088F6D227B5F21C7 /* Pods-TheBeanTests.debug.xcconfig */,
+				AAA55802ABBF805483EBFE8F /* Pods-TheBeanTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		E5F47A559258386DB72A9F0A /* Extensions */ = {
@@ -473,10 +473,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC5EA957903A497974E296C8 /* Build configuration list for PBXNativeTarget "TheBeanUITests" */;
 			buildPhases = (
-				592EE7A2A23DD424A1535D17 /* [CP] Check Pods Manifest.lock */,
+				A9BAD47436AF9F1F1B2ED0EE /* [CP] Check Pods Manifest.lock */,
 				B011C94FFA11ED5BD3F9DD15 /* Sources */,
-				629A14651720751923149755 /* Frameworks */,
-				16B35F68BA2DF8DF0A3C55C8 /* [CP] Embed Pods Frameworks */,
+				F2F403E3B4F48D9F8E4CF6FF /* Frameworks */,
+				B1F90A625DBF0ED6287C04C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -491,9 +491,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FCE5B1E211AB0CF04609C34 /* Build configuration list for PBXNativeTarget "TheBeanTests" */;
 			buildPhases = (
-				603FA8344E7FFAB8A4DA6C41 /* [CP] Check Pods Manifest.lock */,
+				EA153D5AA85770E7F7B0A887 /* [CP] Check Pods Manifest.lock */,
 				B0C0F9C91918B1E57B26E524 /* Sources */,
-				8DCA63B2F07EC95C926B3540 /* Frameworks */,
+				B4599E8AD719C16B664B8C12 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -508,11 +508,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2B5AF7FF9E201FBC4DD758C /* Build configuration list for PBXNativeTarget "TheBean" */;
 			buildPhases = (
-				2E4BE8D2E805BD08E7D7807A /* [CP] Check Pods Manifest.lock */,
+				CC8365A6DFB448C8FA23AC94 /* [CP] Check Pods Manifest.lock */,
 				417F7DC13A4FB2771C14F0A9 /* Sources */,
 				5CFA6333FD9E09D7198D2CD3 /* Resources */,
-				DB34367373AD1BDCF58AC8A6 /* Frameworks */,
-				1E89CAB7EB41B9959C43FB86 /* [CP] Embed Pods Frameworks */,
+				72F61438192721FB86881D97 /* Frameworks */,
+				2DEDEC706E93CFF6DB108B17 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -529,7 +529,7 @@
 		E65151ECBEF3BF2A4F511360 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					B0D5CB9E455A8BF210636ABE = {
 						DevelopmentTeam = XHRWYM4T65;
@@ -578,24 +578,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		16B35F68BA2DF8DF0A3C55C8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1E89CAB7EB41B9959C43FB86 /* [CP] Embed Pods Frameworks */ = {
+		2DEDEC706E93CFF6DB108B17 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -612,29 +595,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheBean/Pods-TheBean-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2E4BE8D2E805BD08E7D7807A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TheBean-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		592EE7A2A23DD424A1535D17 /* [CP] Check Pods Manifest.lock */ = {
+		A9BAD47436AF9F1F1B2ED0EE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -656,7 +617,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		603FA8344E7FFAB8A4DA6C41 /* [CP] Check Pods Manifest.lock */ = {
+		B1F90A625DBF0ED6287C04C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC8365A6DFB448C8FA23AC94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheBean-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA153D5AA85770E7F7B0A887 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -801,7 +801,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -865,7 +864,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -920,7 +918,7 @@
 		};
 		4143FB2A76C79C1DD42BAD39 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4AD7894BBDD7C1A341894A9 /* Pods-TheBeanTests.debug.xcconfig */;
+			baseConfigurationReference = 664291FA088F6D227B5F21C7 /* Pods-TheBeanTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -936,12 +934,12 @@
 		};
 		835EF256A72F6730939F8D3A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE401E8970DCAFEC08C67B53 /* Pods-TheBean.debug.xcconfig */;
+			baseConfigurationReference = D1ED6D419B1CA6A26A09C942 /* Pods-TheBean.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = XHRWYM4T65;
-				INFOPLIST_FILE = TheBean/Info.plist;
+				INFOPLIST_FILE = TheBean/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -954,7 +952,7 @@
 		};
 		8EB67A4AE54C200F73FAFB81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 950CEC97294DAE9731007AEF /* Pods-TheBean-TheBeanUITests.release.xcconfig */;
+			baseConfigurationReference = B5D906FF40B9AF0B5AEA3AEC /* Pods-TheBean-TheBeanUITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -970,12 +968,12 @@
 		};
 		9D81175F41678847CDF6E8F0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE58BF522B7EFD083E6B2BC7 /* Pods-TheBean.release.xcconfig */;
+			baseConfigurationReference = A8EFF6C1FB9406FD9BA782BD /* Pods-TheBean.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = XHRWYM4T65;
-				INFOPLIST_FILE = TheBean/Info.plist;
+				INFOPLIST_FILE = TheBean/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -988,7 +986,7 @@
 		};
 		BF6619C4CE632D16DEFD2377 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 159479AFDE4DB83EC14F6C46 /* Pods-TheBean-TheBeanUITests.debug.xcconfig */;
+			baseConfigurationReference = 25C8F8E8CD87E43DF9F11D11 /* Pods-TheBean-TheBeanUITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1004,7 +1002,7 @@
 		};
 		CB0A428FC3DA6D19C00F0052 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85D147C7EB96887E47094A97 /* Pods-TheBeanTests.release.xcconfig */;
+			baseConfigurationReference = AAA55802ABBF805483EBFE8F /* Pods-TheBeanTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				LD_RUNPATH_SEARCH_PATHS = (

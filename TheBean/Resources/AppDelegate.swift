@@ -31,11 +31,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
         let container = NSPersistentCloudKitContainer(name: "TheBean")
-        container.loadPersistentStores(completionHandler: { (_, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+            
+        // Create a store description for a local store
+        let localStoreLocation = URL(fileURLWithPath: "/path/to/local.store")
+        let localStoreDescription =
+            NSPersistentStoreDescription(url: localStoreLocation)
+        localStoreDescription.configuration = "Local"
+        
+        // Create a store description for a CloudKit-backed local store
+        let cloudStoreLocation = URL(fileURLWithPath: "/path/to/cloud.store")
+        let cloudStoreDescription =
+            NSPersistentStoreDescription(url: cloudStoreLocation)
+        cloudStoreDescription.configuration = "Cloud"
+
+        // Set the container options on the cloud store
+        cloudStoreDescription.cloudKitContainerOptions =
+            NSPersistentCloudKitContainerOptions(
+                containerIdentifier: "com.my.container")
+        
+        // Update the container's list of store descriptions
+        container.persistentStoreDescriptions = [
+            cloudStoreDescription,
+            localStoreDescription
+        ]
+        
+        // Load both stores
+        container.loadPersistentStores { storeDescription, error in
+            guard error == nil else {
+                fatalError("Could not load persistent stores. \(error!)")
             }
-        })
+        }
+        
+        return container
         return container
     }()
 
