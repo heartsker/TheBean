@@ -271,13 +271,9 @@
 		A98B33D627AD9BD200EFA685 /* TheBean */ = {
 			isa = PBXGroup;
 			children = (
+				A99C0D6027F06F0A00692C8E /* Resources */,
 				D3A5221F27E86F560084879D /* Localization */,
 				A96F5EB327ED254A00A270B8 /* Extensions */,
-				D3A5220D27E86C280084879D /* Resources */,
-				A98B33E827AD9BD300EFA685 /* Info.plist */,
-				A98B33E027AD9BD200EFA685 /* TheBean.xcdatamodeld */,
-				A98B33D727AD9BD200EFA685 /* AppDelegate.swift */,
-				A98B33D927AD9BD200EFA685 /* SceneDelegate.swift */,
 				A98B340F27AD9C9200EFA685 /* UI */,
 				A98B340A27AD9C7A00EFA685 /* Model */,
 			);
@@ -315,12 +311,6 @@
 		A98B340F27AD9C9200EFA685 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A98B341527AD9C9200EFA685 /* LaunchScreen.storyboard */,
-				A98B341427AD9C9200EFA685 /* Assets.xcassets */,
-				A9AEDE4D27B7AFF500CCD338 /* AppColors.swift */,
-				A9BD388A27EDBD9B00794F3B /* AppImages.swift */,
-				C7A2F2A027B7B45D003CFB27 /* AppFonts.swift */,
-				A9074BA727B94F9900BFF644 /* AssetsFonts */,
 				C78BAE9327B648D200CEB291 /* Extensions */,
 				A98EFE6127E6537C00468AA9 /* ViewControllers */,
 				A98EFE6227E653A100468AA9 /* Views */,
@@ -389,6 +379,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A99C0D6027F06F0A00692C8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A98B33E027AD9BD200EFA685 /* TheBean.xcdatamodeld */,
+				A98B341427AD9C9200EFA685 /* Assets.xcassets */,
+				A98B33D927AD9BD200EFA685 /* SceneDelegate.swift */,
+				C7A2F2A027B7B45D003CFB27 /* AppFonts.swift */,
+				A9AEDE4D27B7AFF500CCD338 /* AppColors.swift */,
+				A9074BA727B94F9900BFF644 /* AssetsFonts */,
+				A9BD388A27EDBD9B00794F3B /* AppImages.swift */,
+				A98B341527AD9C9200EFA685 /* LaunchScreen.storyboard */,
+				A98B33D727AD9BD200EFA685 /* AppDelegate.swift */,
+				A98B33E827AD9BD300EFA685 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A9DC1E3327DDE5AC00CE6078 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,14 +449,6 @@
 			path = GlobalStatistics;
 			sourceTree = "<group>";
 		};
-		D3A5220D27E86C280084879D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D3A5222027E86F6E0084879D /* Constants */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		D3A5221F27E86F560084879D /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,13 +456,6 @@
 				A9546D8627ED19C800370F99 /* Localizable.strings */,
 			);
 			path = Localization;
-			sourceTree = "<group>";
-		};
-		D3A5222027E86F6E0084879D /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -925,7 +917,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XHRWYM4T65;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TheBean/Info.plist;
+				INFOPLIST_FILE = TheBean/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -954,7 +946,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XHRWYM4T65;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TheBean/Info.plist;
+				INFOPLIST_FILE = TheBean/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

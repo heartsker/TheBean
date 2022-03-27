@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-TheBean-TheBeanUITests/Pods-TheBean-TheBeanUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/SnapKit-framework/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
