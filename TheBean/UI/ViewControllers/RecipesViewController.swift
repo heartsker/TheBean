@@ -11,9 +11,14 @@ class RecipesViewController: UIViewController, IBaseView {
 
     // MARK: - Properties
     private lazy var button: UIButton = {
-        let button = UIButton(text: "That is recipe", color: .materialHeavy, font: .bold)
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
+        let button = UIButton(text: "That is recipe", color: .materialHeavy, font: .bold(30))
         button.addTarget(self, action: #selector(buttonClick(sender:)), for: .touchUpInside)
         return button
+
     }()
 
     // MARK: - Methods

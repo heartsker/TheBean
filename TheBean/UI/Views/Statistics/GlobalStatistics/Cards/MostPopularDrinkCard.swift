@@ -65,7 +65,7 @@ class MostPopularDrinkCard: UIStackView, ICardRepresentable {
         label.snp.makeConstraints { make in
             make.left.equalTo(imageView.snp.right).offset(14)
             make.right.equalToSuperview().inset(18)
-            make.goldenRatio(from: snp.top, in: .Y, size: 192, bigger: true)
+            make.goldenRatio(from: snp.top, in: .Y, size: 192)
         }
     }
 }

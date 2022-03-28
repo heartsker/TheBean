@@ -5,6 +5,7 @@ BLUE := $(shell tput -Txterm setaf 4)
 MAGENTA := $(shell tput -Txterm setaf 5)
 WHITE := $(shell tput -Txterm setaf 7)
 RESET := $(shell tput -Txterm sgr0)
+BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 
 # Show help
 help:
@@ -26,6 +27,9 @@ help:
 # run
 	@echo '	${BLUE}Init project and open workspace${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}run${RESET}'
+# tic
+	@echo '	${BLUE}Create new ticket branch${RESET}:'
+	@echo '		${RED}make${RESET} ${GREEN}tic${RESET} ${YELLOW}t=<TICKET_NUMBER>${RESET}'
 # clean
 	@echo '	${BLUE}Clean DerivedData directory${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}clean${RESET}'
@@ -47,7 +51,7 @@ init:
 # Run linter check and fix
 lint:
 	Pods/Swiftlint/swiftlint --fix
-	@echo '${RED}Linter:${RESET}'
+	@echo '${YELLOW}Linter:${RESET}'
 	Pods/Swiftlint/swiftlint
 
 # Open work in XCode
@@ -59,11 +63,12 @@ run:
 	make init
 	make open
 
+# Create new ticket branch
 tic:
 	git fetch
 	git checkout dev
 	git pull
-	git checkout -b TIC-$t
+	git checkout -b TIC-$t || git checkout TIC-$t
 
 # Clean DerivedData directory
 clean:
@@ -77,6 +82,10 @@ pods:
 # Make a commit and push to the origin
 git:
 	make lint
-	git add .
-	git commit -m "$t" -m "$b"
-	git push --set-upstream origin
+	@echo '${YELLOW}Adding files:${RESET}'
+	git add . || (echo '${RED}Adding error${RESET}' && exit 1)
+	@echo '${YELLOW}Committing:${RESET}'
+	git commit -m "$t" -m "$b" || (echo '${RED}Committing error${RESET}' && exit 1)
+	@echo '${YELLOW}Pushing to origin:${RESET}'
+	git push --set-upstream origin $(BRANCH) || (echo '${RED}Pushing error${RESET}' && exit 1)
+	@echo '${GREEN}Successfully!${RESET}'
