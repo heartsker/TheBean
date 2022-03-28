@@ -81,7 +81,7 @@ git:
 	@echo '${YELLOW}Adding files:${RESET}'
 	git add . || (echo '${RED}Adding error${RESET}' && exit 1)
 	@echo '${YELLOW}Committing:${RESET}'
-	git commit -m "$t" -m "$b" || echo '${RED}Committing error${RESET}' && exit 1
+	git commit -m "$t" -m "$b" || (echo '${RED}Committing error${RESET}' && exit 1)
 	@echo '${YELLOW}Pushing to origin:${RESET}'
-	git push --set-upstream origin $(BRANCH)  || echo '${RED}Pushing error${RESET}' && exit 1
+	git push --set-upstream origin $(BRANCH) || (echo '${RED}Pushing error${RESET}' && exit 1)
 	@echo '${GREEN}Successfully!${RESET}'
