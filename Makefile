@@ -48,7 +48,7 @@ init:
 # Run linter check and fix
 lint:
 	Pods/Swiftlint/swiftlint --fix
-	@echo '${GREEN}Linter:${RESET}'
+	@echo '${YELLOW}Linter:${RESET}'
 	Pods/Swiftlint/swiftlint
 
 # Open work in XCode
@@ -78,9 +78,10 @@ pods:
 # Make a commit and push to the origin
 git:
 	make lint
-	@echo '${GREEN}Adding files:${RESET}'
-	git add .
-	@echo '${GREEN}Committing:${RESET}'
-	git commit -m "$t" -m "$b"
-	@echo '${GREEN}Pushing to origin:${RESET}'
-	git push --set-upstream origin $(BRANCH)
+	@echo '${YELLOW}Adding files:${RESET}'
+	git add . || (echo '${RED}Adding error${RESET}' && exit 1)
+	@echo '${YELLOW}Committing:${RESET}'
+	git commit -m "$t" -m "$b" || echo '${RED}Committing error${RESET}' && exit 1
+	@echo '${YELLOW}Pushing to origin:${RESET}'
+	git push --set-upstream origin $(BRANCH)  || echo '${RED}Pushing error${RESET}' && exit 1
+	@echo '${GREEN}Successfully!${RESET}'
