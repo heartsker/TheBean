@@ -27,6 +27,9 @@ help:
 # run
 	@echo '	${BLUE}Init project and open workspace${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}run${RESET}'
+# tic
+	@echo '	${BLUE}Create new ticket branch${RESET}:'
+	@echo '		${RED}make${RESET} ${GREEN}tic${RESET} ${YELLOW}t=<TICKET_NUMBER>${RESET}'
 # clean
 	@echo '	${BLUE}Clean DerivedData directory${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}clean${RESET}'
@@ -60,6 +63,7 @@ run:
 	make init
 	make open
 
+# Create new ticket branch
 tic:
 	git fetch
 	git checkout dev
