@@ -63,7 +63,7 @@ tic:
 	git fetch
 	git checkout dev
 	git pull
-	git checkout -b TIC-$t
+	git checkout -b TIC-$t || git checkout TIC-$t
 
 # Clean DerivedData directory
 clean:
