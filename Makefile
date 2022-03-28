@@ -29,7 +29,9 @@ help:
 # clean
 	@echo '	${BLUE}Clean DerivedData directory${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}clean${RESET}'
-
+# pods
+	@echo '	${BLUE}Install and update pods${RESET}:'
+	@echo '		${RED}make${RESET} ${GREEN}pods${RESET}'
 # git
 	@echo '	${BLUE}Make a commit and push to the origin${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}git${RESET} ${YELLOW}t="text"${RESET} ${MAGENTA}[b="body"]${RESET}'
@@ -60,6 +62,11 @@ run:
 # Clean DerivedData directory
 clean:
 	rm -rf ~/Library/Developer/Xcode/DerivedData/*
+	
+# Install and update pods
+pods:
+	pod install
+	pod update
 	
 # Make a commit and push to the origin
 git:
