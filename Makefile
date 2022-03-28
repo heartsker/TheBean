@@ -26,6 +26,10 @@ help:
 # run
 	@echo '	${BLUE}Init project and open workspace${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}run${RESET}'
+# clean
+	@echo '	${BLUE}Clean DerivedData directory${RESET}:'
+	@echo '		${RED}make${RESET} ${GREEN}clean${RESET}'
+
 # git
 	@echo '	${BLUE}Make a commit and push to the origin${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}git${RESET} ${YELLOW}t="text"${RESET} ${MAGENTA}[b="body"]${RESET}'
@@ -53,6 +57,10 @@ run:
 	make init
 	make open
 
+# Clean DerivedData directory
+clean:
+	rm -rf ~/Library/Developer/Xcode/DerivedData/*
+	
 # Make a commit and push to the origin
 git:
 	make lint
