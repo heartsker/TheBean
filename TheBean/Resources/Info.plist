@@ -12,10 +12,10 @@
 	<string>1.0</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Muller-Trial-Light.ttf</string>
-		<string>Muller-Trial-Regular.ttf</string>
-		<string>Muller-Trial-Medium.ttf</string>
-		<string>Muller-Trial-Bold.ttf</string>
+		<string>MullerLight.ttf</string>
+		<string>MullerRegular.ttf</string>
+		<string>MullerMedium.ttf</string>
+		<string>MullerBold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

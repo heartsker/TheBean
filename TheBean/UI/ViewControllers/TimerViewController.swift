@@ -10,7 +10,7 @@ import UIKit
 class TimerViewController: UIViewController, IBaseView {
     // MARK: - Properties
     private lazy var label: UILabel = {
-        UILabel(text: "That is timer", color: .materialHeavy, font: .bold)
+        UILabel(text: "That is timer", color: .materialHeavy, font: .bold(30))
     }()
 
     // MARK: - Initialization
