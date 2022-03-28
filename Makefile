@@ -53,6 +53,12 @@ run:
 	make init
 	make open
 
+tic:
+	git fetch
+	git checkout dev
+	git pull
+	git checkout -b TIC-$t
+
 # Make a commit and push to the origin
 git:
 	make lint
