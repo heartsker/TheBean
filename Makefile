@@ -80,4 +80,4 @@ git:
 	make lint
 	git add .
 	git commit -m "$t" -m "$b"
-	git push --set-upstream origin $BRANCH
+	git push --set-upstream origin $(BRANCH)
