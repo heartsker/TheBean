@@ -15,6 +15,11 @@ targets:
       testTargets:
       - TheBeanTests
       - TheBeanUITests
+    postCompileScripts:
+      - script: ${PODS_ROOT}/Swiftlint/swiftlint --fix
+        name: SwiftlintFix
+      - script: ${PODS_ROOT}/Swiftlint/swiftlint
+        name: Swiftlint
   TheBeanTests:
     type: bundle.unit-test
     platform: iOS
