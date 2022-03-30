@@ -7,7 +7,7 @@
 # Документация - TheBean
 ## Локализация
 
-(Интерфейс)[https://github.com/Nephew-Ustas/TheBean/blob/11cbecabf6beee338b9b0e12d3f28feb8a37a52d/TheBean/Localization/ILocalizable.swift#L10] локализации - `ILocalizable`.
+[Интерфейс](https://github.com/Nephew-Ustas/TheBean/blob/11cbecabf6beee338b9b0e12d3f28feb8a37a52d/TheBean/Localization/ILocalizable.swift#L10) локализации - `ILocalizable`.
 
 Чтобы добавить новый сервис локализации, необходимо исполнить требования `ILocalizable` и добавить требуемые строки:
 
