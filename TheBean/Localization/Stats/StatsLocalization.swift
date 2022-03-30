@@ -8,7 +8,7 @@
 import Foundation
 
 class StatsLocalization: ILocalizable {
-     static let table: String = "Statistics"
+     static let table: String = "Stats"
 
      static let personalRecomendations = StatsLocalization.localize("personal.recomendations")
 
