@@ -121,10 +121,17 @@ pods:
 # Make a commit and push to the origin
 git:
 	make lint
+
 	@echo '${YELLOW}Adding files:${RESET}'
 	git add . || (echo '${RED}Failed to add files${RESET}' && exit 1)
+	@echo '${GREEN}Files added successfully${RESET}'
+
 	@echo '${YELLOW}Committing:${RESET}'
 	git commit -m "$t" -m "$b" || (echo '${RED}Failed to commit${RESET}' && exit 1)
+	@echo '${GREEN}Changes commiteted successfully${RESET}'
+
 	@echo '${YELLOW}Pushing to origin:${RESET}'
 	git push --set-upstream origin $(BRANCH) || (echo '${RED}Failed to push${RESET}' && exit 1)
+	@echo '${GREEN}Changes pushed successfully${RESET}'
+	
 	@echo '${GREEN}Successfully!${RESET}'
