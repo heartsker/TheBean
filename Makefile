@@ -6,6 +6,7 @@ MAGENTA := $(shell tput -Txterm setaf 5)
 WHITE := $(shell tput -Txterm setaf 7)
 RESET := $(shell tput -Txterm sgr0)
 BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+PROJECT := 'TheBean'
 
 # Show help
 help:
@@ -22,7 +23,7 @@ help:
 	@echo '	${BLUE}Run linter check and fix${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}lint${RESET}'
 # open
-	@echo '	${BLUE}Open work in XCode${RESET}:'
+	@echo '	${BLUE}Open workspace in XCode${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}open${RESET}'
 # run
 	@echo '	${BLUE}Init project and open workspace${RESET}:'
@@ -42,21 +43,39 @@ help:
 
 # Initialize the project
 init:
-	brew ls --versions xcodegen || brew install xcodegen
-	xcodegen
-	pod install
-	pod update
+	@echo '${YELLOW}Initializing $(PROJECT) project:${RESET}'
+
+	@echo '${YELLOW}Installing xcodegen:${RESET}'
+	brew ls --versions xcodegen || brew install xcodegen || (echo '${RED}Failed to install xcodegen${RESET}' && exit 1)
+	@echo '${GREEN}xcodegen installed successfully${RESET}'
+
+	@echo '${YELLOW}Executing xcodegen:${RESET}'
+	xcodegen || (echo '${RED}Failed to run xcodegen${RESET}' && exit 1)
+	@echo '${GREEN}xcodegen executed successfully${RESET}'
+
+	make pods
+
 	make lint
+
+	@echo '${GREEN}Project $(PROJECT) initialized successfully${RESET}'
 
 # Run linter check and fix
 lint:
-	Pods/Swiftlint/swiftlint --fix
-	@echo '${YELLOW}Linter:${RESET}'
-	Pods/Swiftlint/swiftlint
+	@echo '${YELLOW}Running Linter:${RESET}'
 
-# Open work in XCode
+	@echo '${YELLOW}Running swiftlint fix:${RESET}'
+	Pods/Swiftlint/swiftlint --fix || (echo '${RED}Failed to  run swiftlint fix${RESET}' && exit 1)
+	@echo '${GREEN}Swiftlint fix executed successfully${RESET}'
+
+	@echo '${YELLOW}Running swiftlint:${RESET}'
+	Pods/Swiftlint/swiftlint || (echo '${RED}Failed to run swiftlint${RESET}' && exit 1)
+	@echo '${GREEN}Swiftlint executed successfully${RESET}'
+
+# Open workspace in XCode
 open:
-	open TheBean.xcworkspace
+	@echo '${YELLOW}Opening workspace for $(PROJECT):${RESET}'
+	open $(PROJECT).xcworkspace || (echo '${RED}Failed to open $(PROJECT) workspace${RESET}' && exit 1)
+	@echo '${GREEN}$(PROJECT) workspace opened successfully${RESET}'
 
 # Init project and open workspace
 run:
@@ -65,27 +84,47 @@ run:
 
 # Create new ticket branch
 tic:
-	git fetch
-	git checkout dev
-	git pull
-	git checkout -b TIC-$t || git checkout TIC-$t
+	@echo '${YELLOW}Creating new branch [TIC-$t]:${RESET}'
+
+	@echo '${YELLOW}Fetching:${RESET}'
+	git fetch || (echo '${RED}Failed to fetch${RESET}' && exit 1)
+	@echo '${GREEN}Fetched successfully${RESET}'
+
+	@echo '${YELLOW}Checking out developer branch:${RESET}'
+	git checkout dev || (echo '${RED}Failed to checkout [dev]${RESET}' && exit 1)
+	@echo '${GREEN}Developer branch checked out successfully${RESET}'
+
+	@echo '${YELLOW}Pulling updates:${RESET}'
+	git pull || (echo '${RED}Failed to pull [dev]${RESET}' && exit 1)
+	@echo '${GREEN}Updates pulled successfully${RESET}'
+
+	@echo '${YELLOW}Checking out new  ticket branch [TIC-$t]:${RESET}'
+	git checkout -b TIC-$t || (git checkout TIC-$t && git pull) || (echo '${RED}Failed to checkout new branch [TIC-$t]${RESET}' && exit 1)
+	@echo '${GREEN}New branch [TIC-$t] created successfully${RESET}'
 
 # Clean DerivedData directory
 clean:
-	rm -rf ~/Library/Developer/Xcode/DerivedData/*
-	
+	@echo '${YELLOW}Cleaning cache:${RESET}'
+	rm -rf ~/Library/Developer/Xcode/DerivedData/* || (echo '${RED}Failed to clean cache${RESET}' && exit 1)
+	@echo '${GREEN}Cache cleaned successfully${RESET}'
+
 # Install and update pods
 pods:
-	pod install
-	pod update
+	@echo '${YELLOW}Installing Pods:${RESET}'
+	pod install || (echo '${RED}Failed to install Pods${RESET}' && exit 1)
+	@echo '${GREEN}Pods installed successfully${RESET}'
+
+	@echo '${YELLOW}Updating pods:${RESET}'
+	pod update || (echo '${RED}Failed to update Pods${RESET}' && exit 1)
+	@echo '${GREEN}Pods updated successfully${RESET}'
 	
 # Make a commit and push to the origin
 git:
 	make lint
 	@echo '${YELLOW}Adding files:${RESET}'
-	git add . || (echo '${RED}Adding error${RESET}' && exit 1)
+	git add . || (echo '${RED}Failed to add files${RESET}' && exit 1)
 	@echo '${YELLOW}Committing:${RESET}'
-	git commit -m "$t" -m "$b" || (echo '${RED}Committing error${RESET}' && exit 1)
+	git commit -m "$t" -m "$b" || (echo '${RED}Failed to commit${RESET}' && exit 1)
 	@echo '${YELLOW}Pushing to origin:${RESET}'
-	git push --set-upstream origin $(BRANCH) || (echo '${RED}Pushing error${RESET}' && exit 1)
+	git push --set-upstream origin $(BRANCH) || (echo '${RED}Failed to push${RESET}' && exit 1)
 	@echo '${GREEN}Successfully!${RESET}'
