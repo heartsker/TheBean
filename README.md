@@ -5,6 +5,9 @@
 > Love coffee? We got you!
 
 # Документация - TheBean
+## Организация
+Информацию про внутреннюю инфраструктуру и организацию Nephew-Ustas можно найти [тут](https://github.com/Nephew-Ustas/Nephew-Ustas#readme).
+
 ## Локализация
 
 [Интерфейс](https://github.com/Nephew-Ustas/TheBean/blob/11cbecabf6beee338b9b0e12d3f28feb8a37a52d/TheBean/Localization/ILocalizable.swift#L10) локализации - `ILocalizable`.

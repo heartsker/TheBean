@@ -63,8 +63,12 @@ init:
 lint:
 	@echo '${YELLOW}Running Linter:${RESET}'
 
+	@echo '${YELLOW}Updating and installing swiftlint:${RESET}'
+	brew upgrade swiftlint || brew install swiftlint || (echo '${RED}Failed installing swiftlint${RESET}' && exit 1)
+	@echo '${GREEN}Swiftlint updated successfully${RESET}'
+
 	@echo '${YELLOW}Running swiftlint fix:${RESET}'
-	Pods/Swiftlint/swiftlint --fix || (echo '${RED}Failed to  run swiftlint fix${RESET}' && exit 1)
+	Pods/Swiftlint/swiftlint --fix || (echo '${RED}Failed to run swiftlint fix${RESET}' && exit 1)
 	@echo '${GREEN}Swiftlint fix executed successfully${RESET}'
 
 	@echo '${YELLOW}Running swiftlint:${RESET}'
