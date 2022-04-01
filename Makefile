@@ -45,8 +45,15 @@ help:
 init:
 	@echo '${YELLOW}Initializing $(PROJECT) project:${RESET}'
 
+	@echo '${YELLOW}Updating environment variables:${RESET}'
+	unset $$CURRENT_PROJECT
+	export CURRENT_PROJECT=$(PROJECT) || (echo '${RED}Failed to update environment variables${RESET}' && exit 1)
+	echo $$CURRENT_PROJECT
+	@echo '${GREEN}Environment variables updated successfully${RESET}'
+
 	@echo '${YELLOW}Installing xcodegen:${RESET}'
 	brew ls --versions xcodegen || brew install xcodegen || (echo '${RED}Failed to install xcodegen${RESET}' && exit 1)
+	unset $$CURRENT_PROJECT
 	@echo '${GREEN}xcodegen installed successfully${RESET}'
 
 	@echo '${YELLOW}Executing xcodegen:${RESET}'
