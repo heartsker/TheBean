@@ -6,7 +6,7 @@ MAGENTA := $(shell tput -Txterm setaf 5)
 WHITE := $(shell tput -Txterm setaf 7)
 RESET := $(shell tput -Txterm sgr0)
 BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
-PROJECT := 'TheBean'
+PROJECT := TheBean
 
 # Show help
 help:
@@ -34,9 +34,9 @@ help:
 # clean
 	@echo '	${BLUE}Clean DerivedData directory${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}clean${RESET}'
-# pods
+# pod
 	@echo '	${BLUE}Install and update pods${RESET}:'
-	@echo '		${RED}make${RESET} ${GREEN}pods${RESET}'
+	@echo '		${RED}make${RESET} ${GREEN}pod${RESET}'
 # git
 	@echo '	${BLUE}Make a commit and push to the origin${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}git${RESET} ${YELLOW}t="text"${RESET} ${MAGENTA}[b="body"]${RESET}'
@@ -45,15 +45,22 @@ help:
 init:
 	@echo '${YELLOW}Initializing $(PROJECT) project:${RESET}'
 
+	@echo '${YELLOW}Updating environment variables:${RESET}'
+	unset $$CURRENT_PROJECT
+	export CURRENT_PROJECT=$(PROJECT) || (echo '${RED}Failed to update environment variables${RESET}' && exit 1)
+	echo $$CURRENT_PROJECT
+	@echo '${GREEN}Environment variables updated successfully${RESET}'
+
 	@echo '${YELLOW}Installing xcodegen:${RESET}'
 	brew ls --versions xcodegen || brew install xcodegen || (echo '${RED}Failed to install xcodegen${RESET}' && exit 1)
+	unset $$CURRENT_PROJECT
 	@echo '${GREEN}xcodegen installed successfully${RESET}'
 
 	@echo '${YELLOW}Executing xcodegen:${RESET}'
 	xcodegen || (echo '${RED}Failed to run xcodegen${RESET}' && exit 1)
 	@echo '${GREEN}xcodegen executed successfully${RESET}'
 
-	make pods
+	make pod
 
 	make lint
 
@@ -63,12 +70,16 @@ init:
 lint:
 	@echo '${YELLOW}Running Linter:${RESET}'
 
+	@echo '${YELLOW}Updating swiftlint:${RESET}'
+	brew upgrade swiftlint || brew install swiftlint || (echo '${RED}Failed to install swiftlint${RESET}' && exit 1)
+	@echo '${GREEN}Swiftlint updated successfully${RESET}'
+	
 	@echo '${YELLOW}Running swiftlint fix:${RESET}'
-	Pods/Swiftlint/swiftlint --fix || (echo '${RED}Failed to  run swiftlint fix${RESET}' && exit 1)
+	Pods/SwiftLint/swiftlint --fix || (echo '${RED}Failed to run swiftlint fix${RESET}' && exit 1)
 	@echo '${GREEN}Swiftlint fix executed successfully${RESET}'
 
 	@echo '${YELLOW}Running swiftlint:${RESET}'
-	Pods/Swiftlint/swiftlint || (echo '${RED}Failed to run swiftlint${RESET}' && exit 1)
+	Pods/SwiftLint/swiftlint || (echo '${RED}Failed to run swiftlint${RESET}' && exit 1)
 	@echo '${GREEN}Swiftlint executed successfully${RESET}'
 
 # Open workspace in XCode
@@ -109,7 +120,11 @@ clean:
 	@echo '${GREEN}Cache cleaned successfully${RESET}'
 
 # Install and update pods
-pods:
+pod:
+	@echo '${YELLOW}Updating Cocoapods:${RESET}'
+	brew upgrade cocoapods || brew install cocoapods || (echo '${RED}Failed to install cocoapods${RESET}' && exit 1)
+	@echo '${GREEN}Cocoapods updated successfully${RESET}'
+
 	@echo '${YELLOW}Installing Pods:${RESET}'
 	pod install || (echo '${RED}Failed to install Pods${RESET}' && exit 1)
 	@echo '${GREEN}Pods installed successfully${RESET}'

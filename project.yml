@@ -1,32 +1,32 @@
-name: TheBean
+name: ${CURRENT_PROJECT}
 options:
-  bundleIdPrefix: heartsker
+  bundleIdPrefix: ${BUNDLE_ID_PREFIX}
   deploymentTarget:
     iOS: 13.0
 targets:
-  TheBean:
+  ${CURRENT_PROJECT}:
     type: application
     platform: iOS
     sources: 
-      - path: TheBean
+      - path: ${CURRENT_PROJECT}
     settings:
-      DEVELOPMENT_TEAM: XHRWYM4T65
+      DEVELOPMENT_TEAM: ${DEVELOPMENT_TEAM}
     scheme:
       testTargets:
-      - TheBeanTests
-      - TheBeanUITests
+      - ${CURRENT_PROJECT}Tests
+      - ${CURRENT_PROJECT}UITests
     postCompileScripts:
-      - script: ${PODS_ROOT}/Swiftlint/swiftlint --fix
+      - script: Pods/Swiftlint/swiftlint --fix
         name: SwiftlintFix
-      - script: ${PODS_ROOT}/Swiftlint/swiftlint
+      - script: Pods/Swiftlint/swiftlint
         name: Swiftlint
-  TheBeanTests:
+  ${CURRENT_PROJECT}Tests:
     type: bundle.unit-test
     platform: iOS
     sources:
-      - path: TheBeanTests
-  TheBeanUITests:
+      - path: ${CURRENT_PROJECT}Tests
+  ${CURRENT_PROJECT}UITests:
     type: bundle.unit-test
     platform: iOS
     sources:
-      - path: TheBeanUITests
+      - path: ${CURRENT_PROJECT}UITests
