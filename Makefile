@@ -6,7 +6,7 @@ MAGENTA := $(shell tput -Txterm setaf 5)
 WHITE := $(shell tput -Txterm setaf 7)
 RESET := $(shell tput -Txterm sgr0)
 BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
-PROJECT := TheBean
+export CURRENT_PROJECT = TheBean
 
 # Show help
 help:
@@ -43,16 +43,10 @@ help:
 
 # Initialize the project
 init:
-	@echo '${YELLOW}Initializing $(PROJECT) project:${RESET}'
-
-	@echo '${YELLOW}Updating environment variables:${RESET}'
-	unset $$CURRENT_PROJECT
-	export CURRENT_PROJECT=$(PROJECT) || (echo '${RED}Failed to update environment variables${RESET}' && exit 1)
-	@echo '${GREEN}Environment variables updated successfully${RESET}'
+	@echo '${YELLOW}Initializing $(CURRENT_PROJECT) project:${RESET}'
 
 	@echo '${YELLOW}Installing xcodegen:${RESET}'
 	brew ls --versions xcodegen || brew install xcodegen || (echo '${RED}Failed to install xcodegen${RESET}' && exit 1)
-	unset $$CURRENT_PROJECT
 	@echo '${GREEN}xcodegen installed successfully${RESET}'
 
 	@echo '${YELLOW}Executing xcodegen:${RESET}'
@@ -63,7 +57,7 @@ init:
 
 	make lint
 
-	@echo '${GREEN}Project $(PROJECT) initialized successfully${RESET}'
+	@echo '${GREEN}Project $(CURRENT_PROJECT) initialized successfully${RESET}'
 
 # Run linter check and fix
 lint:
@@ -83,9 +77,9 @@ lint:
 
 # Open workspace in XCode
 open:
-	@echo '${YELLOW}Opening workspace for $(PROJECT):${RESET}'
-	open $(PROJECT).xcworkspace || (echo '${RED}Failed to open $(PROJECT) workspace${RESET}' && exit 1)
-	@echo '${GREEN}$(PROJECT) workspace opened successfully${RESET}'
+	@echo '${YELLOW}Opening workspace for $(CURRENT_PROJECT):${RESET}'
+	open $(CURRENT_PROJECT).xcworkspace || (echo '${RED}Failed to open $(CURRENT_PROJECT) workspace${RESET}' && exit 1)
+	@echo '${GREEN}$(CURRENT_PROJECT) workspace opened successfully${RESET}'
 
 # Init project and open workspace
 run:
