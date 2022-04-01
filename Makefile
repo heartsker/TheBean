@@ -48,7 +48,6 @@ init:
 	@echo '${YELLOW}Updating environment variables:${RESET}'
 	unset $$CURRENT_PROJECT
 	export CURRENT_PROJECT=$(PROJECT) || (echo '${RED}Failed to update environment variables${RESET}' && exit 1)
-	echo $$CURRENT_PROJECT
 	@echo '${GREEN}Environment variables updated successfully${RESET}'
 
 	@echo '${YELLOW}Installing xcodegen:${RESET}'
