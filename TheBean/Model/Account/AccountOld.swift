@@ -1,5 +1,5 @@
 //
-//  Account.swift
+//  AccountOld.swift
 //  TheBean
 //
 //  Created by Daniel Pustotin on 05.02.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class Account {
+final class AccountOld {
     private var _username: String?
     private var _email: String?
     var picture: UIImage?

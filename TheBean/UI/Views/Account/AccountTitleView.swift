@@ -8,13 +8,8 @@
 import UIKit
 
 class AccountTitleView: UIStackView, IBaseView {
-    // MARK: - Properties
-    var account: Account
-
     // MARK: - Initialization
-    // MARK: Initialization
-    init(account: Account) {
-        self.account = account
+    init() {
         super.init(frame: .zero)
         setup()
     }
@@ -35,7 +30,7 @@ class AccountTitleView: UIStackView, IBaseView {
 
     private lazy var nameLabel: UIView = {
         let label = UILabel()
-        label.text = account.username
+        label.text = Account.shared.username
         label.font = .bold(24)
         label.textColor = .materialHeavy
         label.textAlignment = .center
@@ -44,7 +39,7 @@ class AccountTitleView: UIStackView, IBaseView {
 
     private lazy var emailLabel: UIView = {
         let label = UILabel()
-        label.text = account.email
+        label.text = Account.shared.email
         label.font = .light(18)
         label.textColor = .materialMedium
         label.textAlignment = .center

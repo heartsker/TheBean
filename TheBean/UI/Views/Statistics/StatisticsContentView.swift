@@ -8,12 +8,8 @@
 import UIKit
 
 class StatisticsContentView: UIStackView, IBaseView {
-    // MARK: - Properties
-    let account: Account
-
     // MARK: Initialization
-    init(account: Account) {
-        self.account = account
+    init() {
         super.init(frame: .zero)
         setup()
     }
