@@ -8,12 +8,8 @@
 import UIKit
 
 class AccountContentView: UIStackView, IBaseView {
-    // MARK: - Properties
-    let account: Account
-
     // MARK: Initialization
-    init(account: Account) {
-        self.account = account
+    init() {
         super.init(frame: .zero)
         setup()
     }
@@ -24,7 +20,7 @@ class AccountContentView: UIStackView, IBaseView {
 
     // MARK: - Subviews
     private lazy var titleView = {
-        AccountTitleView(account: account)
+        AccountTitleView()
     }()
 
     // MARK: - Setup

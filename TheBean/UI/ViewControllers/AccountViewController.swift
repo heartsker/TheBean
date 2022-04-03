@@ -10,13 +10,12 @@ import UIKit
 class AccountViewController: UIViewController, IBaseView {
     // MARK: - Properties
     private lazy var content: UIView = {
-        AccountContentView(account: Account())
+        AccountContentView()
     }()
 
     // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
     }
 
