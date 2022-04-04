@@ -30,7 +30,8 @@ class RecomendationsView: UIStackView, IBaseView {
         BlockLabel(text: ^StatsLocalization.personalRecomendations)
     }()
 
-    private lazy var topRecomendations = { TopRecomendationsView(recomendations: recomendations)
+    private lazy var topRecomendations = {
+        TopRecomendationsView(recomendations: recomendations)
     }()
 
     // MARK: - Setup
