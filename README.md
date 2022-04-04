@@ -32,3 +32,27 @@
 // App (Russian)
 "name" = "Зе рно";
 ```
+## Combine
+Класс [`Publisher`]() позволяет создавать публикации изменений и подписываться на них.
+
+Чтобы создать публикацию используется метод `publishPost<T>(with:, for:)`.
+
+Для подписки на обновления используется метод `subscribe<T>(_: T, keyPath:, for:)`.
+
+Таким образом, для подписания текста лейбла на обновления имени аккаунта используется следующий код:
+```swift
+let label = UILabel()
+Publisher.subscribe(label, keyPath: \.text, for: .usernamePost)
+```
+
+Для того, чтобы опубликовать изменения имени, можно использовать такой код:
+```swift
+Publisher.publishPost(with: username, for: .usernamePost)
+```
+
+В примерах выше используется
+```swift
+extension Notification.Name {
+    static let usernamePost = Notification.Name("usernamePost")
+}
+```

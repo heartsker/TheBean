@@ -35,7 +35,10 @@ class CoreDataManager {
     static func fetchAccount() throws -> Account {
         var account: Account
         do {
-            account = try managedContext.fetch(Account.fetchRequest()).first!
+            guard let acc = try? managedContext.fetch(Account.fetchRequest()).first else {
+                throw CoreDataError.fetchingError("Account")
+            }
+            account = acc
         } catch {
             throw CoreDataError.fetchingError("Account")
         }

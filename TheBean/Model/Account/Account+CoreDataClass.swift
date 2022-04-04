@@ -11,6 +11,7 @@ import CoreData
 
 @objc(Account)
 public class Account: NSManagedObject {
+    // MARK: - Properties
     static var shared: Account {
         guard let account = try? CoreDataManager.fetchAccount() else {
             let account = Account()
@@ -20,6 +21,28 @@ public class Account: NSManagedObject {
         return account
     }
 
+    var username: String {
+        get {
+            return rowUsername ?? ""
+        }
+        set {
+            rowUsername = newValue
+            Publisher.publishPost(with: username, for: .usernamePost)
+            CoreDataManager.save()
+        }
+    }
+
+    var email: String {
+        get {
+            return rowEmail ?? ""
+        }
+        set {
+            rowEmail = newValue
+            CoreDataManager.save()
+        }
+    }
+
+    // MARK: - Initialization
     convenience init() {
         self.init(context: CoreDataManager.managedContext)
     }
