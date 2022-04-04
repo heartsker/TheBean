@@ -15,9 +15,9 @@ extension Account {
         return NSFetchRequest<Account>(entityName: "Account")
     }
 
-    @NSManaged public var email: String?
-    @NSManaged public var password: String?
-    @NSManaged public var username: String?
+    @NSManaged var rowEmail: String?
+    @NSManaged var rowPassword: String?
+    @NSManaged var rowUsername: String?
 
 }
 
