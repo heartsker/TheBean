@@ -9,7 +9,8 @@ import UIKit
 import SnapKit
 import Combine
 
-class TestVC: UIViewController, IBaseView {
+// MARK: - TestVC
+class TestVC: UIViewController {
     // MARK: - Properties
     lazy private var usernameLabel: UILabel = {
         let label = UILabel(text: Account.shared.username, color: .blue, font: .bold(40))
@@ -33,6 +34,7 @@ class TestVC: UIViewController, IBaseView {
         //        button.backgroundColor = .blue
         return button
     }()
+
     @objc func makeRu() {
         Account.shared.username = "heartsker.ru"
     }
@@ -41,15 +43,22 @@ class TestVC: UIViewController, IBaseView {
         super.viewDidLoad()
         setup()
     }
+}
 
-    // MARK: - Setup
-    func setupSubviews() {
+// MARK: - Setup methods
+extension TestVC {
+    private func setup() {
+        setupSubviews()
+        setupConstraints()
+    }
+
+    private func setupSubviews() {
         view.addSubview(usernameLabel)
         view.addSubview(buttonRu)
         view.addSubview(buttonCom)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         usernameLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.width.equalToSuperview()

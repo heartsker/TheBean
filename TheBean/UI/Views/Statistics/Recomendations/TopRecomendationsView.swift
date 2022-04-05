@@ -8,7 +8,7 @@
 import SnapKit
 import UIKit
 
-class TopRecomendationsView: UIStackView, IBaseView {
+class TopRecomendationsView: UIStackView {
     // MARK: - Properties
     var recomendations: [(text: String, image: UIImage)]
 
@@ -29,18 +29,23 @@ class TopRecomendationsView: UIStackView, IBaseView {
             CoffeeBlockView(text: text, image: image)
         }
     }()
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
+// MARK: - Setup methods
+extension TopRecomendationsView {
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+    }
+
+    private func setupAppearance() {
         axis = .horizontal
         distribution = .equalSpacing
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         for stackView in placesViews {
             addArrangedSubview(stackView)
         }
     }
-
-    func setupConstraints() {}
 }

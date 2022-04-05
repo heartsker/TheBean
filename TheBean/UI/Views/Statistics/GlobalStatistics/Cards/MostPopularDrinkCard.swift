@@ -7,20 +7,17 @@
 
 import UIKit
 
-class MostPopularDrinkCard: UIStackView, ICardRepresentable {
-    // MARK: - Properties
+// MARK: - MostPopularDrinkCard
+class MostPopularDrinkCard: BaseCardView {
+    // MARK: Properties
     let image: UIImage?
     let text: String
 
-    lazy var card: UIView = {
-        self
-    }()
-
-    // MARK: - Initialization
+    // MARK: Initialization
     required init(text: String) {
         self.text = text
         image = UIImage(named: "coffee.barista.hands")
-        super.init(frame: .zero)
+        super.init(backgroundColor: .highlightPrimary)
         setup()
     }
 
@@ -28,7 +25,7 @@ class MostPopularDrinkCard: UIStackView, ICardRepresentable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Subviews
+    // MARK: Subviews
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView(image: image)
         imageView.layer.cornerRadius = 20
@@ -38,23 +35,21 @@ class MostPopularDrinkCard: UIStackView, ICardRepresentable {
     private lazy var label: UILabel = {
         CardLabel(text: text, isWhite: false)
     }()
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
-        backgroundColor = .highlightPrimary
-        layer.cornerRadius = 20
+// MARK: - Setup methods
+extension MostPopularDrinkCard {
+    private func setup() {
+        setupSubviews()
+        setupConstraints()
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         addSubview(imageView)
         addSubview(label)
     }
 
-    func setupConstraints() {
-        snp.makeConstraints { make in
-            make.height.equalTo(192)
-        }
-
+    private func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(18)
             make.centerY.equalToSuperview()

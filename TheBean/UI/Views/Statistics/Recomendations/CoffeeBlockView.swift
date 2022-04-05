@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CoffeeBlockView: UIStackView, IBaseView {
+class CoffeeBlockView: UIStackView {
     // MARK: - Properties
     var text: String
     var image: UIImage
@@ -37,19 +37,27 @@ class CoffeeBlockView: UIStackView, IBaseView {
         label.textAlignment = .center
         return label
     }()
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
+// MARK: - Setup methods
+extension CoffeeBlockView {
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+        setupConstraints()
+    }
+
+    private func setupAppearance() {
         axis = .vertical
         distribution = .equalSpacing
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         addArrangedSubview(imageView)
         addArrangedSubview(labelView)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.width.equalTo(88)
             make.height.equalTo(83)

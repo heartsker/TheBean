@@ -8,14 +8,15 @@
 import UIKit
 import SnapKit
 
-class StatisticsViewController: UIViewController, IBaseView {
-    // MARK: - Initialization
+// MARK: - StatisticsViewController
+class StatisticsViewController: UIViewController {
+    // MARK: Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
 
-    // MARK: - Subviews
+    // MARK: Subviews
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: view.bounds)
         scrollView.backgroundColor = .background
@@ -25,14 +26,21 @@ class StatisticsViewController: UIViewController, IBaseView {
     private lazy var statisticsContentView = {
         StatisticsContentView()
     }()
+}
 
-    // MARK: - Setup
-    func setupSubviews() {
+// MARK: - Setup methods
+extension StatisticsViewController {
+    private func setup() {
+        setupSubviews()
+        setupConstraints()
+    }
+
+    private func setupSubviews() {
         view.addSubview(scrollView)
         scrollView.addSubview(statisticsContentView)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         let insetLeftRight: CGFloat = UIScreen.main.bounds.width * 0.08
 
         statisticsContentView.snp.makeConstraints { make in

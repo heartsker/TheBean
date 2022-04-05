@@ -7,19 +7,27 @@
 
 import UIKit
 
-class AccountViewController: UIViewController, IBaseView {
-    // MARK: - Properties
+// MARK: - AccountViewController
+class AccountViewController: UIViewController {
+    // MARK: Properties
     private lazy var content: UIView = {
         AccountContentView()
     }()
 
-    // MARK: - Initialization
+    // MARK: Initializators
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
+}
 
-    // MARK: - Setup
+// MARK: - Setup methods
+extension AccountViewController {
+    private func setup() {
+        setupSubviews()
+        setupConstraints()
+    }
+
     func setupSubviews() {
         view.addSubview(content)
     }

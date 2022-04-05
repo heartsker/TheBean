@@ -8,7 +8,7 @@
 import UIKit
 
 // TODO: (IC) Add comments
-class CardLabel: UILabel, IBaseView {
+class CardLabel: UILabel {
     let isWhite: Bool
 
     init(text: String, isWhite: Bool) {
@@ -21,14 +21,15 @@ class CardLabel: UILabel, IBaseView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    func setup() {
+// MARK: - Setup methods
+extension CardLabel {
+    private func setup() {
         setupAppearance()
-        setupSubviews()
-        setupConstraints()
     }
 
-    func setupAppearance() {
+    private func setupAppearance() {
         guard let text = super.text else {
             return
         }
@@ -50,8 +51,4 @@ class CardLabel: UILabel, IBaseView {
         numberOfLines = 0
         lineBreakMode = .byClipping
     }
-
-    func setupSubviews() {}
-
-    func setupConstraints() {}
 }

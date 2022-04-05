@@ -7,16 +7,22 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController, IBaseView {
-    // MARK: - Initialization
+// MARK: - MainTabBarController
+class MainTabBarController: UITabBarController {
+    // MARK: Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
     }
+}
 
-    // MARK: - Setup
-    func setupSubviews() {
+// MARK: - Setup methods
+extension MainTabBarController {
+    private func setup() {
+        setupSubviews()
+    }
+
+    private func setupSubviews() {
         let recipesVC = RecipesViewController()
         let statisticsVC = StatisticsViewController()
         let timerVC = TimerViewController()
@@ -44,6 +50,4 @@ class MainTabBarController: UITabBarController, IBaseView {
         // MARK: Add Navigation Controllers to the main TabBar here:
         viewControllers = [testNVC, recipesNVC, statisticsNVC, timerNVC, accountNVC]
     }
-
-    func setupConstraints() {}
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AvatarImageView: UIImageView, IBaseView {
+class AvatarImageView: UIImageView {
     // MARK: - Properties
     var avatarImage: UIImage
 
@@ -21,15 +21,17 @@ class AvatarImageView: UIImageView, IBaseView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Setup()
-    func setupAppearance() {
+// MARK: - Setup methods
+extension AvatarImageView {
+    private func setup() {
+        setupAppearance()
+    }
+
+    private func setupAppearance() {
         self.image = self.avatarImage
         self.clipsToBounds = true
         self.contentMode = .scaleAspectFit
     }
-
-    func setupSubviews() {}
-
-    func setupConstraints() {}
 }

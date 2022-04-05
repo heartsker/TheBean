@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecomendationsView: UIStackView, IBaseView {
+class RecomendationsView: UIStackView {
     // MARK: Properties
     let recomendations = [
         (^CoffeeLocalization.latte, UIImage(named: "coffee.latte")!),
@@ -33,8 +33,16 @@ class RecomendationsView: UIStackView, IBaseView {
     private lazy var topRecomendations = {
         TopRecomendationsView(recomendations: recomendations)
     }()
+}
 
-    // MARK: - Setup
+// MARK: - Setup methods
+extension RecomendationsView {
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+        setupConstraints()
+    }
+
     func setupAppearance() {
         axis = .vertical
         distribution = .equalSpacing

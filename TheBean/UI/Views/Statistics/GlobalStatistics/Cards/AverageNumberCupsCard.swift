@@ -7,23 +7,19 @@
 
 import UIKit
 
-class AverageNumberCupsCard: UIStackView, ICardRepresentable {
-    // MARK: - Properties
+// MARK: - AverageNumberCupsCard
+class AverageNumberCupsCard: BaseCardView {
+    // MARK: Properties
     let cupImage: UIImage?
     let numberOfCups: Int
     let text: String
-    let cornerRadius: CGFloat = 20
 
-    lazy var card: UIView = {
-        self
-    }()
-
-    // MARK: - Initialization
+    // MARK: Initialization
     required init(text: String, numberOfCups: Int) {
         self.text = text
         self.numberOfCups = numberOfCups
         cupImage = UIImage(named: "coffee.cup")
-        super.init(frame: .zero)
+        super.init(backgroundColor: .materialHeavy)
         setup()
     }
 
@@ -31,43 +27,42 @@ class AverageNumberCupsCard: UIStackView, ICardRepresentable {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Subviews
     private lazy var label: UILabel = {
         CardLabel(text: text, isWhite: true)
     }()
 
     private lazy var secondBackground: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = cornerRadius
+        view.layer.cornerRadius = 20
         view.backgroundColor = .hightlightThirdly
         return view
     }()
 
-    private lazy var cupsStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.distribution = .equalSpacing
-        for _ in stride(from: 0, to: numberOfCups, by: 1) {
+//    private lazy var cupsStackView: UIStackView = {
+//        let stack = UIStackView()
+//        stack.axis = .horizontal
+//        stack.distribution = .equalSpacing
+//        for _ in stride(from: 0, to: numberOfCups, by: 1) {
+//
+//        }
+//        return stack
+//    }()
+}
 
-        }
-        return stack
-    }()
-
-    // MARK: - Setup
-    func setupAppearance() {
-        backgroundColor = .materialHeavy
-        layer.cornerRadius = cornerRadius
+// MARK: - Setup methods
+extension AverageNumberCupsCard {
+    private func setup() {
+        setupSubviews()
+        setupConstraints()
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         addSubview(secondBackground)
         addSubview(label)
     }
 
-    func setupConstraints() {
-        snp.makeConstraints { make in
-            make.height.equalTo(snp.width).multipliedBy(0.6095)
-        }
-
+    private func setupConstraints() {
         secondBackground.snp.makeConstraints { make in
             make.height.equalToSuperview().multipliedBy(0.3906)
             make.leading.trailing.equalToSuperview()
