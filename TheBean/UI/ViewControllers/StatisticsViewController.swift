@@ -33,10 +33,11 @@ class StatisticsViewController: UIViewController, IBaseView {
     }
 
     func setupConstraints() {
+        let insetLeftRight: CGFloat = UIScreen.main.bounds.width * 0.08
 
         statisticsContentView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(20)
-            make.width.equalToSuperview().inset(20)
+            make.edges.equalToSuperview().inset(insetLeftRight)
+            make.width.equalToSuperview().inset(insetLeftRight)
         }
 
         scrollView.snp.makeConstraints { make in
