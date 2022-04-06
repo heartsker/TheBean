@@ -7,14 +7,14 @@
 
 import UIKit
 
-// MARK: - AverageNumberCupsCard
+// MARK: AverageNumberCupsCard
 class AverageNumberCupsCard: BaseCardView {
     // MARK: Properties
     let cupImage: UIImage?
     let numberOfCups: Int
     let text: String
 
-    // MARK: Initialization
+    // MARK: - Initializers
     required init(text: String, numberOfCups: Int) {
         self.text = text
         self.numberOfCups = numberOfCups
@@ -39,18 +39,20 @@ class AverageNumberCupsCard: BaseCardView {
         return view
     }()
 
-//    private lazy var cupsStackView: UIStackView = {
-//        let stack = UIStackView()
-//        stack.axis = .horizontal
-//        stack.distribution = .equalSpacing
-//        for _ in stride(from: 0, to: numberOfCups, by: 1) {
-//
-//        }
-//        return stack
-//    }()
+    private lazy var cupsStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.distribution = .fillProportionally
+        for _ in stride(from: 0, to: numberOfCups, by: 1) {
+            let imageView = UIImageView(image: cupImage)
+            imageView.contentMode = .scaleAspectFit
+            stack.addArrangedSubview(imageView)
+        }
+        return stack
+    }()
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension AverageNumberCupsCard {
     private func setup() {
         setupSubviews()
@@ -60,6 +62,7 @@ extension AverageNumberCupsCard {
     private func setupSubviews() {
         addSubview(secondBackground)
         addSubview(label)
+        addSubview(cupsStackView)
     }
 
     private func setupConstraints() {
@@ -74,5 +77,11 @@ extension AverageNumberCupsCard {
             make.top.equalToSuperview().inset(28)
         }
 
+        cupsStackView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(21)
+            make.bottom.equalToSuperview().inset(UIScreen.main.bounds.width*0.015)
+            make.height.equalTo(UIScreen.main.bounds.width*0.25)
+        }
+        layoutIfNeeded()
     }
 }

@@ -7,15 +7,15 @@
 
 import UIKit
 
-// MARK: - GlobalStatisticsView
+// MARK: GlobalStatisticsView
 class GlobalStatisticsView: UIStackView {
-    // MARK: Properties
+    // MARK: - Properties
     let globalStatisticsCards: [ICardRepresentable] = [
         MostPopularDrinkCard(text: "Latte - is the most popular drink among The Bean users"),
-        AverageNumberCupsCard(text: "4 - is an average number of cups per day", numberOfCups: 1)
+        AverageNumberCupsCard(text: "5 - is an average number of cups per day", numberOfCups: 5)
     ]
 
-    // MARK: Initialization
+    // MARK: - Initializators
     init() {
         super.init(frame: .zero)
         setup()
@@ -25,13 +25,13 @@ class GlobalStatisticsView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: Subviews
+    // MARK: - Subviews
     private lazy var label = {
         BlockLabel(text: ^StatsLocalization.globalStatistics)
     }()
 }
 
-// MARK: - GlobalStatisticsView
+// MARK: GlobalStatisticsView
 extension GlobalStatisticsView {
     private func setup() {
         setupAppearance()
