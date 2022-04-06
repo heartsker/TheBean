@@ -52,20 +52,38 @@ class MostPopularDrinkCard: UIStackView, ICardRepresentable {
 
     func setupConstraints() {
         snp.makeConstraints { make in
-            make.height.equalTo(192)
+            make.height.equalTo(snp.width).multipliedBy(Card.heigthPercent)
         }
 
         imageView.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(18)
+            make.left.equalToSuperview().offset(Image.left)
             make.centerY.equalToSuperview()
-            make.height.equalTo(165)
-            make.width.equalTo(110)
+            make.height.equalToSuperview().multipliedBy(Image.heigthPercent)
+            make.width.equalTo(imageView.snp.height).multipliedBy(Image.widthPercent)
         }
 
         label.snp.makeConstraints { make in
-            make.left.equalTo(imageView.snp.right).offset(14)
-            make.right.equalToSuperview().inset(18)
-            make.goldenRatio(from: snp.top, in: .Y, size: 192)
+            make.left.equalTo(imageView.snp.right).offset(Label.left)
+            make.right.equalToSuperview().inset(Label.right)
+            make.goldenRatio(from: snp.top, in: .Y, size: 220)
         }
+    }
+}
+
+extension MostPopularDrinkCard {
+    enum Card {
+        static let heigthPercent: CGFloat = 0.565
+
+    }
+
+    enum Image {
+        static let left: CGFloat = 20
+        static let heigthPercent: CGFloat = 0.8594
+        static let widthPercent: CGFloat = 0.6667
+    }
+
+    enum Label {
+        static let left: CGFloat = 14
+        static let right: CGFloat = 16
     }
 }
