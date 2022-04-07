@@ -12,7 +12,8 @@ class GlobalStatisticsView: UIStackView {
     // MARK: - Properties
     let globalStatisticsCards: [ICardRepresentable] = [
         MostPopularDrinkCard(text: "Latte - is the most popular drink among The Bean users"),
-        AverageNumberCupsCard(text: "5 - is an average number of cups per day", numberOfCups: 5)
+        AverageNumberCupsCard(text: "4 - is an average number of cups per day", numberOfCups: 4),
+        RecipesNumberCard(text: "129 recipes are mastered by The Bean users")
     ]
 
     // MARK: - Initializators
