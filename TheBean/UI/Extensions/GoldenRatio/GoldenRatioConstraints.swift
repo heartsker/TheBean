@@ -18,8 +18,8 @@ extension ConstraintMaker {
     }
 
     @discardableResult
-    func goldenRatio(from other: ConstraintViewDSL,
-                     in direction: Direction,
+    func goldenRatio(inside other: ConstraintViewDSL,
+                     by direction: Direction,
                      trailing: Bool = false) -> ConstraintMakerEditable {
         switch direction {
         case .X:
