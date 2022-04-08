@@ -13,9 +13,11 @@ class BaseCardView: UIStackView, ICardRepresentable {
 
     // MARK: - Properties
     var card: UIView { self }
+    private var heightWidthRatio: CGFloat
 
     // MARK: - Initializers
-    init(backgroundColor: UIColor) {
+    init(backgroundColor: UIColor, heightWidthRatio: CGFloat = 0.6095) {
+        self.heightWidthRatio = heightWidthRatio
         super.init(frame: .zero)
         setup(backgroundColor: backgroundColor)
     }
@@ -41,7 +43,7 @@ extension BaseCardView {
 
     private func setupConstraints() {
         snp.makeConstraints { make in
-            make.height.equalTo(snp.width).multipliedBy(0.6095)
+            make.height.equalTo(snp.width).multipliedBy(heightWidthRatio)
         }
     }
 }
