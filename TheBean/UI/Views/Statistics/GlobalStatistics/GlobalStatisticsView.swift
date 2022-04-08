@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: GlobalStatisticsView
 class GlobalStatisticsView: UIStackView {
+
     // MARK: - Properties
     let globalStatisticsCards: [ICardRepresentable] = [
         MostPopularDrinkCard(text: "Latte - is the most popular drink among The Bean users"),
@@ -32,7 +33,7 @@ class GlobalStatisticsView: UIStackView {
     }()
 }
 
-// MARK: GlobalStatisticsView
+// MARK: Setup methods
 extension GlobalStatisticsView {
     private func setup() {
         setupAppearance()

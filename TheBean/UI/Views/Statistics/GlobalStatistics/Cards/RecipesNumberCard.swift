@@ -10,6 +10,7 @@ import SnapKit
 
 // MARK: MostPopularDrinkCard
 class RecipesNumberCard: BaseCardView {
+
     // MARK: - Properties
     let imageLeft: UIImage?
     let imageRight: UIImage?

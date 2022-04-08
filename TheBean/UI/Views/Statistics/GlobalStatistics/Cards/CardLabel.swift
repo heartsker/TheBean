@@ -9,8 +9,10 @@ import UIKit
 
 // TODO: (IC) Add comments
 class CardLabel: UILabel {
+    // MARK: - Properties
     let isWhite: Bool
 
+    // MARK: - Initializers
     init(text: String, isWhite: Bool) {
         self.isWhite = isWhite
         super.init(frame: .zero)
@@ -23,7 +25,7 @@ class CardLabel: UILabel {
     }
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension CardLabel {
     private func setup() {
         setupAppearance()

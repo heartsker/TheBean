@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Combine
 
-// MARK: - TestVC
+// MARK: TestVC
 class TestVC: UIViewController {
     // MARK: - Properties
     lazy private var usernameLabel: UILabel = {
@@ -45,7 +45,7 @@ class TestVC: UIViewController {
     }
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension TestVC {
     private func setup() {
         setupSubviews()

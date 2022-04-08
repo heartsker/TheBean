@@ -7,9 +7,10 @@
 
 import UIKit
 
-// MARK: - StatisticsContentView
+// MARK: StatisticsContentView
 class StatisticsContentView: UIStackView {
-    // MARK: Initialization
+
+    // MARK: - Initialization
     init() {
         super.init(frame: .zero)
         setup()
@@ -19,7 +20,7 @@ class StatisticsContentView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: Subviews
+    // MARK: - Subviews
     private lazy var personalRecomendationsView = {
         RecomendationsView()
     }()
@@ -29,7 +30,7 @@ class StatisticsContentView: UIStackView {
     }()
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension StatisticsContentView {
     private func setup() {
         setupAppearance()

@@ -9,6 +9,8 @@ import UIKit
 
 // MARK: ArrowView
 class ArrowView: UIView {
+
+    // MARK: - Properties
     let color: UIColor
     let width: Double
     let pointerLineLength: Double

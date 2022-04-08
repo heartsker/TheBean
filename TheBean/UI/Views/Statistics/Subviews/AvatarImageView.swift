@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: AvatarImageView
 class AvatarImageView: UIImageView {
     // MARK: - Properties
     var avatarImage: UIImage
@@ -23,7 +24,7 @@ class AvatarImageView: UIImageView {
     }
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension AvatarImageView {
     private func setup() {
         setupAppearance()

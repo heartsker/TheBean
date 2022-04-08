@@ -7,16 +7,17 @@
 
 import UIKit
 
-// MARK: - MainTabBarController
+// MARK: MainTabBarController
 class MainTabBarController: UITabBarController {
-    // MARK: Initialization
+
+    // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension MainTabBarController {
     private func setup() {
         setupSubviews()

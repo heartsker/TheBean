@@ -7,28 +7,28 @@
 
 import UIKit
 
-// MARK: - RecipesViewController
+// MARK: RecipesViewController
 class RecipesViewController: UIViewController {
-    // MARK: Properties
+    // MARK: - Properties
     private lazy var button: UIButton = {
         let button = UIButton(text: "That is recipe", color: .materialHeavy, font: .bold(30))
         button.addTarget(self, action: #selector(buttonClick(sender:)), for: .touchUpInside)
         return button
     }()
 
-    // MARK: Methods
+    // MARK: - Methods
     @objc func buttonClick(sender: UIButton!) {
         navigationController?.pushViewController(TimerViewController(), animated: true)
     }
 
-    // MARK: Initialization
+    // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension RecipesViewController {
     private func setup() {
         setupSubviews()

@@ -8,15 +8,15 @@
 import UIKit
 import SnapKit
 
-// MARK: - StatisticsViewController
+// MARK: StatisticsViewController
 class StatisticsViewController: UIViewController {
-    // MARK: Initialization
+    // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
 
-    // MARK: Subviews
+    // MARK: - Subviews
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: view.bounds)
         scrollView.backgroundColor = .background
@@ -28,7 +28,7 @@ class StatisticsViewController: UIViewController {
     }()
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension StatisticsViewController {
     private func setup() {
         setupSubviews()

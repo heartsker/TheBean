@@ -7,9 +7,10 @@
 
 import UIKit
 
-// MARK: - AccountTitleView
+// MARK: AccountTitleView
 class AccountTitleView: UIStackView {
-    // MARK: Initialization
+
+    // MARK: - Initialization
     init() {
         super.init(frame: .zero)
         setup()
@@ -19,7 +20,7 @@ class AccountTitleView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: Subviews
+    // MARK: - Subviews
     private lazy var imageView: UIView = {
         let image = UIImageView(image: UIImage(named: "profile"))
         image.contentMode = .scaleAspectFill
@@ -48,7 +49,7 @@ class AccountTitleView: UIStackView {
     }()
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension AccountTitleView {
     private func setup() {
         setupAppearance()

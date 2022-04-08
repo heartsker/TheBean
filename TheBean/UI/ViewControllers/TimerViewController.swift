@@ -7,27 +7,27 @@
 
 import UIKit
 
-// MARK: - TimerViewController
+// MARK: TimerViewController
 class TimerViewController: UIViewController {
-    // MARK: Properties
+    // MARK: - Properties
     private lazy var label: UILabel = {
         UILabel(text: "That is timer", color: .materialHeavy, font: .bold(30))
     }()
 
-    // MARK: Initialization
+    // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
 }
 
+// MARK: Setup methods
 extension TimerViewController {
     private func setup() {
         setupSubviews()
         setupConstraints()
     }
 
-    // MARK: - Setup
     private func setupSubviews() {
         view.addSubview(label)
     }

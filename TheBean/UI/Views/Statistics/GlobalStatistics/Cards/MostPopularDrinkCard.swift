@@ -7,13 +7,14 @@
 
 import UIKit
 
-// MARK: - MostPopularDrinkCard
+// MARK: MostPopularDrinkCard
 class MostPopularDrinkCard: BaseCardView {
-    // MARK: Properties
+
+    // MARK: - Properties
     let image: UIImage?
     let text: String
 
-    // MARK: Initialization
+    // MARK: - Initialization
     required init(text: String) {
         self.text = text
         image = UIImage(named: "coffee.barista.hands")
@@ -25,7 +26,7 @@ class MostPopularDrinkCard: BaseCardView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: Subviews
+    // MARK: - Subviews
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView(image: image)
         imageView.layer.cornerRadius = 20
@@ -37,7 +38,7 @@ class MostPopularDrinkCard: BaseCardView {
     }()
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension MostPopularDrinkCard {
     private func setup() {
         setupSubviews()

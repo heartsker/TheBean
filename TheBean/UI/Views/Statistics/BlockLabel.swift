@@ -7,9 +7,10 @@
 
 import UIKit
 
-// MARK: - BlockLabel
+// MARK: BlockLabel
 class BlockLabel: UILabel {
-    // MARK: Initializators
+
+    // MARK: - Initializators
     init(text: String) {
         super.init(frame: .zero)
         self.text = text
@@ -21,7 +22,7 @@ class BlockLabel: UILabel {
     }
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension BlockLabel {
     private func setup() {
         setupAppearance()

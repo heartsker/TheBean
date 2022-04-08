@@ -7,21 +7,22 @@
 
 import UIKit
 
-// MARK: - AccountViewController
+// MARK: AccountViewController
 class AccountViewController: UIViewController {
-    // MARK: Properties
+
+    // MARK: - Properties
     private lazy var content: UIView = {
         AccountContentView()
     }()
 
-    // MARK: Initializators
+    // MARK: - Initializators
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
 }
 
-// MARK: - Setup methods
+// MARK: Setup methods
 extension AccountViewController {
     private func setup() {
         setupSubviews()

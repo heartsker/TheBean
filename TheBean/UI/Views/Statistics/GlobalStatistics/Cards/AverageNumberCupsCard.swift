@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: AverageNumberCupsCard
 class AverageNumberCupsCard: BaseCardView {
-    // MARK: Properties
+    // MARK: - Properties
     let cupImage: UIImage?
     let numberOfCups: Int
     let text: String
