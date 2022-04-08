@@ -38,10 +38,6 @@ class ArrowView: UIView {
 // MARK: Setup methods
 extension ArrowView {
     override func draw(_ rect: CGRect) {
-        drawArrow(rect)
-    }
-
-    private func drawArrow(_ rect: CGRect) {
         let arrow = UIBezierPath()
         arrow.addArrow(start: CGPoint(x: rect.origin.x, y: rect.midY),
                        end: CGPoint(x: rect.maxX,
