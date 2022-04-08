@@ -9,9 +9,6 @@ import UIKit
 import SnapKit
 
 class StatisticsViewController: UIViewController, IBaseView {
-    // MARK: - Properties
-    let account: Account = Account()
-
     // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +23,7 @@ class StatisticsViewController: UIViewController, IBaseView {
     }()
 
     private lazy var statisticsContentView = {
-        StatisticsContentView(account: account)
+        StatisticsContentView()
     }()
 
     // MARK: - Setup
