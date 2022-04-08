@@ -54,8 +54,8 @@ extension MostPopularDrinkCard {
         imageView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(18)
             make.centerY.equalToSuperview()
-            make.height.equalTo(165)
-            make.width.equalTo(110)
+            make.bottom.top.equalToSuperview().inset(13)
+            make.width.equalTo(imageView.snp.height).multipliedBy(0.6666)
         }
 
         label.snp.makeConstraints { make in
