@@ -65,12 +65,13 @@ class MostPopularDrinkCard: UIStackView, ICardRepresentable {
         label.snp.makeConstraints { make in
             make.left.equalTo(imageView.snp.right).offset(Label.left)
             make.right.equalToSuperview().inset(Label.right)
-            make.goldenRatio(from: snp.top, in: .Y, size: 220)
+            make.goldenRatio(from: snp, in: .Y, trailing: false)
         }
     }
 }
 
-extension MostPopularDrinkCard {
+// MARK: - Constraint constants
+private extension MostPopularDrinkCard {
     enum Card {
         static let heigthPercent: CGFloat = 0.565
 

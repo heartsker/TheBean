@@ -8,10 +8,10 @@
 import UIKit
 
 extension CGFloat {
-    var goldenRatioCompotents: (a: CGFloat, b: CGFloat) {
+    static func goldenRatioMultiplier(trailing: Bool = false) -> CGFloat {
         // swiftlint:disable identifier_name
-        let a = self / Double.phi
+        let a = 1 / Double.phi
         // swiftlint:enable identifier_name
-        return (a, self - a)
+        return trailing ? a : 1 - a
     }
 }

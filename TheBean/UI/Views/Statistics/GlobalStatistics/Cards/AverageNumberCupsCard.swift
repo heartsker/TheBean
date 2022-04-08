@@ -82,7 +82,8 @@ class AverageNumberCupsCard: UIStackView, ICardRepresentable {
     }
 }
 
-extension AverageNumberCupsCard {
+// MARK: - Constraint constants
+private extension AverageNumberCupsCard {
     enum Card {
         static let heigthPercent: CGFloat = 0.565
     }
