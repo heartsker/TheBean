@@ -11,6 +11,28 @@ targets:
       - path: ${CURRENT_PROJECT}
     settings:
       DEVELOPMENT_TEAM: ${DEVELOPMENT_TEAM}
+    info:
+      path: ${CURRENT_PROJECT}/Resources/Info.plist
+      properties:
+        CFBundleExecutable: "$(EXECUTABLE_NAME)"
+        CFBundleIdentifier: ${BUNDLE_ID_PREFIX}.${CURRENT_PROJECT}
+        CFBundleVersion: "1.0"
+        CFBundleShortVersionString: "1.0"
+        UIAppFonts:
+          - MullerLight.ttf
+          - MullerRegular.ttf
+          - MullerMedium.ttf
+          - MullerBold.ttf
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              -
+                UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+        UILaunchStoryboardName: LaunchScreen
+        UIRequiresFullScreen: true
+        UISupportedInterfaceOrientations: []
     scheme:
       testTargets:
       - ${CURRENT_PROJECT}Tests
