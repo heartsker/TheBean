@@ -65,19 +65,35 @@ class AverageNumberCupsCard: UIStackView, ICardRepresentable {
 
     func setupConstraints() {
         snp.makeConstraints { make in
-            make.height.equalTo(snp.width).multipliedBy(0.6095)
+            make.height.equalTo(snp.width).multipliedBy(Card.heigthPercent)
         }
 
         secondBackground.snp.makeConstraints { make in
-            make.height.equalToSuperview().multipliedBy(0.3906)
+            make.height.equalToSuperview().multipliedBy(SecondBackground.heigthPercent)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
 
         label.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(64)
-            make.top.equalToSuperview().inset(28)
+            make.width.equalToSuperview().multipliedBy(Label.widthPercent)
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(Label.top)
         }
+    }
+}
 
+// MARK: - Constraint constants
+private extension AverageNumberCupsCard {
+    enum Card {
+        static let heigthPercent: CGFloat = 0.565
+    }
+
+    enum SecondBackground {
+        static let heigthPercent: CGFloat = 0.3906
+    }
+
+    enum Label {
+        static let widthPercent: CGFloat = 0.5714
+        static let top: CGFloat = 27
     }
 }
