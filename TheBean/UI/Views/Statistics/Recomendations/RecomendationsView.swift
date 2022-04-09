@@ -8,16 +8,17 @@
 import UIKit
 
 class RecomendationsView: UIStackView, IBaseView {
-    // MARK: Properties
+    // MARK: - Properties
     let recomendations = [
         (^CoffeeLocalization.latte, UIImage(named: "coffee.latte")!),
         (^CoffeeLocalization.flatwhite, UIImage(named: "coffee.flatwhite")!),
         (^CoffeeLocalization.americano, UIImage(named: "coffee.americano")!)
     ]
 
-    // MARK: Initialization
+    // MARK: - Initialization
     init() {
         super.init(frame: .zero)
+
         setup()
     }
 
@@ -25,7 +26,7 @@ class RecomendationsView: UIStackView, IBaseView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: Subviews
+    // MARK: - Subviews
     private lazy var label = {
         BlockLabel(text: ^StatsLocalization.personalRecomendations)
     }()

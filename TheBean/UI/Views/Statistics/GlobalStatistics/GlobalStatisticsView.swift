@@ -8,7 +8,7 @@
 import UIKit
 
 class GlobalStatisticsView: UIStackView, IBaseView {
-    // MARK: Properties
+    // MARK: - Properties
     let globalStatisticsCards: [ICardRepresentable] = [
         MostPopularDrinkCard(text: "Latte - is the most popular drink among The Bean users"),
         AverageNumberCupsCard(text: "4 - is an average number of cups per day", numberOfCups: 1)
@@ -17,6 +17,7 @@ class GlobalStatisticsView: UIStackView, IBaseView {
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
+
         setup()
     }
 

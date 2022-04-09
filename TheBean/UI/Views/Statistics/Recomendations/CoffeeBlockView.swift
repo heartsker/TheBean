@@ -17,6 +17,7 @@ class CoffeeBlockView: UIStackView, IBaseView {
         self.text = text
         self.image = image
         super.init(frame: .zero)
+
         setup()
     }
 

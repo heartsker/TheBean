@@ -16,6 +16,7 @@ class TopRecomendationsView: UIStackView, IBaseView {
     init(recomendations: [(String, UIImage)] ) {
         self.recomendations = recomendations
         super.init(frame: .zero)
+
         setup()
     }
 

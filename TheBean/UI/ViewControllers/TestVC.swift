@@ -39,6 +39,7 @@ class TestVC: UIViewController, IBaseView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setup()
     }
 

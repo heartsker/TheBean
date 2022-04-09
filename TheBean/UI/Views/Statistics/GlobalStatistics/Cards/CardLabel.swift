@@ -15,6 +15,7 @@ class CardLabel: UILabel, IBaseView {
         self.isWhite = isWhite
         super.init(frame: .zero)
         super.text = text
+
         setup()
     }
 

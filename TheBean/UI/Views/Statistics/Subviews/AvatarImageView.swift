@@ -15,6 +15,7 @@ class AvatarImageView: UIImageView, IBaseView {
     init(avatarImage: UIImage) {
         self.avatarImage = avatarImage
         super.init(frame: .zero)
+
         setup()
     }
 
@@ -22,7 +23,7 @@ class AvatarImageView: UIImageView, IBaseView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Setup()
+    // MARK: - Setup
     func setupAppearance() {
         self.image = self.avatarImage
         self.clipsToBounds = true
