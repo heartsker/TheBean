@@ -11,6 +11,7 @@ class AccountTitleView: UIStackView, IBaseView {
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
+
         setup()
     }
 

@@ -37,7 +37,7 @@ targets:
       testTargets:
       - ${CURRENT_PROJECT}Tests
       - ${CURRENT_PROJECT}UITests
-    postCompileScripts:
+    preBuildScripts:
       - script: Pods/Swiftlint/swiftlint --fix
         name: SwiftlintFix
       - script: Pods/Swiftlint/swiftlint

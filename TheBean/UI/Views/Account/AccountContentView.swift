@@ -8,9 +8,10 @@
 import UIKit
 
 class AccountContentView: UIStackView, IBaseView {
-    // MARK: Initialization
+    // MARK: - Initialization
     init() {
         super.init(frame: .zero)
+
         setup()
     }
 

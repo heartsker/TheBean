@@ -5,8 +5,6 @@
 //  Created by Daniel Pustotin on 27.03.2022.
 //
 
-import Foundation
-
 class StatsLocalization: ILocalizable {
      static let table: String = "Stats"
 

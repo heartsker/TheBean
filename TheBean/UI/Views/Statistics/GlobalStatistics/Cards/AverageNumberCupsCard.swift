@@ -24,6 +24,7 @@ class AverageNumberCupsCard: UIStackView, ICardRepresentable {
         self.numberOfCups = numberOfCups
         cupImage = UIImage(named: "coffee.cup")
         super.init(frame: .zero)
+
         setup()
     }
 

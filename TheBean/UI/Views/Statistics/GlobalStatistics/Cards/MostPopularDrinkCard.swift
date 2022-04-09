@@ -21,6 +21,7 @@ class MostPopularDrinkCard: UIStackView, ICardRepresentable {
         self.text = text
         image = UIImage(named: "coffee.barista.hands")
         super.init(frame: .zero)
+
         setup()
     }
 
