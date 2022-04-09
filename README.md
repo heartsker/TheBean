@@ -33,7 +33,7 @@
 "name" = "Зе рно";
 ```
 ## Combine
-Класс [`Publisher`]() позволяет создавать публикации изменений и подписываться на них.
+Класс [`Publisher`](https://github.com/Nephew-Ustas/TheBean/blob/5275158b6fc56e4e2840b4c1425f202a1adffeef/TheBean/Model/Account/Notifications.swift#L15) позволяет создавать публикации изменений и подписываться на них.
 
 Чтобы создать публикацию используется метод `publishPost<T>(with:, for:)`.
 
