@@ -7,18 +7,16 @@
 
 import UIKit
 
-class RecipesViewController: UIViewController, IBaseView {
+final class RecipesViewController: UIViewController, IBaseView {
     // MARK: - Properties
-    private lazy var button: UIButton = {
-        let button = UIButton(text: "That is recipe", color: .materialHeavy, font: .bold(30))
-        button.addTarget(self, action: #selector(buttonClick(sender:)), for: .touchUpInside)
-        return button
+    private lazy var collectionView: UICollectionView = {
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        collectionView.backgroundColor = .systemPink
+        return collectionView
     }()
 
     // MARK: - Methods
-    @objc func buttonClick(sender: UIButton!) {
-        navigationController?.pushViewController(TimerViewController(), animated: true)
-    }
 
     // MARK: - Initialization
     override func viewDidLoad() {
@@ -29,12 +27,32 @@ class RecipesViewController: UIViewController, IBaseView {
 
     // MARK: - Setup
     func setupConstraints() {
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
     }
 
     func setupSubviews() {
-        view.addSubview(button)
+        view.addSubview(collectionView)
+
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
+}
+
+extension RecipesViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+}
+
+extension RecipesViewController: UICollectionViewDelegate {
+
 }
