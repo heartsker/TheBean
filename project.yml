@@ -33,22 +33,8 @@ targets:
         UILaunchStoryboardName: LaunchScreen
         UIRequiresFullScreen: true
         UISupportedInterfaceOrientations: []
-    scheme:
-      testTargets:
-      - ${CURRENT_PROJECT}Tests
-      - ${CURRENT_PROJECT}UITests
     preBuildScripts:
       - script: Pods/Swiftlint/swiftlint --fix
         name: SwiftlintFix
       - script: Pods/Swiftlint/swiftlint
         name: Swiftlint
-  ${CURRENT_PROJECT}Tests:
-    type: bundle.unit-test
-    platform: iOS
-    sources:
-      - path: ${CURRENT_PROJECT}Tests
-  ${CURRENT_PROJECT}UITests:
-    type: bundle.unit-test
-    platform: iOS
-    sources:
-      - path: ${CURRENT_PROJECT}UITests
