@@ -13,15 +13,6 @@ target 'TheBean' do
   pod 'Alamofire'
   pod 'SnapKit'
 
-  target 'TheBeanTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'TheBeanUITests' do
-    # Pods for testing
-  end
-
 end
 
 post_install do |installer|
