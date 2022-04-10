@@ -32,6 +32,20 @@
 // App (Russian)
 "name" = "Зе рно";
 ```
+
+## Assets
+[Интерфейс]() `IAssetsManager` позволяет использовать в коде файлы из папки Assets.
+
+Например, для получения картинок реализован [класс]() `ImageManager`:
+```swift
+class ImageManager: IAssetsManager {
+    typealias Asset = UIImage
+
+    static let latte = ImageManager.asset(for: "coffee.latte")
+}
+```
+
+Тогда в коде следует использовать `ImageManager.latte`.
 ## Combine
 Класс [`Publisher`](https://github.com/Nephew-Ustas/TheBean/blob/5275158b6fc56e4e2840b4c1425f202a1adffeef/TheBean/Model/Account/Notifications.swift#L15) позволяет создавать публикации изменений и подписываться на них.
 
