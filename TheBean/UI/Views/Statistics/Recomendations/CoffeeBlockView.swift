@@ -10,10 +10,10 @@ import UIKit
 class CoffeeBlockView: UIStackView, IBaseView {
     // MARK: - Properties
     var text: String
-    var image: UIImage
+    var image: UIImage?
 
     // MARK: - Initialization
-    init(text: String, image: UIImage) {
+    init(text: String, image: UIImage?) {
         self.text = text
         self.image = image
         super.init(frame: .zero)

@@ -23,8 +23,3 @@ extension ILocalizable {
         bundle.localizedString(forKey: string, value: "", table: table)
     }
 }
-
-prefix operator ^
-prefix func ^ (string: String) -> String {
-    string.firstUppercased
-}

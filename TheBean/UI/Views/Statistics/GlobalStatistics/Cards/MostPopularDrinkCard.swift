@@ -19,7 +19,7 @@ class MostPopularDrinkCard: UIStackView, ICardRepresentable {
     // MARK: - Initialization
     required init(text: String) {
         self.text = text
-        image = UIImage(named: "coffee.barista.hands")
+        image = ImageManager.baristaHands
         super.init(frame: .zero)
 
         setup()
