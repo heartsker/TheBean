@@ -21,10 +21,8 @@ extension UICollectionViewCell: ReuseIdentifyingCellProtocol {}
 
 extension UICollectionView {
 
-    func create<A: ReuseIdentifyingCellProtocol>(cell: A.Type, at index: IndexPath) -> A {
-        // swiftlint:disable force_cast
-        return self.dequeueReusableCell(withReuseIdentifier: cell.reuseIdentifier, for: index) as! A
-        // swiftlint:enable force_cast
+    func create<A: ReuseIdentifyingCellProtocol>(cell: A.Type, at index: IndexPath) -> A? {
+        return self.dequeueReusableCell(withReuseIdentifier: cell.reuseIdentifier, for: index) as? A
     }
 
     func register<A: ReuseIdentifyingCellProtocol>(classXIB: A.Type) {
