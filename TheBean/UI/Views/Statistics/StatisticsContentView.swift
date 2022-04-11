@@ -21,13 +21,9 @@ class StatisticsContentView: UIStackView {
     }
 
     // MARK: - Subviews
-    private lazy var personalRecomendationsView = {
-        RecomendationsView()
-    }()
-
-    private lazy var globalStatisticsView = {
-        GlobalStatisticsView()
-    }()
+    private lazy var scoreView = ScoreView()
+    private lazy var personalRecomendationsView = RecomendationsView()
+    private lazy var globalStatisticsView = GlobalStatisticsView()
 }
 
 // MARK: Setup methods
@@ -43,7 +39,10 @@ extension StatisticsContentView {
     }
 
     private func setupSubviews() {
+        addArrangedSubview(scoreView)
+        setCustomSpacing(38, after: scoreView)
         addArrangedSubview(personalRecomendationsView)
         setCustomSpacing(46, after: personalRecomendationsView)
         addArrangedSubview(globalStatisticsView)
-    }}
+    }
+}

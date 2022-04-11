@@ -6,6 +6,11 @@
   
 */
 
+"score.label" = "счёт";
+"score.cupsDrunk" = "кружек выпито";
+"score.recipesMastered" = "рецептов создано";
+"score.healthScore" = "уровень здоровья";
+
 "personal.recomendations" = "персональные рекомендации";
 
 "global.statistics" = "глобальная статискика";

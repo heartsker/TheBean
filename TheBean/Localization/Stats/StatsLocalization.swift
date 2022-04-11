@@ -8,11 +8,16 @@
 import Foundation
 
 class StatsLocalization: ILocalizable {
-     static let table: String = "Stats"
+    static let table: String = "Stats"
 
-     static let personalRecomendations = StatsLocalization.localize("personal.recomendations")
+    static let scoreLabel = StatsLocalization.localize("score.label")
+    static let scoreCupsDrunk = StatsLocalization.localize("score.cupsDrunk")
+    static let scoreRecipesMastered = StatsLocalization.localize("score.recipesMastered")
+    static let scoreHealthScore = StatsLocalization.localize("score.healthScore")
 
-     static let globalStatistics = StatsLocalization.localize("global.statistics")
-     static let mostPopularDrinkSuffix = StatsLocalization.localize("most.popular.drink.suffix")
-     static let averageCupsPerDay = StatsLocalization.localize("average.cups.per.day")
+    static let personalRecomendations = StatsLocalization.localize("personal.recomendations")
+
+    static let globalStatistics = StatsLocalization.localize("global.statistics")
+    static let mostPopularDrinkSuffix = StatsLocalization.localize("most.popular.drink.suffix")
+    static let averageCupsPerDay = StatsLocalization.localize("average.cups.per.day")
  }

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 // MARK: BaseCardView
-class BaseCardView: UIStackView, ICardRepresentable {
+class BaseCardView: UIView, ICardRepresentable {
 
     // MARK: - Properties
     var card: UIView { self }

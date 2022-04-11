@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 @objc(Account)
 public class Account: NSManagedObject {
@@ -23,7 +24,7 @@ public class Account: NSManagedObject {
 
     var username: String {
         get {
-            return rowUsername ?? ""
+            return rowUsername ?? "Wane Smith"
         }
         set {
             rowUsername = newValue
@@ -41,6 +42,12 @@ public class Account: NSManagedObject {
             CoreDataManager.save()
         }
     }
+
+    var userimage: UIImage = UIImage(named: "account.profile.picture.test")!
+    var cupsDrunk: Int = 54
+    var recipesMastered: Int = 24
+    var healthScore: Int = 38
+    var level: Int = 39
 
     // MARK: - Initialization
     convenience init() {

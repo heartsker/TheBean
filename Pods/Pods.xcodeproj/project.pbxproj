@@ -15,7 +15,6 @@
 			dependencies = (
 			);
 			name = SwiftLint;
-			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -244,7 +243,7 @@
 		4C924F2DCF3C70D39D64756BAFAE2875 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		4EB13E57ED8A0B13A4BE08C49EE94D3F /* Pods-TheBean.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TheBean.debug.xcconfig"; sourceTree = "<group>"; };
 		4F60D28935B5908408CDADD1FDD30688 /* SnapKit-library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SnapKit-library.release.xcconfig"; path = "../SnapKit-library/SnapKit-library.release.xcconfig"; sourceTree = "<group>"; };
-		5342F0564D3DED9313EA530E48930B75 /* libSnapKit-library.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libSnapKit-library.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5342F0564D3DED9313EA530E48930B75 /* SnapKit-library */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "SnapKit-library"; path = "libSnapKit-library.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		544E740726B89C17CFC7817E21CB7FB6 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
 		5569AAC14153A9EB9AC08C1B5530C520 /* SnapKit-library-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SnapKit-library-umbrella.h"; path = "../SnapKit-library/SnapKit-library-umbrella.h"; sourceTree = "<group>"; };
 		55EFF345753D3217013AA02A82AF3439 /* Pods-TheBean */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TheBean"; path = Pods_TheBean.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,7 +281,7 @@
 		98C605C66396F73F824A8B0858CE144A /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
 		992E862825C5DF9D33DA0E159477B51C /* SnapKit-framework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-framework-umbrella.h"; sourceTree = "<group>"; };
 		9C03F7E96EB1EC380836C6820A81CCA4 /* Pods-TheBean-TheBeanUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TheBean-TheBeanUITests-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A4D0C6C69243E9DA1E1B6A6086CE7767 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
 		A60717D185EF92D33F88F686097DDF6B /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
 		A71CF3536FC1584DFFD21D7BBC6D1F4F /* SnapKit-framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SnapKit-framework.release.xcconfig"; sourceTree = "<group>"; };
@@ -447,7 +446,7 @@
 				B82C93B3C1EC89973AE3074ABFAC15C5 /* Pods-TheBean-TheBeanUITests */,
 				2C1A642B592D5F6CA4CC3716E016C947 /* Pods-TheBeanTests */,
 				DB25E447EEC680364EB10D7BF016FA37 /* SnapKit-framework */,
-				5342F0564D3DED9313EA530E48930B75 /* libSnapKit-library.a */,
+				5342F0564D3DED9313EA530E48930B75 /* SnapKit-library */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -544,6 +543,7 @@
 				175A63C7D6860A674F9509795146BEFB /* UILayoutSupport+Extensions.swift */,
 				238695091291F74EFDFF9A749EC4A9A1 /* Support Files */,
 			);
+			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -552,6 +552,7 @@
 			children = (
 				CB9062780937A76CDBCCE24254542336 /* Support Files */,
 			);
+			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -617,6 +618,7 @@
 				FB7FB4EBE3F322FB0871949ABE539F98 /* Validation.swift */,
 				86E6DBFA64CA4F90F011DE03C1606007 /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -803,7 +805,7 @@
 			);
 			name = "SnapKit-library";
 			productName = "SnapKit-library";
-			productReference = 5342F0564D3DED9313EA530E48930B75 /* libSnapKit-library.a */;
+			productReference = 5342F0564D3DED9313EA530E48930B75 /* SnapKit-library */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -813,7 +815,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -1501,6 +1503,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 77F49604DF66D857B282759A204A34F2 /* SnapKit-library.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1666,6 +1669,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F60D28935B5908408CDADD1FDD30688 /* SnapKit-library.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
