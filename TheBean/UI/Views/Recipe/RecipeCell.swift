@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 final class RecipeCell: UICollectionViewCell {
+
+    // MARK: - Properties
     private lazy var containerView: UIView = {
         let container = UIView()
         return container
@@ -39,6 +41,7 @@ final class RecipeCell: UICollectionViewCell {
         return standView
     }()
 
+    // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -47,9 +50,17 @@ final class RecipeCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        [titleLabel, volumeLabel, cookingTimeLabel].forEach { $0.text = nil }
+        imageView.image = nil
+    }
 }
 
 extension RecipeCell: CellConfigurationProtocol {
+
+    // MARK: - Cell Configuration
     func configure(model: RecipeCardModel) {
         titleLabel.text = model.title
         imageView.image = model.drinkKind.imageName
@@ -59,19 +70,24 @@ extension RecipeCell: CellConfigurationProtocol {
 }
 
 extension RecipeCell: IBaseView {
+
+    // MARK: - Setup
     func setupAppearance() {
         contentView.backgroundColor = .clear
         contentView.layer.cornerRadius = 20
         contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.hightlightSecondary.cgColor
+        setCellBorderColorByAppearanceMode()
 
         containerView.backgroundColor = .highlightPrimary
         containerView.layer.cornerRadius = 20
 
-        titleLabel.font = .regular()
+        titleLabel.font = .medium()
         titleLabel.textAlignment = .center
 
         [volumeLabel, cookingTimeLabel].forEach { $0.font = .regular(12) }
+        [volumeLabel, cookingTimeLabel, titleLabel].forEach { $0.textColor = .materialMedium }
+
+        imageView.contentMode = .scaleAspectFit
     }
 
     func setupSubviews() {
@@ -79,6 +95,7 @@ extension RecipeCell: IBaseView {
         [volumeLabel, cookingTimeLabel].forEach { contentView.addSubview($0) }
         containerView.addSubview(titleLabel)
         containerView.addSubview(standView)
+        containerView.addSubview(imageView)
 //        [titleLabel, standView, imageView].forEach { containerView.addSubview($0) }
     }
 
@@ -104,10 +121,15 @@ extension RecipeCell: IBaseView {
             make.centerX.equalToSuperview()
         }
 
-//        imageView.snp.makeConstraints { make in
+        imageView.snp.makeConstraints { make in
 //            make.centerX.equalToSuperview()
-//            make.bottom.equalToSuperview()
-//        }
+            make.centerX.equalToSuperview()
+            make.width.equalTo(contentView.bounds.width * 0.8)
+            make.bottom.equalToSuperview()
+
+            make.height.greaterThanOrEqualTo((contentView.bounds.height - 34) * 1/2)
+//            make.height.lessThanOrEqualTo((contentView.bounds.height - 34) * 3/4)
+        }
 
         volumeLabel.snp.makeConstraints { make in
             make.bottom.equalTo(-10)
@@ -118,5 +140,20 @@ extension RecipeCell: IBaseView {
             make.bottom.equalTo(-10)
             make.trailing.equalTo(-21)
         }
+    }
+}
+
+extension RecipeCell {
+
+    private func setCellBorderColorByAppearanceMode() {
+        let borderColorCondition = traitCollection.userInterfaceStyle == .dark
+        let darkModeBorderColor: CGColor = .init(red: 0.384, green: 0.337, blue: 0.416, alpha: 1)
+        let lightModeBorderColor: CGColor = .init(red: 0.858, green: 0.758, blue: 0.669, alpha: 1)
+        contentView.layer.borderColor = borderColorCondition ? darkModeBorderColor : lightModeBorderColor
+    }
+
+    // CGColor не умеет в динамический цвет, поэтому приходится пергружать этот метод
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        setCellBorderColorByAppearanceMode()
     }
 }

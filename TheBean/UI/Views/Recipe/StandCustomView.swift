@@ -8,39 +8,19 @@
 import UIKit
 
 final class StandCustomView: UIView {
-    var shapeLayer = CAShapeLayer()
+    var fillColor: UIColor = .materialMedium
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        self.backgroundColor = .clear
     }
 
     convenience init(frame: CGRect, fillColor: UIColor) {
         self.init(frame: frame)
-        setup(fillColor)
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setup()
-    }
-
-    override func layoutSubviews() {
-        applyScale()
-    }
-
-    private func setup(_ color: UIColor = .materialHeavy) {
-        let path = createBezierPath()
-        shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = color.cgColor
-        shapeLayer.position = .zero
-        layer.addSublayer(shapeLayer)
-    }
-
-    private func applyScale() {
-        let path = createBezierPath()
-        path.apply(.init(scaleX: self.frame.width/130, y: self.frame.height/58))
-        shapeLayer.path = path.cgPath
     }
 
     private func createBezierPath() -> UIBezierPath {
@@ -57,5 +37,12 @@ final class StandCustomView: UIView {
         path.close()
 
         return path
+    }
+
+    override func draw(_ rect: CGRect) {
+        let path = createBezierPath()
+        fillColor.setFill()
+        path.apply(.init(scaleX: self.frame.width/130, y: self.frame.height/58))
+        path.fill()
     }
 }

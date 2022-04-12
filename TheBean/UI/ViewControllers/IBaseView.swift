@@ -5,6 +5,8 @@
 //  Created by Daniel Pustotin on 19.03.2022.
 //
 
+import UIKit
+
 protocol IBaseView {
     func setupAppearance()
     func setupSubviews()
@@ -18,5 +20,11 @@ extension IBaseView {
         setupAppearance()
         setupSubviews()
         setupConstraints()
+    }
+}
+
+extension IBaseView where Self: UIViewController {
+    func setupAppearance() {
+        view.backgroundColor = .background
     }
 }

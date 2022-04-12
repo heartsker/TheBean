@@ -17,5 +17,6 @@ extension UIColor {
     static let materialMedium:      UIColor = .init(named: "MaterialMedium")!
     static let materialLight:       UIColor = .init(named: "MaterialLight")!
     static let accentColor:         UIColor = .init(named: "AccentColor")!
+    static let strokeColor:         UIColor = .init(named: "Stroke")!
     // swiftlint:enable colon
 }
