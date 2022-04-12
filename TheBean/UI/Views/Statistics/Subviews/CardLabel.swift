@@ -38,7 +38,7 @@ extension CardLabel {
 
         let textSize: CGFloat = 16
         let color: UIColor = isWhite ? .white : .materialMedium
-        let font: UIFont = isWhite ? .bold(textSize) : .medium(textSize)
+        let font: UIFont = .medium(textSize)
 
         let string = NSMutableAttributedString(string: text)
         string.addAttribute(.foregroundColor,

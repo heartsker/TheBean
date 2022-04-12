@@ -12,11 +12,13 @@ class MostPopularDrinkCard: BaseCardView {
 
     // MARK: - Properties
     let image: UIImage?
-    let text: String
+    let value: String
+    let suffix: String = StatsLocalization.mostPopularDrinkSuffix
+    lazy var text = "\(^value) - \(suffix)"
 
     // MARK: - Initialization
-    required init(text: String) {
-        self.text = text
+    required init(value: String) {
+        self.value = value
         image = UIImage(named: "coffee.barista.hands")
         super.init(backgroundColor: .highlightPrimary)
         setup()

@@ -10,15 +10,14 @@ import UIKit
 // MARK: AverageNumberCupsCard
 class AverageNumberCupsCard: BaseCardView {
     // MARK: - Properties
-    let cupImage: UIImage?
-    let numberOfCups: Int
-    let text: String
+    let value: Int
+    let cupImage: UIImage? = UIImage(named: "coffee.cup")
+    let suffix = StatsLocalization.averageCupsPerDay
+    lazy var text = "\(value) - \(suffix)"
 
     // MARK: - Initializers
-    required init(text: String, numberOfCups: Int) {
-        self.text = text
-        self.numberOfCups = numberOfCups
-        cupImage = UIImage(named: "coffee.cup")
+    required init(value: Int) {
+        self.value = value
         super.init(backgroundColor: .materialHeavy)
         setup()
     }
@@ -43,7 +42,7 @@ class AverageNumberCupsCard: BaseCardView {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
-        for _ in stride(from: 0, to: numberOfCups, by: 1) {
+        for _ in stride(from: 0, to: value, by: 1) {
             let imageView = UIImageView(image: cupImage)
             imageView.contentMode = .scaleAspectFit
             stack.addArrangedSubview(imageView)

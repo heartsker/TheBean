@@ -14,11 +14,12 @@ class RecipesNumberCard: BaseCardView {
     // MARK: - Properties
     let imageLeft: UIImage?
     let imageRight: UIImage?
-    let text: String
+    let value: UInt
+    lazy var text = StatsLocalization.masteredRecipes(value: value)
 
     // MARK: - Initialization
-    required init(text: String) {
-        self.text = text
+    required init(value: UInt) {
+        self.value = value
         imageLeft = UIImage(named: "coffee.beans")
         imageRight = UIImage(named: "coffee.ready")
         super.init(backgroundColor: .highlightPrimary)
