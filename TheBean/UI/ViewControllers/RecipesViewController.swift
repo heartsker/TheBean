@@ -16,11 +16,6 @@ final class RecipesViewController: UIViewController {
         return items
     }()
 
-    private enum SupplementaryKinds: String {
-        case header
-        case footer
-    }
-
     private lazy var collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
@@ -28,6 +23,9 @@ final class RecipesViewController: UIViewController {
         collectionView.register(RecipesHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: RecipesHeaderView.reuseIdentifier)
+        collectionView.register(RecipesFooterView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                withReuseIdentifier: RecipesFooterView.reuseIdentifier)
         return collectionView
     }()
 
@@ -89,17 +87,33 @@ extension RecipesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerKind = UICollectionView.elementKindSectionHeader
-        let identifier = RecipesHeaderView.reuseIdentifier
-        let cView = collectionView
 
-        guard let headerView = cView.dequeueReusableSupplementaryView(ofKind: headerKind,
-                                                                      withReuseIdentifier: identifier,
-                                                                      for: indexPath) as? RecipesHeaderView else {
-            return RecipesHeaderView()
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let headerKind = UICollectionView.elementKindSectionHeader
+            let identifier = RecipesHeaderView.reuseIdentifier
+            let cView = collectionView
+
+            guard let headerView = cView.dequeueReusableSupplementaryView(ofKind: headerKind,
+                                                                          withReuseIdentifier: identifier,
+                                                                          for: indexPath) as? RecipesHeaderView else {
+                return RecipesHeaderView()
+            }
+            headerView.configure(model: CoffeeStrength(rawValue: indexPath.section)?.title ?? "")
+            return headerView
+        default:
+            let footerKind = UICollectionView.elementKindSectionFooter
+            let identifier = RecipesFooterView.reuseIdentifier
+            let cView = collectionView
+
+            guard let footerView = cView.dequeueReusableSupplementaryView(ofKind: footerKind,
+                                                                          withReuseIdentifier: identifier,
+                                                                          for: indexPath) as? RecipesFooterView else {
+                return RecipesFooterView()
+            }
+            footerView.delegate = self
+            return footerView
         }
-        headerView.configure(model: CoffeeStrength(rawValue: indexPath.section)?.title ?? "")
-        return headerView
     }
 }
 
@@ -161,4 +175,13 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 250, height: 40)
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: 100, height: 30)
+    }
+}
+
+extension RecipesViewController: RecipesFooterDelegate {
+    func sectionFooterButtonTapped() {
+        print("🐋 Update collection view... Loading more...")
+    }
 }

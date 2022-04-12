@@ -21,8 +21,7 @@ extension RecipeCardModel {
             .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
             .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
             .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13),
-            .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
-            .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11)
+            .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10)
         ]
         return items
     }()
@@ -32,8 +31,7 @@ extension RecipeCardModel {
             .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
             .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
             .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13),
-            .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
-            .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11)
+            .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10)
         ]
         return items
     }()
@@ -43,8 +41,7 @@ extension RecipeCardModel {
             .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
             .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
             .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13),
-            .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
-            .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11)
+            .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10)
         ]
         return items
     }()
