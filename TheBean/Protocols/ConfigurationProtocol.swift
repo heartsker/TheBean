@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CellConfigurationProtocol {
+protocol ConfigurationProtocol {
     associatedtype Model
     func configure(model: Model)
 }

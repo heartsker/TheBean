@@ -2,39 +2,34 @@
 //  RecipesViewController.swift
 //  TheBean
 //
-//  Created by Daniel Pustotin on 31.01.2022.
+//  Created by Ilya Buldin on 11.04.2022.
 //
 
 import UIKit
 
 final class RecipesViewController: UIViewController {
+
     // MARK: - Properties
-    var recipes: [RecipeCardModel] = [
-        .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
-        .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
-        .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13),
-        .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
-        .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
-        .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13),
-        .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
-        .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
-        .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13),
-        .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
-        .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
-        .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13),
-        .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
-        .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
-        .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13)
-    ]
+    var recipes: [Int: [RecipeCardModel]] = {
+        var items: [Int: [RecipeCardModel]] = [:]
+        CoffeeStrength.allCases.forEach { items[$0.rawValue] = $0.cards }
+        return items
+    }()
+
+    private enum SupplementaryKinds: String {
+        case header
+        case footer
+    }
 
     private lazy var collectionView: UICollectionView = {
         let collectionViewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.register(classCell: RecipeCell.self)
+        collectionView.register(RecipesHeaderView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: RecipesHeaderView.reuseIdentifier)
         return collectionView
     }()
-
-    // MARK: - Methods
 
     // MARK: - Initialization
     override func viewDidLoad() {
@@ -45,6 +40,7 @@ final class RecipesViewController: UIViewController {
     }
 }
 
+// MARK: - Setup
 extension RecipesViewController: IBaseView {
 
     func setupConstraints() {
@@ -66,27 +62,54 @@ extension RecipesViewController: IBaseView {
     }
 }
 
+// MARK: - Collection View DataSource
 extension RecipesViewController: UICollectionViewDataSource {
 
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return CoffeeStrength.allCases.count
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recipes.count
+        guard let cards = recipes[section] else {
+            return 0
+        }
+        return cards.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.create(cell: RecipeCell.self, at: indexPath) else {
-            return UICollectionViewCell()
-        }
-        cell.configure(model: recipes[indexPath.row])
+        guard let cell = collectionView.create(cell: RecipeCell.self, at: indexPath),
+              let cards = recipes[indexPath.section] else {
+                  return UICollectionViewCell()
+              }
+        cell.configure(model: cards[indexPath.row])
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerKind = UICollectionView.elementKindSectionHeader
+        let identifier = RecipesHeaderView.reuseIdentifier
+        let cView = collectionView
+
+        guard let headerView = cView.dequeueReusableSupplementaryView(ofKind: headerKind,
+                                                                      withReuseIdentifier: identifier,
+                                                                      for: indexPath) as? RecipesHeaderView else {
+            return RecipesHeaderView()
+        }
+        headerView.configure(model: CoffeeStrength(rawValue: indexPath.section)?.title ?? "")
+        return headerView
     }
 }
 
+// MARK: - Collection View Delegate
 extension RecipesViewController: UICollectionViewDelegate { }
 
+// MARK: - Flow Layout Delegate
 extension RecipesViewController: UICollectionViewDelegateFlowLayout {
 
-    private enum LayoutConstants {
+    enum LayoutConstants {
         static let screenHeight: CGFloat = UIScreen.main.bounds.height
         static let screenWidth: CGFloat = UIScreen.main.bounds.width
         static let leftRightInset: CGFloat = screenWidth * 31/375
@@ -131,4 +154,11 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: 250, height: 40)
+    }
+
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 final class StandCustomView: UIView {
+
     var fillColor: UIColor = .materialMedium
 
     override init(frame: CGRect) {
@@ -42,7 +43,7 @@ final class StandCustomView: UIView {
     override func draw(_ rect: CGRect) {
         let path = createBezierPath()
         fillColor.setFill()
-        path.apply(.init(scaleX: self.frame.width/130, y: self.frame.height/58))
+        path.apply(.init(scaleX: frame.width/130, y: frame.height/58))
         path.fill()
     }
 }

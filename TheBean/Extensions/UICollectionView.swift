@@ -7,30 +7,30 @@
 
 import UIKit
 
-protocol ReuseIdentifyingCellProtocol: UIView {
+protocol ReuseIdentifyingProtocol: UIView {
     static var reuseIdentifier: String { get }
 }
 
-extension ReuseIdentifyingCellProtocol {
+extension ReuseIdentifyingProtocol {
     static var reuseIdentifier: String {
         return String(describing: Self.self)
     }
 }
 
-extension UICollectionViewCell: ReuseIdentifyingCellProtocol {}
+extension UICollectionViewCell: ReuseIdentifyingProtocol {}
 
 extension UICollectionView {
 
-    func create<A: ReuseIdentifyingCellProtocol>(cell: A.Type, at index: IndexPath) -> A? {
+    func create<A: ReuseIdentifyingProtocol>(cell: A.Type, at index: IndexPath) -> A? {
         return self.dequeueReusableCell(withReuseIdentifier: cell.reuseIdentifier, for: index) as? A
     }
 
-    func register<A: ReuseIdentifyingCellProtocol>(classXIB: A.Type) {
+    func register<A: ReuseIdentifyingProtocol>(classXIB: A.Type) {
         let cell = UINib(nibName: classXIB.reuseIdentifier, bundle: nil)
         self.register(cell, forCellWithReuseIdentifier: classXIB.reuseIdentifier)
     }
 
-    func register<A: ReuseIdentifyingCellProtocol>(classCell: A.Type) {
+    func register<A: ReuseIdentifyingProtocol>(classCell: A.Type) {
         self.register(classCell.self, forCellWithReuseIdentifier: classCell.reuseIdentifier)
     }
 }

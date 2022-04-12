@@ -58,7 +58,7 @@ final class RecipeCell: UICollectionViewCell {
     }
 }
 
-extension RecipeCell: CellConfigurationProtocol {
+extension RecipeCell: ConfigurationProtocol {
 
     // MARK: - Cell Configuration
     func configure(model: RecipeCardModel) {
@@ -93,10 +93,7 @@ extension RecipeCell: IBaseView {
     func setupSubviews() {
         contentView.addSubview(containerView)
         [volumeLabel, cookingTimeLabel].forEach { contentView.addSubview($0) }
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(standView)
-        containerView.addSubview(imageView)
-//        [titleLabel, standView, imageView].forEach { containerView.addSubview($0) }
+        [titleLabel, standView, imageView].forEach { containerView.addSubview($0) }
     }
 
     func setupConstraints() {
@@ -122,13 +119,10 @@ extension RecipeCell: IBaseView {
         }
 
         imageView.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
             make.centerX.equalToSuperview()
             make.width.equalTo(contentView.bounds.width * 0.8)
             make.bottom.equalToSuperview()
-
             make.height.greaterThanOrEqualTo((contentView.bounds.height - 34) * 1/2)
-//            make.height.lessThanOrEqualTo((contentView.bounds.height - 34) * 3/4)
         }
 
         volumeLabel.snp.makeConstraints { make in
