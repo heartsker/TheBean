@@ -9,7 +9,11 @@ target 'TheBean' do
   use_frameworks!
 
   # Pods for TheBean
+
+  # Linter
   pod 'SwiftLint'
+
+  # Public pods
   pod 'Alamofire'
   pod 'SnapKit'
 

@@ -7,11 +7,11 @@
 
 import UIKit
 
-class StatisticsContentView: UIStackView, IBaseView {
+class StatisticsContentView: UIStackView {
+
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
-
         setup()
     }
 
@@ -20,25 +20,28 @@ class StatisticsContentView: UIStackView, IBaseView {
     }
 
     // MARK: - Subviews
-    private lazy var personalRecomendationsView = {
-        RecomendationsView()
-    }()
+    private lazy var scoreView = ScoreView()
+    private lazy var personalRecomendationsView = RecomendationsView()
+    private lazy var globalStatisticsView = GlobalStatisticsView()
+}
 
-    private lazy var globalStatisticsView = {
-        GlobalStatisticsView()
-    }()
+// MARK: - Setup methods
+extension StatisticsContentView {
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+    }
 
-    // MARK: - Setup
-    func setupAppearance() {
+    private func setupAppearance() {
         axis = .vertical
         distribution = .fill
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
+        addArrangedSubview(scoreView)
+        setCustomSpacing(38, after: scoreView)
         addArrangedSubview(personalRecomendationsView)
         setCustomSpacing(46, after: personalRecomendationsView)
         addArrangedSubview(globalStatisticsView)
     }
-
-    func setupConstraints() {}
 }

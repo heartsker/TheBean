@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TimerViewController: UIViewController, IBaseView {
+class TimerViewController: UIViewController {
     // MARK: - Properties
     private lazy var label: UILabel = {
         UILabel(text: "That is timer", color: .materialHeavy, font: .bold(30))
@@ -16,16 +16,22 @@ class TimerViewController: UIViewController, IBaseView {
     // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
     }
+}
 
-    // MARK: - Setup
-    func setupSubviews() {
+// MARK: - Setup methods
+extension TimerViewController {
+    private func setup() {
+        setupSubviews()
+        setupConstraints()
+    }
+
+    private func setupSubviews() {
         view.addSubview(label)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true

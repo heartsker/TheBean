@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import SnapKit
 
-class BlockLabel: UILabel, IBaseView {
-    // MARK: - Initialization
+class BlockLabel: UILabel {
+
+    // MARK: - Initializators
     init(text: String) {
         super.init(frame: .zero)
         self.text = text
@@ -20,15 +20,16 @@ class BlockLabel: UILabel, IBaseView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
-        textColor = .materialHeavy
-        // TODO: (IC) Replace with UIFont.bold
-        font = .init(name: "Muller-Trial-Bold", size: 18)
+// MARK: - Setup methods
+extension BlockLabel {
+    private func setup() {
+        setupAppearance()
     }
 
-    func setupSubviews() {}
-
-    func setupConstraints() {}
+    private func setupAppearance() {
+        textColor = .materialHeavy
+        font = .bold(18)
+    }
 }

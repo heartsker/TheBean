@@ -7,10 +7,12 @@
 
 import UIKit
 
-// TODO: (IC) Add comments
-class CardLabel: UILabel, IBaseView {
-    let isWhite: Bool
+class CardLabel: UILabel {
 
+    // MARK: - Properties
+    private let isWhite: Bool
+
+    // MARK: - Initializers
     init(text: String, isWhite: Bool) {
         self.isWhite = isWhite
         super.init(frame: .zero)
@@ -23,19 +25,20 @@ class CardLabel: UILabel, IBaseView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setup() {
+}
+
+// MARK: - Setup methods
+extension CardLabel {
+    private func setup() {
         setupAppearance()
-        setupSubviews()
-        setupConstraints()
     }
 
-    func setupAppearance() {
-        guard let text = super.text else {
-            return
-        }
+    private func setupAppearance() {
+        guard let text = super.text else { return }
 
+        let textSize: CGFloat = 16
         let color: UIColor = isWhite ? .white : .materialMedium
-        let font: UIFont = isWhite ? .bold(16) : .medium(16)
+        let font: UIFont = .medium(textSize)
 
         let string = NSMutableAttributedString(string: text)
         string.addAttribute(.foregroundColor,
@@ -46,13 +49,16 @@ class CardLabel: UILabel, IBaseView {
                             value: font,
                             range: NSRange(text.startIndex ..< text.endIndex, in: text))
 
+        let appNameIndexRanges = text.ranges(of: "The Bean")
+        for range in appNameIndexRanges {
+            string.addAttribute(.font,
+                                value: UIFont.bold(textSize),
+                                range: NSRange(range, in: text))
+        }
+
         attributedText = string
         textAlignment = .center
         numberOfLines = 0
         lineBreakMode = .byClipping
     }
-
-    func setupSubviews() {}
-
-    func setupConstraints() {}
 }

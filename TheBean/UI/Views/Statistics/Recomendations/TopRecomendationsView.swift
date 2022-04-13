@@ -8,16 +8,15 @@
 import SnapKit
 import UIKit
 
-class TopRecomendationsView: UIStackView, IBaseView {
+class TopRecomendationsView: UIStackView {
+
     // MARK: - Properties
-    // TODO: (IC) Exstract `(text: String, image: UIImage?)` to struct
-    var recomendations: [(text: String, image: UIImage?)]
+    private var recomendations: [CoffeeRecomendation]
 
     // MARK: - Initializations
-    init(recomendations: [(String, UIImage?)] ) {
+    init(recomendations: [CoffeeRecomendation] ) {
         self.recomendations = recomendations
         super.init(frame: .zero)
-
         setup()
     }
 
@@ -27,22 +26,27 @@ class TopRecomendationsView: UIStackView, IBaseView {
 
     // MARK: - Subviews
     private lazy var placesViews = {
-        recomendations.map { (text: String, image: UIImage?) in
-            CoffeeBlockView(text: text, image: image)
+        recomendations.map { (recomendation: CoffeeRecomendation) in
+            CoffeeBlockView(recomendation)
         }
     }()
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
+// MARK: - Setup methods
+extension TopRecomendationsView {
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+    }
+
+    private func setupAppearance() {
         axis = .horizontal
         distribution = .equalSpacing
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         for stackView in placesViews {
             addArrangedSubview(stackView)
         }
     }
-
-    func setupConstraints() {}
 }

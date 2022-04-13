@@ -7,17 +7,15 @@
 
 import UIKit
 
-class CoffeeBlockView: UIStackView, IBaseView {
+class CoffeeBlockView: UIStackView {
+
     // MARK: - Properties
-    var text: String
-    var image: UIImage?
+    private var recomendation: CoffeeRecomendation
 
     // MARK: - Initialization
-    init(text: String, image: UIImage?) {
-        self.text = text
-        self.image = image
+    init(_ recomendation: CoffeeRecomendation) {
+        self.recomendation = recomendation
         super.init(frame: .zero)
-
         setup()
     }
 
@@ -27,30 +25,40 @@ class CoffeeBlockView: UIStackView, IBaseView {
 
     // MARK: - Subviews
     private lazy var imageView: UIImageView = {
-        let imageView = UIImageView(image: image)
+        let imageView = UIImageView(image: recomendation.image)
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
     private lazy var labelView: UILabel = {
-        let label = UILabel(text: text, color: .materialHeavy, font: .regular(14))
+        let label = UILabel(text: recomendation.text,
+                            color: .materialHeavy,
+                            font: .regular(14))
         label.textAlignment = .center
         return label
     }()
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
+// MARK: - Setup methods
+extension CoffeeBlockView {
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+        setupConstraints()
+    }
+
+    private func setupAppearance() {
         axis = .vertical
         distribution = .equalSpacing
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         addArrangedSubview(imageView)
         addArrangedSubview(labelView)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.width.equalTo(88)
             make.height.equalTo(83)
