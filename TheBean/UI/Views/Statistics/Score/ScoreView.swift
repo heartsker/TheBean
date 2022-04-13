@@ -90,3 +90,145 @@ extension ScoreView {
         }
     }
 }
+
+// MARK: - StatsStackView
+extension ScoreView {
+
+    private class StatsStackView: UIStackView {
+
+        // MARK: - Init
+        init() {
+            super.init(frame: .zero)
+            setup()
+        }
+
+        required init(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+        // MARK: - Setup methods
+        private func setup() {
+            setupAppearance()
+            setupSubviews()
+        }
+
+        private func setupAppearance() {
+            distribution = .equalSpacing
+            axis = .vertical
+        }
+
+        private func setupSubviews() {
+            addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreCupsDrunk,
+                                           rightString: "\(Account.shared.cupsDrunk)"))
+            addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreRecipesMastered,
+                                           rightString: "\(Account.shared.recipesMastered)"))
+            addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreHealthScore,
+                                           rightString: "\(Account.shared.healthScore)"))
+        }
+    }
+}
+
+// MARK: - RowStack
+extension ScoreView {
+
+    private class RowStack: UIStackView {
+        let leftString: String
+        let rightString: String
+
+        // MARK: - Init
+        init(leftString: String, rightString: String) {
+            self.leftString = leftString
+            self.rightString = rightString
+            super.init(frame: .zero)
+            setup()
+        }
+
+        required init(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+        // MARK: - Subviews
+        private lazy var leftLabel = {
+            UILabel(text: leftString,
+                    color: .materialMedium,
+                    font: .light(13))
+        }()
+
+        private lazy var rightLabel = {
+            UILabel(text: rightString,
+                    color: .materialMedium,
+                    font: .light(13))
+        }()
+
+        // MARK: - Setup methods
+        private func setup() {
+            setupAppearance()
+            setupSubviews()
+        }
+
+        private func setupAppearance() {
+            axis = .horizontal
+            distribution = .equalSpacing
+        }
+
+        private func setupSubviews() {
+            addArrangedSubview(leftLabel)
+            addArrangedSubview(rightLabel)
+        }
+    }
+
+}
+
+// MARK: - ScoreLevelView
+extension ScoreView {
+    private class ScoreLevelView: UIView {
+
+        // MARK: - Init
+        init() {
+            super.init(frame: .zero)
+            setup()
+        }
+
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+        // MARK: - Subviews
+        private lazy var label: UILabel = {
+            UILabel(text: "\(Account.shared.level)",
+                    color: .black,
+                    font: .regular(36))
+        }()
+
+        // MARK: - Setup methods
+        private func setup() {
+            setupAppearence()
+            setupSubviews()
+            setupConstraints()
+        }
+
+        private func setupAppearence() {
+            backgroundColor = .highlightPrimary
+        }
+
+        private func setupSubviews() {
+            addSubview(label)
+        }
+
+        private func setupConstraints() {
+            label.snp.makeConstraints { make in
+                make.centerX.centerY.equalToSuperview()
+            }
+        }
+
+        override func draw(_ rect: CGRect) {
+            let path = UIBezierPath(ovalIn: CGRect(x: 2.5,
+                                                   y: 2.5,
+                                                   width: rect.width-5,
+                                                   height: rect.height-5))
+            path.lineWidth = 5
+            UIColor.accentColor.setStroke()
+            path.stroke()
+        }
+    }
+}
