@@ -7,24 +7,17 @@
 
 import UIKit
 
-class AverageNumberCupsCard: UIStackView, ICardRepresentable {
+class AverageNumberCupsCard: BaseCardView {
     // MARK: - Properties
-    let cupImage: UIImage?
-    let numberOfCups: Int
-    let text: String
-    let cornerRadius: CGFloat = 20
+    private let value: Int
+    private let cupImage: UIImage? = UIImage(named: "coffee.cup")
+    private let suffix = StatsLocalization.averageCupsPerDay
+    private lazy var text = "\(value) - \(suffix)"
 
-    lazy var card: UIView = {
-        self
-    }()
-
-    // MARK: - Initialization
-    required init(text: String, numberOfCups: Int) {
-        self.text = text
-        self.numberOfCups = numberOfCups
-        cupImage = ImageManager.cup
-        super.init(frame: .zero)
-
+    // MARK: - Initializers
+    required init(value: Int) {
+        self.value = value
+        super.init(backgroundColor: .materialHeavy)
         setup()
     }
 
@@ -32,13 +25,14 @@ class AverageNumberCupsCard: UIStackView, ICardRepresentable {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Subviews
     private lazy var label: UILabel = {
         CardLabel(text: text, isWhite: true)
     }()
 
     private lazy var secondBackground: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = cornerRadius
+        view.layer.cornerRadius = 20
         view.backgroundColor = .hightlightThirdly
         return view
     }()
@@ -46,25 +40,29 @@ class AverageNumberCupsCard: UIStackView, ICardRepresentable {
     private lazy var cupsStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
-        stack.distribution = .equalSpacing
-        for _ in stride(from: 0, to: numberOfCups, by: 1) {
-
+        stack.distribution = .fillProportionally
+        for _ in stride(from: 0, to: value, by: 1) {
+            let imageView = UIImageView(image: cupImage)
+            imageView.contentMode = .scaleAspectFit
+            stack.addArrangedSubview(imageView)
         }
         return stack
     }()
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
-        backgroundColor = .materialHeavy
-        layer.cornerRadius = cornerRadius
+// MARK: - Setup methods
+extension AverageNumberCupsCard {
+    private func setup() {
+        setupSubviews()
+        setupConstraints()
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         addSubview(secondBackground)
         addSubview(label)
+        addSubview(cupsStackView)
     }
-
-    func setupConstraints() {
+    private func setupConstraints() {
         snp.makeConstraints { make in
             make.height.equalTo(snp.width).multipliedBy(Card.heigthPercent)
         }
@@ -80,6 +78,14 @@ class AverageNumberCupsCard: UIStackView, ICardRepresentable {
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(Label.top)
         }
+
+        cupsStackView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(21)
+            make.bottom.equalToSuperview().inset(.screenWidth*0.015)
+            make.height.equalTo(.screenWidth*0.25)
+        }
+
+        layoutIfNeeded()
     }
 }
 
@@ -92,7 +98,6 @@ private extension AverageNumberCupsCard {
     enum SecondBackground {
         static let heigthPercent: CGFloat = 0.3906
     }
-
     enum Label {
         static let widthPercent: CGFloat = 0.5714
         static let top: CGFloat = 27

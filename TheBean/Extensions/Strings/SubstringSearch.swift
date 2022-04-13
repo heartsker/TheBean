@@ -1,18 +1,20 @@
 //
-//  StringProtocolExtension.swift
+//  SubstringSearch.swift
 //  TheBean
 //
 //  Created by Илья Чуб on 22.03.2022.
 //
 
-// TODO: (IC) Do we need this extension?
 extension StringProtocol where Index == String.Index {
+
     func index(of string: Self, options: String.CompareOptions = []) -> Index? {
         return range(of: string, options: options)?.lowerBound
     }
+
     func endIndex(of string: Self, options: String.CompareOptions = []) -> Index? {
         return range(of: string, options: options)?.upperBound
     }
+
     func indexes(of string: Self, options: String.CompareOptions = []) -> [Index] {
         var result: [Index] = []
         var start = startIndex
@@ -24,6 +26,7 @@ extension StringProtocol where Index == String.Index {
         }
         return result
     }
+
     func ranges(of string: Self, options: String.CompareOptions = []) -> [Range<Index>] {
         var result: [Range<Index>] = []
         var start = startIndex

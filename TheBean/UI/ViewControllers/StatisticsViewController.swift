@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StatisticsViewController: UIViewController, IBaseView {
+class StatisticsViewController: UIViewController {
     // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,18 +26,26 @@ class StatisticsViewController: UIViewController, IBaseView {
     private lazy var statisticsContentView = {
         StatisticsContentView()
     }()
+}
 
-    // MARK: - Setup
-    func setupSubviews() {
+// MARK: - Setup methods
+extension StatisticsViewController {
+    private func setup() {
+        setupSubviews()
+        setupConstraints()
+    }
+
+    private func setupSubviews() {
         view.addSubview(scrollView)
         scrollView.addSubview(statisticsContentView)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
+        let insetLeftRight: CGFloat = .screenWidth * 0.08
 
         statisticsContentView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(20)
-            make.width.equalToSuperview().inset(20)
+            make.edges.equalToSuperview().inset(insetLeftRight)
+            make.width.equalToSuperview().inset(insetLeftRight)
         }
 
         scrollView.snp.makeConstraints { make in

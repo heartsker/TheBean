@@ -7,21 +7,18 @@
 
 import UIKit
 
-class MostPopularDrinkCard: UIStackView, ICardRepresentable {
-    // MARK: - Properties
-    let image: UIImage?
-    let text: String
+class MostPopularDrinkCard: BaseCardView {
 
-    lazy var card: UIView = {
-        self
-    }()
+    // MARK: - Properties
+    private let image: UIImage? = ImageManager.baristaHands
+    private let value: String
+    private let suffix: String = StatsLocalization.mostPopularDrinkSuffix
+    private lazy var text = "\(^value) - \(suffix)"
 
     // MARK: - Initialization
-    required init(text: String) {
-        self.text = text
-        image = ImageManager.baristaHands
-        super.init(frame: .zero)
-
+    required init(value: String) {
+        self.value = value
+        super.init(backgroundColor: .highlightPrimary)
         setup()
     }
 
@@ -39,19 +36,21 @@ class MostPopularDrinkCard: UIStackView, ICardRepresentable {
     private lazy var label: UILabel = {
         CardLabel(text: text, isWhite: false)
     }()
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
-        backgroundColor = .highlightPrimary
-        layer.cornerRadius = 20
+// MARK: - Setup methods
+extension MostPopularDrinkCard {
+    private func setup() {
+        setupSubviews()
+        setupConstraints()
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         addSubview(imageView)
         addSubview(label)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         snp.makeConstraints { make in
             make.height.equalTo(snp.width).multipliedBy(Card.heigthPercent)
         }
@@ -75,7 +74,6 @@ class MostPopularDrinkCard: UIStackView, ICardRepresentable {
 private extension MostPopularDrinkCard {
     enum Card {
         static let heigthPercent: CGFloat = 0.565
-
     }
 
     enum Image {

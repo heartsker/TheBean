@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecipesViewController: UIViewController, IBaseView {
+class RecipesViewController: UIViewController {
     // MARK: - Properties
     private lazy var button: UIButton = {
         let button = UIButton(text: "That is recipe", color: .materialHeavy, font: .bold(30))
@@ -23,18 +23,24 @@ class RecipesViewController: UIViewController, IBaseView {
     // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
     }
+}
 
-    // MARK: - Setup
-    func setupConstraints() {
+// MARK: - Setup methods
+extension RecipesViewController {
+    private func setup() {
+        setupSubviews()
+        setupConstraints()
+    }
+
+    private func setupConstraints() {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         view.addSubview(button)
     }
 }

@@ -7,11 +7,11 @@
 
 import UIKit
 
-class AccountContentView: UIStackView, IBaseView {
+class AccountContentView: UIStackView {
+
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
-
         setup()
     }
 
@@ -23,23 +23,30 @@ class AccountContentView: UIStackView, IBaseView {
     private lazy var titleView = {
         AccountTitleView()
     }()
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
+// MARK: - Setup methods
+extension AccountContentView {
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+        setupConstraints()
+    }
+
+    private func setupAppearance() {
         axis = .vertical
         distribution = .fill
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         addArrangedSubview(titleView)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         titleView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.height.equalTo(110)
             make.width.equalTo(110)
         }
-        titleView.setupConstraints()
     }
 }

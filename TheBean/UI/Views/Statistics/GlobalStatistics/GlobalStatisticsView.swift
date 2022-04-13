@@ -7,17 +7,18 @@
 
 import UIKit
 
-class GlobalStatisticsView: UIStackView, IBaseView {
+class GlobalStatisticsView: UIStackView {
+
     // MARK: - Properties
-    let globalStatisticsCards: [ICardRepresentable] = [
-        MostPopularDrinkCard(text: "Latte - is the most popular drink among The Bean users"),
-        AverageNumberCupsCard(text: "4 - is an average number of cups per day", numberOfCups: 1)
+    private let globalStatisticsCards: [ICardRepresentable] = [
+        MostPopularDrinkCard(value: CoffeeLocalization.latte),
+        AverageNumberCupsCard(value: 4),
+        RecipesNumberCard(value: 129)
     ]
 
-    // MARK: - Initialization
+    // MARK: - Initializators
     init() {
         super.init(frame: .zero)
-
         setup()
     }
 
@@ -29,14 +30,21 @@ class GlobalStatisticsView: UIStackView, IBaseView {
     private lazy var label = {
         BlockLabel(text: ^StatsLocalization.globalStatistics)
     }()
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
+// MARK: - Setup methods
+extension GlobalStatisticsView {
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+    }
+
+    private func setupAppearance() {
         axis = .vertical
         distribution = .fill
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         addArrangedSubview(label)
         setCustomSpacing(22, after: label)
 
@@ -46,6 +54,4 @@ class GlobalStatisticsView: UIStackView, IBaseView {
             setCustomSpacing(8, after: lastSubview)
         }
     }
-
-    func setupConstraints() {}
 }

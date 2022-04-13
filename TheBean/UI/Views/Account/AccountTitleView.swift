@@ -7,7 +7,8 @@
 
 import UIKit
 
-class AccountTitleView: UIStackView, IBaseView {
+class AccountTitleView: UIStackView {
+
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
@@ -46,20 +47,28 @@ class AccountTitleView: UIStackView, IBaseView {
         label.textAlignment = .center
         return label
     }()
+}
 
-    // MARK: - Setup
-    func setupAppearance() {
+// MARK: - Setup methods
+extension AccountTitleView {
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+        setupConstraints()
+    }
+
+    private func setupAppearance() {
         axis = .vertical
         distribution = .fill
     }
 
-    func setupSubviews() {
+    private func setupSubviews() {
         addSubview(imageView)
         addSubview(nameLabel)
         addSubview(emailLabel)
     }
 
-    func setupConstraints() {
+    private func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.width.equalToSuperview()

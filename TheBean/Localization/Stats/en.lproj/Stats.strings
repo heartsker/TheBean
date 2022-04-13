@@ -6,6 +6,11 @@
   
 */
 
+"score.label" = "score";
+"score.cupsDrunk" = "cups drunk";
+"score.recipesMastered" = "recipes mastered";
+"score.healthScore" = "health score";
+
 "personal.recomendations" = "personal recomendations";
 
 "global.statistics" = "global statistics";

@@ -7,18 +7,17 @@
 
 import UIKit
 
-class RecomendationsView: UIStackView, IBaseView {
+class RecomendationsView: UIStackView {
     // MARK: - Properties
     let recomendations = [
-        (^CoffeeLocalization.latte, ImageManager.latte),
-        (^CoffeeLocalization.flatwhite, ImageManager.flatwhite),
-        (^CoffeeLocalization.americano, ImageManager.americano)
+        CoffeeRecomendation(text: ^CoffeeLocalization.latte, image: ImageManager.latte),
+        CoffeeRecomendation(text: ^CoffeeLocalization.flatwhite, image: ImageManager.flatwhite),
+        CoffeeRecomendation(text: ^CoffeeLocalization.americano, image: ImageManager.americano)
     ]
 
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
-
         setup()
     }
 
@@ -31,10 +30,19 @@ class RecomendationsView: UIStackView, IBaseView {
         BlockLabel(text: ^StatsLocalization.personalRecomendations)
     }()
 
-    private lazy var topRecomendations = { TopRecomendationsView(recomendations: recomendations)
+    private lazy var topRecomendations = {
+        TopRecomendationsView(recomendations: recomendations)
     }()
+}
 
-    // MARK: - Setup
+// MARK: - Setup methods
+extension RecomendationsView {
+    private func setup() {
+        setupAppearance()
+        setupSubviews()
+        setupConstraints()
+    }
+
     func setupAppearance() {
         axis = .vertical
         distribution = .equalSpacing

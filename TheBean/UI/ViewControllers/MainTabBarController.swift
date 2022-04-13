@@ -7,16 +7,22 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController, IBaseView {
+class MainTabBarController: UITabBarController {
+
     // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
     }
+}
 
-    // MARK: - Setup
-    func setupSubviews() {
+// MARK: - Setup methods
+extension MainTabBarController {
+    private func setup() {
+        setupSubviews()
+    }
+
+    private func setupSubviews() {
         let recipesVC = RecipesViewController()
         let statisticsVC = StatisticsViewController()
         let timerVC = TimerViewController()
@@ -32,7 +38,7 @@ class MainTabBarController: UITabBarController, IBaseView {
         timerVC.setupTabBar(^ControllerLocalization.timer, image: "timer")
         accountVC.setupTabBar(^ControllerLocalization.account, image: "person")
 
-        // MARK: Test
+        // MARK: - Test
         let testVC = TestVC()
         let testNVC = UINavigationController(rootViewController: testVC)
         testVC.setupTabBar(^ControllerLocalization.test, image: "wrench.and.screwdriver")
@@ -41,9 +47,7 @@ class MainTabBarController: UITabBarController, IBaseView {
         tabBar.unselectedItemTintColor = .materialMedium
         tabBar.backgroundColor = .hightlightSecondary
 
-        // MARK: Add Navigation Controllers to the main TabBar here:
+        // TODO: Add Navigation Controllers to the main TabBar here:
         viewControllers = [testNVC, recipesNVC, statisticsNVC, timerNVC, accountNVC]
     }
-
-    func setupConstraints() {}
 }
