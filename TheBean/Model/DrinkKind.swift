@@ -6,8 +6,8 @@
 //
 
 enum DrinkKind: String {
-    case latte
-    case flatWhite
+    case latte = "coffee.latte"
+    case flatwhite = "flatwhite"
     case americano
     case espresso
 }

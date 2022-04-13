@@ -10,7 +10,7 @@ import UIKit
 class MostPopularDrinkCard: BaseCardView {
 
     // MARK: - Properties
-    private let image: UIImage?
+    private let image: UIImage? = ImageManager.baristaHands
     private let value: String
     private let suffix: String = StatsLocalization.mostPopularDrinkSuffix
     private lazy var text = "\(^value) - \(suffix)"
@@ -18,7 +18,6 @@ class MostPopularDrinkCard: BaseCardView {
     // MARK: - Initialization
     required init(value: String) {
         self.value = value
-        image = UIImage(named: "coffee.barista.hands")
         super.init(backgroundColor: .highlightPrimary)
         setup()
     }
@@ -52,17 +51,39 @@ extension MostPopularDrinkCard {
     }
 
     private func setupConstraints() {
+        snp.makeConstraints { make in
+            make.height.equalTo(snp.width).multipliedBy(Card.heigthPercent)
+        }
+
         imageView.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(18)
+            make.left.equalToSuperview().offset(Image.left)
             make.centerY.equalToSuperview()
-            make.bottom.top.equalToSuperview().inset(13)
-            make.width.equalTo(imageView.snp.height).multipliedBy(0.6666)
+            make.height.equalToSuperview().multipliedBy(Image.heigthPercent)
+            make.width.equalTo(imageView.snp.height).multipliedBy(Image.widthPercent)
         }
 
         label.snp.makeConstraints { make in
-            make.left.equalTo(imageView.snp.right).offset(14)
-            make.right.equalToSuperview().inset(18)
-            make.goldenRatio(from: snp.top, in: .Y, size: 192)
+            make.left.equalTo(imageView.snp.right).offset(Label.left)
+            make.right.equalToSuperview().inset(Label.right)
+            make.goldenRatio(inside: snp, by: .Y, trailing: false)
         }
+    }
+}
+
+// MARK: - Constraint constants
+private extension MostPopularDrinkCard {
+    enum Card {
+        static let heigthPercent: CGFloat = 0.565
+    }
+
+    enum Image {
+        static let left: CGFloat = 20
+        static let heigthPercent: CGFloat = 0.8594
+        static let widthPercent: CGFloat = 0.6667
+    }
+
+    enum Label {
+        static let left: CGFloat = 14
+        static let right: CGFloat = 16
     }
 }

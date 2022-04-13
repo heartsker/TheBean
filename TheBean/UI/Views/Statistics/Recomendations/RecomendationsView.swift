@@ -8,12 +8,11 @@
 import UIKit
 
 class RecomendationsView: UIStackView {
-
     // MARK: - Properties
-    private let recomendations = [
-        (^CoffeeLocalization.latte, UIImage(named: "coffee.latte")!),
-        (^CoffeeLocalization.flatwhite, UIImage(named: "coffee.flatwhite")!),
-        (^CoffeeLocalization.americano, UIImage(named: "coffee.americano")!)
+    let recomendations = [
+        (^CoffeeLocalization.latte, ImageManager.latte),
+        (^CoffeeLocalization.flatwhite, ImageManager.flatwhite),
+        (^CoffeeLocalization.americano, ImageManager.americano)
     ]
 
     // MARK: - Initialization

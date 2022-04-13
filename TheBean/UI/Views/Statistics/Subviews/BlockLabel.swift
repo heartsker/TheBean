@@ -13,6 +13,7 @@ class BlockLabel: UILabel {
     init(text: String) {
         super.init(frame: .zero)
         self.text = text
+
         setup()
     }
 

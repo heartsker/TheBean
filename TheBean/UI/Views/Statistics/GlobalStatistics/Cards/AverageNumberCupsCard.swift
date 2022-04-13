@@ -62,17 +62,21 @@ extension AverageNumberCupsCard {
         addSubview(label)
         addSubview(cupsStackView)
     }
-
     private func setupConstraints() {
+        snp.makeConstraints { make in
+            make.height.equalTo(snp.width).multipliedBy(Card.heigthPercent)
+        }
+
         secondBackground.snp.makeConstraints { make in
-            make.height.equalToSuperview().multipliedBy(0.3906)
+            make.height.equalToSuperview().multipliedBy(SecondBackground.heigthPercent)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
 
         label.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(64)
-            make.top.equalToSuperview().inset(28)
+            make.width.equalToSuperview().multipliedBy(Label.widthPercent)
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(Label.top)
         }
 
         cupsStackView.snp.makeConstraints { make in
@@ -80,6 +84,22 @@ extension AverageNumberCupsCard {
             make.bottom.equalToSuperview().inset(.screenWidth*0.015)
             make.height.equalTo(.screenWidth*0.25)
         }
+
         layoutIfNeeded()
+    }
+}
+
+// MARK: - Constraint constants
+private extension AverageNumberCupsCard {
+    enum Card {
+        static let heigthPercent: CGFloat = 0.565
+    }
+
+    enum SecondBackground {
+        static let heigthPercent: CGFloat = 0.3906
+    }
+    enum Label {
+        static let widthPercent: CGFloat = 0.5714
+        static let top: CGFloat = 27
     }
 }

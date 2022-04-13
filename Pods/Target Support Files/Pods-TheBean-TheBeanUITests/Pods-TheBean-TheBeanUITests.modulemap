@@ -1,6 +1,0 @@
-framework module Pods_TheBean_TheBeanUITests {
-  umbrella header "Pods-TheBean-TheBeanUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

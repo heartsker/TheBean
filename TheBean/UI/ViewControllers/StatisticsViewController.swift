@@ -12,6 +12,7 @@ class StatisticsViewController: UIViewController {
     // MARK: - Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setup()
     }
 

@@ -11,10 +11,11 @@ import UIKit
 class TopRecomendationsView: UIStackView {
 
     // MARK: - Properties
-    private var recomendations: [(text: String, image: UIImage)]
+    // TODO: (IC) Exstract `(text: String, image: UIImage?)` to struct
+    private var recomendations: [(text: String, image: UIImage?)]
 
     // MARK: - Initializations
-    init(recomendations: [(String, UIImage)] ) {
+    init(recomendations: [(String, UIImage?)] ) {
         self.recomendations = recomendations
         super.init(frame: .zero)
         setup()
@@ -26,7 +27,7 @@ class TopRecomendationsView: UIStackView {
 
     // MARK: - Subviews
     private lazy var placesViews = {
-        recomendations.map { (text: String, image: UIImage) in
+        recomendations.map { (text: String, image: UIImage?) in
             CoffeeBlockView(text: text, image: image)
         }
     }()

@@ -1,4 +1,7 @@
 # Unreleased
+[TIC-26-AssetsIDs]:
+* Добавлен интерфейс взаимодействия с Assets - `IAssetsManager` и менеджер для работы с картинками - `ImageManager`
+
 [TIC-23-Combine]:
 * Интегрирован Combine
 * Добавлен `Publisher` для публикации и подписок на изменения

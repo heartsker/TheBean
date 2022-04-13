@@ -18,17 +18,16 @@ extension ConstraintMaker {
     }
 
     @discardableResult
-    func goldenRatio(from other: ConstraintItem,
-                     in direction: Direction,
-                     size: CGFloat,
-                     bigger: Bool = false) -> ConstraintMakerEditable {
+    func goldenRatio(inside other: ConstraintViewDSL,
+                     by direction: Direction,
+                     trailing: Bool = false) -> ConstraintMakerEditable {
         switch direction {
         case .X:
-            return centerX.equalTo(other)
-                .offset(bigger ? size.goldenRatioCompotents.a : size.goldenRatioCompotents.b)
+            return centerX.equalTo(other.trailing)
+                .multipliedBy(CGFloat.goldenRatioMultiplier(trailing: trailing))
         case .Y:
-            return centerY.equalTo(other)
-                .offset(bigger ? size.goldenRatioCompotents.a : size.goldenRatioCompotents.b)
+            return centerY.equalTo(other.bottom)
+                .multipliedBy(CGFloat.goldenRatioMultiplier(trailing: trailing))
         }
     }
 }

@@ -17,6 +17,7 @@ class CardLabel: UILabel {
         self.isWhite = isWhite
         super.init(frame: .zero)
         super.text = text
+
         setup()
     }
 

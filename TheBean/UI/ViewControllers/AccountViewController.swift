@@ -17,6 +17,7 @@ class AccountViewController: UIViewController {
     // MARK: - Initializators
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setup()
     }
 }
