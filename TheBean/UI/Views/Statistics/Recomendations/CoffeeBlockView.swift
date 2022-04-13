@@ -7,12 +7,11 @@
 
 import UIKit
 
-// MARK: CoffeeBlockView
 class CoffeeBlockView: UIStackView {
 
     // MARK: - Properties
-    var text: String
-    var image: UIImage
+    private var text: String
+    private var image: UIImage
 
     // MARK: - Initialization
     init(text: String, image: UIImage) {
@@ -41,7 +40,7 @@ class CoffeeBlockView: UIStackView {
     }()
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension CoffeeBlockView {
     private func setup() {
         setupAppearance()

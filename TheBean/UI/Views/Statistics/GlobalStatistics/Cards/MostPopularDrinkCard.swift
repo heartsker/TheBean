@@ -7,14 +7,13 @@
 
 import UIKit
 
-// MARK: MostPopularDrinkCard
 class MostPopularDrinkCard: BaseCardView {
 
     // MARK: - Properties
-    let image: UIImage?
-    let value: String
-    let suffix: String = StatsLocalization.mostPopularDrinkSuffix
-    lazy var text = "\(^value) - \(suffix)"
+    private let image: UIImage?
+    private let value: String
+    private let suffix: String = StatsLocalization.mostPopularDrinkSuffix
+    private lazy var text = "\(^value) - \(suffix)"
 
     // MARK: - Initialization
     required init(value: String) {
@@ -40,7 +39,7 @@ class MostPopularDrinkCard: BaseCardView {
     }()
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension MostPopularDrinkCard {
     private func setup() {
         setupSubviews()

@@ -7,16 +7,23 @@
 
 import UIKit
 
-// MARK: ArrowView
 class ArrowView: UIView {
 
     // MARK: - Properties
-    let color: UIColor
-    let width: Double
-    let pointerLineLength: Double
-    let arrowAngle: Double
+    private let color: UIColor
+    private let width: Double
+    private let pointerLineLength: Double
+    private let arrowAngle: Double
 
     // MARK: - Initializers
+    init() {
+        self.color = .materialMedium
+        self.width = 1
+        self.pointerLineLength = 5
+        self.arrowAngle = CGFloat(Double.pi / 4) * 0.9
+        super.init(frame: .zero)
+    }
+
     init(
         color: UIColor,
         width: Double,
@@ -35,7 +42,7 @@ class ArrowView: UIView {
     }
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension ArrowView {
     override func draw(_ rect: CGRect) {
         let arrow = UIBezierPath()

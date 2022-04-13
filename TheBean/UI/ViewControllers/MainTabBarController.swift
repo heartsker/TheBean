@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: MainTabBarController
 class MainTabBarController: UITabBarController {
 
     // MARK: - Initialization
@@ -17,7 +16,7 @@ class MainTabBarController: UITabBarController {
     }
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension MainTabBarController {
     private func setup() {
         setupSubviews()
@@ -39,7 +38,7 @@ extension MainTabBarController {
         timerVC.setupTabBar(^ControllerLocalization.timer, image: "timer")
         accountVC.setupTabBar(^ControllerLocalization.account, image: "person")
 
-        // MARK: Test
+        // MARK: - Test
         let testVC = TestVC()
         let testNVC = UINavigationController(rootViewController: testVC)
         testVC.setupTabBar(^ControllerLocalization.test, image: "wrench.and.screwdriver")
@@ -48,7 +47,7 @@ extension MainTabBarController {
         tabBar.unselectedItemTintColor = .materialMedium
         tabBar.backgroundColor = .hightlightSecondary
 
-        // MARK: Add Navigation Controllers to the main TabBar here:
+        // TODO: Add Navigation Controllers to the main TabBar here:
         viewControllers = [testNVC, recipesNVC, statisticsNVC, timerNVC, accountNVC]
     }
 }

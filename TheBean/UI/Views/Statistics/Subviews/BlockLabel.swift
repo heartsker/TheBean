@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: BlockLabel
 class BlockLabel: UILabel {
 
     // MARK: - Initializators
@@ -22,7 +21,7 @@ class BlockLabel: UILabel {
     }
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension BlockLabel {
     private func setup() {
         setupAppearance()

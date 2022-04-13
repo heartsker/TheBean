@@ -7,11 +7,10 @@
 
 import UIKit
 
-// MARK: CardLabel
 class CardLabel: UILabel {
 
     // MARK: - Properties
-    let isWhite: Bool
+    private let isWhite: Bool
 
     // MARK: - Initializers
     init(text: String, isWhite: Bool) {

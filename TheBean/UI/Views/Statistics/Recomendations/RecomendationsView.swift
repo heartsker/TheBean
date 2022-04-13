@@ -7,11 +7,10 @@
 
 import UIKit
 
-// MARK: RecomendationsView
 class RecomendationsView: UIStackView {
 
     // MARK: - Properties
-    let recomendations = [
+    private let recomendations = [
         (^CoffeeLocalization.latte, UIImage(named: "coffee.latte")!),
         (^CoffeeLocalization.flatwhite, UIImage(named: "coffee.flatwhite")!),
         (^CoffeeLocalization.americano, UIImage(named: "coffee.americano")!)
@@ -37,7 +36,7 @@ class RecomendationsView: UIStackView {
     }()
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension RecomendationsView {
     private func setup() {
         setupAppearance()

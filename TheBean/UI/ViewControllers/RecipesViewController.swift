@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: RecipesViewController
 class RecipesViewController: UIViewController {
     // MARK: - Properties
     private lazy var button: UIButton = {
@@ -28,7 +27,7 @@ class RecipesViewController: UIViewController {
     }
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension RecipesViewController {
     private func setup() {
         setupSubviews()

@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 
-// MARK: ScoreView
 class ScoreView: BaseCardView {
 
     // MARK: - Init
@@ -32,7 +31,7 @@ class ScoreView: BaseCardView {
 
     private lazy var userimageView: UIImageView = {
         let imageview = UIImageView(image: Account.shared.userimage)
-        imageview.layer.cornerRadius = UIScreen.main.bounds.width*0.144/2
+        imageview.layer.cornerRadius = .screenWidth * 0.144 / 2
         imageview.clipsToBounds = true
         return imageview
     }()
@@ -68,7 +67,7 @@ extension ScoreView {
         userimageView.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(40)
             make.top.equalToSuperview().inset(12)
-            make.width.height.equalTo(UIScreen.main.bounds.width*0.144)
+            make.width.height.equalTo(.screenWidth*0.144)
         }
 
         scoreLabel.snp.makeConstraints { make in
@@ -79,12 +78,12 @@ extension ScoreView {
         statsStackView.snp.makeConstraints { make in
             make.top.equalTo(scoreLabel.snp.bottom).offset(20)
             make.leading.equalToSuperview().inset(23)
-            make.bottom.equalToSuperview().inset(UIScreen.main.bounds.width*0.1253)
-            make.width.equalTo(UIScreen.main.bounds.width*0.3813)
+            make.bottom.equalToSuperview().inset(.screenWidth*0.1253)
+            make.width.equalTo(.screenWidth*0.3813)
         }
 
         scoreView.snp.makeConstraints { make in
-            make.width.equalTo(UIScreen.main.bounds.width*0.2346)
+            make.width.equalTo(.screenWidth*0.2346)
             make.height.equalTo(scoreView.snp.width).multipliedBy(0.9204)
             make.trailing.equalToSuperview().inset(23)
             make.top.equalTo(userimageView.snp.bottom).offset(29)

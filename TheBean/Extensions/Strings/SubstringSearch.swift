@@ -1,5 +1,5 @@
 //
-//  StringProtocolExtension.swift
+//  SubstringSearch.swift
 //  TheBean
 //
 //  Created by Илья Чуб on 22.03.2022.

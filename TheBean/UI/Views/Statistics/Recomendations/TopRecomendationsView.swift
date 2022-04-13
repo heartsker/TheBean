@@ -8,11 +8,10 @@
 import SnapKit
 import UIKit
 
-// MARK: TopRecomendationsView
 class TopRecomendationsView: UIStackView {
 
     // MARK: - Properties
-    var recomendations: [(text: String, image: UIImage)]
+    private var recomendations: [(text: String, image: UIImage)]
 
     // MARK: - Initializations
     init(recomendations: [(String, UIImage)] ) {
@@ -33,7 +32,7 @@ class TopRecomendationsView: UIStackView {
     }()
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension TopRecomendationsView {
     private func setup() {
         setupAppearance()

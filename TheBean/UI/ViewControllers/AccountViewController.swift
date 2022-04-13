@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: AccountViewController
 class AccountViewController: UIViewController {
 
     // MARK: - Properties
@@ -22,7 +21,7 @@ class AccountViewController: UIViewController {
     }
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension AccountViewController {
     private func setup() {
         setupSubviews()

@@ -7,9 +7,9 @@
 
 import UIKit
 
-// MARK: - StringStack
+// MARK: - RowStack
 extension StatsStackView {
-    internal class RowStack: UIStackView {
+    class RowStack: UIStackView {
         let leftString: String
         let rightString: String
 

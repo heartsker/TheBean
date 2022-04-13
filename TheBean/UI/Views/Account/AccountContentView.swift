@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: AccountContentView
 class AccountContentView: UIStackView {
 
     // MARK: - Initialization
@@ -26,7 +25,7 @@ class AccountContentView: UIStackView {
     }()
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension AccountContentView {
     private func setup() {
         setupAppearance()

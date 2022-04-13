@@ -12,8 +12,6 @@
 			<string>NSStringPluralRuleType</string>
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
-			<key>zero</key>
-			<string>%d рецептов было создано пользователями The Bean</string>
 			<key>one</key>
 			<string>%d рецепт был создан пользователями The Bean</string>
 			<key>many</key>

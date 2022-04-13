@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: ICardRepresentable
 protocol ICardRepresentable: UIView {
     var card: UIView { get }
 }

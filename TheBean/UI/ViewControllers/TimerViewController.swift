@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: TimerViewController
 class TimerViewController: UIViewController {
     // MARK: - Properties
     private lazy var label: UILabel = {
@@ -21,7 +20,7 @@ class TimerViewController: UIViewController {
     }
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension TimerViewController {
     private func setup() {
         setupSubviews()

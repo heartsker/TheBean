@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: StatisticsContentView
 class StatisticsContentView: UIStackView {
 
     // MARK: - Initialization
@@ -26,7 +25,7 @@ class StatisticsContentView: UIStackView {
     private lazy var globalStatisticsView = GlobalStatisticsView()
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension StatisticsContentView {
     private func setup() {
         setupAppearance()

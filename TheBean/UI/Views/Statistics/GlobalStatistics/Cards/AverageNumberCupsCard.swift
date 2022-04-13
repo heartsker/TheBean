@@ -7,13 +7,12 @@
 
 import UIKit
 
-// MARK: AverageNumberCupsCard
 class AverageNumberCupsCard: BaseCardView {
     // MARK: - Properties
-    let value: Int
-    let cupImage: UIImage? = UIImage(named: "coffee.cup")
-    let suffix = StatsLocalization.averageCupsPerDay
-    lazy var text = "\(value) - \(suffix)"
+    private let value: Int
+    private let cupImage: UIImage? = UIImage(named: "coffee.cup")
+    private let suffix = StatsLocalization.averageCupsPerDay
+    private lazy var text = "\(value) - \(suffix)"
 
     // MARK: - Initializers
     required init(value: Int) {
@@ -51,7 +50,7 @@ class AverageNumberCupsCard: BaseCardView {
     }()
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension AverageNumberCupsCard {
     private func setup() {
         setupSubviews()
@@ -78,8 +77,8 @@ extension AverageNumberCupsCard {
 
         cupsStackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(21)
-            make.bottom.equalToSuperview().inset(UIScreen.main.bounds.width*0.015)
-            make.height.equalTo(UIScreen.main.bounds.width*0.25)
+            make.bottom.equalToSuperview().inset(.screenWidth*0.015)
+            make.height.equalTo(.screenWidth*0.25)
         }
         layoutIfNeeded()
     }

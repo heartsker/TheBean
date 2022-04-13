@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - ScoreLevelView
 extension ScoreView {
-    internal class ScoreLevelView: UIView {
+    class ScoreLevelView: UIView {
 
         // MARK: - Init
         init() {

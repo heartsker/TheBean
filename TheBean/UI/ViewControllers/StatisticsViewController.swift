@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 
-// MARK: StatisticsViewController
 class StatisticsViewController: UIViewController {
     // MARK: - Initialization
     override func viewDidLoad() {
@@ -28,7 +27,7 @@ class StatisticsViewController: UIViewController {
     }()
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension StatisticsViewController {
     private func setup() {
         setupSubviews()
@@ -41,7 +40,7 @@ extension StatisticsViewController {
     }
 
     private func setupConstraints() {
-        let insetLeftRight: CGFloat = UIScreen.main.bounds.width * 0.08
+        let insetLeftRight: CGFloat = .screenWidth * 0.08
 
         statisticsContentView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(insetLeftRight)

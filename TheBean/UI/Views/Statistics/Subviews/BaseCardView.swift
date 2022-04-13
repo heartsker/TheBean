@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 
-// MARK: BaseCardView
 class BaseCardView: UIView, ICardRepresentable {
 
     // MARK: - Properties
@@ -27,7 +26,7 @@ class BaseCardView: UIView, ICardRepresentable {
     }
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension BaseCardView {
     private func setup(backgroundColor: UIColor) {
         setupAppearance(backgroundColor: backgroundColor)

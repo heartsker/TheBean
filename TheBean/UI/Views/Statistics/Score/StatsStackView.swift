@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-// MARK: StatsView
 class StatsStackView: UIStackView {
 
     // MARK: - Init

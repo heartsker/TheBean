@@ -8,14 +8,13 @@
 import UIKit
 import SnapKit
 
-// MARK: MostPopularDrinkCard
 class RecipesNumberCard: BaseCardView {
 
     // MARK: - Properties
-    let imageLeft: UIImage?
-    let imageRight: UIImage?
-    let value: UInt
-    lazy var text = StatsLocalization.masteredRecipes(value: value)
+    private let imageLeft: UIImage?
+    private let imageRight: UIImage?
+    private let value: UInt
+    private lazy var text = StatsLocalization.masteredRecipes(value: value)
 
     // MARK: - Initialization
     required init(value: UInt) {
@@ -43,19 +42,14 @@ class RecipesNumberCard: BaseCardView {
         return imageView
     }()
 
-    private lazy var arrowView: ArrowView = {
-        ArrowView(color: .materialMedium,
-                  width: 1,
-                  pointerLineLength: 5,
-                  arrowAngle: CGFloat(Double.pi / 4) * 0.9)
-    }()
+    private lazy var arrowView = ArrowView()
 
     private lazy var label: UILabel = {
         CardLabel(text: text, isWhite: false)
     }()
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension RecipesNumberCard {
     private func setup() {
         setupSubviews()
@@ -78,14 +72,14 @@ extension RecipesNumberCard {
         imageViewLeft.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.bottom.equalToSuperview().inset(10)
-            make.width.equalTo(UIScreen.main.bounds.width*0.3333)
+            make.width.equalTo(.screenWidth*0.3333)
             make.height.equalTo(imageViewRight.snp.width).multipliedBy(0.944)
         }
 
         imageViewRight.snp.makeConstraints { make in
             make.right.equalToSuperview()
             make.bottom.equalToSuperview().inset(10)
-            make.width.equalTo(UIScreen.main.bounds.width*0.3333)
+            make.width.equalTo(.screenWidth*0.3333)
             make.height.equalTo(imageViewRight.snp.width).multipliedBy(0.944)
         }
 

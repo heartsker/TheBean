@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: AccountTitleView
 class AccountTitleView: UIStackView {
 
     // MARK: - Initialization
@@ -49,7 +48,7 @@ class AccountTitleView: UIStackView {
     }()
 }
 
-// MARK: Setup methods
+// MARK: - Setup methods
 extension AccountTitleView {
     private func setup() {
         setupAppearance()
