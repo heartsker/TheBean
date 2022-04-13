@@ -73,7 +73,7 @@ extension AccountTitleView {
             make.top.equalToSuperview()
             make.width.equalToSuperview()
             make.height.equalTo(snp.height)
-            // FIXME: Needs to be replaced by inconstant radius with respect to superview
+            // FIXME: (AS) - Needs to be replaced by inconstant radius with respect to superview
             imageView.layer.cornerRadius = 55
         }
         nameLabel.snp.makeConstraints { make in

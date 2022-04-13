@@ -47,7 +47,6 @@ extension MainTabBarController {
         tabBar.unselectedItemTintColor = .materialMedium
         tabBar.backgroundColor = .hightlightSecondary
 
-        // TODO: Add Navigation Controllers to the main TabBar here:
         viewControllers = [testNVC, recipesNVC, statisticsNVC, timerNVC, accountNVC]
     }
 }
