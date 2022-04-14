@@ -38,6 +38,16 @@ class TestVC: UIViewController {
         Account.shared.username = "heartsker.ru"
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setupTabBar(^ControllerLocalization.test, image: "wrench.and.screwdriver")
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupTabBar(^ControllerLocalization.test, image: "wrench.and.screwdriver")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

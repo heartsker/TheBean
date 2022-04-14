@@ -14,6 +14,16 @@ class TimerViewController: UIViewController {
     }()
 
     // MARK: - Initialization
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setupTabBar(^ControllerLocalization.timer, image: "timer")
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupTabBar(^ControllerLocalization.timer, image: "timer")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()

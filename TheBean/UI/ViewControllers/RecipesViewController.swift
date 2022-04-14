@@ -5,11 +5,14 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
-import UIKit
+// import UIKit
+import SwiftUI
 
 final class RecipesViewController: UIViewController {
 
     // MARK: - Properties
+    private lazy var store = MainStore.shared
+
     var recipes: [Int: [RecipeCardModel]] = {
         var items: [Int: [RecipeCardModel]] = [:]
         CoffeeStrength.allCases.forEach { items[$0.rawValue] = $0.cards }
@@ -30,6 +33,16 @@ final class RecipesViewController: UIViewController {
     }()
 
     // MARK: - Initialization
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setupTabBar(^ControllerLocalization.recipes, image: "book")
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -175,13 +188,15 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 250, height: 40)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: 100, height: 30)
     }
 }
 
 extension RecipesViewController: RecipesFooterDelegate {
     func sectionFooterButtonTapped() {
-        print("🐋 Update collection view... Loading more...")
+        store.coordinator?.proceed(to: .recipes(.exampleRoute1))
     }
 }
