@@ -17,6 +17,9 @@ target 'TheBean' do
   pod 'Alamofire'
   pod 'SnapKit'
 
+  # Local pods
+  pod 'TBGraphics', :path => 'LocalPods/TBGraphics'
+
 end
 
 post_install do |installer|
