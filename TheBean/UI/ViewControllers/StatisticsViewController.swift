@@ -10,6 +10,16 @@ import SnapKit
 
 class StatisticsViewController: UIViewController {
     // MARK: - Initialization
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setupTabBar(^ControllerLocalization.statistics, image: "chart.bar.xaxis")
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupTabBar(^ControllerLocalization.statistics, image: "chart.bar.xaxis")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

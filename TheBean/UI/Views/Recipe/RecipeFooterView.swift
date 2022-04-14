@@ -41,10 +41,6 @@ final class RecipesFooterView: UICollectionReusableView {
 
 extension RecipesFooterView: ReuseIdentifyingProtocol { }
 
-extension RecipesFooterView: ConfigurationProtocol {
-    func configure(model: () -> Void) { }
-}
-
 extension RecipesFooterView: IBaseView {
     func setupAppearance() {
         buttonLabel.titleLabel?.font = .regular(13)
