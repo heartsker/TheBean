@@ -2,11 +2,13 @@ PODS:
   - Alamofire (5.6.0)
   - SnapKit (5.6.0)
   - SwiftLint (0.47.0)
+  - TBGraphics (0.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - SnapKit
   - SwiftLint
+  - TBGraphics (from `LocalPods/TBGraphics`)
 
 SPEC REPOS:
   trunk:
@@ -14,11 +16,16 @@ SPEC REPOS:
     - SnapKit
     - SwiftLint
 
+EXTERNAL SOURCES:
+  TBGraphics:
+    :path: LocalPods/TBGraphics
+
 SPEC CHECKSUMS:
   Alamofire: 0c07058209f211e3d32824f8e0766d7c44ac83b3
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: d41cc46a2ae58ac6d9f26954bc89f1d72e71fdef
+  TBGraphics: fc68f9b97a388ef79ebdde45d2651e781f7711dc
 
-PODFILE CHECKSUM: b5c22e2076ddda0fa2ad74dddcffb8124a8b7625
+PODFILE CHECKSUM: 2f04da8daee04e10c73249a1ad79b4995157fd95
 
 COCOAPODS: 1.11.3

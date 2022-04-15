@@ -6,7 +6,7 @@ MAGENTA := $(shell tput -Txterm setaf 5)
 WHITE := $(shell tput -Txterm setaf 7)
 RESET := $(shell tput -Txterm sgr0)
 BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
-export CURRENT_PROJECT = TheBean
+CURRENT_PROJECT := TheBean
 
 # Show help
 help:
