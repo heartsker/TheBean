@@ -1,21 +1,21 @@
-name: ${CURRENT_PROJECT}
+name: TheBean
 options:
   bundleIdPrefix: ${BUNDLE_ID_PREFIX}
   deploymentTarget:
     iOS: 13.0
 targets:
-  ${CURRENT_PROJECT}:
+  TheBean:
     type: application
     platform: iOS
     sources: 
-      - path: ${CURRENT_PROJECT}
+      - path: TheBean
     settings:
       DEVELOPMENT_TEAM: ${DEVELOPMENT_TEAM}
     info:
-      path: ${CURRENT_PROJECT}/Resources/Info.plist
+      path: TheBean/Resources/Info.plist
       properties:
         CFBundleExecutable: "$(EXECUTABLE_NAME)"
-        CFBundleIdentifier: ${BUNDLE_ID_PREFIX}.${CURRENT_PROJECT}
+        CFBundleIdentifier: ${BUNDLE_ID_PREFIX}.TheBean
         CFBundleVersion: "1.0"
         CFBundleShortVersionString: "1.0"
         UIAppFonts:
