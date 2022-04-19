@@ -11,7 +11,7 @@ import SwiftUI
 final class RecipesViewController: UIViewController {
 
     // MARK: - Properties
-    private lazy var store = MainStore.shared
+    var coordinator: RecipesCoordinator?
 
     var recipes: [Int: [RecipeCardModel]] = {
         var items: [Int: [RecipeCardModel]] = [:]
@@ -197,6 +197,6 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
 
 extension RecipesViewController: RecipesFooterDelegate {
     func sectionFooterButtonTapped() {
-        store.coordinator?.proceed(to: .recipes(.exampleRoute1))
+        coordinator?.showAdditionalInfo()
     }
 }

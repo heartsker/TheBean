@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.6.0)
+  - Alamofire (5.6.1)
   - SnapKit (5.6.0)
   - SwiftLint (0.47.0)
   - TBGraphics (0.1.0)
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
     :path: LocalPods/TBGraphics
 
 SPEC CHECKSUMS:
-  Alamofire: 0c07058209f211e3d32824f8e0766d7c44ac83b3
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: d41cc46a2ae58ac6d9f26954bc89f1d72e71fdef
   TBGraphics: fc68f9b97a388ef79ebdde45d2651e781f7711dc

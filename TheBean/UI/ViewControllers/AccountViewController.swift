@@ -10,6 +10,8 @@ import UIKit
 class AccountViewController: UIViewController {
 
     // MARK: - Properties
+    var coordinator: AccountCoordinator?
+
     private lazy var content: UIView = {
         AccountContentView()
     }()

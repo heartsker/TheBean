@@ -11,11 +11,14 @@ import Combine
 
 class TestVC: UIViewController {
     // MARK: - Properties
+    var coordinator: TestCoordinator?
+
     lazy private var usernameLabel: UILabel = {
         let label = UILabel(text: Account.shared.username, color: .blue, font: .bold(40))
         Publisher.subscribe(label, keyPath: \.text, for: .usernamePost)
         return label
     }()
+
     lazy private var buttonCom: UIButton = {
         let button = UIButton()
         button.setTitle("Make .com", for: .normal)
