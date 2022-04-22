@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="Account" representedClassName="Account" syncable="YES">
-        <attribute name="rowEmail" optional="YES" attributeType="String"/>
-        <attribute name="rowPassword" optional="YES" attributeType="String"/>
-        <attribute name="rowUsername" optional="YES" attributeType="String"/>
+        <attribute name="cupsCount" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="healthScore" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="level" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="rawEmail" optional="YES" attributeType="String"/>
+        <attribute name="rawImage" optional="YES" attributeType="Binary" valueTransformerName="UIImage?"/>
+        <attribute name="rawUsername" optional="YES" attributeType="String"/>
+        <attribute name="recipesCount" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Account" positionX="-2010.34375" positionY="-98.234375" width="92.54296875" height="74"/>
+        <element name="Account" positionX="-2010.34375" positionY="-98.234375" width="92.54296875" height="134"/>
     </elements>
 </model>

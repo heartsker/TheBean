@@ -21,12 +21,15 @@ public class Account: NSManagedObject {
         return account
     }
 
+    private let defaultUsername: String = "username"
+    private let defaultEmail: String = "the.bean@example.com"
+
     var username: String {
         get {
-            return rowUsername ?? "Wane Smith"
+            rawUsername ?? defaultUsername
         }
         set {
-            rowUsername = newValue
+            rawUsername = newValue
             Publisher.publishPost(with: username, for: .usernamePost)
             CoreDataManager.save()
         }
@@ -34,22 +37,35 @@ public class Account: NSManagedObject {
 
     var email: String {
         get {
-            return rowEmail ?? ""
+            rawEmail ?? defaultEmail
         }
         set {
-            rowEmail = newValue
+            rawEmail = newValue
             CoreDataManager.save()
         }
     }
 
-    var userimage: UIImage = UIImage(named: "account.profile.picture.test")!
-    var cupsDrunk: Int = 54
-    var recipesMastered: Int = 24
-    var healthScore: Int = 38
-    var level: Int = 39
+    var image: UIImage? {
+        get {
+            guard let data = rawImage else {
+                return nil
+            }
+            return UIImage(data: data)
+        }
+        set {
+            rawImage = newValue?.jpegData(compressionQuality: 1.0)
+            CoreDataManager.save()
+        }
+    }
 
     // MARK: - Initialization
     convenience init() {
         self.init(context: CoreDataManager.managedContext)
+
+        image = nil
+        cupsCount = 0
+        recipesCount = 0
+        healthScore = 0
+        level = 0
     }
 }

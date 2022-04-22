@@ -33,15 +33,13 @@ class CoreDataManager {
     }
 
     static func fetchAccount() throws -> Account {
-        var account: Account
         do {
-            guard let acc = try? managedContext.fetch(Account.fetchRequest()).first else {
+            guard let account = try? managedContext.fetch(Account.fetchRequest()).first else {
                 throw CoreDataError.fetchingError("Account")
             }
-            account = acc
+            return account
         } catch {
             throw CoreDataError.fetchingError("Account")
         }
-        return account
     }
 }

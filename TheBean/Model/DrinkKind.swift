@@ -7,9 +7,9 @@
 
 import UIKit
 
-enum DrinkKind: String {
-    case latte = "coffee.latte"
-    case flatwhite = "flatwhite"
+enum DrinkKind {
+    case latte
+    case flatwhite
     case americano
 
     var imageName: UIImage? {
@@ -17,7 +17,6 @@ enum DrinkKind: String {
         case .americano: return ImageManager.americano
         case .flatwhite: return ImageManager.flatwhite
         case .latte: return ImageManager.latte
-        default: return UIImage(systemName: "photo")
         }
     }
 }

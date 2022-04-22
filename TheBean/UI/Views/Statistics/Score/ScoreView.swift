@@ -30,7 +30,7 @@ class ScoreView: BaseCardView {
     }()
 
     private lazy var userimageView: UIImageView = {
-        let imageview = UIImageView(image: Account.shared.userimage)
+        let imageview = UIImageView(image: Account.shared.image)
         imageview.layer.cornerRadius = .screenWidth * 0.144 / 2
         imageview.clipsToBounds = true
         return imageview
@@ -119,9 +119,9 @@ extension ScoreView {
 
         private func setupSubviews() {
             addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreCupsDrunk,
-                                           rightString: "\(Account.shared.cupsDrunk)"))
+                                           rightString: "\(Account.shared.cupsCount)"))
             addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreRecipesMastered,
-                                           rightString: "\(Account.shared.recipesMastered)"))
+                                           rightString: "\(Account.shared.recipesCount)"))
             addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreHealthScore,
                                            rightString: "\(Account.shared.healthScore)"))
         }
