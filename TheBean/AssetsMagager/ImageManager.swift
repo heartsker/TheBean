@@ -23,6 +23,5 @@ class ImageManager: IAssetsManager {
     static let logo = ImageManager.asset(for: "logo")
     static let logoTransparent = ImageManager.asset(for: "logo.transparent")
 
-    // swiftlint:disable:next identifier_name
-    static let test_profilePicture = ImageManager.asset(for: "account.profile.picture.test")
+    static let profilePicture = ImageManager.system(name: "person.fill")
 }

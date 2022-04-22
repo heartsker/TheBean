@@ -34,8 +34,13 @@ class AccountViewController: UIViewController {
 // MARK: - Setup methods
 extension AccountViewController {
     private func setup() {
+        setupAppearance()
         setupSubviews()
         setupConstraints()
+    }
+
+    func setupAppearance() {
+        view.backgroundColor = .background
     }
 
     func setupSubviews() {

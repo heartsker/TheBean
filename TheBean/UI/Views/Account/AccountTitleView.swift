@@ -22,7 +22,8 @@ class AccountTitleView: UIStackView {
 
     // MARK: - Subviews
     private lazy var imageView: UIView = {
-        let image = UIImageView(image: ImageManager.test_profilePicture)
+        let image = UIImageView(image: Account.shared.image ?? ImageManager.profilePicture)
+        image.tintColor = .highlightPrimary
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.borderColor = UIColor.white.cgColor
