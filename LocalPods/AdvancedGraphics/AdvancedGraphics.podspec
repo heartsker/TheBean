@@ -9,8 +9,10 @@ Pod::Spec.new do |spec|
   spec.author = { "Daniel Pustotin" => "daniel.pustotin@gmail.com" }
   spec.source = { :path => "*" }
 
-  spec.ios.deployment_target = "12.0"
+  spec.ios.deployment_target = "13.0"
   spec.static_framework = true
 
   spec.source_files = "#{spec.name}/**/*.{swift}"
+
+  spec.dependency "AssetsManager"
 end

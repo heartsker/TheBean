@@ -1,11 +1,11 @@
 //
 //  FirstUppercased.swift
-//  TheBean
+//  Utils
 //
 //  Created by Daniel Pustotin on 25.03.2022.
 //
 
-public extension StringProtocol {
+fileprivate extension StringProtocol {
     var firstUppercased: String { prefix(1).uppercased() + dropFirst() }
 }
 

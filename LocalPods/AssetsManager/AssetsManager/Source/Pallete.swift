@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension IAssetsManager where Asset: UIColor {
+public extension IAssetsManager where Asset: UIColor {
     static var defaultAsset: UIColor {
         UIColor.clear
     }

@@ -7,12 +7,12 @@
 
 import Foundation
 
-extension IAssetsManager where Asset: UIFont {
+public extension IAssetsManager where Asset: UIFont {
     static var defaultAsset: UIFont {
         UIFont()
     }
 
-    private static var defaultFontSize: CGFloat {
+    static var defaultFontSize: CGFloat {
         16
     }
 
@@ -34,19 +34,19 @@ public class FontManager: IAssetsManager {
 
     private static let fontFamily = "Muller"
 
-    public static func light(_ size: CGFloat = 14) -> UIFont {
+    public static func light(_ size: CGFloat = defaultFontSize) -> UIFont {
         FontManager.asset(for: fontFamily + "Light", size: size)
     }
 
-    public static func regular(_ size: CGFloat = 14) -> UIFont {
+    public static func regular(_ size: CGFloat = defaultFontSize) -> UIFont {
         FontManager.asset(for: fontFamily + "Regular", size: size)
     }
 
-    public static func medium(_ size: CGFloat = 14) -> UIFont {
+    public static func medium(_ size: CGFloat = defaultFontSize) -> UIFont {
         FontManager.asset(for: fontFamily + "Medium", size: size)
     }
 
-    public static func bold(_ size: CGFloat = 14) -> UIFont {
+    public static func bold(_ size: CGFloat = defaultFontSize) -> UIFont {
         FontManager.asset(for: fontFamily + "Bold", size: size)
     }
 }

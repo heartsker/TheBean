@@ -1,21 +1,21 @@
 //
 //  BezierPathArrow.swift
-//  TheBean
+//  AdvancedGraphics
 //
 //  Created by Илья Чуб on 07.04.2022.
 //
 
 import UIKit
 
-public extension UIBezierPath {
+extension UIBezierPath {
     func arrow(
         from: CGPoint,
         to: CGPoint,
         pointerLength: CGFloat,
         angle: CGFloat
     ) {
-        self.move(to: from)
-        self.addLine(to: to)
+        move(to: from)
+        addLine(to: to)
 
         let startEndAngle = atan(
             (to.y - from.y) / (to.x - from.x)) + ((to.x - from.x) < 0 ? CGFloat(Double.pi) : 0
@@ -36,8 +36,8 @@ public extension UIBezierPath {
                 - pointerLength
                 * sin(CGFloat(Double.pi) - startEndAngle - angle)
         )
-        self.addLine(to: arrowLine1)
-        self.move(to: to)
-        self.addLine(to: arrowLine2)
+        addLine(to: arrowLine1)
+        move(to: to)
+        addLine(to: arrowLine2)
     }
 }

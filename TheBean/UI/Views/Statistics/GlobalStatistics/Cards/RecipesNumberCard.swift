@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Localize
 import AssetsManager
+import AdvancedGraphics
 
 class RecipesNumberCard: BaseCardView {
 

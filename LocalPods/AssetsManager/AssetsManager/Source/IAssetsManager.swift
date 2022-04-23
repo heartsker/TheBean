@@ -1,13 +1,13 @@
 //
 //  IAssetsManager.swift
-//  TheBean
+//  AssetsManager
 //
 //  Created by Daniel Pustotin on 10.04.2022.
 //
 
 import UIKit
 
-protocol IAssetsManager {
+public protocol IAssetsManager {
     associatedtype Asset
 
     static var defaultAsset: Asset { get }

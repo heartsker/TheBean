@@ -1,13 +1,13 @@
 //
 //  ImageManager.swift
-//  TheBean
+//  AssetsManager
 //
 //  Created by Daniel Pustotin on 10.04.2022.
 //
 
 import UIKit
 
-extension IAssetsManager where Asset: UIImage {
+public extension IAssetsManager where Asset: UIImage {
     static var defaultAsset: Asset {
         Asset(systemName: "questionmark.app.dashed")!
     }
