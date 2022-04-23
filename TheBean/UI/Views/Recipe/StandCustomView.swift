@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import AssetsManager
 
 final class StandCustomView: UIView {
 
-    var fillColor: UIColor = .materialMedium
+    var fillColor: UIColor = Pallete.materialMedium
 
     override init(frame: CGRect) {
         super.init(frame: frame)

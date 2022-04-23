@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AssetsManager
 
 class AccountTitleView: UIStackView {
 
@@ -23,7 +24,7 @@ class AccountTitleView: UIStackView {
     // MARK: - Subviews
     private lazy var imageView: UIView = {
         let image = UIImageView(image: Account.shared.image ?? ImageManager.profilePicture)
-        image.tintColor = .highlightPrimary
+        image.tintColor = Pallete.highlightPrimary
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.borderColor = UIColor.white.cgColor
@@ -34,8 +35,8 @@ class AccountTitleView: UIStackView {
     private lazy var nameLabel: UIView = {
         let label = UILabel()
         label.text = Account.shared.username
-        label.font = .bold(24)
-        label.textColor = .materialHeavy
+        label.font = FontManager.bold(24)
+        label.textColor = Pallete.materialHeavy
         label.textAlignment = .center
         return label
     }()
@@ -43,8 +44,8 @@ class AccountTitleView: UIStackView {
     private lazy var emailLabel: UIView = {
         let label = UILabel()
         label.text = Account.shared.email
-        label.font = .light(18)
-        label.textColor = .materialMedium
+        label.font = FontManager.light(18)
+        label.textColor = Pallete.materialMedium
         label.textAlignment = .center
         return label
     }()

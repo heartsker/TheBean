@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import Localize
+import AssetsManager
 
 class RecipesNumberCard: BaseCardView {
 
@@ -21,7 +23,7 @@ class RecipesNumberCard: BaseCardView {
         self.value = value
         imageLeft = UIImage(named: "coffee.beans")
         imageRight = UIImage(named: "coffee.ready")
-        super.init(backgroundColor: .highlightPrimary)
+        super.init(backgroundColor: Pallete.highlightPrimary)
         setup()
     }
 

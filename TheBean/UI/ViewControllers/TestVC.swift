@@ -7,12 +7,16 @@
 
 import UIKit
 import SnapKit
-import Combine
+import Localize
+import class Reactive.Publisher
+import Utils
+import AssetsManager
 
 class TestVC: UIViewController {
     // MARK: - Properties
     lazy private var usernameLabel: UILabel = {
-        let label = UILabel(text: Account.shared.username, color: .blue, font: .bold(40))
+        let label = UILabel(text: Account.shared.username, color: Pallete.materialLight, font: FontManager.bold(40))
+        label.textAlignment = .center
         Publisher.subscribe(label, keyPath: \.text, for: .usernamePost)
         return label
     }()
@@ -20,22 +24,22 @@ class TestVC: UIViewController {
         let button = UIButton()
         button.setTitle("Make .com", for: .normal)
         button.addTarget(self, action: #selector(makeCom), for: .touchUpInside)
-        //        button.backgroundColor = .red
+        button.setTitleColor(Pallete.materialLight, for: .normal)
         return button
     }()
     @objc func makeCom() {
-        Account.shared.username = "heartsker.com"
+        Account.shared.username = "the.bean@example.com"
     }
     lazy private var buttonRu: UIButton = {
         let button = UIButton()
         button.setTitle("Make .ru", for: .normal)
         button.addTarget(self, action: #selector(makeRu), for: .touchUpInside)
-        //        button.backgroundColor = .blue
+        button.setTitleColor(Pallete.materialLight, for: .normal)
         return button
     }()
 
     @objc func makeRu() {
-        Account.shared.username = "heartsker.ru"
+        Account.shared.username = "the.bean@example.ru"
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -58,8 +62,13 @@ class TestVC: UIViewController {
 // MARK: - Setup methods
 extension TestVC {
     private func setup() {
+        setupAppearance()
         setupSubviews()
         setupConstraints()
+    }
+
+    private func setupAppearance() {
+        view.backgroundColor = Pallete.background
     }
 
     private func setupSubviews() {

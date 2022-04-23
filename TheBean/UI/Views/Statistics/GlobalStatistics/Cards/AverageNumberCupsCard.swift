@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Localize
+import AssetsManager
 
 class AverageNumberCupsCard: BaseCardView {
     // MARK: - Properties
@@ -17,7 +19,7 @@ class AverageNumberCupsCard: BaseCardView {
     // MARK: - Initializers
     required init(value: Int) {
         self.value = value
-        super.init(backgroundColor: .materialHeavy)
+        super.init(backgroundColor: Pallete.materialHeavy)
         setup()
     }
 
@@ -33,7 +35,7 @@ class AverageNumberCupsCard: BaseCardView {
     private lazy var secondBackground: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 20
-        view.backgroundColor = .hightlightThirdly
+        view.backgroundColor = Pallete.hightlightThirdly
         return view
     }()
 

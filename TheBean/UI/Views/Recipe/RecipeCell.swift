@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import AssetsManager
 
 final class RecipeCell: UICollectionViewCell {
 
@@ -78,14 +79,14 @@ extension RecipeCell: IBaseView {
         contentView.layer.borderWidth = 1
         setCellBorderColorByAppearanceMode()
 
-        containerView.backgroundColor = .highlightPrimary
+        containerView.backgroundColor = Pallete.highlightPrimary
         containerView.layer.cornerRadius = 20
 
-        titleLabel.font = .medium()
+        titleLabel.font = FontManager.medium()
         titleLabel.textAlignment = .center
 
-        [volumeLabel, cookingTimeLabel].forEach { $0.font = .regular(12) }
-        [volumeLabel, cookingTimeLabel, titleLabel].forEach { $0.textColor = .materialMedium }
+        [volumeLabel, cookingTimeLabel].forEach { $0.font = FontManager.regular(12) }
+        [volumeLabel, cookingTimeLabel, titleLabel].forEach { $0.textColor = Pallete.materialMedium }
 
         imageView.contentMode = .scaleAspectFit
     }

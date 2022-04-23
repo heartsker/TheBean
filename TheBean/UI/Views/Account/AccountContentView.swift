@@ -45,8 +45,8 @@ extension AccountContentView {
     private func setupConstraints() {
         titleView.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.height.equalTo(110)
-            make.width.equalTo(110)
+            make.height.equalTo(300)
+            make.width.equalTo(300)
         }
     }
 }

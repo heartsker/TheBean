@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Localize
+import Utils
+import AssetsManager
 
 class TimerViewController: UIViewController {
     // MARK: - Properties
     private lazy var label: UILabel = {
-        UILabel(text: "That is timer", color: .materialHeavy, font: .bold(30))
+        UILabel(text: "That is timer", color: Pallete.materialHeavy, font: FontManager.bold(30))
     }()
 
     // MARK: - Initialization
@@ -33,8 +36,13 @@ class TimerViewController: UIViewController {
 // MARK: - Setup methods
 extension TimerViewController {
     private func setup() {
+        setupAppearance()
         setupSubviews()
         setupConstraints()
+    }
+
+    private func setupAppearance() {
+        view.backgroundColor = Pallete.background
     }
 
     private func setupSubviews() {

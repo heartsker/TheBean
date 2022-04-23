@@ -1,14 +1,22 @@
 PODS:
+  - AdvancedGraphics (0.1.0)
   - Alamofire (5.6.1)
+  - AssetsManager (0.1.0)
+  - Localize (0.1.0)
+  - Reactive (0.1.0)
   - SnapKit (5.6.0)
   - SwiftLint (0.47.0)
-  - TBGraphics (0.1.0)
+  - Utils (0.1.0)
 
 DEPENDENCIES:
+  - AdvancedGraphics (from `LocalPods/AdvancedGraphics`)
   - Alamofire
+  - AssetsManager (from `LocalPods/AssetsManager`)
+  - Localize (from `LocalPods/Localize`)
+  - Reactive (from `LocalPods/Reactive`)
   - SnapKit
   - SwiftLint
-  - TBGraphics (from `LocalPods/TBGraphics`)
+  - Utils (from `LocalPods/Utils`)
 
 SPEC REPOS:
   trunk:
@@ -17,15 +25,27 @@ SPEC REPOS:
     - SwiftLint
 
 EXTERNAL SOURCES:
-  TBGraphics:
-    :path: LocalPods/TBGraphics
+  AdvancedGraphics:
+    :path: LocalPods/AdvancedGraphics
+  AssetsManager:
+    :path: LocalPods/AssetsManager
+  Localize:
+    :path: LocalPods/Localize
+  Reactive:
+    :path: LocalPods/Reactive
+  Utils:
+    :path: LocalPods/Utils
 
 SPEC CHECKSUMS:
+  AdvancedGraphics: 1c1c07292765fdf11595ed5c253a38b1ae27fe74
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  AssetsManager: 5194fb57c1ed11c683879add03e0fdb1f51d2186
+  Localize: f67cd9bf6b00ee3ffa0b12e75767fbcbb031222d
+  Reactive: cfa3b3740dca28c426f63e5c075802cd31353841
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: d41cc46a2ae58ac6d9f26954bc89f1d72e71fdef
-  TBGraphics: fc68f9b97a388ef79ebdde45d2651e781f7711dc
+  Utils: d03e96223e81bab097aee3978e414020a2b75cc7
 
-PODFILE CHECKSUM: 2f04da8daee04e10c73249a1ad79b4995157fd95
+PODFILE CHECKSUM: 07c7126f04b621ef85a33de483c72aeb70b1bed2
 
 COCOAPODS: 1.11.3

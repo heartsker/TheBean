@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AssetsManager
 
 final class RecipesHeaderView: UICollectionReusableView {
 
@@ -35,7 +36,7 @@ extension RecipesHeaderView: ConfigurationProtocol {
 
 extension RecipesHeaderView: IBaseView {
     func setupAppearance() {
-        titleLabel.font = .bold(18)
+        titleLabel.font = FontManager.bold(18)
     }
 
     func setupSubviews() {

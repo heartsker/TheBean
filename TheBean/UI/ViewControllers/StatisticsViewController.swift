@@ -7,6 +7,9 @@
 
 import UIKit
 import SnapKit
+import Localize
+import Utils
+import AssetsManager
 
 class StatisticsViewController: UIViewController {
     // MARK: - Initialization
@@ -29,7 +32,7 @@ class StatisticsViewController: UIViewController {
     // MARK: - Subviews
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: view.bounds)
-        scrollView.backgroundColor = .background
+        scrollView.backgroundColor = Pallete.background
         return scrollView
     }()
 

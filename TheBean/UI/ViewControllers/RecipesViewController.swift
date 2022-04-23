@@ -7,6 +7,9 @@
 
 // import UIKit
 import SwiftUI
+import Localize
+import Utils
+import AssetsManager
 
 final class RecipesViewController: UIViewController {
 
@@ -68,7 +71,7 @@ extension RecipesViewController: IBaseView {
     }
 
     func setupAppearance() {
-        view.backgroundColor = .background
+        view.backgroundColor = Pallete.background
         collectionView.backgroundColor = .clear
     }
 }

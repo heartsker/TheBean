@@ -112,6 +112,15 @@ clean:
 	@rm -rf ~/Library/Developer/Xcode/DerivedData/* || (echo '❌	${RED}Failed to clean cache${RESET}' && exit 1)
 	@echo '✅	${GREEN}Cache cleaned successfully${RESET}'
 
+	@echo '⏳	${YELLOW}Removing pods:${RESET}'
+	@rm -rf Pods || (echo '❌	${RED}Failed to remove pods${RESET}' && exit 1)
+	@echo '✅	${GREEN}Pods removed successfully${RESET}'
+
+	@echo '⏳	${YELLOW}Removing project:${RESET}'
+	@rm -rf $(CURRENT_PROJECT).xcodeproj || (echo '❌	${RED}Failed to remove $(CURRENT_PROJECT) project ${RESET}' && exit 1)
+	@rm -rf $(CURRENT_PROJECT).xcworkspace || (echo '❌	${RED}Failed to remove $(CURRENT_PROJECT) workspace ${RESET}' && exit 1)
+	@echo '✅	${GREEN}Project removed successfully${RESET}'
+
 # Install and update pods
 pod:
 	@echo '⏳	${YELLOW}Updating Cocoapods:${RESET}'

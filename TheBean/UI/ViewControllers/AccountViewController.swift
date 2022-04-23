@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Localize
+import Utils
+import AssetsManager
 
 class AccountViewController: UIViewController {
 
@@ -40,7 +43,7 @@ extension AccountViewController {
     }
 
     func setupAppearance() {
-        view.backgroundColor = .background
+        view.backgroundColor = Pallete.background
     }
 
     func setupSubviews() {
