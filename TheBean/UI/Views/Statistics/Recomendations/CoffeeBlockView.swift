@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AssetsManager
 
 class CoffeeBlockView: UIStackView {
 
@@ -33,8 +34,8 @@ class CoffeeBlockView: UIStackView {
 
     private lazy var labelView: UILabel = {
         let label = UILabel(text: recomendation.text,
-                            color: .materialHeavy,
-                            font: .regular(14))
+                            color: Pallete.materialHeavy,
+                            font: FontManager.regular(14))
         label.textAlignment = .center
         return label
     }()

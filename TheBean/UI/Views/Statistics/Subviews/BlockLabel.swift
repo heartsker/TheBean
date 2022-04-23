@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AssetsManager
 
 class BlockLabel: UILabel {
 
@@ -29,7 +30,7 @@ extension BlockLabel {
     }
 
     private func setupAppearance() {
-        textColor = .materialHeavy
-        font = .bold(18)
+        textColor = Pallete.materialHeavy
+        font = FontManager.bold(18)
     }
 }

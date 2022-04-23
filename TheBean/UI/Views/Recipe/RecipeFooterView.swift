@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AssetsManager
 
 protocol RecipesFooterDelegate: AnyObject {
     func sectionFooterButtonTapped()
@@ -43,9 +44,9 @@ extension RecipesFooterView: ReuseIdentifyingProtocol { }
 
 extension RecipesFooterView: IBaseView {
     func setupAppearance() {
-        buttonLabel.titleLabel?.font = .regular(13)
+        buttonLabel.titleLabel?.font = FontManager.regular(13)
         buttonLabel.layer.cornerRadius = 18
-        buttonLabel.backgroundColor = .accentColor
+        buttonLabel.backgroundColor = Pallete.accentColor
     }
 
     func setupSubviews() {

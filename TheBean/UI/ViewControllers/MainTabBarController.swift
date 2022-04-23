@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Localize
+import Utils
+import AssetsManager
 
 class MainTabBarController: UITabBarController {
 
@@ -43,9 +46,9 @@ extension MainTabBarController {
         let testNVC = UINavigationController(rootViewController: testVC)
         testVC.setupTabBar(^ControllerLocalization.test, image: "wrench.and.screwdriver")
 
-        tabBar.tintColor = .materialHeavy
-        tabBar.unselectedItemTintColor = .materialMedium
-        tabBar.backgroundColor = .hightlightSecondary
+        tabBar.tintColor = Pallete.materialHeavy
+        tabBar.unselectedItemTintColor = Pallete.materialMedium
+        tabBar.backgroundColor = Pallete.hightlightSecondary
 
         viewControllers = [testNVC, recipesNVC, statisticsNVC, timerNVC, accountNVC]
     }

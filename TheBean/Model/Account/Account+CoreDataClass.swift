@@ -8,12 +8,13 @@
 
 import CoreData
 import UIKit
+import Reactive
 
 @objc(Account)
 public class Account: NSManagedObject {
     // MARK: - Properties
     static var shared: Account {
-        guard let account = try? CoreDataManager.fetchAccount() else {
+        guard let account = try? CoreDataManager.fetch(Account.self) as? Account else {
             let account = Account()
             CoreDataManager.save()
             return account
@@ -30,7 +31,7 @@ public class Account: NSManagedObject {
         }
         set {
             rawUsername = newValue
-            Publisher.publishPost(with: username, for: .usernamePost)
+            Reactive.Publisher.publishPost(with: username, for: .usernamePost)
             CoreDataManager.save()
         }
     }

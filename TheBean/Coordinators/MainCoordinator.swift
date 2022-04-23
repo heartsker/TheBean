@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AssetsManager
 
 final class MainCoordinator {
 
@@ -47,9 +48,9 @@ extension MainCoordinator {
 
     func setupTabBarAppearance() {
         let tabBar = tabBarController.tabBar
-        tabBar.tintColor = .materialHeavy
-        tabBar.unselectedItemTintColor = .materialMedium
-        tabBar.backgroundColor = .hightlightSecondary
+        tabBar.tintColor = Pallete.materialHeavy
+        tabBar.unselectedItemTintColor = Pallete.materialMedium
+        tabBar.backgroundColor = Pallete.hightlightSecondary
     }
 
 }

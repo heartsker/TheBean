@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import AssetsManager
+import Localize
+import Utils
 
 class RecomendationsView: UIStackView {
     // MARK: - Properties

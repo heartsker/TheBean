@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AssetsManager
 
 enum DrinkKind {
     case latte

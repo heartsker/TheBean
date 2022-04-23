@@ -8,17 +8,6 @@
 import UIKit
 import CoreData
 
-enum CoreDataError: LocalizedError {
-    case fetchingError(String)
-
-    var errorDescription: String? {
-        switch self {
-        case let .fetchingError(type):
-            return "Failed to fetch entity of type \(type)"
-        }
-    }
-}
-
 class CoreDataManager {
 
     static let appDelegate: AppDelegate = UIApplication.shared.delegate as? AppDelegate ?? AppDelegate()
@@ -32,14 +21,14 @@ class CoreDataManager {
         }
     }
 
-    static func fetchAccount() throws -> Account {
+    static func fetch(_ type: NSManagedObject.Type) throws -> NSManagedObject {
         do {
-            guard let account = try? managedContext.fetch(Account.fetchRequest()).first else {
-                throw CoreDataError.fetchingError("Account")
+            guard let object = try? managedContext.fetch(Account.fetchRequest()).first else {
+                throw CoreDataError.fetchingError(type)
             }
-            return account
+            return object
         } catch {
-            throw CoreDataError.fetchingError("Account")
+            throw CoreDataError.fetchingError(type)
         }
     }
 }

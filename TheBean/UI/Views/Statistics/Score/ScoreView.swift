@@ -7,12 +7,15 @@
 
 import UIKit
 import SnapKit
+import Localize
+import Utils
+import AssetsManager
 
 class ScoreView: BaseCardView {
 
     // MARK: - Init
     init() {
-        super.init(backgroundColor: .highlightPrimary, heightWidthRatio: 0.673)
+        super.init(backgroundColor: Pallete.highlightPrimary, heightWidthRatio: 0.673)
         setup()
     }
 
@@ -24,7 +27,7 @@ class ScoreView: BaseCardView {
     private lazy var usernameLabel: UILabel = {
         let label = UILabel(text: Account.shared.username,
                             color: .black,
-                            font: .bold(24))
+                            font: FontManager.bold(24))
         label.numberOfLines = 1
         return label
     }()
@@ -37,8 +40,8 @@ class ScoreView: BaseCardView {
     }()
 
     private lazy var scoreLabel: UILabel = UILabel(text: ^StatsLocalization.scoreLabel,
-                                                   color: .materialMedium,
-                                                   font: .bold(18))
+                                                   color: Pallete.materialMedium,
+                                                   font: FontManager.bold(18))
     private lazy var statsStackView = StatsStackView()
     private lazy var scoreView = ScoreLevelView()
 }
@@ -150,14 +153,14 @@ extension ScoreView {
         // MARK: - Subviews
         private lazy var leftLabel = {
             UILabel(text: leftString,
-                    color: .materialMedium,
-                    font: .light(13))
+                    color: Pallete.materialMedium,
+                    font: FontManager.light(13))
         }()
 
         private lazy var rightLabel = {
             UILabel(text: rightString,
-                    color: .materialMedium,
-                    font: .light(13))
+                    color: Pallete.materialMedium,
+                    font: FontManager.light(13))
         }()
 
         // MARK: - Setup methods
@@ -197,7 +200,7 @@ extension ScoreView {
         private lazy var label: UILabel = {
             UILabel(text: "\(Account.shared.level)",
                     color: .black,
-                    font: .regular(36))
+                    font: FontManager.regular(36))
         }()
 
         // MARK: - Setup methods
@@ -208,7 +211,7 @@ extension ScoreView {
         }
 
         private func setupAppearence() {
-            backgroundColor = .highlightPrimary
+            backgroundColor = Pallete.highlightPrimary
         }
 
         private func setupSubviews() {
@@ -227,7 +230,7 @@ extension ScoreView {
                                                    width: rect.width-5,
                                                    height: rect.height-5))
             path.lineWidth = 5
-            UIColor.accentColor.setStroke()
+            Pallete.accentColor.setStroke()
             path.stroke()
         }
     }

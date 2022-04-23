@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Localize
+import Utils
 
 class GlobalStatisticsView: UIStackView {
 

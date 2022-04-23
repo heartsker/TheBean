@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Localize
+import AssetsManager
+import Utils
 
 class MostPopularDrinkCard: BaseCardView {
 
@@ -18,7 +21,7 @@ class MostPopularDrinkCard: BaseCardView {
     // MARK: - Initialization
     required init(value: String) {
         self.value = value
-        super.init(backgroundColor: .highlightPrimary)
+        super.init(backgroundColor: Pallete.highlightPrimary)
         setup()
     }
 

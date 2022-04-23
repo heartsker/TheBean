@@ -1,5 +1,6 @@
 name: TheBean
 options:
+  generateEmptyDirectories: true
   bundleIdPrefix: ${BUNDLE_ID_PREFIX}
   deploymentTarget:
     iOS: 13.0

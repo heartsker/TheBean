@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AdvancedGraphics
+import AssetsManager
 
 class ArrowView: UIView {
 
@@ -17,7 +19,7 @@ class ArrowView: UIView {
 
     // MARK: - Initializers
     init() {
-        self.color = .materialMedium
+        self.color = Pallete.materialMedium
         self.width = 1
         self.pointerLineLength = 5
         self.arrowAngle = CGFloat(Double.pi / 4) * 0.9
@@ -45,19 +47,19 @@ class ArrowView: UIView {
 // MARK: - Setup methods
 extension ArrowView {
     override func draw(_ rect: CGRect) {
-        let arrow = UIBezierPath()
-        arrow.addArrow(start: CGPoint(x: rect.origin.x, y: rect.midY),
-                       end: CGPoint(x: rect.maxX,
+        let path = UIBezierPath()
+        path.arrow(from: CGPoint(x: rect.origin.x, y: rect.midY),
+                       to: CGPoint(x: rect.maxX,
                                     y: rect.midY),
-                       pointerLineLength: pointerLineLength,
-                       arrowAngle: CGFloat(arrowAngle))
-        let arrowLayer = CAShapeLayer()
-        arrowLayer.strokeColor = color.cgColor
-        arrowLayer.lineWidth = CGFloat(width)
-        arrowLayer.path = arrow.cgPath
-        arrowLayer.fillColor = UIColor.clear.cgColor
-        arrowLayer.lineJoin = CAShapeLayerLineJoin.round
-        arrowLayer.lineCap = CAShapeLayerLineCap.round
-        layer.addSublayer(arrowLayer)
+                       pointerLength: pointerLineLength,
+                       angle: CGFloat(arrowAngle))
+        let layer = CAShapeLayer()
+        layer.strokeColor = color.cgColor
+        layer.lineWidth = CGFloat(width)
+        layer.path = path.cgPath
+        layer.fillColor = UIColor.clear.cgColor
+        layer.lineJoin = CAShapeLayerLineJoin.round
+        layer.lineCap = CAShapeLayerLineCap.round
+        self.layer.addSublayer(layer)
     }
 }

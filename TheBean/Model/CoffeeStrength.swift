@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AssetsManager
 
 enum CoffeeStrength: Int, CaseIterable {
     case regular

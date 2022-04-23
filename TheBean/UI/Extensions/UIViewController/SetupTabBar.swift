@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Utils
 
 extension UIViewController {
     func setupTabBar(_ title: String, image: String = "question") {
