@@ -1,6 +1,6 @@
 //
 //  Notifications.swift
-//  TheBean
+//  Reactive
 //
 //  Created by Daniel Pustotin on 04.04.2022.
 //

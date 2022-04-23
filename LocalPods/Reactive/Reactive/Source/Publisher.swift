@@ -15,10 +15,9 @@ public class Publisher {
 
     private static func stringPostPublisher<T>(for name: Notification.Name) ->
     Publishers.Map<NotificationCenter.Publisher, T?> {
-        let publisher = NotificationCenter.Publisher(center: .default, name: name)
-            .map { (notification) -> T? in
-                return (notification.object as? Post<T>)?.content
-            }
+        let publisher = NotificationCenter.Publisher(center: .default, name: name).map { (notification) -> T? in
+            return (notification.object as? Post<T>)?.content
+        }
         return publisher
     }
 

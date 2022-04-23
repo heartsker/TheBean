@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 import Localize
-import class Reactive.Publisher
+import Reactive
 import Utils
 import AssetsManager
 

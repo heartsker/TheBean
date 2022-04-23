@@ -1,6 +1,6 @@
 //
 //  ILocalizable.swift
-//  
+//  Localize
 //
 //  Created by Daniel Pustotin on 27.03.2022.
 //
