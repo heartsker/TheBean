@@ -10,6 +10,7 @@ import SnapKit
 import Localize
 import Utils
 import AssetsManager
+import Account
 
 class ScoreView: BaseCardView {
 
