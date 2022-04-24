@@ -1,16 +1,13 @@
 //
 //  Account+CoreDataProperties.swift
-//  TheBean
+//  Account
 //
-//  Created by Daniel Pustotin on 23.04.2022.
-//
+//  Created by Daniel Pustotin on 24.04.2022.
 //
 
-import Foundation
 import CoreData
 
 extension Account {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Account> {
         return NSFetchRequest<Account>(entityName: "Account")
     }
@@ -22,7 +19,6 @@ extension Account {
     @NSManaged public var rawImage: Data?
     @NSManaged public var rawUsername: String?
     @NSManaged public var recipesCount: Int64
-
 }
 
 extension Account: Identifiable {

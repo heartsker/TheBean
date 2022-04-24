@@ -23,12 +23,12 @@ public class Publisher {
 
     public static func publishPost<T>(with content: T, for name: Notification.Name) {
         let post = Post(content: content)
-        NotificationCenter.default.post(name: .usernamePost, object: post)
+        NotificationCenter.default.post(name: name, object: post)
     }
 
-    public static func subscribe<T>(_ object: T,
-                                    keyPath: ReferenceWritableKeyPath<T, String?>,
-                                    for name: Notification.Name) {
+    public static func subscribe<T, U>(_ object: T,
+                                       keyPath: ReferenceWritableKeyPath<T, U?>,
+                                       for name: Notification.Name) {
         let subscriber = Subscribers.Assign(object: object, keyPath: keyPath)
         stringPostPublisher(for: name).subscribe(subscriber)
     }

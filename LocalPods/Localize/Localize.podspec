@@ -14,6 +14,10 @@ Pod::Spec.new do |spec|
 
   spec.source_files = "#{spec.name}/Source/**/*.{swift}"
 
-  spec.resources = ["#{spec.name}/Resources/**/*.{strings,stringsdict}"]
+  spec.resource_bundles = {
+    "LocalizeResources" => ["#{spec.name}/Resources/**/*.{strings,stringsdict}"]
+  }
+
+  spec.dependency "DevelopmentUtils"
 
 end

@@ -7,17 +7,17 @@
 
 import UIKit
 
-public extension IAssetsManager where Asset: UIImage {
+extension IAssetsManager where Asset: UIImage {
     static var defaultAsset: Asset {
         Asset(systemName: "questionmark.app.dashed")!
     }
 
     static func asset(for string: String) -> Asset {
-        Asset(named: string) ?? defaultAsset
+        Asset(named: string, in: resourcesBundle, compatibleWith: nil) ?? defaultAsset
     }
 
     static func system(name: String) -> Asset {
-        Asset(systemName: name) ?? defaultAsset
+        return Asset(systemName: name) ?? defaultAsset
     }
 }
 

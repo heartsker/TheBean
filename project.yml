@@ -20,10 +20,10 @@ targets:
         CFBundleVersion: "1.0"
         CFBundleShortVersionString: "1.0"
         UIAppFonts:
-          - MullerLight.ttf
-          - MullerRegular.ttf
-          - MullerMedium.ttf
-          - MullerBold.ttf
+          - AssetsManagerResources.bundle/MullerLight.ttf
+          - AssetsManagerResources.bundle/MullerRegular.ttf
+          - AssetsManagerResources.bundle/MullerMedium.ttf
+          - AssetsManagerResources.bundle/MullerBold.ttf
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: true
           UISceneConfigurations:

@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
 
-  spec.name = "AssetsManager"
+  spec.name = "Account"
   spec.version = "0.1.0"
   
-  spec.summary = "AssetsManager provides functionality for managing assets"
+  spec.summary = "Account module provides Account type and functionality to work with it"
 
   spec.homepage = "Local"
   spec.author = { "Daniel Pustotin" => "daniel.pustotin@gmail.com" }
@@ -13,11 +13,5 @@ Pod::Spec.new do |spec|
   spec.static_framework = true
 
   spec.source_files = "#{spec.name}/Source/**/*.{swift}"
-
-  spec.resource_bundles = {
-    "AssetsManagerResources" => ["#{spec.name}/Resources/**/*.{xcassets,ttf}"]
-  }
-
-  spec.dependency "DevelopmentUtils"
 
 end

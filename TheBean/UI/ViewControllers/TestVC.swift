@@ -11,13 +11,14 @@ import Localize
 import Reactive
 import Utils
 import AssetsManager
+import Account
 
 class TestVC: UIViewController {
     // MARK: - Properties
     lazy private var usernameLabel: UILabel = {
-        let label = UILabel(text: Account.shared.username, color: Pallete.materialLight, font: FontManager.bold(40))
+        let label = UILabel(text: Account.shared.email, color: Pallete.materialLight, font: FontManager.bold(40))
         label.textAlignment = .center
-        Publisher.subscribe(label, keyPath: \.text, for: .usernamePost)
+        Publisher.subscribe(label, keyPath: \.text, for: .emailPost)
         return label
     }()
     lazy private var buttonCom: UIButton = {
@@ -28,7 +29,9 @@ class TestVC: UIViewController {
         return button
     }()
     @objc func makeCom() {
-        Account.shared.username = "the.bean@example.com"
+        Account.shared.email = "the.bean@example.com"
+        Publisher.publishPost(with: "the.bean@example.com", for: .emailPost)
+        CoreDataManager.save()
     }
     lazy private var buttonRu: UIButton = {
         let button = UIButton()
@@ -39,7 +42,9 @@ class TestVC: UIViewController {
     }()
 
     @objc func makeRu() {
-        Account.shared.username = "the.bean@example.ru"
+        Account.shared.email = "the.bean@example.ru"
+        Publisher.publishPost(with: "the.bean@example.ru", for: .emailPost)
+        CoreDataManager.save()
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

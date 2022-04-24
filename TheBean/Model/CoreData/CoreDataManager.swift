@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Account
 
 class CoreDataManager {
 
@@ -21,14 +22,14 @@ class CoreDataManager {
         }
     }
 
-    static func fetch(_ type: NSManagedObject.Type) throws -> NSManagedObject {
+    static func fetch() throws -> Account {
         do {
             guard let object = try? managedContext.fetch(Account.fetchRequest()).first else {
-                throw CoreDataError.fetchingError(type)
+                throw CoreDataError.fetchingError(Account.self)
             }
             return object
         } catch {
-            throw CoreDataError.fetchingError(type)
+            throw CoreDataError.fetchingError(Account.self)
         }
     }
 }
