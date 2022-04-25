@@ -7,9 +7,9 @@
 
 import Foundation
 
-class RecipeStep {
-    var text: String
-    var imageID: String
+public class RecipeStep {
+    public let text: String
+    public let imageID: String
 
     init(text: String, imageID: String) {
         self.text = text
