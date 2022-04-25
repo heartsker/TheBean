@@ -18,6 +18,6 @@ Pod::Spec.new do |spec|
     "LocalizeResources" => ["#{spec.name}/Resources/**/*.{strings,stringsdict}"]
   }
 
-  spec.dependency "DevelopmentUtils"
+  spec.dependency "Utils"
 
 end

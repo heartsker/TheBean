@@ -6,21 +6,26 @@
 //
 
 import Foundation
-import DevelopmentUtils
+import Utils
 
-protocol ILocalizable: AnyObject {
+public protocol ILocalizable: AnyObject {
     static var resourcesBundle: Bundle { get }
     static var table: String { get }
 
     static func localize(_ string: String) -> String
+    static func loc(id: String) -> String
 }
 
-extension ILocalizable {
+public extension ILocalizable {
     static var resourcesBundle: Bundle {
-        DevelopmentUtils.resourcesBundle(of: Self.self)
+        Utils.resourcesBundle(of: Self.self)
     }
 
     static func localize(_ string: String) -> String {
         resourcesBundle.localizedString(forKey: string, value: "", table: table)
+    }
+
+    static func loc(id: String) -> String {
+        Self.localize(id)
     }
 }

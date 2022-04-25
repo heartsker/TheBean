@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Account
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -23,15 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window.rootViewController = MainTabBarController()
         self.window = window
         window.makeKeyAndVisible()
-
-        guard let account = try? CoreDataManager.fetch() else {
-            Account.setup(with: CoreDataManager.managedContext)
-            return
-        }
-
-        Account.setup(with: account)
-
-//        CoreDataManager.save()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

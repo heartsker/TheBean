@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension IAssetsManager where Asset: UIImage {
+public extension IAssetsManager where Asset: UIImage {
     static var defaultAsset: Asset {
         Asset(systemName: "questionmark.app.dashed")!
     }

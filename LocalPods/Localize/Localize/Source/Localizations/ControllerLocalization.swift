@@ -6,7 +6,7 @@
 //
 
 public class ControllerLocalization: ILocalizable {
-    static let table: String = "Controller"
+    public static let table: String = "Controller"
 
     public static let recipes = ControllerLocalization.localize("recipes")
     public static let statistics = ControllerLocalization.localize("statistics")

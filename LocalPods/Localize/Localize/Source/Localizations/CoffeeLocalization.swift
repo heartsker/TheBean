@@ -5,8 +5,10 @@
 //  Created by Daniel Pustotin on 27.03.2022.
 //
 
+import Utils
+
 public class CoffeeLocalization: ILocalizable {
-    static let table: String = "Coffee"
+    public static let table: String = "Coffee"
 
     public static let coffee = CoffeeLocalization.localize("coffee")
     public static let latte = CoffeeLocalization.localize("latte")

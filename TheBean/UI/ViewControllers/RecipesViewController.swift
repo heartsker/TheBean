@@ -16,8 +16,8 @@ final class RecipesViewController: UIViewController {
     // MARK: - Properties
     private lazy var store = MainStore.shared
 
-    var recipes: [Int: [RecipeCardModel]] = {
-        var items: [Int: [RecipeCardModel]] = [:]
+    var recipes: [Int: [RecipeCard]] = {
+        var items: [Int: [RecipeCard]] = [:]
         CoffeeStrength.allCases.forEach { items[$0.rawValue] = $0.cards }
         return items
     }()
@@ -115,6 +115,7 @@ extension RecipesViewController: UICollectionViewDataSource {
                                                                           for: indexPath) as? RecipesHeaderView else {
                 return RecipesHeaderView()
             }
+            // TODO: - Add localization instead of RawValue
             headerView.configure(model: CoffeeStrength(rawValue: indexPath.section)?.title ?? "")
             return headerView
         default:

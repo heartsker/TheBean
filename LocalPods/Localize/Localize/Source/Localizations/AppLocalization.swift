@@ -6,7 +6,7 @@
 //
 
 public class AppLocalization: ILocalizable {
-     static let table: String = "App"
+     public static let table: String = "App"
 
      public static let name = AppLocalization.localize("name")
  }

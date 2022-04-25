@@ -7,6 +7,7 @@
 
 import SnapKit
 import UIKit
+import Utils
 
 class TopRecomendationsView: UIStackView {
 

@@ -6,23 +6,22 @@
 //
 
 import Foundation
-import AssetsManager
 
-enum CoffeeStrength: Int, CaseIterable {
+public enum CoffeeStrength: Int, CaseIterable {
     case regular
     case strong
     case dessert
 
-    var cards: [RecipeCardModel] {
+    public var cards: [RecipeCard] {
         switch self {
-        case .regular: return RecipeCardModel.regularCards
-        case .strong: return RecipeCardModel.strongCards
-        case .dessert: return RecipeCardModel.dessertCards
+        case .regular: return RecipeCard.regularCards
+        case .strong: return RecipeCard.strongCards
+        case .dessert: return RecipeCard.dessertCards
         }
     }
 
     // TODO: сделать с локализацией
-    var title: String {
+    public var title: String {
         switch self {
         case .regular: return "Regular coffee"
         case .strong: return "Strong coffee"

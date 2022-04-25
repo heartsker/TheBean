@@ -8,7 +8,7 @@
 import Foundation
 
 extension IAssetsManager where Asset: UIFont {
-    static var defaultAsset: UIFont {
+    public static var defaultAsset: UIFont {
         UIFont()
     }
 
@@ -16,7 +16,7 @@ extension IAssetsManager where Asset: UIFont {
         16
     }
 
-    static func asset(for string: String) -> UIFont {
+    public static func asset(for string: String) -> UIFont {
         UIFont(name: string, size: defaultFontSize) ?? defaultAsset
     }
 
@@ -24,7 +24,7 @@ extension IAssetsManager where Asset: UIFont {
         UIFont(name: string, size: size) ?? defaultAsset
     }
 
-    static func system(name: String) -> UIFont {
+    public static func system(name: String) -> UIFont {
         UIFont.systemFont(ofSize: defaultFontSize)
     }
 }

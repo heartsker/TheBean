@@ -13,9 +13,9 @@ import Utils
 class RecomendationsView: UIStackView {
     // MARK: - Properties
     let recomendations = [
-        CoffeeRecomendation(text: ^CoffeeLocalization.latte, image: ImageManager.latte),
-        CoffeeRecomendation(text: ^CoffeeLocalization.flatwhite, image: ImageManager.flatwhite),
-        CoffeeRecomendation(text: ^CoffeeLocalization.americano, image: ImageManager.americano)
+        CoffeeRecomendation(drinkKind: .latte),
+        CoffeeRecomendation(drinkKind: .flatwhite),
+        CoffeeRecomendation(drinkKind: .americano)
     ]
 
     // MARK: - Initialization

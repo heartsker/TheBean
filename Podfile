@@ -21,7 +21,6 @@ target 'TheBean' do
   pod 'Account', :path => 'LocalPods/Account'
   pod 'AdvancedGraphics', :path => 'LocalPods/AdvancedGraphics'
   pod 'AssetsManager', :path => 'LocalPods/AssetsManager'
-  pod 'DevelopmentUtils', :path => 'LocalPods/DevelopmentUtils'
   pod 'Localize', :path => 'LocalPods/Localize'
   pod 'Reactive', :path => 'LocalPods/Reactive'
   pod 'Utils', :path => 'LocalPods/Utils'

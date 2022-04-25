@@ -44,7 +44,7 @@ class AverageNumberCupsCard: BaseCardView {
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         for _ in stride(from: 0, to: value, by: 1) {
-            let imageView = UIImageView(image: cupImage)
+            let imageView = UIImageView(image: ImageManager.cup)
             imageView.contentMode = .scaleAspectFit
             stack.addArrangedSubview(imageView)
         }

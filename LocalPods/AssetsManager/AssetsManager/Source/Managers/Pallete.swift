@@ -9,15 +9,15 @@ import Foundation
 import UIKit
 
 extension IAssetsManager where Asset: UIColor {
-    static var defaultAsset: UIColor {
+    public static var defaultAsset: UIColor {
         UIColor.clear
     }
 
-    static func asset(for string: String) -> UIColor {
+    public static func asset(for string: String) -> UIColor {
         return UIColor(named: string, in: resourcesBundle, compatibleWith: nil) ?? defaultAsset
     }
 
-    static func system(name: String) -> UIColor {
+    public static func system(name: String) -> UIColor {
         UIColor(named: name) ?? defaultAsset
     }
 }

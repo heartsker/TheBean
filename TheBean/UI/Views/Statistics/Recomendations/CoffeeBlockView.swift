@@ -7,6 +7,8 @@
 
 import UIKit
 import AssetsManager
+import Utils
+import Localize
 
 class CoffeeBlockView: UIStackView {
 
@@ -26,14 +28,14 @@ class CoffeeBlockView: UIStackView {
 
     // MARK: - Subviews
     private lazy var imageView: UIImageView = {
-        let imageView = UIImageView(image: recomendation.image)
+        let imageView = UIImageView(image: ImageManager.asset(id: .id(of: recomendation.drinkKind)))
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
     private lazy var labelView: UILabel = {
-        let label = UILabel(text: recomendation.text,
+        let label = UILabel(text: CoffeeLocalization.loc(id: .id(of: recomendation.drinkKind)),
                             color: Pallete.materialHeavy,
                             font: FontManager.regular(14))
         label.textAlignment = .center

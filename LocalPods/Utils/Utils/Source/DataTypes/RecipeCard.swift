@@ -1,23 +1,21 @@
 //
 //  RecipeCard.swift
-//  TheBean
+//  Utils
 //
-//  Created by Ilya Buldin on 11.04.2022.
+//  Created by Daniel Pustotin on 25.04.2022.
 //
 
-import Foundation
-
-struct RecipeCardModel {
-    let title: String
-    let drinkKind: DrinkKind
-    let volume: Int
-    let cookingTime: Int
+public struct RecipeCard {
+    public let title: String
+    public let drinkKind: DrinkKind
+    public let volume: Int
+    public let cookingTime: Int
 }
 
-extension RecipeCardModel {
+extension RecipeCard {
 
-    static let regularCards: [RecipeCardModel] = {
-        let items: [RecipeCardModel] = [
+    static let regularCards: [RecipeCard] = {
+        let items: [RecipeCard] = [
             .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
             .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
             .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13),
@@ -26,8 +24,8 @@ extension RecipeCardModel {
         return items
     }()
 
-    static let strongCards: [RecipeCardModel] = {
-        let items: [RecipeCardModel] = [
+    static let strongCards: [RecipeCard] = {
+        let items: [RecipeCard] = [
             .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
             .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
             .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13),
@@ -36,8 +34,8 @@ extension RecipeCardModel {
         return items
     }()
 
-    static let dessertCards: [RecipeCardModel] = {
-        let items: [RecipeCardModel] = [
+    static let dessertCards: [RecipeCard] = {
+        let items: [RecipeCard] = [
             .init(title: "Latte", drinkKind: .latte, volume: 300, cookingTime: 10),
             .init(title: "Flat White", drinkKind: .flatwhite, volume: 250, cookingTime: 11),
             .init(title: "Americano", drinkKind: .americano, volume: 300, cookingTime: 13),

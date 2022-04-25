@@ -22,8 +22,8 @@ class RecipesNumberCard: BaseCardView {
     // MARK: - Initialization
     required init(value: UInt) {
         self.value = value
-        imageLeft = UIImage(named: "coffee.beans")
-        imageRight = UIImage(named: "coffee.ready")
+        imageLeft = ImageManager.coffeeBeans
+        imageRight = ImageManager.coffeeReady
         super.init(backgroundColor: Pallete.highlightPrimary)
         setup()
     }
