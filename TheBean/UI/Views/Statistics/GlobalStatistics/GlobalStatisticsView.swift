@@ -15,7 +15,7 @@ class GlobalStatisticsView: UIStackView {
     private let globalStatisticsCards: [ICardRepresentable] = [
         MostPopularDrinkCard(value: CoffeeLocalization.latte),
         AverageNumberCupsCard(value: 4),
-        RecipesNumberCard(value: 129)
+        RecipesNumberCard(count: 129)
     ]
 
     // MARK: - Initializators

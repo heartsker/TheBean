@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import Account
+import Recipe
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         setupAccount()
+        setupRecipes()
 
         return true
     }
@@ -66,5 +68,13 @@ private extension AppDelegate {
         Account.setup(with: account)
 
         CoreDataManager.save()
+    }
+}
+
+// MARK: - Recipes setup
+private extension AppDelegate {
+    func setupRecipes() {
+        let recipes = RecipeManager.loadRecipes()
+        print(recipes ?? "nil")
     }
 }

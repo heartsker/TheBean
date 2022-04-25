@@ -1,0 +1,66 @@
+{
+    "latte": {
+        "info": "Dust off that coffee machine and learn a few barista skills to make a creamy latte. Our easy recipe takes breakfast, or brunch, to the next level.",
+        "preparation": "2-3 min",
+        "difficulty": "easy",
+        "imageID": "latte",
+        "nutrition": {
+            "kcal": 161,
+            "fat": 9,
+            "sugars": 11
+        },
+        "ingredients": [
+            "18g ground espresso, or 1 espresso pod",
+            "250ml milk"
+        ],
+        "steps": [
+            {
+                "text": "Make around 35ml espresso using your coffee machine and pour it into the base of your cup.",
+                "imageID": ""
+            },
+            {
+                "text": "Steam the milk with the steamer attachment so that it has around 2-3cm of foam on top.",
+                "imageID": ""
+            },
+            {
+                "text": "Hold the jug so that the spout is about 3-4cm above the cup and pour the milk in steadily. As the volume within the cup increases, bring the jug as close to the surface of the drink as possible whilst aiming to pour into the centre.",
+                "imageID": ""
+            },
+            {
+                "text": "Once the milk jug is almost touching the surface of the coffee, tilt to speed up the rate of pour. As you accelerate, the milk will hit the back of the cup and start naturally folding in on itself to create a pattern on the top.",
+                "imageID": ""
+            }
+        ]
+    },
+    "iced": {
+        "info": "Discover how to make iced coffee at home. With this simple recipe, you can get a cooling caffeine fix with no fuss. Try it with a shot of maple syrup.",
+        "preparation": "5 min",
+        "difficulty": "easy",
+        "imageID": "",
+        "nutrition": {
+            "kcal": 27,
+            "fat": 1,
+            "sugars": 2
+        },
+        "ingredients": [
+            "200ml strong black coffee",
+            "50ml milk",
+            "ice",
+            "maple syrup, optional"
+        ],
+        "steps": [
+            {
+                "text": "Make a 200ml cup of black coffee following pack instructions, then allow the coffee to go completely cold.",
+                "imageID": ""
+            },
+            {
+                "text": "Pour into a blender with the milk along with 2 or 3 handfuls of ice and maple syrup, if using, then blend until smooth and foamy.",
+                "imageID": ""
+            },
+            {
+                "text": "Pour into a chilled tall glass and serve.",
+                "imageID": ""
+            }
+        ]
+    }
+}

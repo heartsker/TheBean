@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
 
-  spec.name = "Localize"
+  spec.name = "Recipe"
   spec.version = "0.1.0"
   
-  spec.summary = "Localize module provides app localization"
+  spec.summary = "Recipe module provides functionality for managing recipes"
 
   spec.homepage = "Local"
   spec.author = { "Daniel Pustotin" => "daniel.pustotin@gmail.com" }
@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   spec.source_files = "#{spec.name}/Source/**/*.{swift}"
 
   spec.resource_bundles = {
-    "#{spec.name}Resources" => ["#{spec.name}/Resources/**/*.{strings,stringsdict}"]
+    "#{spec.name}Resources" => ["#{spec.name}/Resources/**/*.{json}"]
   }
 
   spec.dependency "Utils"

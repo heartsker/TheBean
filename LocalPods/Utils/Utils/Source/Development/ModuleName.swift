@@ -1,6 +1,6 @@
 //
 //  ModuleName.swift
-//  DevelopmentUtils
+//  Utils
 //
 //  Created by Daniel Pustotin on 24.04.2022.
 //

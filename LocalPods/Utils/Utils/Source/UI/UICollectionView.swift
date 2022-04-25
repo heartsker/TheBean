@@ -1,6 +1,6 @@
 //
 //  UICollectionView.swift
-//  TheBean
+//  Utils
 //
 //  Created by Ilya Buldin on 11.04.2022.
 //

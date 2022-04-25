@@ -14,16 +14,12 @@ import AdvancedGraphics
 class RecipesNumberCard: BaseCardView {
 
     // MARK: - Properties
-    private let imageLeft: UIImage?
-    private let imageRight: UIImage?
-    private let value: UInt
-    private lazy var text = StatsLocalization.masteredRecipes(value: value)
+    private let count: UInt
+    private lazy var text = StatsLocalization.masteredRecipes(value: count)
 
     // MARK: - Initialization
-    required init(value: UInt) {
-        self.value = value
-        imageLeft = ImageManager.coffeeBeans
-        imageRight = ImageManager.coffeeReady
+    required init(count: UInt) {
+        self.count = count
         super.init(backgroundColor: Pallete.highlightPrimary)
         setup()
     }
@@ -34,13 +30,13 @@ class RecipesNumberCard: BaseCardView {
 
     // MARK: - Subviews
     private lazy var imageViewLeft: UIImageView = {
-        let imageView = UIImageView(image: imageLeft)
+        let imageView = UIImageView(image: ImageManager.coffeeBeans)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
     private lazy var imageViewRight: UIImageView = {
-        let imageView = UIImageView(image: imageRight)
+        let imageView = UIImageView(image: ImageManager.coffeeReady)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()

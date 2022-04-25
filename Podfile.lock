@@ -5,11 +5,15 @@ PODS:
   - Alamofire (5.6.1)
   - AssetsManager (0.1.0):
     - Utils
+  - DebugUtils (0.1.0):
+    - Recipe
   - Localize (0.1.0):
     - Utils
   - Reactive (0.1.0)
+  - Recipe (0.1.0):
+    - Utils
   - SnapKit (5.6.0)
-  - SwiftLint (0.47.0)
+  - SwiftLint (0.47.1)
   - Utils (0.1.0)
 
 DEPENDENCIES:
@@ -17,8 +21,10 @@ DEPENDENCIES:
   - AdvancedGraphics (from `LocalPods/AdvancedGraphics`)
   - Alamofire
   - AssetsManager (from `LocalPods/AssetsManager`)
+  - DebugUtils (from `LocalPods/DebugUtils`)
   - Localize (from `LocalPods/Localize`)
   - Reactive (from `LocalPods/Reactive`)
+  - Recipe (from `LocalPods/Recipe`)
   - SnapKit
   - SwiftLint
   - Utils (from `LocalPods/Utils`)
@@ -36,10 +42,14 @@ EXTERNAL SOURCES:
     :path: LocalPods/AdvancedGraphics
   AssetsManager:
     :path: LocalPods/AssetsManager
+  DebugUtils:
+    :path: LocalPods/DebugUtils
   Localize:
     :path: LocalPods/Localize
   Reactive:
     :path: LocalPods/Reactive
+  Recipe:
+    :path: LocalPods/Recipe
   Utils:
     :path: LocalPods/Utils
 
@@ -48,12 +58,14 @@ SPEC CHECKSUMS:
   AdvancedGraphics: 05f271f4e1699b64566f4727f118474fa2a7a25a
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   AssetsManager: dde2dbe9ba95b4d6998ee29e2ed6d90cf0df8151
+  DebugUtils: 1b472ea83d5b5217a6c6fbc8ef1672100822be79
   Localize: b9c8d1ccdf194547c4dfb89b686aeb43c1b4f844
   Reactive: cfa3b3740dca28c426f63e5c075802cd31353841
+  Recipe: faeaa8ed7483981f1130445b4506b5cad7b02b3c
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  SwiftLint: d41cc46a2ae58ac6d9f26954bc89f1d72e71fdef
+  SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
   Utils: d03e96223e81bab097aee3978e414020a2b75cc7
 
-PODFILE CHECKSUM: dba10897149869475ccf1e6b03812e239fb5afed
+PODFILE CHECKSUM: a149389326e64b2bebac0280255b34c6ef579bdf
 
 COCOAPODS: 1.11.3

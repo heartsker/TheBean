@@ -1,6 +1,6 @@
 //
 //  CoffeeStrength.swift
-//  TheBean
+//  Utils
 //
 //  Created by Ilya Buldin on 13.04.2022.
 //
