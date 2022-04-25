@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import AssetsManager
+import Utils
 
 final class RecipeCell: UICollectionViewCell {
 
@@ -62,9 +63,9 @@ final class RecipeCell: UICollectionViewCell {
 extension RecipeCell: ConfigurationProtocol {
 
     // MARK: - Cell Configuration
-    func configure(model: RecipeCardModel) {
+    func configure(model: RecipeCard) {
         titleLabel.text = model.title
-        imageView.image = model.drinkKind.imageName
+        imageView.image = ImageManager.asset(id: .id(of: model.drinkKind))
         volumeLabel.text = "\(model.volume) ml"
         cookingTimeLabel.text = "\(model.cookingTime) min"
     }

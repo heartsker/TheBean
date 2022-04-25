@@ -18,6 +18,6 @@ Pod::Spec.new do |spec|
     "AssetsManagerResources" => ["#{spec.name}/Resources/**/*.{xcassets,ttf}"]
   }
 
-  spec.dependency "DevelopmentUtils"
+  spec.dependency "Utils"
 
 end

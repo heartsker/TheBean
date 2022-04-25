@@ -5,9 +5,9 @@
 //  Created by Daniel Pustotin on 10.04.2022.
 //
 
-import DevelopmentUtils
+import Utils
 
-protocol IAssetsManager: AnyObject {
+public protocol IAssetsManager: AnyObject {
     associatedtype Asset
 
     static var resourcesBundle: Bundle { get }
@@ -18,8 +18,12 @@ protocol IAssetsManager: AnyObject {
     static func system(name: String) -> Asset
 }
 
-extension IAssetsManager {
+public extension IAssetsManager {
     static var resourcesBundle: Bundle {
-        DevelopmentUtils.resourcesBundle(of: Self.self)
+        Utils.resourcesBundle(of: Self.self)
+    }
+
+    static func asset(id: String) -> Asset {
+        asset(for: id)
     }
 }

@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol ReuseIdentifyingProtocol: UIView {
+public protocol ReuseIdentifyingProtocol: UIView {
     static var reuseIdentifier: String { get }
 }
 
-extension ReuseIdentifyingProtocol {
+public extension ReuseIdentifyingProtocol {
     static var reuseIdentifier: String {
         return String(describing: Self.self)
     }
@@ -19,7 +19,7 @@ extension ReuseIdentifyingProtocol {
 
 extension UICollectionViewCell: ReuseIdentifyingProtocol {}
 
-extension UICollectionView {
+public extension UICollectionView {
 
     func create<A: ReuseIdentifyingProtocol>(cell: A.Type, at index: IndexPath) -> A? {
         return self.dequeueReusableCell(withReuseIdentifier: cell.reuseIdentifier, for: index) as? A

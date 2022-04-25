@@ -8,7 +8,7 @@
 import Foundation
 
 public class StatsLocalization: ILocalizable {
-    static let table: String = "Stats"
+    public static let table: String = "Stats"
 
     public static let scoreLabel = StatsLocalization.localize("score.label")
     public static let scoreCupsDrunk = StatsLocalization.localize("score.cupsDrunk")

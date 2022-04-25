@@ -7,6 +7,7 @@
 
 import UIKit
 import AssetsManager
+import Utils
 
 final class RecipesHeaderView: UICollectionReusableView {
 

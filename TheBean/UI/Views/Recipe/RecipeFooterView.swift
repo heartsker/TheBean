@@ -7,6 +7,7 @@
 
 import UIKit
 import AssetsManager
+import Utils
 
 protocol RecipesFooterDelegate: AnyObject {
     func sectionFooterButtonTapped()

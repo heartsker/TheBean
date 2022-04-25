@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Utils
 
 // Store example
 final class RecipesStore: ObservableObject {
@@ -17,7 +18,7 @@ final class RecipesStore: ObservableObject {
         startReceiptsCoreDataPipeline()
     }
 
-    @Published var recipes: [RecipeCardModel] = []
+    @Published var recipes: [RecipeCard] = []
 
     private var cancelBag = Set<AnyCancellable>()
 

@@ -4,5 +4,6 @@ identifier_name:
   excluded:
     - i
     - to
+    - id
 excluded:
   - Pods
