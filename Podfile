@@ -23,6 +23,7 @@ target 'TheBean' do
   pod 'AssetsManager', :path => 'LocalPods/AssetsManager'
   pod 'Localize', :path => 'LocalPods/Localize'
   pod 'Reactive', :path => 'LocalPods/Reactive'
+  pod 'Recipe', :path => 'LocalPods/Recipe'
   pod 'Utils', :path => 'LocalPods/Utils'
 
 end

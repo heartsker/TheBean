@@ -1,6 +1,6 @@
 //
 //  IDManager.swift
-//  Localize
+//  Utils
 //
 //  Created by Daniel Pustotin on 25.04.2022.
 //

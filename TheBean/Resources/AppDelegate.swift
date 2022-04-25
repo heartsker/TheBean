@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import Account
+import Recipe
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

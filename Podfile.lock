@@ -8,6 +8,8 @@ PODS:
   - Localize (0.1.0):
     - Utils
   - Reactive (0.1.0)
+  - Recipe (0.1.0):
+    - Utils
   - SnapKit (5.6.0)
   - SwiftLint (0.47.0)
   - Utils (0.1.0)
@@ -19,6 +21,7 @@ DEPENDENCIES:
   - AssetsManager (from `LocalPods/AssetsManager`)
   - Localize (from `LocalPods/Localize`)
   - Reactive (from `LocalPods/Reactive`)
+  - Recipe (from `LocalPods/Recipe`)
   - SnapKit
   - SwiftLint
   - Utils (from `LocalPods/Utils`)
@@ -40,6 +43,8 @@ EXTERNAL SOURCES:
     :path: LocalPods/Localize
   Reactive:
     :path: LocalPods/Reactive
+  Recipe:
+    :path: LocalPods/Recipe
   Utils:
     :path: LocalPods/Utils
 
@@ -50,10 +55,11 @@ SPEC CHECKSUMS:
   AssetsManager: dde2dbe9ba95b4d6998ee29e2ed6d90cf0df8151
   Localize: b9c8d1ccdf194547c4dfb89b686aeb43c1b4f844
   Reactive: cfa3b3740dca28c426f63e5c075802cd31353841
+  Recipe: faeaa8ed7483981f1130445b4506b5cad7b02b3c
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: d41cc46a2ae58ac6d9f26954bc89f1d72e71fdef
   Utils: d03e96223e81bab097aee3978e414020a2b75cc7
 
-PODFILE CHECKSUM: dba10897149869475ccf1e6b03812e239fb5afed
+PODFILE CHECKSUM: 62049082b03b97fe02d4371a29362e1d60170017
 
 COCOAPODS: 1.11.3

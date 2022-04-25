@@ -1,6 +1,6 @@
 //
 //  DrinkKind.swift
-//  TheBean
+//  Utils
 //
 //  Created by Daniel Pustotin on 05.02.2022.
 //
