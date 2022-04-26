@@ -5,8 +5,6 @@
 //  Created by Daniel Pustotin on 23.04.2022.
 //
 
-import Foundation
-
 extension IAssetsManager where Asset: UIFont {
     public static var defaultAsset: UIFont {
         UIFont()
@@ -29,6 +27,7 @@ extension IAssetsManager where Asset: UIFont {
     }
 }
 
+/// Manager for app font assets
 public class FontManager: IAssetsManager {
     public typealias Asset = UIFont
 

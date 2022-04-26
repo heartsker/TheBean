@@ -5,8 +5,6 @@
 //  Created by Ilya Buldin on 14.04.2022.
 //
 
-import Foundation
-
 final class MainStore {
     weak var coordinator: MainCoordinator?
 

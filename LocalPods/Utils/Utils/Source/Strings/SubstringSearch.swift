@@ -2,7 +2,7 @@
 //  SubstringSearch.swift
 //  Utils
 //
-//  Created by Илья Чуб on 22.03.2022.
+//  Created by Ilya Chub on 22.03.2022.
 //
 
 public extension StringProtocol where Index == String.Index {

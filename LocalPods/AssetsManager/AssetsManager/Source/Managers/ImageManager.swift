@@ -5,10 +5,9 @@
 //  Created by Daniel Pustotin on 10.04.2022.
 //
 
-import UIKit
-
 public extension IAssetsManager where Asset: UIImage {
     static var defaultAsset: Asset {
+        // swiftlint:disable:next force_unwrapping
         Asset(systemName: "questionmark.app.dashed")!
     }
 
@@ -21,6 +20,7 @@ public extension IAssetsManager where Asset: UIImage {
     }
 }
 
+/// Manager for app image assets
 public class ImageManager: IAssetsManager {
     public typealias Asset = UIImage
 

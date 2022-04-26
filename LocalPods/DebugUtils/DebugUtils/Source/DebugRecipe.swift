@@ -27,7 +27,9 @@ extension Recipe: CustomStringConvertible {
         "⏰ Preparation: \(preparation)\n" +
         "🥵 Difficulty: \(difficulty)\n" +
         "🍽 Ingredients:\n" +
-        ingredients.map({ "\t- \($0)\n" }).reduce("", +) +
+        ingredients
+            .map { "\t- \($0)\n" }
+            .reduce("", +) +
         "⚡️ Nutrition:\n" +
         "\t\(nutrition.description)\n" +
         "🐾 Steps:\n" +

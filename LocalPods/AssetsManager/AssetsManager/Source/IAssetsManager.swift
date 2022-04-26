@@ -7,6 +7,7 @@
 
 import Utils
 
+/// Protocol for app assets managers
 public protocol IAssetsManager: AnyObject {
     associatedtype Asset
 
@@ -18,6 +19,7 @@ public protocol IAssetsManager: AnyObject {
     static func system(name: String) -> Asset
 }
 
+/// Extends `IAssetsManager` with default values
 public extension IAssetsManager {
     static var resourcesBundle: Bundle {
         Utils.resourcesBundle(of: Self.self)

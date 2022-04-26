@@ -5,8 +5,7 @@
 //  Created by Daniel Pustotin on 27.03.2022.
 //
 
-import Foundation
-
+/// Localization for Statistics
 public class StatsLocalization: ILocalizable {
     public static let table: String = "Stats"
 
@@ -23,7 +22,7 @@ public class StatsLocalization: ILocalizable {
 
     public static func masteredRecipes(value: UInt) -> String {
         let formatString: String = NSLocalizedString("mastered recipes", tableName: table, comment: "")
-        let resultString: String = String.localizedStringWithFormat(formatString, value)
+        let resultString = String.localizedStringWithFormat(formatString, value)
         return resultString
     }
  }

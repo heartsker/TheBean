@@ -10,6 +10,9 @@ fileprivate extension StringProtocol {
 }
 
 prefix operator ^
+/// First uppercased string operator
+/// - Parameter string: string to be uppercased
+/// - Returns: Uppercased string
 public prefix func ^ (string: String) -> String {
     string.firstUppercased
 }

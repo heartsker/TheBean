@@ -7,6 +7,7 @@
 
 import Combine
 
+/// Publisher provides functionality for publishing posts and subscribing onto them
 public class Publisher {
 
     private struct Post<T> {

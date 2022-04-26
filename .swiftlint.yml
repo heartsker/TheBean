@@ -1,5 +1,7 @@
-disabled_rules: 
+disabled_rules:
   - inclusive_language
+opt_in_rules:
+  - force_unwrapping
 identifier_name:
   excluded:
     - i
@@ -7,3 +9,193 @@ identifier_name:
     - id
 excluded:
   - Pods
+
+warning_threshold: 3
+
+line_length:
+  warning: 120
+  error: 120
+  ignores_urls: true
+  ignores_comments: true
+
+force_unwrapping:
+  error
+
+force_cast:
+  error
+
+unused_optional_binding:
+  error
+
+# Custom rules
+custom_rules:
+  cyrillic_file_name:
+    name: "Usage of cyrillic in file naming is forbidden"
+    regex: "[A-Za-z]*[ЁёА-я]+[A-Za-z]*(\\.swift)$"
+    message: "Ensure that filename does not contain cyrillic symbols"
+    match_kinds:
+      - comment
+    severity: error
+    
+  cyrillic_code:
+    name: "Usage of cyrillic in code is forbidden"
+    regex: "[ЁёА-я]"
+    message: "Ensure that your code does not contain cyrillic symbols"
+    match_kinds:
+      - argument
+      - identifier
+      - keyword
+      - parameter
+      - typeidentifier
+      - comment
+      - doccomment
+    severity: error
+
+  wrong_id_usage:
+    name: "Wrong identificator naming"
+    excluded: "path/to/DTO"
+    regex: "(var|let) \\w*Id( |:)"
+    message: "Use `ID` instead"
+    severity: error
+
+  wrong_url_usage:
+    name: "Wrong URL naming"
+    excluded: "path/to/DTO"
+    regex: "(var|let) \\w*Url( |:)"
+    message: "Use `URL` instead"
+    severity: error
+
+  void_return_usage:
+    name: "Wrong Void usage"
+    regex: "([(](Void)?[)] ?-> ?Void)"
+    match_kinds:
+      - typeidentifier
+    message: "Use `() -> ()` instead"
+    severity: error
+
+  empty_string_check:
+    name: "Incorrect empty string checking"
+    regex: "( == \"\")|(== \"\")|( ==\"\")|(==\"\")|( != \"\")|(!= \"\")|( !=\"\")|(!=\"\")"
+    message: "Use `string.isEmpty` instead"
+    severity: warning
+
+  guard_self_usage:
+    name: "Wrong guard let self = self usage"
+    regex: "guard\\s+let\\s+(((?!self).)\\S* = self[ ,]|`self` = self)"
+    message: "Use `guard let self = self` instead"
+    severity: error
+
+  empty_array_constructor:
+    name: "Wrong empty array constructor"
+    regex: "(var|let) \\w* = \\[\\w*\\]\\(\\)"
+    message: "Use `var array: [Type] = []` instead"
+    severity: warning
+
+  boolean_redundant_condition:
+    name: "Bool optional chaining is forbidden"
+    regex: "(?? true)|(?? false)"
+    message: "Use `== true` or `== false` instead"
+    severity: error
+
+  boolean_clear_condition:
+    name: "Overcomplicated condition"
+    regex: "^(?>(?!(as\\?)|(\\?.)).)*((!= true)|(!= false)).*$"
+    message: "Use `== true` or `== false` or variable as condition"
+    severity: warning
+
+  documentation_ticks:
+    name: "Incorrect apostrophe in the documentation"
+    regex: "´"
+    message: "Use '`' instead of '´' for correct work of documentation"
+    match_kinds:
+      - comment
+      - doccomment
+    severity: error
+
+  boolean_in_ternar_return:
+    name: "Returning Bool from ternary expression"
+    regex: "\\? (true : false)|(false : true)"
+    message: "Do not use ternary expression for returning Bool"
+    severity: warning
+
+  unowned:
+    name: "Usage of unowned is forbidden"
+    regex: "\\[unowned "
+    message: "Use `weak` instead of `unowned`"
+    severity: error
+
+  type_inferred_context:
+    name: "Unnecessary type indication"
+    regex: "^\\w* *((var)|(let)) \\w+\\:\\s(\\w+)\\s\\=\\s\\4"
+    message: "Use `var a = Type()` instead"
+    severity: warning
+
+  handler_names:
+    name: "The closure name does not contain the Handler suffix"
+    regex: "(var|let) \\w+(Action|Block): (\\(|\\w+(Action|Handler))"
+    message: "The closure must have the Handler suffix"
+    severity: warninig
+
+  forced_handlers:
+    name: "Force unwrapping for closures is forbidden"
+    regex: "(var|let) \\w+: (\\(*\\w*\\)->\\(\\w*\\)*|\\w+(Action|Handler))!"
+    message: "Use `var handler: Handler?` instead of `var handler: Handler!`"
+    severity: error
+
+  color_literal:
+    name: "Color literals are forbidden"
+    regex: "#colorLiteral"
+    message: "Use the ready-made colors added to the app"
+    severity: error
+
+  objc_inline:
+    name: "Wrong @objc syntax"
+    regex: "@objc\\n"
+    message: "Use oneline @objc syntax"
+    severity: error
+
+  texts:
+    name: "Hardcode for text in Presentation is forbidden"
+    included: "path/to/Presentation"
+    regex: "\"[a-zA-Zа-яА-Я]"
+    message: "Use Texts structure"
+    match_kinds:
+      - string
+    severity: error
+
+  missing_docs:
+    name: "No documentation provided for a non-private interface"
+    regex: "\n\n(public|open|struct|class|enum) (?!\\w+_Previews)"
+    message: "Add documentation (via the keyboard shortcut 􀆔+􀆕+/)"
+    severity: warning
+
+  void_parameters_method:
+    name: "Usage of methods for creating a View without parameters is prohibited"
+    regex: "\\(\\) -> some View \\{"
+    message: "Use variable instead of method"
+    severity: error
+
+  protocol_naming:
+    name: "Protocol name must start with `I` prefix"
+    regex: "protocol ((?![I])[A-Za-z]|I )"
+    message: "Add `I` prefix"
+    severity: error
+
+  view_controller_naming:
+    name: "UIViewController name must have `ViewController` suffix"
+    regex: "(?<!(ViewController)|(VC)|(Self))(:| =) UIViewController"
+    message: "Add `ViewController` suffix"
+    severity: error
+
+  default_imports:
+    name: "Import by default is prohibited"
+    excluded: "Imports.swift"
+    regex: "import (Foundation|CoreGraphics|UIKit)"
+    message: "Do not use default imports"
+    severity: error
+
+  geometryproxy_name:
+    name: "GeometryProxy must have -Proxy suffix"
+    regex: "GeometryReader \\{ \\w*(?<!(proxy)|(Proxy)) "
+    message: "Add `-Proxy` suffix"
+    severity: error

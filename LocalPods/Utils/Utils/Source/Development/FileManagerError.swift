@@ -5,8 +5,6 @@
 //  Created by Daniel Pustotin on 25.04.2022.
 //
 
-import Foundation
-
 enum FileManagerError: LocalizedError {
     case jsonExtracting(file: String)
 

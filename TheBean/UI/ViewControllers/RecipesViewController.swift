@@ -5,7 +5,6 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
-// import UIKit
 import SwiftUI
 import Localize
 import Utils
@@ -18,6 +17,7 @@ final class RecipesViewController: UIViewController {
 
     var recipes: [Int: [RecipeCard]] = {
         var items: [Int: [RecipeCard]] = [:]
+        // FIXME: - (IB)
         CoffeeStrength.allCases.forEach { items[$0.rawValue] = $0.cards }
         return items
     }()
@@ -94,8 +94,8 @@ extension RecipesViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.create(cell: RecipeCell.self, at: indexPath),
               let cards = recipes[indexPath.section] else {
-                  return UICollectionViewCell()
-              }
+            return UICollectionViewCell()
+        }
         cell.configure(model: cards[indexPath.row])
         return cell
     }
@@ -115,8 +115,8 @@ extension RecipesViewController: UICollectionViewDataSource {
                                                                           for: indexPath) as? RecipesHeaderView else {
                 return RecipesHeaderView()
             }
-            // TODO: - Add localization instead of RawValue
-            headerView.configure(model: CoffeeStrength(rawValue: indexPath.section)?.title ?? "")
+
+            headerView.configure(model: .id(of: CoffeeStrength.allCases[indexPath.section]))
             return headerView
         default:
             let footerKind = UICollectionView.elementKindSectionFooter
@@ -168,10 +168,10 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: LayoutConstants.topInset,
-                            left: LayoutConstants.leftRightInset,
-                            bottom: LayoutConstants.bottomInset,
-                            right: LayoutConstants.leftRightInset)
+        return UIEdgeInsets(            top: LayoutConstants.topInset,
+            left: LayoutConstants.leftRightInset,
+            bottom: LayoutConstants.bottomInset,
+            right: LayoutConstants.leftRightInset)
     }
 
     func collectionView(_ collectionView: UICollectionView,

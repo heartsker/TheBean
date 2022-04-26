@@ -2,13 +2,13 @@
 //  AverageNumberCupsCard.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 22.03.2022.
+//  Created by Ilya Chub on 22.03.2022.
 //
 
-import UIKit
 import Localize
 import AssetsManager
 
+/// Card for average number of cups drunk
 class AverageNumberCupsCard: BaseCardView {
     // MARK: - Properties
     private let value: Int

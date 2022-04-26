@@ -5,10 +5,10 @@
 //  Created by Daniel Pustotin on 02.04.2022.
 //
 
-import UIKit
 import CoreData
 import Account
 
+/// Provides functionality for work with CoreData
 class CoreDataManager {
 
     static let appDelegate: AppDelegate = UIApplication.shared.delegate as? AppDelegate ?? AppDelegate()

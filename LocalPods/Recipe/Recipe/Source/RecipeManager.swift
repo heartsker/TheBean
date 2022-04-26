@@ -7,9 +7,15 @@
 
 import Utils
 
+/// Provides functionality for loading recipes from file
 public class RecipeManager {
+
+    /// Loads recipes from file `Recipes.json`
+    /// - Returns: Array of `Recipe` or `nil` if failed to load
     public static func loadRecipes() -> [Recipe]? {
-        guard let json = FileManager.json(from: "Recipes", in: resourcesBundle(of: RecipeManager.self), localize: true) else {
+        guard let json = FileManager.json(            from: "Recipes",
+                                                      in: resourcesBundle(of: RecipeManager.self),
+                                                      localize: true) else {
             return nil
         }
 
@@ -43,15 +49,14 @@ public class RecipeManager {
                 }
                 steps?.append(RecipeStep(text: text, imageID: imageID))
             }
-            recipes.append(
-                Recipe(title: title,
-                       info: info,
-                       preparation: preparation,
-                       difficulty: difficulty,
-                       imageID: imageID,
-                       ingredients: ingredients,
-                       nutrition: nutrition,
-                       steps: steps ?? [])
+            recipes.append(Recipe(title: title,
+                                  info: info,
+                                  preparation: preparation,
+                                  difficulty: difficulty,
+                                  imageID: imageID,
+                                  ingredients: ingredients,
+                                  nutrition: nutrition,
+                                  steps: steps ?? [])
             )
         }
         return recipes

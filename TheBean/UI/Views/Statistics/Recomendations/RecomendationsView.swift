@@ -2,10 +2,9 @@
 //  RecomendationsView.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 15.03.2022.
+//  Created by Ilya Chub on 15.03.2022.
 //
 
-import UIKit
 import AssetsManager
 import Localize
 import Utils

@@ -5,8 +5,6 @@
 //  Created by Daniel Pustotin on 13.02.2022.
 //
 
-import UIKit
-
 extension UIButton {
     convenience init(text: String, color: UIColor, font: UIFont) {
         self.init()

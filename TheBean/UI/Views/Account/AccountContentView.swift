@@ -5,8 +5,6 @@
 //  Created by Daniel Pustotin on 25.03.2022.
 //
 
-import UIKit
-
 class AccountContentView: UIStackView {
 
     // MARK: - Initialization

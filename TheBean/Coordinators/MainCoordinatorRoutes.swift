@@ -5,8 +5,6 @@
 //  Created by Ilya Buldin on 14.04.2022.
 //
 
-import Foundation
-
 extension MainCoordinator {
     enum RecipesRoute {
         case exampleRoute1

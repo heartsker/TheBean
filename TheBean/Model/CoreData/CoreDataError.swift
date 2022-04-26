@@ -7,6 +7,7 @@
 
 import CoreData
 
+/// Errors for CoreDataManager
 enum CoreDataError: LocalizedError {
     case fetchingError(NSManagedObject.Type)
 

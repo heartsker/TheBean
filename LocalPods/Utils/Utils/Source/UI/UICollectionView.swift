@@ -5,8 +5,6 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
-import UIKit
-
 public protocol ReuseIdentifyingProtocol: UIView {
     static var reuseIdentifier: String { get }
 }

@@ -5,7 +5,6 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
-import UIKit
 import AssetsManager
 
 final class CoolVC: UIViewController {

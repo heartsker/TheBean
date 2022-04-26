@@ -5,7 +5,6 @@
 //  Created by Ilya Buldin on 14.04.2022.
 //
 
-import UIKit
 import AssetsManager
 
 final class MainCoordinator {
@@ -57,22 +56,22 @@ extension MainCoordinator {
 
 extension MainCoordinator {
     func proceed(to endpoint: Route) {
-        var controller: UIViewController?
+        var controllerVC: UIViewController?
         var present = false
 
         switch endpoint {
         case .recipes(.exampleRoute1):
-            controller = CoolVC()
+            controllerVC = CoolVC()
 
         case .recipes(.exampleRoute2):
-            controller = CoolVC()
+            controllerVC = CoolVC()
             present = true
         default:
-            controller = CoolVC()
+            controllerVC = CoolVC()
 
         }
 
-        if let controller = controller {
+        if let controller = controllerVC {
             if present {
                 currentNavigationController.topViewController?.present(controller,
                                                                        animated: true,

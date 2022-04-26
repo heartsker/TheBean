@@ -5,7 +5,6 @@
 //  Created by Daniel Pustotin on 21.03.2022.
 //
 
-import UIKit
 import SnapKit
 
 extension ConstraintMaker {

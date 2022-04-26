@@ -5,7 +5,6 @@
 //  Created by Daniel Pustotin on 19.03.2022.
 //
 
-import UIKit
 import AssetsManager
 
 protocol IBaseView {

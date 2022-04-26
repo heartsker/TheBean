@@ -2,16 +2,16 @@
 //  ScoreView.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 11.04.2022.
+//  Created by Ilya Chub on 11.04.2022.
 //
 
-import UIKit
 import SnapKit
 import Localize
 import Utils
 import AssetsManager
 import Account
 
+/// Score view
 class ScoreView: BaseCardView {
 
     // MARK: - Init
@@ -123,11 +123,11 @@ extension ScoreView {
 
         private func setupSubviews() {
             addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreCupsDrunk,
-                                           rightString: "\(Account.shared.cupsCount)"))
+                                        rightString: "\(Account.shared.cupsCount)"))
             addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreRecipesMastered,
-                                           rightString: "\(Account.shared.recipesCount)"))
+                                        rightString: "\(Account.shared.recipesCount)"))
             addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreHealthScore,
-                                           rightString: "\(Account.shared.healthScore)"))
+                                        rightString: "\(Account.shared.healthScore)"))
         }
     }
 }
