@@ -5,7 +5,6 @@
 //  Created by Daniel Pustotin on 13.03.2022.
 //
 
-import UIKit
 import SnapKit
 import Localize
 import Reactive
@@ -13,6 +12,7 @@ import Utils
 import AssetsManager
 import Account
 
+/// View Controller for testing
 class TestVC: UIViewController {
     // MARK: - Properties
     lazy private var usernameLabel: UILabel = {
@@ -70,11 +70,11 @@ class TestVC: UIViewController {
     }()
 
     @objc func saveTextField() {
-        guard textField.text ?? "" != "" else {
+        guard !(textField.text ?? "").isEmpty else {
             return
         }
-        Account.shared.email = textField.text!
-        Publisher.publishPost(with: textField.text!, for: .emailPost)
+        Account.shared.email = textField.text ?? ""
+        Publisher.publishPost(with: textField.text ?? "", for: .emailPost)
         CoreDataManager.save()
     }
 

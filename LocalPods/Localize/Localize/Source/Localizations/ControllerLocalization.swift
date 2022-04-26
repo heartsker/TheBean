@@ -5,6 +5,7 @@
 //  Created by Daniel Pustotin on 27.03.2022.
 //
 
+/// Localization for Controller
 public class ControllerLocalization: ILocalizable {
     public static let table: String = "Controller"
 

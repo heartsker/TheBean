@@ -5,27 +5,17 @@
 //  Created by Ilya Buldin on 13.04.2022.
 //
 
-import Foundation
-
-public enum CoffeeStrength: Int, CaseIterable {
+public enum CoffeeStrength: String, CaseIterable {
     case regular
     case strong
     case dessert
 
+    // TODO: - (IB) Remove this property from this enum
     public var cards: [RecipeCard] {
         switch self {
         case .regular: return RecipeCard.regularCards
         case .strong: return RecipeCard.strongCards
         case .dessert: return RecipeCard.dessertCards
-        }
-    }
-
-    // TODO: сделать с локализацией
-    public var title: String {
-        switch self {
-        case .regular: return "Regular coffee"
-        case .strong: return "Strong coffee"
-        case .dessert: return "Dessert coffee"
         }
     }
 }

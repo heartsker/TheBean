@@ -2,13 +2,13 @@
 //  CardsLabel.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 22.03.2022.
+//  Created by Ilya Chub on 22.03.2022.
 //
 
-import UIKit
 import Utils
 import AssetsManager
 
+/// Card label
 class CardLabel: UILabel {
 
     // MARK: - Properties

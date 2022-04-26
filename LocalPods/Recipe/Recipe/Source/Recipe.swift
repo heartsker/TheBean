@@ -5,8 +5,7 @@
 //  Created by Daniel Pustotin on 25.04.2022.
 //
 
-import Foundation
-
+/// Class for recipe
 public class Recipe {
     public let title: String
     public let info: String

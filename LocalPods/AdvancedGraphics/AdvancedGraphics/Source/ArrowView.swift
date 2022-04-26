@@ -7,6 +7,7 @@
 
 import AssetsManager
 
+/// View with arrow
 public class ArrowView: UIView {
 
     // MARK: - Properties
@@ -16,15 +17,16 @@ public class ArrowView: UIView {
     private let arrowAngle: Double
 
     // MARK: - Initializers
+
+    /// Default init
     public convenience init() {
         self.init(color: Pallete.materialMedium, width: 1, pointerLineLength: 5, arrowAngle: 1)
     }
 
-    private init(
-        color: UIColor,
-        width: Double,
-        pointerLineLength: Double,
-        arrowAngle: Double
+    private init(color: UIColor,
+                 width: Double,
+                 pointerLineLength: Double,
+                 arrowAngle: Double
     ) {
         self.color = color
         self.width = width
@@ -38,13 +40,16 @@ public class ArrowView: UIView {
     }
 
     // MARK: - Methods
+
+    /// Method to draw the arrow in the view
+    /// - Parameter rect: Rect to draw arrow in
     public override func draw(_ rect: CGRect) {
         let path = UIBezierPath()
         path.arrow(from: CGPoint(x: rect.origin.x, y: rect.midY),
-                       to: CGPoint(x: rect.maxX,
-                                    y: rect.midY),
-                       pointerLength: pointerLineLength,
-                       angle: CGFloat(arrowAngle))
+                   to: CGPoint(x: rect.maxX,
+                               y: rect.midY),
+                   pointerLength: pointerLineLength,
+                   angle: CGFloat(arrowAngle))
         let layer = CAShapeLayer()
         layer.strokeColor = color.cgColor
         layer.lineWidth = CGFloat(width)

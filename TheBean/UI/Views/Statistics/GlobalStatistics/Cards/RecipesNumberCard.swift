@@ -2,15 +2,15 @@
 //  RecipesNumberCard.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 07.04.2022.
+//  Created by Ilya Chub on 07.04.2022.
 //
 
-import UIKit
 import SnapKit
 import Localize
 import AssetsManager
 import AdvancedGraphics
 
+/// Recipes Number Card
 class RecipesNumberCard: BaseCardView {
 
     // MARK: - Properties

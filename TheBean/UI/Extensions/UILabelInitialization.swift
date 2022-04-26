@@ -5,8 +5,6 @@
 //  Created by Alina on 12.02.2022.
 //
 
-import UIKit
-
 extension UILabel {
     convenience init(text: String, color: UIColor, font: UIFont) {
         self.init()

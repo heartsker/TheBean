@@ -5,9 +5,6 @@
 //  Created by Daniel Pustotin on 23.04.2022.
 //
 
-import Foundation
-import UIKit
-
 extension IAssetsManager where Asset: UIColor {
     public static var defaultAsset: UIColor {
         UIColor.clear
@@ -22,6 +19,7 @@ extension IAssetsManager where Asset: UIColor {
     }
 }
 
+/// Manager for app color assets
 public class Pallete: IAssetsManager {
     public typealias Asset = UIColor
 

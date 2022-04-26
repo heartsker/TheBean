@@ -5,7 +5,6 @@
 //  Created by Daniel Pustotin on 04.02.2022.
 //
 
-import UIKit
 import CoreData
 import Account
 import Recipe

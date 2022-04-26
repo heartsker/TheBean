@@ -2,13 +2,13 @@
 //  TopRecomendationsView.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 15.03.2022.
+//  Created by Ilya Chub on 15.03.2022.
 //
 
 import SnapKit
-import UIKit
 import Utils
 
+/// Top recomendations view
 class TopRecomendationsView: UIStackView {
 
     // MARK: - Properties

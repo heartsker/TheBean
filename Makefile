@@ -68,11 +68,11 @@ lint:
 	@echo '✅	${GREEN}Swiftlint updated successfully${RESET}'
 	
 	@echo '⏳	${YELLOW}Running swiftlint fix:${RESET}'
-	@Pods/SwiftLint/swiftlint --fix || (echo '❌	${RED}Failed to run swiftlint fix${RESET}' && exit 1)
+	@Pods/SwiftLint/swiftlint --fix || (echo '❌	${RED}Failed to run swiftlint fix${RESET}')
 	@echo '✅	${GREEN}Swiftlint fix executed successfully${RESET}'
 
 	@echo '⏳	${YELLOW}Running swiftlint:${RESET}'
-	@Pods/SwiftLint/swiftlint || (echo '❌	${RED}Failed to run swiftlint${RESET}' && exit 1)
+	@Pods/SwiftLint/swiftlint || (echo '❌	${RED}Failed to run swiftlint${RESET}')
 	@echo '✅	${GREEN}Swiftlint executed successfully${RESET}'
 
 # Open workspace in XCode

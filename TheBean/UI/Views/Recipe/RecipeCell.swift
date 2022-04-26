@@ -5,7 +5,6 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
-import UIKit
 import SnapKit
 import AssetsManager
 import Utils
@@ -148,7 +147,7 @@ extension RecipeCell {
         contentView.layer.borderColor = borderColorCondition ? darkModeBorderColor : lightModeBorderColor
     }
 
-    // CGColor не умеет в динамический цвет, поэтому приходится пергружать этот метод
+    // CGColor cannot use dynamic color, so we need to override this method
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         setCellBorderColorByAppearanceMode()
     }

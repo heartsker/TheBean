@@ -2,10 +2,8 @@
 //  StatisticsContentStackView.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 16.03.2022.
+//  Created by Ilya Chub on 16.03.2022.
 //
-
-import UIKit
 
 class StatisticsContentView: UIStackView {
 

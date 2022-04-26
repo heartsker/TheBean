@@ -5,12 +5,12 @@
 //  Created by Alina on 10.02.2022.
 //
 
-import UIKit
 import SnapKit
 import Localize
 import Utils
 import AssetsManager
 
+/// Statistics View Controller
 class StatisticsViewController: UIViewController {
     // MARK: - Initialization
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

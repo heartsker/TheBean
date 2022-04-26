@@ -5,7 +5,6 @@
 //  Created by Daniel Pustotin on 28.01.2022.
 //
 
-import UIKit
 import Localize
 import Utils
 import AssetsManager
