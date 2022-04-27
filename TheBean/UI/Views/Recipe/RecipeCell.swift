@@ -59,7 +59,7 @@ final class RecipeCell: UICollectionViewCell {
     }
 }
 
-extension RecipeCell: ConfigurationProtocol {
+extension RecipeCell: IConfigurationWithModel {
 
     // MARK: - Cell Configuration
     func configure(model: RecipeCard) {

@@ -199,7 +199,7 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension RecipesViewController: RecipesFooterDelegate {
+extension RecipesViewController: IRecipesFooterDelegate {
     func sectionFooterButtonTapped() {
         store.coordinator?.proceed(to: .recipes(.exampleRoute1))
     }

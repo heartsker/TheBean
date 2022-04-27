@@ -5,30 +5,30 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
-public protocol ReuseIdentifyingProtocol: UIView {
+public protocol IReuseIdentifying: UIView {
     static var reuseIdentifier: String { get }
 }
 
-public extension ReuseIdentifyingProtocol {
+public extension IReuseIdentifying {
     static var reuseIdentifier: String {
         return String(describing: Self.self)
     }
 }
 
-extension UICollectionViewCell: ReuseIdentifyingProtocol {}
+extension UICollectionViewCell: IReuseIdentifying {}
 
 public extension UICollectionView {
 
-    func create<A: ReuseIdentifyingProtocol>(cell: A.Type, at index: IndexPath) -> A? {
+    func create<A: IReuseIdentifying>(cell: A.Type, at index: IndexPath) -> A? {
         return self.dequeueReusableCell(withReuseIdentifier: cell.reuseIdentifier, for: index) as? A
     }
 
-    func register<A: ReuseIdentifyingProtocol>(classXIB: A.Type) {
+    func register<A: IReuseIdentifying>(classXIB: A.Type) {
         let cell = UINib(nibName: classXIB.reuseIdentifier, bundle: nil)
         self.register(cell, forCellWithReuseIdentifier: classXIB.reuseIdentifier)
     }
 
-    func register<A: ReuseIdentifyingProtocol>(classCell: A.Type) {
+    func register<A: IReuseIdentifying>(classCell: A.Type) {
         self.register(classCell.self, forCellWithReuseIdentifier: classCell.reuseIdentifier)
     }
 }

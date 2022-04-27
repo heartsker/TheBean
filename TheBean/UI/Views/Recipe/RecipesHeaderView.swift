@@ -28,7 +28,7 @@ final class RecipesHeaderView: UICollectionReusableView {
 
 extension RecipesHeaderView: ReuseIdentifyingProtocol { }
 
-extension RecipesHeaderView: ConfigurationProtocol {
+extension RecipesHeaderView: IConfigurationWithModel {
     func configure(model: String) {
         titleLabel.text = model
     }

@@ -8,13 +8,13 @@
 import AssetsManager
 import Utils
 
-protocol RecipesFooterDelegate: AnyObject {
+protocol IRecipesFooterDelegate: AnyObject {
     func sectionFooterButtonTapped()
 }
 
 final class RecipesFooterView: UICollectionReusableView {
 
-    weak var delegate: RecipesFooterDelegate?
+    weak var delegate: IRecipesFooterDelegate?
 
     private(set) var buttonLabel: UIButton = {
         let button = UIButton()

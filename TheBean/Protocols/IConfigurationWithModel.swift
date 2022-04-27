@@ -5,7 +5,7 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
-protocol ConfigurationProtocol {
+protocol IConfigurationWithModel {
     associatedtype Model
     func configure(model: Model)
 }
