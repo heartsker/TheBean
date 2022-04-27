@@ -5,11 +5,13 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
+/// Provides all UIView's reuseIdentifier to simplify working with tableView or collectionView
 public protocol IReuseIdentifying: UIView {
     static var reuseIdentifier: String { get }
 }
 
 public extension IReuseIdentifying {
+
     static var reuseIdentifier: String {
         return String(describing: Self.self)
     }

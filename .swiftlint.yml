@@ -10,7 +10,7 @@ identifier_name:
 excluded:
   - Pods
 
-warning_threshold: 20
+warning_threshold: 3
 
 line_length:
   warning: 120
@@ -31,7 +31,7 @@ unused_optional_binding:
 custom_rules:
   missing_docs:
     name: "No documentation provided for a non-private interface"
-    regex: "\n\n(class|enum) (?!\\w+_Previews)"
+    regex: "\n\n(public|open) (extension|protocol|class|enum|struct) (?!\\w+_Previews)"
     message: "Add documentation (via the keyboard shortcut 􀆔+􀆕+/)"
     severity: warning
 

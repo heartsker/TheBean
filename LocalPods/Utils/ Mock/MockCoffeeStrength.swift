@@ -5,13 +5,13 @@
 //  Created by Ilya Buldin on 13.04.2022.
 //
 
-public enum CoffeeStrength: String, CaseIterable {
+public enum MockCoffeeStrength: String, CaseIterable {
     case regular
     case strong
     case dessert
 }
 
-public extension CoffeeStrength {
+public extension MockCoffeeStrength {
     // this property is tmp for mock
     var sectionProvider: Int {
         switch self {

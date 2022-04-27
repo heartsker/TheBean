@@ -10,7 +10,7 @@ public extension String {
         "coffee." + drinkKind.rawValue
     }
 
-    static func id(of strength: CoffeeStrength) -> String {
+    static func id(of strength: MockCoffeeStrength) -> String {
         "coffee.strength." + strength.rawValue
     }
 }

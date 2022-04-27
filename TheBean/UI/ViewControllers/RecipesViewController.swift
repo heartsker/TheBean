@@ -15,9 +15,9 @@ final class RecipesViewController: UIViewController {
     // MARK: - Properties
     private lazy var store = MainStore.shared
 
-    var recipes: [Int: [RecipeCard]] = {
-        var items: [Int: [RecipeCard]] = [:]
-        CoffeeStrength.allCases.forEach { items[$0.sectionProvider] = RecipeCard.makeCards($0) }
+    var recipes: [Int: [MockRecipeCard]] = {
+        var items: [Int: [MockRecipeCard]] = [:]
+        MockCoffeeStrength.allCases.forEach { items[$0.sectionProvider] = MockRecipeCard.makeCards($0) }
         return items
     }()
 
@@ -79,7 +79,7 @@ extension RecipesViewController: IBaseView {
 extension RecipesViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return CoffeeStrength.allCases.count
+        return MockCoffeeStrength.allCases.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -115,7 +115,7 @@ extension RecipesViewController: UICollectionViewDataSource {
                 return RecipesHeaderView()
             }
 
-            headerView.configure(model: ^CoffeeStrength.allCases[indexPath.section].rawValue)
+            headerView.configure(model: ^MockCoffeeStrength.allCases[indexPath.section].rawValue)
             return headerView
         default:
             let footerKind = UICollectionView.elementKindSectionFooter
