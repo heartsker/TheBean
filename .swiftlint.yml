@@ -1,6 +1,5 @@
 disabled_rules:
   - inclusive_language
-  - missing_docs
 opt_in_rules:
   - force_unwrapping
 identifier_name:
@@ -30,6 +29,12 @@ unused_optional_binding:
 
 # Custom rules
 custom_rules:
+  missing_docs:
+    name: "No documentation provided for a non-private interface"
+    regex: "\n\n(public|open|struct|class|enum) (?!\\w+_Previews)"
+    message: "Add documentation (via the keyboard shortcut 􀆔+􀆕+/)"
+    severity: warning
+
   cyrillic_file_name:
     name: "Usage of cyrillic in file naming is forbidden"
     regex: "[A-Za-z]*[ЁёА-я]+[A-Za-z]*(\\.swift)$"

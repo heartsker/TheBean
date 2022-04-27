@@ -115,7 +115,7 @@ extension RecipesViewController: UICollectionViewDataSource {
                 return RecipesHeaderView()
             }
 
-            headerView.configure(model: .id(of: CoffeeStrength.allCases[indexPath.section]))
+            headerView.configure(model: ^CoffeeStrength.allCases[indexPath.section].rawValue)
             return headerView
         default:
             let footerKind = UICollectionView.elementKindSectionFooter
