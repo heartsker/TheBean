@@ -4,6 +4,7 @@
 //
 //  Created by Alina on 12.02.2022.
 //
+import UIKit.UILabel
 
 extension UILabel {
     convenience init(text: String, color: UIColor, font: UIFont) {

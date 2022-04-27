@@ -4,6 +4,7 @@
 //
 //  Created by Ilya Chub on 15.03.2022.
 //
+import UIKit
 
 class AvatarImageView: UIImageView {
     // MARK: - Properties

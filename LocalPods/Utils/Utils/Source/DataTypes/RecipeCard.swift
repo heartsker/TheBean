@@ -12,7 +12,15 @@ public struct RecipeCard {
     public let cookingTime: Int
 }
 
-extension RecipeCard {
+public extension RecipeCard {
+
+    static let makeCards: (CoffeeStrength) -> [RecipeCard] = { strength in
+        switch strength {
+        case .regular: return Self.regularCards
+        case .dessert: return Self.dessertCards
+        case .strong: return Self.strongCards
+        }
+    }
 
     static let regularCards: [RecipeCard] = {
         let items: [RecipeCard] = [

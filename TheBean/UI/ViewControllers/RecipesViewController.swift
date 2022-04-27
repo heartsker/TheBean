@@ -17,8 +17,7 @@ final class RecipesViewController: UIViewController {
 
     var recipes: [Int: [RecipeCard]] = {
         var items: [Int: [RecipeCard]] = [:]
-        // FIXME: - (IB)
-        CoffeeStrength.allCases.forEach { items[$0.rawValue] = $0.cards }
+        CoffeeStrength.allCases.forEach { items[$0.sectionProvider] = RecipeCard.makeCards($0) }
         return items
     }()
 

@@ -9,13 +9,15 @@ public enum CoffeeStrength: String, CaseIterable {
     case regular
     case strong
     case dessert
+}
 
-//      - (IB) Remove this property from this enum
-//    public var cards: [RecipeCard] {
-//        switch self {
-//        case .regular: return RecipeCard.regularCards
-//        case .strong: return RecipeCard.strongCards
-//        case .dessert: return RecipeCard.dessertCards
-//        }
-//    }
+public extension CoffeeStrength {
+    // this property is tmp for mock
+    var sectionProvider: Int {
+        switch self {
+        case .regular: return 0
+        case .strong: return 1
+        case .dessert: return 2
+        }
+    }
 }
