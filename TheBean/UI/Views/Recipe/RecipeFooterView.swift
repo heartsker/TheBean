@@ -40,7 +40,7 @@ final class RecipesFooterView: UICollectionReusableView {
     }
 }
 
-extension RecipesFooterView: ReuseIdentifyingProtocol { }
+extension RecipesFooterView: IReuseIdentifying { }
 
 extension RecipesFooterView: IBaseView {
     func setupAppearance() {

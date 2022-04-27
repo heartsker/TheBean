@@ -26,7 +26,7 @@ final class RecipesHeaderView: UICollectionReusableView {
     }
 }
 
-extension RecipesHeaderView: ReuseIdentifyingProtocol { }
+extension RecipesHeaderView: IReuseIdentifying { }
 
 extension RecipesHeaderView: IConfigurationWithModel {
     func configure(model: String) {

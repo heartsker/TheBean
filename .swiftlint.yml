@@ -164,12 +164,6 @@ custom_rules:
       - string
     severity: error
 
-  missing_docs:
-    name: "No documentation provided for a non-private interface"
-    regex: "\n\n(public|open|struct|class|enum) (?!\\w+_Previews)"
-    message: "Add documentation (via the keyboard shortcut 􀆔+􀆕+/)"
-    severity: warning
-
   void_parameters_method:
     name: "Usage of methods for creating a View without parameters is prohibited"
     regex: "\\(\\) -> some View \\{"
@@ -186,13 +180,6 @@ custom_rules:
     name: "UIViewController name must have `ViewController` suffix"
     regex: "(?<!(ViewController)|(VC)|(Self))(:| =) UIViewController"
     message: "Add `ViewController` suffix"
-    severity: error
-
-  default_imports:
-    name: "Import by default is prohibited"
-    excluded: "Imports.swift"
-    regex: "import (Foundation|CoreGraphics|UIKit)"
-    message: "Do not use default imports"
     severity: error
 
   geometryproxy_name:
