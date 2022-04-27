@@ -62,7 +62,7 @@ final class RecipeCell: UICollectionViewCell {
 extension RecipeCell: IConfigurationWithModel {
 
     // MARK: - Cell Configuration
-    func configure(model: RecipeCard) {
+    func configure(model: MockRecipeCard) {
         titleLabel.text = model.title
         imageView.image = ImageManager.asset(id: .id(of: model.drinkKind))
         volumeLabel.text = "\(model.volume) ml"

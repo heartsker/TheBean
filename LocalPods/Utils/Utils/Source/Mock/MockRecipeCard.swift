@@ -5,6 +5,7 @@
 //  Created by Daniel Pustotin on 25.04.2022.
 //
 
+/// Model to mock RecipesViewController
 public struct MockRecipeCard {
     public let title: String
     public let drinkKind: DrinkKind
@@ -12,6 +13,7 @@ public struct MockRecipeCard {
     public let cookingTime: Int
 }
 
+/// Model to mock RecipesViewController
 public extension MockRecipeCard {
 
     static let makeCards: (MockCoffeeStrength) -> [Self] = { strength in

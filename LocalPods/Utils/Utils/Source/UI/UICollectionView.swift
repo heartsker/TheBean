@@ -10,6 +10,7 @@ public protocol IReuseIdentifying: UIView {
     static var reuseIdentifier: String { get }
 }
 
+/// Default implementation of reuseIdentifier computing var
 public extension IReuseIdentifying {
 
     static var reuseIdentifier: String {
@@ -19,6 +20,8 @@ public extension IReuseIdentifying {
 
 extension UICollectionViewCell: IReuseIdentifying {}
 
+/// Description: Extents UICollectionViewCell with functionality which simplifies with dequeueReusableCell method
+/// Example: collectionView.create(cell: RecipeCell.self, at: indexPath)
 public extension UICollectionView {
 
     func create<A: IReuseIdentifying>(cell: A.Type, at index: IndexPath) -> A? {

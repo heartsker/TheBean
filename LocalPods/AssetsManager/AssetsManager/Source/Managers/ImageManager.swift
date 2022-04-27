@@ -5,6 +5,7 @@
 //  Created by Daniel Pustotin on 10.04.2022.
 //
 
+/// Provides IAssetsManager with functionality which simplifies grabbing needed assets
 public extension IAssetsManager where Asset: UIImage {
     static var defaultAsset: Asset {
         // swiftlint:disable:next force_unwrapping

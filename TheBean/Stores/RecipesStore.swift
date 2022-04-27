@@ -17,7 +17,7 @@ final class RecipesStore: ObservableObject {
         startReceiptsCoreDataPipeline()
     }
 
-    @Published var recipes: [RecipeCard] = []
+    @Published var recipes: [MockRecipeCard] = []
 
     private var cancelBag = Set<AnyCancellable>()
 

@@ -5,6 +5,7 @@
 //  Created by Ilya Chub on 22.03.2022.
 //
 
+/// Extends StringProtocol with functionality to find ranges easier
 public extension StringProtocol where Index == String.Index {
 
     private func index(of string: Self, options: String.CompareOptions = []) -> Index? {
