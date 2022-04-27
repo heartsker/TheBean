@@ -11,18 +11,23 @@ protocol StatisticsFlowProtocol: AnyObject {
 
 }
 
-final class StatisticsCoordinator: CoordinatorProtocol, StatisticsFlowProtocol {
+final class StatisticsCoordinator: ICoordinator, StatisticsFlowProtocol {
+    var parentCoordinator: ICoordinator?
 
-    weak var navigationController: UINavigationController?
+    var childCoordinators: [ICoordinator]
 
-    init(_ navigationController: UINavigationController) {
+    var navigationController: UINavigationController
+
+    init(_ navigationController: UINavigationController, parentCoordinator: ICoordinator) {
         self.navigationController = navigationController
+        childCoordinators = []
+        self.parentCoordinator = parentCoordinator
     }
 
     func start() {
         let statisticsViewController = StatisticsViewController()
         statisticsViewController.coordinator = self
-        navigationController?.pushViewController(statisticsViewController, animated: false)
+        navigationController.pushViewController(statisticsViewController, animated: false)
     }
 
 }

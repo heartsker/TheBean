@@ -7,19 +7,23 @@
 
 import UIKit
 
-final class AppCoordinator: CoordinatorProtocol {
-    let window: UIWindow
+final class AppCoordinator: ICoordinator {
+    var childCoordinators: [ICoordinator]
 
-    init(_ window: UIWindow) {
-        self.window = window
+    var navigationController: UINavigationController
+
+    var parentCoordinator: ICoordinator?
+
+    init(_ navigationController: UINavigationController) {
+        self.parentCoordinator = nil
+        self.navigationController = navigationController
+        childCoordinators = []
     }
 
     func start() {
-        let navigationController = UINavigationController()
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
-
-        let tabBarCoordinator = TabBarCoordinator(in: window)
-        coordinate(to: tabBarCoordinator)
+        let tabBarCoordinator = TabBarCoordinator(UINavigationController(), parentCoordinator: self)
+        childCoordinators.append(tabBarCoordinator)
+        tabBarCoordinator.start()
     }
+
 }

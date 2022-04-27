@@ -11,18 +11,23 @@ protocol AccountFlowProtocol: AnyObject {
 
 }
 
-final class AccountCoordinator: CoordinatorProtocol, AccountFlowProtocol {
+final class AccountCoordinator: ICoordinator, AccountFlowProtocol {
+    var parentCoordinator: ICoordinator?
 
-    weak var navigationController: UINavigationController?
+    var childCoordinators: [ICoordinator]
 
-    init(_ navigationController: UINavigationController) {
+    var navigationController: UINavigationController
+
+    init(_ navigationController: UINavigationController, parentCoordinator: ICoordinator) {
         self.navigationController = navigationController
+        childCoordinators = []
+        self.parentCoordinator = parentCoordinator
     }
 
     func start() {
         let accountViewController = AccountViewController()
         accountViewController.coordinator = self
-        navigationController?.pushViewController(accountViewController, animated: false)
+        navigationController.pushViewController(accountViewController, animated: false)
     }
 
 }

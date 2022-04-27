@@ -11,18 +11,23 @@ protocol TimerFlowProtocol: AnyObject {
 
 }
 
-final class TimerCoordinator: CoordinatorProtocol, TimerFlowProtocol {
+final class TimerCoordinator: ICoordinator, TimerFlowProtocol {
+    var parentCoordinator: ICoordinator?
 
-    weak var navigationController: UINavigationController?
+    var navigationController: UINavigationController
 
-    init(_ navigationController: UINavigationController) {
+    var childCoordinators: [ICoordinator]
+
+    init(_ navigationController: UINavigationController, parentCoordinator: ICoordinator) {
         self.navigationController = navigationController
+        childCoordinators = []
+        self.parentCoordinator = parentCoordinator
     }
 
     func start() {
         let timerViewController = TimerViewController()
         timerViewController.coordinator = self
-        navigationController?.pushViewController(timerViewController, animated: false)
+        navigationController.pushViewController(timerViewController, animated: false)
     }
 
 }

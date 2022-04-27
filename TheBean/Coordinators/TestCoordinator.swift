@@ -11,18 +11,23 @@ protocol TestFlowProtocol: AnyObject {
 
 }
 
-final class TestCoordinator: CoordinatorProtocol, TestFlowProtocol {
+final class TestCoordinator: ICoordinator, TestFlowProtocol {
+    var parentCoordinator: ICoordinator?
 
-    weak var navigationController: UINavigationController?
+    var childCoordinators: [ICoordinator]
 
-    init(_ navigationController: UINavigationController) {
+    var navigationController: UINavigationController
+
+    init(_ navigationController: UINavigationController, parentCoordinator: ICoordinator) {
         self.navigationController = navigationController
+        childCoordinators = []
+        self.parentCoordinator = parentCoordinator
     }
 
     func start() {
         let testViewController = TestVC()
         testViewController.coordinator = self
-        navigationController?.pushViewController(testViewController, animated: false)
+        navigationController.pushViewController(testViewController, animated: false)
     }
 
 }

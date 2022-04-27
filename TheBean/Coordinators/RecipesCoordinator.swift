@@ -11,18 +11,23 @@ protocol RecipesFlowProtocol: AnyObject {
 
 }
 
-final class RecipesCoordinator: CoordinatorProtocol, RecipesFlowProtocol {
+final class RecipesCoordinator: ICoordinator, RecipesFlowProtocol {
+    var parentCoordinator: ICoordinator?
 
-    weak var navigationController: UINavigationController?
+    var childCoordinators: [ICoordinator]
 
-    init(_ navigationController: UINavigationController) {
+    var navigationController: UINavigationController
+
+    init(_ navigationController: UINavigationController, parentCoordinator: ICoordinator) {
         self.navigationController = navigationController
+        childCoordinators = []
+        self.parentCoordinator = parentCoordinator
     }
 
     func start() {
         let recipesViewController  = RecipesViewController()
         recipesViewController.coordinator = self
-        navigationController?.pushViewController(recipesViewController, animated: false)
+        navigationController.pushViewController(recipesViewController, animated: false)
     }
 
     func showAdditionalInfo() {
