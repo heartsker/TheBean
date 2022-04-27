@@ -1,5 +1,6 @@
 disabled_rules:
   - inclusive_language
+  - missing_docs
 opt_in_rules:
   - force_unwrapping
 identifier_name:
