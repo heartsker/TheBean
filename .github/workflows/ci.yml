@@ -32,6 +32,8 @@ jobs:
     env:
       MINT_PATH: ${{ github.workspace }}/mint
   linter:
+    needs:
+      - setup
     runs-on: macOS-latest
     steps:
       - name: Run danger
@@ -39,6 +41,9 @@ jobs:
         env:
           DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
   build:
+    needs:
+      - setup
+      - linter
     runs-on: macOS-latest
     steps:
       - name: Xcodegen
