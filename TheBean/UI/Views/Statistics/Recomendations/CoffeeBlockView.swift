@@ -12,10 +12,10 @@ import Localize
 class CoffeeBlockView: UIStackView {
 
     // MARK: - Properties
-    private var recomendation: CoffeeRecomendation
+    private var recomendation: CoffeeRecommendation
 
     // MARK: - Initialization
-    init(_ recomendation: CoffeeRecomendation) {
+    init(_ recomendation: CoffeeRecommendation) {
         self.recomendation = recomendation
         super.init(frame: .zero)
         setup()

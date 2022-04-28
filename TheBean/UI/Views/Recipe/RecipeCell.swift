@@ -17,22 +17,22 @@ final class RecipeCell: UICollectionViewCell {
         return container
     }()
 
-    private(set) lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         return label
     }()
 
-    private(set) lazy var imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
 
-    private(set) lazy var volumeLabel: UILabel = {
+    private lazy var volumeLabel: UILabel = {
         let label = UILabel()
         return label
     }()
 
-    private(set) lazy var cookingTimeLabel: UILabel = {
+    private lazy var cookingTimeLabel: UILabel = {
         let label = UILabel()
         return label
     }()

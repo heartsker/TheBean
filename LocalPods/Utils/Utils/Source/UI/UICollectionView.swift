@@ -6,34 +6,33 @@
 //
 
 /// Provides all UIView's reuseIdentifier to simplify working with tableView or collectionView
-public protocol IReuseIdentifying: UIView {
+public protocol IReuseIdentifiable: UIView {
     static var reuseIdentifier: String { get }
 }
 
-/// Default implementation of reuseIdentifier computing var
-public extension IReuseIdentifying {
+/// Extends IReuseIdentifiable with default implementation of reuseIdentifier computing var
+public extension IReuseIdentifiable {
 
     static var reuseIdentifier: String {
         return String(describing: Self.self)
     }
 }
 
-extension UICollectionViewCell: IReuseIdentifying {}
+extension UICollectionViewCell: IReuseIdentifiable {}
 
-/// Description: Extents UICollectionViewCell with functionality which simplifies with dequeueReusableCell method
-/// Example: collectionView.create(cell: RecipeCell.self, at: indexPath)
+/// Extents UICollectionViewCell with functionality which simplifies with dequeueReusableCell method
 public extension UICollectionView {
 
-    func create<A: IReuseIdentifying>(cell: A.Type, at index: IndexPath) -> A? {
+    func create<A: IReuseIdentifiable>(cell: A.Type, at index: IndexPath) -> A? {
         return self.dequeueReusableCell(withReuseIdentifier: cell.reuseIdentifier, for: index) as? A
     }
 
-    func register<A: IReuseIdentifying>(classXIB: A.Type) {
+    func register<A: IReuseIdentifiable>(classXIB: A.Type) {
         let cell = UINib(nibName: classXIB.reuseIdentifier, bundle: nil)
         self.register(cell, forCellWithReuseIdentifier: classXIB.reuseIdentifier)
     }
 
-    func register<A: IReuseIdentifying>(classCell: A.Type) {
+    func register<A: IReuseIdentifiable>(classCell: A.Type) {
         self.register(classCell.self, forCellWithReuseIdentifier: classCell.reuseIdentifier)
     }
 }

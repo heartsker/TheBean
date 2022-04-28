@@ -5,16 +5,15 @@
 //  Created by Ilya Buldin on 13.04.2022.
 //
 
-/// Model to mock RecipesViewController
-public enum MockCoffeeStrength: String, CaseIterable {
+/// Model of coffee strenght
+public enum CoffeeStrength: String, CaseIterable {
     case regular
     case strong
     case dessert
 }
 
-/// Model to mock RecipesViewController
-public extension MockCoffeeStrength {
-    // this property is tmp for mock
+/// Extends model with mock for RecipesViewController
+public extension CoffeeStrength {
     var sectionProvider: Int {
         switch self {
         case .regular: return 0

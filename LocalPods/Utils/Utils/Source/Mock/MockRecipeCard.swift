@@ -16,7 +16,7 @@ public struct MockRecipeCard {
 /// Model to mock RecipesViewController
 public extension MockRecipeCard {
 
-    static let makeCards: (MockCoffeeStrength) -> [Self] = { strength in
+    static let makeCards: (CoffeeStrength) -> [Self] = { strength in
         switch strength {
         case .regular: return Self.regularCards
         case .dessert: return Self.dessertCards

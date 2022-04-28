@@ -5,8 +5,8 @@
 //  Created by Daniel Pustotin on 25.04.2022.
 //
 
-/// All is clear
-public class CoffeeRecomendation {
+/// CoffeeRecommendation
+public class CoffeeRecommendation {
     public let drinkKind: DrinkKind
 
     public init(drinkKind: DrinkKind) {
