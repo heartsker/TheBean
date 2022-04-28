@@ -13,8 +13,9 @@ jobs:
   setup:
     runs-on: macOS-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v3
+      - name: Checkout
+        - uses: actions/checkout@v2
+      - uses: actions/cache@v1
         with:
           path: Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
@@ -42,6 +43,8 @@ jobs:
     needs:
       - setup
     steps:
+      - name: Checkout
+        - uses: actions/checkout@v2
       - name: Run linter
         run: |
           pwd
