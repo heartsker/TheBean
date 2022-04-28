@@ -21,8 +21,9 @@ jobs:
     runs-on: macOS-latest
     steps:
       - name: Run linter
-        run: swiftlint --fix
-        run: swiftlint
+        run: |
+        swiftlint --fix
+        swiftlint
   build:
     needs:
       - setup
@@ -31,6 +32,7 @@ jobs:
     steps:
       - name: Xcodegen
         run: |
-          brew upgrade xcodegen || brew install xcodegen && xcodegen
+          brew upgrade xcodegen || brew install xcodegen
+          xcodegen
       - name: Build
         run: xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
