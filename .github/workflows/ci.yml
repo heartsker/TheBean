@@ -22,8 +22,8 @@ jobs:
     steps:
       - name: Run linter
         run: |
-        swiftlint --fix
-        swiftlint
+          swiftlint --fix
+          swiftlint
   build:
     needs:
       - setup
