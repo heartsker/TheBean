@@ -26,11 +26,21 @@ jobs:
           xcodegen
       - name: CocoaPod Install
         run: pod install
+      - name: Run linter
+        run: |
+          pwd
+          ls -la
+          echo here
+          swiftlint --fix
+          swiftlint
+      - name: Build
+        run: xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
   linter:
     runs-on: macOS-latest
     needs:
       - setup
     steps:
+      - uses: actions/checkout@v2
       - name: Checkout
         uses: actions/checkout@v1
       - name: Run linter
@@ -46,5 +56,6 @@ jobs:
       - setup
       - linter
     steps:
+      - uses: actions/checkout@v2
       - name: Build
         run: xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
