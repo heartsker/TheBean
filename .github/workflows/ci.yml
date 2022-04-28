@@ -22,8 +22,10 @@ jobs:
             ${{ runner.os }}-pods-
       - name: Xcodegen
         run: |
+          ls
           brew upgrade xcodegen || brew install xcodegen
           xcodegen
+          ls
       - name: CocoaPod Install
         run: pod install
       - name: Run linter
@@ -41,8 +43,6 @@ jobs:
       - setup
     steps:
       - uses: actions/checkout@v2
-      - name: Checkout
-        uses: actions/checkout@v1
       - name: Run linter
         run: |
           pwd
@@ -52,9 +52,10 @@ jobs:
           swiftlint
   build:
     runs-on: macOS-latest
-    uses:
+    needs:
       - setup
       - linter
+    uses: actions/cache@v2
     steps:
       - uses: actions/checkout@v2
       - name: Build
