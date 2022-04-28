@@ -1,4 +1,14 @@
-on: pull_request
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+  push:
+    branches:
+      - main
+      - dev
+
 name: Test
 jobs:
   test:
