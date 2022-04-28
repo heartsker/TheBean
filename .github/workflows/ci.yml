@@ -55,9 +55,9 @@ jobs:
     needs:
       - setup
       - linter
-    uses: actions/cache@v2
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/cache@v2
       - name: Build
         run: |
           ls
