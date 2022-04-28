@@ -13,10 +13,8 @@ final class RecipesStore {
 
     static let shared = RecipesStore()
 
-    private init() {
-        
-    }
-
     var recipes: [MockRecipeCard] = []
 
+    private init() {
+    }
 }

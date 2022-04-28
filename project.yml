@@ -34,7 +34,7 @@ targets:
         UILaunchStoryboardName: LaunchScreen
         UIRequiresFullScreen: true
         UISupportedInterfaceOrientations: []
-    preBuildScripts:
+    postCompileScripts:
       - script: Pods/Swiftlint/swiftlint --fix
         name: SwiftlintFix
       - script: Pods/Swiftlint/swiftlint
