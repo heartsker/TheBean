@@ -13,12 +13,23 @@ jobs:
   setup:
     runs-on: macOS-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      - name: Xcodegen
+        run: |
+          brew upgrade xcodegen || brew install xcodegen
+          xcodegen
+      - name: CocoaPod Install
+        run: pod install
   linter:
+    runs-on: macOS-latest
     needs:
       - setup
-    runs-on: macOS-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -30,14 +41,10 @@ jobs:
           swiftlint --fix
           swiftlint
   build:
+    runs-on: macOS-latest
     needs:
       - setup
       - linter
-    runs-on: macOS-latest
     steps:
-      - name: Xcodegen
-        run: |
-          brew upgrade xcodegen || brew install xcodegen
-          xcodegen
       - name: Build
         run: xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
