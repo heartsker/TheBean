@@ -1,55 +1,19 @@
-name: CI
-on:
-  pull_request:
-    branches:
-      - main
-      - dev
-  push:
-    branches:
-      - main
-      - dev
-
+on: pull_request
+name: Test
 jobs:
-  setup:
+  test:
+    name: Test
     runs-on: macOS-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=12.2,name=iPhone X', 'platform=tvOS Simulator,OS=12.2,name=Apple TV 4K']
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Cache RubyGems
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: ${{ runner.os }}-gem-
-      - name: Cache Mint packages
-        uses: actions/cache@v1
-        with:
-          path: ${{ env.MINT_PATH }}
-          key: ${{ runner.os }}-mint-${{ hashFiles('**/Mintfile') }}
-          restore-keys: ${{ runner.os }}-mint-
-      - name: Install dependencies
-        run: sh ./bootstrap.sh
-    env:
-      MINT_PATH: ${{ github.workspace }}/mint
-  linter:
-    needs:
-      - setup
-    runs-on: macOS-latest
-    steps:
-      - name: Run danger
-        run: bundle exec danger
-        env:
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-  build:
-    needs:
-      - setup
-      - linter
-    runs-on: macOS-latest
-    steps:
-      - name: Xcodegen
+        uses: actions/checkout@master
+      - name: Build and test
         run: |
-          brew upgrade xcodegen || brew install xcodegen && xcodegen
-      - name: Build
-        run: xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
-        env:
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+          cd Texstyle
+          xcodebuild clean test -project Texstyle.xcodeproj -scheme Texstyle -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          bash <(curl -s https://codecov.io/bash)
+        env: 
+         destination: ${{ matrix.destination }}
