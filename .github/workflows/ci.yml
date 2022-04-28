@@ -43,8 +43,7 @@ jobs:
     steps:
       - name: Xcodegen
         run: |
-          brew upgrade xcodegen || brew install xcodegen
-	        xcodegen
+          brew upgrade xcodegen || brew install xcodegen && xcodegen
       - name: Build
         run: @xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
         env:
