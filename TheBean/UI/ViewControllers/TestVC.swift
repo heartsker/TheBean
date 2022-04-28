@@ -1,5 +1,5 @@
 //
-//  TestVC.swift
+//  TestViewController.swift
 //  TheBean
 //
 //  Created by Daniel Pustotin on 13.03.2022.
@@ -13,7 +13,7 @@ import AssetsManager
 import Account
 
 /// View Controller for testing
-class TestVC: UIViewController {
+class TestViewController: UIViewController {
     // MARK: - Properties
     lazy private var usernameLabel: UILabel = {
         let label = UILabel(text: Account.shared.email, color: Pallete.materialLight, font: FontManager.bold(30))
@@ -96,7 +96,7 @@ class TestVC: UIViewController {
 }
 
 // MARK: - Setup methods
-extension TestVC {
+extension TestViewController {
     private func setup() {
         setupAppearance()
         setupSubviews()

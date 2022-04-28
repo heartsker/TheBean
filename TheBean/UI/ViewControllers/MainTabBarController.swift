@@ -41,7 +41,7 @@ extension MainTabBarController {
         accountVC.setupTabBar(^ControllerLocalization.account, image: "person")
 
         // MARK: - Test
-        let testVC = TestVC()
+        let testVC = TestViewController()
         let testNVC = UINavigationController(rootViewController: testVC)
         testVC.setupTabBar(^ControllerLocalization.test, image: "wrench.and.screwdriver")
 

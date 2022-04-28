@@ -28,6 +28,9 @@ help:
 # run
 	@echo '	${BLUE}Init project and open workspace${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}run${RESET}'
+# build
+	@echo '	${BLUE}Build project${RESET}:'
+	@echo '		${RED}make${RESET} ${GREEN}build${RESET}'
 # tic
 	@echo '	${BLUE}Create new ticket branch${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}tic${RESET} ${YELLOW}t=<TICKET_NUMBER>${RESET}'
@@ -54,8 +57,6 @@ init:
 	@echo '✅	${GREEN}xcodegen executed successfully${RESET}'
 
 	@make pod
-
-	@make lint
 
 	@echo '✅	${GREEN}Project $(CURRENT_PROJECT) initialized successfully${RESET}'
 
@@ -85,6 +86,11 @@ open:
 run:
 	@make init
 	@make open
+
+build:
+	@echo '⏳	${YELLOW}Building $(CURRENT_PROJECT) project:${RESET}'
+	@xcodebuild -scheme "$(CURRENT_PROJECT)" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace $(CURRENT_PROJECT).xcworkspace -quiet
+	@echo '✅	${GREEN}$(CURRENT_PROJECT) project has been built${RESET}'
 
 # Create new ticket branch
 tic:

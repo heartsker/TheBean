@@ -1,5 +1,5 @@
 //
-//  CoolVC.swift
+//  CoolViewController.swift
 //  TheBean
 //
 //  Created by Ilya Buldin on 11.04.2022.
@@ -7,7 +7,7 @@
 
 import AssetsManager
 
-final class CoolVC: UIViewController {
+final class CoolViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Pallete.materialHeavy

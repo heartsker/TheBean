@@ -35,7 +35,7 @@ extension MainCoordinator {
 
     func setupTabBar() {
         let controllers = [
-            TestVC(),
+            TestViewController(),
             RecipesViewController(),
             StatisticsViewController(),
             TimerViewController(),
@@ -61,13 +61,14 @@ extension MainCoordinator {
 
         switch endpoint {
         case .recipes(.exampleRoute1):
-            controllerVC = CoolVC()
+            controllerVC = CoolViewController()
 
         case .recipes(.exampleRoute2):
-            controllerVC = CoolVC()
+            controllerVC = CoolViewController()
             present = true
+
         default:
-            controllerVC = CoolVC()
+            controllerVC = CoolViewController()
 
         }
 

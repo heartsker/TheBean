@@ -24,6 +24,7 @@ extension ConstraintMaker {
         case .X:
             return centerX.equalTo(other.trailing)
                 .multipliedBy(CGFloat.goldenRatioMultiplier(trailing: trailing))
+
         case .Y:
             return centerY.equalTo(other.bottom)
                 .multipliedBy(CGFloat.goldenRatioMultiplier(trailing: trailing))
