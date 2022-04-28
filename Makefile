@@ -143,7 +143,6 @@ pod:
 	
 # Make a commit and push to the origin
 git:
-	@make lint
 
 	@echo '⏳	${YELLOW}Adding files:${RESET}'
 	@git add . || (echo '❌	${RED}Failed to add files${RESET}' && exit 1)
