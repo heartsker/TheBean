@@ -9,19 +9,14 @@ import Combine
 import Utils
 
 // Store example
-final class RecipesStore: ObservableObject {
+final class RecipesStore {
 
     static let shared = RecipesStore()
 
     private init() {
-        startReceiptsCoreDataPipeline()
+        
     }
 
-    @Published var recipes: [RecipeCard] = []
+    var recipes: [MockRecipeCard] = []
 
-    private var cancelBag = Set<AnyCancellable>()
-
-    private func startReceiptsCoreDataPipeline() {
-        // Listening to
-    }
 }

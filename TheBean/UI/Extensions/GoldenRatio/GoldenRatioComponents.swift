@@ -4,6 +4,7 @@
 //
 //  Created by Ilya Chub on 17.03.2022.
 //
+import CoreGraphics
 
 extension CGFloat {
     static func goldenRatioMultiplier(trailing: Bool = false) -> CGFloat {

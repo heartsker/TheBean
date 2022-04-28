@@ -8,15 +8,15 @@
 import AssetsManager
 import Utils
 
-protocol RecipesFooterDelegate: AnyObject {
+protocol IRecipesFooterDelegate: AnyObject {
     func sectionFooterButtonTapped()
 }
 
 final class RecipesFooterView: UICollectionReusableView {
 
-    weak var delegate: RecipesFooterDelegate?
+    weak var delegate: IRecipesFooterDelegate?
 
-    private(set) var buttonLabel: UIButton = {
+    private var buttonLabel: UIButton = {
         let button = UIButton()
         button.setTitle("Load more", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -40,7 +40,7 @@ final class RecipesFooterView: UICollectionReusableView {
     }
 }
 
-extension RecipesFooterView: ReuseIdentifyingProtocol { }
+extension RecipesFooterView: IReuseIdentifiable { }
 
 extension RecipesFooterView: IBaseView {
     func setupAppearance() {

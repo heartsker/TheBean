@@ -15,10 +15,9 @@ final class RecipesViewController: UIViewController {
     // MARK: - Properties
     private lazy var store = MainStore.shared
 
-    var recipes: [Int: [RecipeCard]] = {
-        var items: [Int: [RecipeCard]] = [:]
-        // FIXME: - (IB)
-        CoffeeStrength.allCases.forEach { items[$0.rawValue] = $0.cards }
+    var recipes: [Int: [MockRecipeCard]] = {
+        var items: [Int: [MockRecipeCard]] = [:]
+        CoffeeStrength.allCases.forEach { items[$0.sectionProvider] = MockRecipeCard.makeCards($0) }
         return items
     }()
 
@@ -116,7 +115,7 @@ extension RecipesViewController: UICollectionViewDataSource {
                 return RecipesHeaderView()
             }
 
-            headerView.configure(model: .id(of: CoffeeStrength.allCases[indexPath.section]))
+            headerView.configure(model: ^CoffeeStrength.allCases[indexPath.section].rawValue)
             return headerView
         default:
             let footerKind = UICollectionView.elementKindSectionFooter
@@ -199,7 +198,7 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension RecipesViewController: RecipesFooterDelegate {
+extension RecipesViewController: IRecipesFooterDelegate {
     func sectionFooterButtonTapped() {
         store.coordinator?.proceed(to: .recipes(.exampleRoute1))
     }

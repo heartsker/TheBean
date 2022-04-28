@@ -17,22 +17,22 @@ final class RecipeCell: UICollectionViewCell {
         return container
     }()
 
-    private(set) lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         return label
     }()
 
-    private(set) lazy var imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
 
-    private(set) lazy var volumeLabel: UILabel = {
+    private lazy var volumeLabel: UILabel = {
         let label = UILabel()
         return label
     }()
 
-    private(set) lazy var cookingTimeLabel: UILabel = {
+    private lazy var cookingTimeLabel: UILabel = {
         let label = UILabel()
         return label
     }()
@@ -59,10 +59,10 @@ final class RecipeCell: UICollectionViewCell {
     }
 }
 
-extension RecipeCell: ConfigurationProtocol {
+extension RecipeCell: IConfigurationWithModel {
 
     // MARK: - Cell Configuration
-    func configure(model: RecipeCard) {
+    func configure(model: MockRecipeCard) {
         titleLabel.text = model.title
         imageView.image = ImageManager.asset(id: .id(of: model.drinkKind))
         volumeLabel.text = "\(model.volume) ml"

@@ -12,9 +12,9 @@ import Utils
 class RecomendationsView: UIStackView {
     // MARK: - Properties
     let recomendations = [
-        CoffeeRecomendation(drinkKind: .latte),
-        CoffeeRecomendation(drinkKind: .flatwhite),
-        CoffeeRecomendation(drinkKind: .americano)
+        CoffeeRecommendation(drinkKind: .latte),
+        CoffeeRecommendation(drinkKind: .flatwhite),
+        CoffeeRecommendation(drinkKind: .americano)
     ]
 
     // MARK: - Initialization

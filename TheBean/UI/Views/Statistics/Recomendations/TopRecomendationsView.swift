@@ -12,10 +12,10 @@ import Utils
 class TopRecomendationsView: UIStackView {
 
     // MARK: - Properties
-    private var recomendations: [CoffeeRecomendation]
+    private var recomendations: [CoffeeRecommendation]
 
     // MARK: - Initializations
-    init(recomendations: [CoffeeRecomendation] ) {
+    init(recomendations: [CoffeeRecommendation] ) {
         self.recomendations = recomendations
         super.init(frame: .zero)
         setup()
@@ -27,7 +27,7 @@ class TopRecomendationsView: UIStackView {
 
     // MARK: - Subviews
     private lazy var placesViews = {
-        recomendations.map { (recomendation: CoffeeRecomendation) in
+        recomendations.map { (recomendation: CoffeeRecommendation) in
             CoffeeBlockView(recomendation)
         }
     }()

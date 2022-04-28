@@ -10,7 +10,7 @@ import Utils
 
 final class RecipesHeaderView: UICollectionReusableView {
 
-    private(set) lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         return label
     }()
@@ -26,9 +26,9 @@ final class RecipesHeaderView: UICollectionReusableView {
     }
 }
 
-extension RecipesHeaderView: ReuseIdentifyingProtocol { }
+extension RecipesHeaderView: IReuseIdentifiable { }
 
-extension RecipesHeaderView: ConfigurationProtocol {
+extension RecipesHeaderView: IConfigurationWithModel {
     func configure(model: String) {
         titleLabel.text = model
     }
