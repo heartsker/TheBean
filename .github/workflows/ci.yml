@@ -34,7 +34,7 @@ jobs:
           key: ${{ runner.os }}-xcodegen-${{ hashFiles('**/*.x*') }}
           restore-keys: |
             ${{ runner.os }}-xcodegen-
-      name: Xcodegen
+      - name: Xcodegen
         run: |
           brew upgrade xcodegen || brew install xcodegen
           xcodegen
