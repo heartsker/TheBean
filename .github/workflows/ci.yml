@@ -37,33 +37,6 @@ jobs:
           swiftlint --fix
           swiftlint
       - name: Build
-        run: ls
-  linter:
-    runs-on: macOS-latest
-    needs:
-      - setup
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run linter
-        run: |
-          pwd
-          ls -la
-          echo here
-          swiftlint --fix
-          swiftlint
-  build:
-    runs-on: macOS-latest
-    needs:
-      - setup
-      - linter
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
-          path: Pods
-          key: ${{ runner.os }}-pods-
-      - name: Build
         run: |
           ls
           xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
