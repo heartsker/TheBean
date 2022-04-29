@@ -15,12 +15,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: actions/cache@v1
-        with:
-          path: Pods
-          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-pods-
+
   Xcodegen:
     runs-on: macOS-latest
     needs:
@@ -34,6 +29,12 @@ jobs:
           key: ${{ runner.os }}-xcodegen-${{ hashFiles('**/*.x*') }}
           restore-keys: |
             ${{ runner.os }}-xcodegen-
+      - uses: actions/cache@v2
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
       - name: Xcodegen
         run: |
           ls
@@ -57,6 +58,15 @@ jobs:
         with:
           path: /
           key: ${{ runner.os }}-xcodegen-${{ hashFiles('**/*.x*') }}
+          restore-keys: |
+            ${{ runner.os }}-xcodegen-
+      - uses: actions/cache@v2
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
       - name: Build
         run: |
+          ls
           xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
