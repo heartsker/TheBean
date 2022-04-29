@@ -36,6 +36,7 @@ jobs:
             ${{ runner.os }}-xcodegen-
       - name: Xcodegen
         run: |
+          ls
           brew upgrade xcodegen || brew install xcodegen
           xcodegen
       - name: CocoaPod Install
