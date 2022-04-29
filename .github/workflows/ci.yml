@@ -23,20 +23,14 @@ jobs:
             ${{ runner.os }}-pods-
       - name: Xcodegen
         run: |
-          ls
           brew upgrade xcodegen || brew install xcodegen
           xcodegen
-          ls
       - name: CocoaPod Install
         run: pod install
       - name: Run linter
         run: |
-          pwd
-          ls -la
-          echo here
           swiftlint --fix
           swiftlint
       - name: Build
         run: |
-          ls
           xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
