@@ -18,7 +18,3 @@ enum CoreDataError: LocalizedError {
         }
     }
 }
-
-class abc {
-
-}
