@@ -21,7 +21,20 @@ jobs:
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-pods-
-      - name: Xcodegen
+  Xcodegen:
+    runs-on: macOS-latest
+    needs:
+      - setup
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: /
+          key: ${{ runner.os }}-xcodegen-${{ hashFiles('**/*.x*') }}
+          restore-keys: |
+            ${{ runner.os }}-xcodegen-
+      name: Xcodegen
         run: |
           brew upgrade xcodegen || brew install xcodegen
           xcodegen
