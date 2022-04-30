@@ -10,7 +10,6 @@ import SnapKit
 
 class StatisticsViewController: UIViewController {
     // MARK: - Initialization
-    var coordinator: StatisticsCoordinator?
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

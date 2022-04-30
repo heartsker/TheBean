@@ -10,8 +10,12 @@ import SnapKit
 import Combine
 
 class TestVC: UIViewController {
+
     // MARK: - Properties
-    var coordinator: TestCoordinator?
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
 
     lazy private var usernameLabel: UILabel = {
         let label = UILabel(text: Account.shared.username, color: .blue, font: .bold(40))

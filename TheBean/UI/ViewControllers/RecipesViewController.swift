@@ -11,7 +11,10 @@ import SwiftUI
 final class RecipesViewController: UIViewController {
 
     // MARK: - Properties
-    var coordinator: RecipesCoordinator?
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
 
     var recipes: [Int: [RecipeCardModel]] = {
         var items: [Int: [RecipeCardModel]] = [:]
@@ -197,6 +200,7 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
 
 extension RecipesViewController: RecipesFooterDelegate {
     func sectionFooterButtonTapped() {
-        coordinator?.showAdditionalInfo()
+        print("[🐞DEBUG] Tapped: \(#function)")
+
     }
 }

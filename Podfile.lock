@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (5.6.1)
   - SnapKit (5.6.0)
-  - SwiftLint (0.47.0)
+  - SwiftLint (0.47.1)
   - TBGraphics (0.1.0)
 
 DEPENDENCIES:
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  SwiftLint: d41cc46a2ae58ac6d9f26954bc89f1d72e71fdef
+  SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
   TBGraphics: fc68f9b97a388ef79ebdde45d2651e781f7711dc
 
 PODFILE CHECKSUM: 2f04da8daee04e10c73249a1ad79b4995157fd95

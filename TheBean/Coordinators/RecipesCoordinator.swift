@@ -2,36 +2,23 @@
 //  RecipesCoordinator.swift
 //  TheBean
 //
-//  Created by Ilya Buldin on 19.04.2022.
+//  Created by Ilya Buldin on 30.04.2022.
 //
 
-import UIKit
+import Foundation
 
-protocol RecipesFlowProtocol: AnyObject {
+final class RecipesCoordinator: BaseCoordinator {
+    typealias VoidClosure = () -> Void
 
-}
+    var finishFlow: VoidClosure?
+    private let router: IRouter
 
-final class RecipesCoordinator: ICoordinator, RecipesFlowProtocol {
-    var parentCoordinator: ICoordinator?
-
-    var childCoordinators: [ICoordinator]
-
-    var navigationController: UINavigationController
-
-    init(_ navigationController: UINavigationController, parentCoordinator: ICoordinator) {
-        self.navigationController = navigationController
-        childCoordinators = []
-        self.parentCoordinator = parentCoordinator
+    init(router: IRouter) {
+        self.router = router
     }
 
-    func start() {
-        let recipesViewController  = RecipesViewController()
-        recipesViewController.coordinator = self
-        navigationController.pushViewController(recipesViewController, animated: false)
+    override func start() {
+        let recipesViewController = RecipesViewController()
+        router.setRootModule(recipesViewController)
     }
-
-    func showAdditionalInfo() {
-        print("🐞 [RecipesCoordinator] \(#function)")
-    }
-
 }

@@ -2,32 +2,23 @@
 //  TimerCoordinator.swift
 //  TheBean
 //
-//  Created by Ilya Buldin on 19.04.2022.
+//  Created by Ilya Buldin on 30.04.2022.
 //
 
-import UIKit
+import Foundation
 
-protocol TimerFlowProtocol: AnyObject {
+final class TimerCoordinator: BaseCoordinator {
+    typealias VoidClosure = () -> Void
 
-}
+    var finishFlow: VoidClosure?
+    private let router: IRouter
 
-final class TimerCoordinator: ICoordinator, TimerFlowProtocol {
-    var parentCoordinator: ICoordinator?
-
-    var navigationController: UINavigationController
-
-    var childCoordinators: [ICoordinator]
-
-    init(_ navigationController: UINavigationController, parentCoordinator: ICoordinator) {
-        self.navigationController = navigationController
-        childCoordinators = []
-        self.parentCoordinator = parentCoordinator
+    init(router: IRouter) {
+        self.router = router
     }
 
-    func start() {
+    override func start() {
         let timerViewController = TimerViewController()
-        timerViewController.coordinator = self
-        navigationController.pushViewController(timerViewController, animated: false)
+        router.setRootModule(timerViewController)
     }
-
 }

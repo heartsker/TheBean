@@ -9,7 +9,6 @@ import UIKit
 
 class TimerViewController: UIViewController {
     // MARK: - Properties
-    var coordinator: TimerCoordinator?
 
     private lazy var label: UILabel = {
         UILabel(text: "That is timer", color: .materialHeavy, font: .bold(30))

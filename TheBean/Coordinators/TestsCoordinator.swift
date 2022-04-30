@@ -1,5 +1,5 @@
 //
-//  StatisticsCoordinator.swift
+//  TestsCoordinator.swift
 //  TheBean
 //
 //  Created by Ilya Buldin on 30.04.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class StatisticsCoordinator: BaseCoordinator {
+final class TestsCoordinator: BaseCoordinator {
     typealias VoidClosure = () -> Void
 
     var finishFlow: VoidClosure?
@@ -18,7 +18,7 @@ final class StatisticsCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let statisticsViewController = StatisticsViewController()
-        router.setRootModule(statisticsViewController)
+        let testsViewController = TestVC()
+        router.setRootModule(testsViewController)
     }
 }
