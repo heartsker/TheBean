@@ -24,7 +24,7 @@ jobs:
           key: ${{ runner.os }}-cache-xcodegen
       - name: Xcodegen
         run: |
-          brew install xcodegen
+          brew install xcodegen || brew link xcodegen          
 
   Install:
     runs-on: macOS-latest
