@@ -17,8 +17,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - uses: actions/cache@v1
+        uses: actions/checkout@v1
+      - name: Cache
+        uses: actions/cache@v1
         with:
           path: Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
@@ -27,8 +28,7 @@ jobs:
 
       - name: Xcodegen
         run: |
-          brew upgrade xcodegen || brew install xcodegen
-          xcodegen
+          touch TheBean.xcodeproj
           ls -la
 
       - name: CocoaPod Install
@@ -41,6 +41,8 @@ jobs:
     needs: Install
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: Cache
         uses: actions/cache@v1
         with:
