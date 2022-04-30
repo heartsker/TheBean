@@ -17,14 +17,14 @@ jobs:
     runs-on: macOS-latest
 
     steps:
-    - name: Cache
+      - name: Cache
         uses: actions/cache@v1
         with:
           path: /usr/local/Cellar/xcodegen/
           key: ${{ runner.os }}-cache-xcodegen
-    - name: Xcodegen
-      run: |
-        brew install xcodegen
+      - name: Xcodegen
+        run: |
+          brew install xcodegen
 
   Install:
     runs-on: macOS-latest
