@@ -4,14 +4,17 @@ on:
     branches:
       - main
       - dev
+      - CI
   push:
     branches:
       - main
       - dev
+      - CI
 
 jobs:
-  LintAndBuild:
+  Install:
     runs-on: macOS-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,16 +24,29 @@ jobs:
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-pods-
+
       - name: Xcodegen
         run: |
           brew upgrade xcodegen || brew install xcodegen
           xcodegen
+
       - name: CocoaPod Install
         run: pod install
+        
+  Lint:
+    runs-on: macOS-latest
+    needs: Install
+
+    steps:
       - name: Linter
         run: |
           swiftlint --fix
           swiftlint
+  Build:
+      runs-on: macOS-latest
+      needs: Lint
       - name: Build
+        uses: actions/cache@v1
         run: |
+        
           xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
