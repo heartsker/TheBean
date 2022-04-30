@@ -29,14 +29,14 @@ protocol IRouter: IPresentable {
     func push(_ module: IPresentable?)
     func push(_ module: IPresentable?, hideBottomBar: Bool)
     func push(_ module: IPresentable?, animated: Bool)
-    func push(_ module: IPresentable?, animated: Bool, completion: (() -> Void)?)
-    func push(_ module: IPresentable?, animated: Bool, hideBottomBar: Bool, completion: (() -> Void)?)
+    func push(_ module: IPresentable?, animated: Bool, completion: (() -> ())?)
+    func push(_ module: IPresentable?, animated: Bool, hideBottomBar: Bool, completion: (() -> ())?)
 
     func popModule()
     func popModule(animated: Bool)
 
     func dismissModule()
-    func dismissModule(animated: Bool, completion: (() -> Void)?)
+    func dismissModule(animated: Bool, completion: (() -> ())?)
 
     func setNavigationControllerRootModule(_ module: IPresentable?)
     func setNavigationControllerRootModule(_ module: IPresentable?, hideBar: Bool)
@@ -57,7 +57,7 @@ final class Router {
 
     // for future usage
     // like animations and sending, receiving events
-    private var completions: [UIViewController : () -> Void]
+    private var completions: [UIViewController : () -> ()]
 
     init(tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
@@ -94,7 +94,7 @@ extension Router: IRouter {
         dismissModule(animated: true, completion: nil)
     }
 
-    func dismissModule(animated: Bool, completion: (() -> Void)?) {
+    func dismissModule(animated: Bool, completion: (() -> ())?) {
         currentNavigationController?.dismiss(animated: animated, completion: completion)
     }
 
@@ -110,11 +110,11 @@ extension Router: IRouter {
         push(module, animated: animated, completion: nil)
     }
 
-    func push(_ module: IPresentable?, animated: Bool, completion: (() -> Void)?) {
+    func push(_ module: IPresentable?, animated: Bool, completion: (() -> ())?) {
         push(module, animated: animated, hideBottomBar: false, completion: completion)
     }
 
-    func push(_ module: IPresentable?, animated: Bool, hideBottomBar: Bool, completion: (() -> Void)?) {
+    func push(_ module: IPresentable?, animated: Bool, hideBottomBar: Bool, completion: (() -> ())?) {
         guard
             let controller = module?.toPresent(),
             (controller is UINavigationController == false)
