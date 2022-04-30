@@ -7,6 +7,9 @@
 
 import Foundation
 
+/// ApplicationCoordinator - instance of this class is stored in SceneDelegate
+/// Provides logic for choosing which flow should be started
+/// That is why you have to define `finishFlow` callback
 final class ApplicationCoordinator: BaseCoordinator {
 
     private let coordinatorFactory: ICoordinatorFactory

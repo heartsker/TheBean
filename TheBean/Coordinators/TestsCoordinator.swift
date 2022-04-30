@@ -5,7 +5,7 @@
 //  Created by Ilya Buldin on 30.04.2022.
 //
 
-import Foundation
+import UIKit
 
 final class TestsCoordinator: BaseCoordinator {
     typealias VoidClosure = () -> Void
@@ -18,7 +18,7 @@ final class TestsCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let testsViewController = TestVC()
-        router.setRootModule(testsViewController)
+        let testsViewController = UINavigationController(rootViewController: TestVC())
+        router.addTabBarModule(testsViewController)
     }
 }

@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Defines interface for coordinator factory
+/// Implementation of this protocol provide an interface objects without specifying their concrete classes
 protocol ICoordinatorFactory {
 
     func makeApplicationCoordinator(router: IRouter) -> ApplicationCoordinator
@@ -24,6 +26,7 @@ protocol ICoordinatorFactory {
     func makeAccountCoordinator(router: IRouter) -> AccountCoordinator
 }
 
+/// ICoordinatorFactory implementations
 final class CoordinatorFactory: ICoordinatorFactory {
     func makeApplicationCoordinator(router: IRouter) -> ApplicationCoordinator {
         return ApplicationCoordinator(router: router, coordinatorFactory: self)

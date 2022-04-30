@@ -46,8 +46,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func configureKeyWindowWithCoordinator(with scene: UIScene) -> (UIWindow, ICoordinator)? {
         guard let windowScene = (scene as? UIWindowScene) else { return nil }
         let window = UIWindow(windowScene: windowScene)
-        let rootViewController = UINavigationController()
-        let router = Router(rootController: rootViewController)
+        let rootViewController = UITabBarController()
+        let router = Router(tabBarController: rootViewController)
         let coordinator = coordinatorFactory.makeApplicationCoordinator(router: router)
         window.rootViewController = rootViewController
         return (window, coordinator)

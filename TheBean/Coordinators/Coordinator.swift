@@ -7,17 +7,18 @@
 
 import UIKit
 
+/// Extends each coordinator class which conforms to this protocol with functionality of starting
+/// This is the main and logically most needed func which is required from coordinator classes
 protocol ICoordinator: AnyObject {
     func start()
 }
 
+/// This is a base class which provides heirs control over child dependencies
 class BaseCoordinator: ICoordinator {
 
     var childCoordinators: [ICoordinator] = []
 
-    func start() {
-
-    }
+    func start() {}
 
     func addChildCoordinator(_ coordinator: ICoordinator) {
         guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }

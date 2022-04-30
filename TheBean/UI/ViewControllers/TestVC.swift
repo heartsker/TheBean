@@ -13,10 +13,6 @@ class TestVC: UIViewController {
 
     // MARK: - Properties
 
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-
     lazy private var usernameLabel: UILabel = {
         let label = UILabel(text: Account.shared.username, color: .blue, font: .bold(40))
         Publisher.subscribe(label, keyPath: \.text, for: .usernamePost)
