@@ -49,4 +49,5 @@ jobs:
       - uses: actions/cache@v1
       - name: Build  
         run: |
+          ls
           xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
