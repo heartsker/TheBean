@@ -28,7 +28,7 @@ jobs:
 
       - name: Xcodegen
         run: |
-          touch TheBean.xcodeproj
+          xcodegen
           ls -la
 
       - name: CocoaPod Install
