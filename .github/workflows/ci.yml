@@ -25,7 +25,6 @@ jobs:
       - name: Xcodegen
         run: |
           brew install xcodegen
-          brew link xcodegen          
 
   Install:
     runs-on: macOS-latest
@@ -47,7 +46,7 @@ jobs:
           key: ${{ runner.os }}-cache-xcodegen
       - name: Xcodegen
         run: |
-          xcodegen
+          /opt/homebrew/Cellar/xcodegen/2.28.0/bin/xcodegen
 
       - name: CocoaPod Install
         run: |
