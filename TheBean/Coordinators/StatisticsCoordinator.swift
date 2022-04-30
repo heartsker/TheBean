@@ -8,7 +8,7 @@
 import UIKit
 
 final class StatisticsCoordinator: BaseCoordinator {
-    typealias VoidClosure = () -> Void
+    typealias VoidClosure = () -> ()
 
     var finishFlow: VoidClosure?
     private let router: IRouter

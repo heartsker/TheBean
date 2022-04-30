@@ -8,7 +8,7 @@
 import UIKit
 
 final class TabBarCoordinator: BaseCoordinator {
-    typealias VoidClosure = () -> Void
+    typealias VoidClosure = () -> ()
 
     var finishFlow: VoidClosure?
 

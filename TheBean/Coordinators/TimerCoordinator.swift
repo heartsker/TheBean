@@ -8,7 +8,7 @@
 import UIKit
 
 final class TimerCoordinator: BaseCoordinator {
-    typealias VoidClosure = () -> Void
+    typealias VoidClosure = () -> ()
 
     var finishFlow: VoidClosure?
     private let router: IRouter
