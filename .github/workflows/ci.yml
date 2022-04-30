@@ -16,21 +16,14 @@ jobs:
   Preinstall:
     runs-on: macOS-latest
     steps:
-    - name: Update Homebrew
+    - name: Cache
+        uses: actions/cache@v1
+        with:
+          path: /usr/local/Cellar/xcodegen/
+          key: ${{ runner.os }}-cache-xcodegen
+    - name: Xcodegen
       run: |
-        brew update --preinstall
-        cat "$(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula/xcodegen.rb" > .github/brew-formulae
-    - name: Configure Homebrew cache
-      uses: actions/cache@v1
-      with:
-        path: |
-          ~/Library/Caches/Homebrew/xcodegen--*
-          ~/Library/Caches/Homebrew/downloads/*--xcodegen-*
-        key: brew-${{ hashFiles('.github/brew-formulae') }}
-        restore-keys: brew-
-    - name: Install Homebrew dependencies
-      run: |
-        env HOMEBREW_NO_AUTO_UPDATE=1 brew install xcodegen
+        brew install xcodegen
 
   Install:
     runs-on: macOS-latest
@@ -47,7 +40,6 @@ jobs:
 
       - name: Xcodegen
         run: |
-          brew upgrade xcodegen || brew install xcodegen
           xcodegen
           ls -la
 
