@@ -39,6 +39,11 @@ jobs:
           path: ./
           key: ${{ runner.os }}-cache-${{ github.run_id }}
 
+      - name: Cache
+        uses: actions/cache@v1
+        with:
+          path: /usr/local/Cellar/xcodegen/
+          key: ${{ runner.os }}-cache-xcodegen
       - name: Xcodegen
         run: |
           xcodegen
