@@ -45,6 +45,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
       - name: Linter
         run: |
           ls -la
