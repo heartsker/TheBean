@@ -9,18 +9,13 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let coordinator = MainCoordinator()
+    let coordinatorFactory = CoordinatorFactory()
+    var applicationCoordinator: ICoordinator?
 
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-
-        let window = UIWindow(windowScene: windowScene)
-        coordinator.start(in: window)
-//        window.rootViewController = MainTabBarController()
-        self.window = window
-        window.makeKeyAndVisible()
+        runUI(scene: scene)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -37,5 +32,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+    }
+
+    private func runUI(scene: UIScene) {
+        guard let (window, coordinator) = configureKeyWindowWithCoordinator(with: scene) else { return }
+        self.window = window
+        self.applicationCoordinator = coordinator
+        window.makeKeyAndVisible()
+        coordinator.start()
+    }
+
+    private func configureKeyWindowWithCoordinator(with scene: UIScene) -> (UIWindow, ICoordinator)? {
+        guard let windowScene = (scene as? UIWindowScene) else { return nil }
+        let window = UIWindow(windowScene: windowScene)
+        let rootViewController = UITabBarController()
+        let router = Router(tabBarController: rootViewController)
+        let coordinator = coordinatorFactory.makeApplicationCoordinator(router: router)
+        window.rootViewController = rootViewController
+        return (window, coordinator)
     }
 }

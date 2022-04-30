@@ -12,6 +12,7 @@ import AssetsManager
 class AccountViewController: UIViewController {
 
     // MARK: - Properties
+
     private lazy var content: UIView = {
         AccountContentView()
     }()

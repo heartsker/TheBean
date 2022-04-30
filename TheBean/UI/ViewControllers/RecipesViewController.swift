@@ -13,7 +13,7 @@ import AssetsManager
 final class RecipesViewController: UIViewController {
 
     // MARK: - Properties
-    private lazy var store = MainStore.shared
+    var coordinator: RecipesCoordinator?
 
     var recipes: [Int: [MockRecipeCard]] = {
         var items: [Int: [MockRecipeCard]] = [:]
@@ -201,6 +201,6 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
 
 extension RecipesViewController: IRecipesFooterDelegate {
     func sectionFooterButtonTapped() {
-        store.coordinator?.proceed(to: .recipes(.exampleRoute1))
+        coordinator?.showFullInfoRecipeScreen()
     }
 }
