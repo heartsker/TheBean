@@ -15,6 +15,7 @@ jobs:
 
   Preinstall:
     runs-on: macOS-latest
+
     steps:
     - name: Cache
         uses: actions/cache@v1
@@ -41,12 +42,10 @@ jobs:
       - name: Xcodegen
         run: |
           xcodegen
-          ls -la
 
       - name: CocoaPod Install
         run: |
           pod install
-          ls -la
         
   Lint:
     runs-on: macOS-latest
@@ -62,10 +61,13 @@ jobs:
           key: ${{ runner.os }}-cache-${{ github.run_id }}
       - name: Linter
         run: |
-          ls -la
+          swiftlint --fix
+          swiftlint
+
   Build:
     runs-on: macOS-latest
     needs: Lint
+
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -76,5 +78,4 @@ jobs:
           key: ${{ runner.os }}-cache-${{ github.run_id }}
       - name: Build
         run: |
-          ls -la
           xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
