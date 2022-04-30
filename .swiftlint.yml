@@ -82,14 +82,6 @@ custom_rules:
     message: "Use `URL` instead"
     severity: error
 
-  void_return_usage:
-    name: "Wrong Void usage"
-    regex: "([(](Void)?[)] ?-> ?Void)"
-    match_kinds:
-      - typeidentifier
-    message: "Use `() -> ()` instead"
-    severity: error
-
   empty_string_check:
     name: "Incorrect empty string checking"
     regex: "( == \"\")|(== \"\")|( ==\"\")|(==\"\")|( != \"\")|(!= \"\")|( !=\"\")|(!=\"\")"
@@ -190,6 +182,19 @@ custom_rules:
     name: "Protocol name must start with `I` prefix"
     regex: "protocol ((?![I])\\w|I )"
     message: "Add `I` prefix"
+    match_kinds:
+        - argument
+        - attribute.builtin
+        - attribute.id
+        - buildconfig.id
+        - buildconfig.keyword
+        - identifier
+        - keyword
+        - objectliteral
+        - parameter
+        - string
+        - string_interpolation_anchor
+        - typeidentifier
     severity: error
 
   view_controller_naming:
