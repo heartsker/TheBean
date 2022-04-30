@@ -18,13 +18,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Determine cache directory
+        id: cache-dir
+        run: |
+          pwd
       - name: Cache
         uses: actions/cache@v1
         with:
-          path: ${{ runner.os }}
+          path: Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-pods-
+        uses: actions/cache@v1
+        with:
+          path: ./
+          key: ${{ runner.os }}-xcodegen-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-xcodegen-
 
       - name: Xcodegen
         run: |
@@ -47,8 +57,8 @@ jobs:
       - name: Cache
         uses: actions/cache@v1
         with:
-          path: ${{ runner.os }}
-          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          path: ./
+          key: ${{ runner.os }}-xcodegen-${{ github.run_id }}
       - name: Linter
         run: |
           ls -la
