@@ -21,7 +21,7 @@ jobs:
       - name: Cache
         uses: actions/cache@v1
         with:
-          path: Pods
+          path: ${{ runner.os }}
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-pods-
@@ -56,7 +56,16 @@ jobs:
     runs-on: macOS-latest
     needs: Lint
     steps:
-      - uses: actions/cache@v1
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Cache
+        uses: actions/cache@v1
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
       - name: Build
         run: |
           ls -la
+          xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
