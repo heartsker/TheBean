@@ -25,6 +25,7 @@ jobs:
       - name: Xcodegen
         run: |
           brew install xcodegen
+          brew info xcodegen
 
   Install:
     runs-on: macOS-latest
