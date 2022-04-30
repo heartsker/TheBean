@@ -46,7 +46,7 @@ jobs:
     runs-on: macOS-latest
     needs: Lint
     steps:
-      - name: Build
-        uses: actions/cache@v1
+      - uses: actions/cache@v1
+      - name: Build  
         run: |
           xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
