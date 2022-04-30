@@ -15,12 +15,14 @@ import Account
 /// View Controller for testing
 class TestViewController: UIViewController {
     // MARK: - Properties
+
     lazy private var usernameLabel: UILabel = {
         let label = UILabel(text: Account.shared.email, color: Pallete.materialLight, font: FontManager.bold(30))
         label.textAlignment = .center
         Publisher.subscribe(label, keyPath: \.text, for: .emailPost)
         return label
     }()
+
     lazy private var buttonCom: UIButton = {
         let button = UIButton()
         button.setTitle("Make .com", for: .normal)
