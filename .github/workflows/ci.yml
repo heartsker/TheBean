@@ -29,9 +29,12 @@ jobs:
         run: |
           brew upgrade xcodegen || brew install xcodegen
           xcodegen
+          ls -la
 
       - name: CocoaPod Install
-        run: pod install
+        run: |
+          pod install
+          ls -la
         
   Lint:
     runs-on: macOS-latest
@@ -40,8 +43,7 @@ jobs:
     steps:
       - name: Linter
         run: |
-          swiftlint --fix
-          swiftlint
+          ls -la
   Build:
     runs-on: macOS-latest
     needs: Lint
@@ -49,4 +51,4 @@ jobs:
       - uses: actions/cache@v1
       - name: Build
         run: |
-          xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
+          ls -la
