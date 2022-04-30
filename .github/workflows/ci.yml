@@ -41,8 +41,9 @@ jobs:
     needs: Install
 
     steps:
-      - name: Linter
+      - name: Cache
         uses: actions/cache@v1
+      - name: Linter
         run: |
           ls -la
   Build:
