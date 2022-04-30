@@ -28,6 +28,7 @@ jobs:
 
       - name: Xcodegen
         run: |
+          brew upgrade xcodegen || brew install xcodegen
           xcodegen
           ls -la
 
