@@ -43,10 +43,10 @@ jobs:
           swiftlint --fix
           swiftlint
   Build:
-      runs-on: macOS-latest
-      needs: Lint
-      - name: Build
-        uses: actions/cache@v1
-        run: |
+    runs-on: macOS-latest
+    needs: Lint
+    - name: Build
+      uses: actions/cache@v1
+      run: |
         
-          xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
+        xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
