@@ -47,7 +47,7 @@ jobs:
       - name: Cache
         uses: actions/cache@v1
         with:
-          path: Pods
+          path: ${{ runner.os }}
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
       - name: Linter
         run: |
@@ -61,10 +61,8 @@ jobs:
       - name: Cache
         uses: actions/cache@v1
         with:
-          path: Pods
+          path: ${{ runner.os }}
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-pods-
       - name: Build
         run: |
           ls -la
