@@ -8,7 +8,7 @@
 import UIKit
 
 final class RecipesCoordinator: BaseCoordinator {
-    typealias VoidClosure = () -> ()
+    typealias VoidClosure = () -> Void
 
     var finishFlow: VoidClosure?
     private let router: IRouter

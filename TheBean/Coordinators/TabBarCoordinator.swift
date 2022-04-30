@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import AssetsManager
 
 final class TabBarCoordinator: BaseCoordinator {
-    typealias VoidClosure = () -> ()
+    typealias VoidClosure = () -> Void
 
     var finishFlow: VoidClosure?
 
@@ -83,9 +84,9 @@ final class TabBarCoordinator: BaseCoordinator {
     private func setupTabBarAppearance() {
         guard let tabBarController = (router as? Router)?.tabBarController else { return }
         let tabBar = tabBarController.tabBar
-        tabBar.tintColor = .materialHeavy
-        tabBar.unselectedItemTintColor = .materialMedium
-        tabBar.backgroundColor = .hightlightSecondary
+        tabBar.tintColor = Pallete.materialHeavy
+        tabBar.unselectedItemTintColor = Pallete.materialMedium
+        tabBar.backgroundColor = Pallete.hightlightSecondary
     }
 
 }

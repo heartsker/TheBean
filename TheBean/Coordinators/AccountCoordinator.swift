@@ -8,7 +8,7 @@
 import UIKit
 
 final class AccountCoordinator: BaseCoordinator {
-    typealias VoidClosure = () -> ()
+    typealias VoidClosure = () -> Void
 
     var finishFlow: VoidClosure?
     var onSignOut: VoidClosure?

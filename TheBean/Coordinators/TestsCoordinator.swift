@@ -8,7 +8,7 @@
 import UIKit
 
 final class TestsCoordinator: BaseCoordinator {
-    typealias VoidClosure = () -> ()
+    typealias VoidClosure = () -> Void
 
     var finishFlow: VoidClosure?
     private let router: IRouter
@@ -18,7 +18,7 @@ final class TestsCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let testsViewController = UINavigationController(rootViewController: TestVC())
+        let testsViewController = UINavigationController(rootViewController: TestViewController())
         router.addTabBarModule(testsViewController)
     }
 }
