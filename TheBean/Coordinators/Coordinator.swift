@@ -20,8 +20,6 @@ class BaseCoordinator: ICoordinator {
 
     func start() {}
 
-    func lol() {}
-
     func addChildCoordinator(_ coordinator: ICoordinator) {
         guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
         childCoordinators.append(coordinator)

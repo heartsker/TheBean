@@ -183,18 +183,8 @@ custom_rules:
     regex: "protocol ((?![I])\\w|I )"
     message: "Add `I` prefix"
     match_kinds:
-        - argument
-        - attribute.builtin
-        - attribute.id
-        - buildconfig.id
-        - buildconfig.keyword
         - identifier
         - keyword
-        - objectliteral
-        - parameter
-        - string
-        - string_interpolation_anchor
-        - typeidentifier
     severity: error
 
   view_controller_naming:
