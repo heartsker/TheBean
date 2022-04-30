@@ -48,5 +48,4 @@ jobs:
     steps:
       - name: Build
         run: |
-          ls -la
           xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
