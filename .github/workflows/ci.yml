@@ -20,7 +20,7 @@ jobs:
       - name: Cache
         uses: actions/cache@v1
         with:
-          path: /usr/local/Cellar/xcodegen/
+          path: /opt/homebrew/Cellar/xcodegen/2.28.0/bin
           key: ${{ runner.os }}-cache-xcodegen
       - name: Xcodegen
         run: |
