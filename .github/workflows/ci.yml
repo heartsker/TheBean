@@ -12,16 +12,33 @@ on:
       - TIC-CI
 
 jobs:
+
+  Preinstall:
+    runs-on: macOS-latest
+    steps:
+    - name: Update Homebrew
+      run: |
+        brew update --preinstall
+        cat "$(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula/xcodegen.rb" > .github/brew-formulae
+    - name: Configure Homebrew cache
+      uses: actions/cache@v1
+      with:
+        path: |
+          ~/Library/Caches/Homebrew/xcodegen--*
+          ~/Library/Caches/Homebrew/downloads/*--xcodegen-*
+        key: brew-${{ hashFiles('.github/brew-formulae') }}
+        restore-keys: brew-
+    - name: Install Homebrew dependencies
+      run: |
+        env HOMEBREW_NO_AUTO_UPDATE=1 brew install xcodegen
+
   Install:
     runs-on: macOS-latest
+    needs: Preinstall
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Determine cache directory
-        id: cache-dir
-        run: |
-          pwd
       - name: Cache
         uses: actions/cache@v1
         with:
