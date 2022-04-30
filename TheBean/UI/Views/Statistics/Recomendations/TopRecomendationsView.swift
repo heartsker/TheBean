@@ -2,19 +2,20 @@
 //  TopRecomendationsView.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 15.03.2022.
+//  Created by Ilya Chub on 15.03.2022.
 //
 
 import SnapKit
-import UIKit
+import Utils
 
+/// Top recomendations view
 class TopRecomendationsView: UIStackView {
 
     // MARK: - Properties
-    private var recomendations: [CoffeeRecomendation]
+    private var recomendations: [CoffeeRecommendation]
 
     // MARK: - Initializations
-    init(recomendations: [CoffeeRecomendation] ) {
+    init(recomendations: [CoffeeRecommendation] ) {
         self.recomendations = recomendations
         super.init(frame: .zero)
         setup()
@@ -26,7 +27,7 @@ class TopRecomendationsView: UIStackView {
 
     // MARK: - Subviews
     private lazy var placesViews = {
-        recomendations.map { (recomendation: CoffeeRecomendation) in
+        recomendations.map { (recomendation: CoffeeRecommendation) in
             CoffeeBlockView(recomendation)
         }
     }()

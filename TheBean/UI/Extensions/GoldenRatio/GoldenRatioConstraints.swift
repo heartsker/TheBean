@@ -5,7 +5,6 @@
 //  Created by Daniel Pustotin on 21.03.2022.
 //
 
-import UIKit
 import SnapKit
 
 extension ConstraintMaker {
@@ -25,6 +24,7 @@ extension ConstraintMaker {
         case .X:
             return centerX.equalTo(other.trailing)
                 .multipliedBy(CGFloat.goldenRatioMultiplier(trailing: trailing))
+
         case .Y:
             return centerY.equalTo(other.bottom)
                 .multipliedBy(CGFloat.goldenRatioMultiplier(trailing: trailing))

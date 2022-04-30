@@ -28,6 +28,9 @@ help:
 # run
 	@echo '	${BLUE}Init project and open workspace${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}run${RESET}'
+# build
+	@echo '	${BLUE}Build project${RESET}:'
+	@echo '		${RED}make${RESET} ${GREEN}build${RESET}'
 # tic
 	@echo '	${BLUE}Create new ticket branch${RESET}:'
 	@echo '		${RED}make${RESET} ${GREEN}tic${RESET} ${YELLOW}t=<TICKET_NUMBER>${RESET}'
@@ -55,8 +58,6 @@ init:
 
 	@make pod
 
-	@make lint
-
 	@echo '✅	${GREEN}Project $(CURRENT_PROJECT) initialized successfully${RESET}'
 
 # Run linter check and fix
@@ -68,11 +69,11 @@ lint:
 	@echo '✅	${GREEN}Swiftlint updated successfully${RESET}'
 	
 	@echo '⏳	${YELLOW}Running swiftlint fix:${RESET}'
-	@Pods/SwiftLint/swiftlint --fix || (echo '❌	${RED}Failed to run swiftlint fix${RESET}' && exit 1)
+	@Pods/SwiftLint/swiftlint --fix || (echo '❌	${RED}Failed to run swiftlint fix${RESET}')
 	@echo '✅	${GREEN}Swiftlint fix executed successfully${RESET}'
 
 	@echo '⏳	${YELLOW}Running swiftlint:${RESET}'
-	@Pods/SwiftLint/swiftlint || (echo '❌	${RED}Failed to run swiftlint${RESET}' && exit 1)
+	@Pods/SwiftLint/swiftlint || (echo '❌	${RED}Failed to run swiftlint${RESET}')
 	@echo '✅	${GREEN}Swiftlint executed successfully${RESET}'
 
 # Open workspace in XCode
@@ -85,6 +86,11 @@ open:
 run:
 	@make init
 	@make open
+
+build:
+	@echo '⏳	${YELLOW}Building $(CURRENT_PROJECT) project:${RESET}'
+	@xcodebuild -scheme "$(CURRENT_PROJECT)" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace $(CURRENT_PROJECT).xcworkspace -quiet
+	@echo '✅	${GREEN}$(CURRENT_PROJECT) project has been built${RESET}'
 
 # Create new ticket branch
 tic:
@@ -112,6 +118,15 @@ clean:
 	@rm -rf ~/Library/Developer/Xcode/DerivedData/* || (echo '❌	${RED}Failed to clean cache${RESET}' && exit 1)
 	@echo '✅	${GREEN}Cache cleaned successfully${RESET}'
 
+	@echo '⏳	${YELLOW}Removing pods:${RESET}'
+	@rm -rf Pods || (echo '❌	${RED}Failed to remove pods${RESET}' && exit 1)
+	@echo '✅	${GREEN}Pods removed successfully${RESET}'
+
+	@echo '⏳	${YELLOW}Removing project:${RESET}'
+	@rm -rf $(CURRENT_PROJECT).xcodeproj || (echo '❌	${RED}Failed to remove $(CURRENT_PROJECT) project ${RESET}' && exit 1)
+	@rm -rf $(CURRENT_PROJECT).xcworkspace || (echo '❌	${RED}Failed to remove $(CURRENT_PROJECT) workspace ${RESET}' && exit 1)
+	@echo '✅	${GREEN}Project removed successfully${RESET}'
+
 # Install and update pods
 pod:
 	@echo '⏳	${YELLOW}Updating Cocoapods:${RESET}'
@@ -128,7 +143,6 @@ pod:
 	
 # Make a commit and push to the origin
 git:
-	@make lint
 
 	@echo '⏳	${YELLOW}Adding files:${RESET}'
 	@git add . || (echo '❌	${RED}Failed to add files${RESET}' && exit 1)

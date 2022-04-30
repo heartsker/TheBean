@@ -5,9 +5,12 @@
 //  Created by Alina on 10.02.2022.
 //
 
-import UIKit
 import SnapKit
+import Localize
+import Utils
+import AssetsManager
 
+/// Statistics View Controller
 class StatisticsViewController: UIViewController {
     // MARK: - Initialization
 
@@ -29,7 +32,7 @@ class StatisticsViewController: UIViewController {
     // MARK: - Subviews
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: view.bounds)
-        scrollView.backgroundColor = .background
+        scrollView.backgroundColor = Pallete.background
         return scrollView
     }()
 

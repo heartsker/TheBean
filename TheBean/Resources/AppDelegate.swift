@@ -5,19 +5,23 @@
 //  Created by Daniel Pustotin on 04.02.2022.
 //
 
-import UIKit
 import CoreData
+import Account
+import Recipe
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        setupAccount()
+        setupRecipes()
+
         return true
     }
 
     // MARK: UISceneSession Lifecycle
-
     func application(_ application: UIApplication,
                      configurationForConnecting connectingSceneSession: UISceneSession,
                      options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -28,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
         let container = NSPersistentCloudKitContainer(name: "TheBean")
         container.loadPersistentStores(completionHandler: { (_, error) in
@@ -40,7 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -51,5 +53,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+}
+
+// MARK: - Account setup
+private extension AppDelegate {
+    func setupAccount() {
+        guard let account = try? CoreDataManager.fetch() else {
+            Account.setup(with: CoreDataManager.managedContext)
+            return
+        }
+
+        Account.setup(with: account)
+
+        CoreDataManager.save()
+    }
+}
+
+// MARK: - Recipes setup
+private extension AppDelegate {
+    func setupRecipes() {
+        let recipes = RecipeManager.loadRecipes()
+        print(recipes ?? "nil")
     }
 }

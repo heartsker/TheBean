@@ -5,7 +5,7 @@
 //  Created by Daniel Pustotin on 19.03.2022.
 //
 
-import UIKit
+import AssetsManager
 
 protocol IBaseView {
     func setupAppearance()
@@ -25,6 +25,6 @@ extension IBaseView {
 
 extension IBaseView where Self: UIViewController {
     func setupAppearance() {
-        view.backgroundColor = .background
+        view.backgroundColor = Pallete.background
     }
 }

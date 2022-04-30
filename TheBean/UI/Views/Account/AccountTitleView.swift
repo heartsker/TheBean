@@ -5,7 +5,9 @@
 //  Created by Daniel Pustotin on 25.03.2022.
 //
 
-import UIKit
+import AssetsManager
+import Account
+import Reactive
 
 class AccountTitleView: UIStackView {
 
@@ -22,7 +24,9 @@ class AccountTitleView: UIStackView {
 
     // MARK: - Subviews
     private lazy var imageView: UIView = {
-        let image = UIImageView(image: ImageManager.test_profilePicture)
+        let image = UIImageView(image: Account.shared.image ?? ImageManager.profilePicture)
+        Publisher.subscribe(image, keyPath: \.image, for: .profileImagePost)
+        image.tintColor = Pallete.highlightPrimary
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.borderColor = UIColor.white.cgColor
@@ -33,8 +37,9 @@ class AccountTitleView: UIStackView {
     private lazy var nameLabel: UIView = {
         let label = UILabel()
         label.text = Account.shared.username
-        label.font = .bold(24)
-        label.textColor = .materialHeavy
+        Publisher.subscribe(label, keyPath: \.text, for: .usernamePost)
+        label.font = FontManager.bold(24)
+        label.textColor = Pallete.materialHeavy
         label.textAlignment = .center
         return label
     }()
@@ -42,8 +47,9 @@ class AccountTitleView: UIStackView {
     private lazy var emailLabel: UIView = {
         let label = UILabel()
         label.text = Account.shared.email
-        label.font = .light(18)
-        label.textColor = .materialMedium
+        Publisher.subscribe(label, keyPath: \.text, for: .emailPost)
+        label.font = FontManager.light(18)
+        label.textColor = Pallete.materialMedium
         label.textAlignment = .center
         return label
     }()
@@ -73,7 +79,7 @@ extension AccountTitleView {
             make.top.equalToSuperview()
             make.width.equalToSuperview()
             make.height.equalTo(snp.height)
-            // FIXME: (AS) - Needs to be replaced by inconstant radius with respect to superview
+            // TODO: (AS) - Needs to be replaced by inconstant radius with respect to superview
             imageView.layer.cornerRadius = 55
         }
         nameLabel.snp.makeConstraints { make in

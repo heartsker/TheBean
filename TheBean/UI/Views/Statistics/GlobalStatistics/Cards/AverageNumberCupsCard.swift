@@ -2,11 +2,13 @@
 //  AverageNumberCupsCard.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 22.03.2022.
+//  Created by Ilya Chub on 22.03.2022.
 //
 
-import UIKit
+import Localize
+import AssetsManager
 
+/// Card for average number of cups drunk
 class AverageNumberCupsCard: BaseCardView {
     // MARK: - Properties
     private let value: Int
@@ -17,7 +19,7 @@ class AverageNumberCupsCard: BaseCardView {
     // MARK: - Initializers
     required init(value: Int) {
         self.value = value
-        super.init(backgroundColor: .materialHeavy)
+        super.init(backgroundColor: Pallete.materialHeavy)
         setup()
     }
 
@@ -33,7 +35,7 @@ class AverageNumberCupsCard: BaseCardView {
     private lazy var secondBackground: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 20
-        view.backgroundColor = .hightlightThirdly
+        view.backgroundColor = Pallete.hightlightThirdly
         return view
     }()
 
@@ -42,7 +44,7 @@ class AverageNumberCupsCard: BaseCardView {
         stack.axis = .horizontal
         stack.distribution = .fillProportionally
         for _ in stride(from: 0, to: value, by: 1) {
-            let imageView = UIImageView(image: cupImage)
+            let imageView = UIImageView(image: ImageManager.cup)
             imageView.contentMode = .scaleAspectFit
             stack.addArrangedSubview(imageView)
         }

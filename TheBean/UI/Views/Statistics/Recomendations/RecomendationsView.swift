@@ -2,17 +2,19 @@
 //  RecomendationsView.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 15.03.2022.
+//  Created by Ilya Chub on 15.03.2022.
 //
 
-import UIKit
+import AssetsManager
+import Localize
+import Utils
 
 class RecomendationsView: UIStackView {
     // MARK: - Properties
     let recomendations = [
-        CoffeeRecomendation(text: ^CoffeeLocalization.latte, image: ImageManager.latte),
-        CoffeeRecomendation(text: ^CoffeeLocalization.flatwhite, image: ImageManager.flatwhite),
-        CoffeeRecomendation(text: ^CoffeeLocalization.americano, image: ImageManager.americano)
+        CoffeeRecommendation(drinkKind: .latte),
+        CoffeeRecommendation(drinkKind: .flatwhite),
+        CoffeeRecommendation(drinkKind: .americano)
     ]
 
     // MARK: - Initialization

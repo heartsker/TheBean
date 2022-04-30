@@ -5,17 +5,19 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
-// import UIKit
 import SwiftUI
+import Localize
+import Utils
+import AssetsManager
 
 final class RecipesViewController: UIViewController {
 
     // MARK: - Properties
     var coordinator: RecipesCoordinator?
 
-    var recipes: [Int: [RecipeCardModel]] = {
-        var items: [Int: [RecipeCardModel]] = [:]
-        CoffeeStrength.allCases.forEach { items[$0.rawValue] = $0.cards }
+    var recipes: [Int: [MockRecipeCard]] = {
+        var items: [Int: [MockRecipeCard]] = [:]
+        CoffeeStrength.allCases.forEach { items[$0.sectionProvider] = MockRecipeCard.makeCards($0) }
         return items
     }()
 
@@ -68,7 +70,7 @@ extension RecipesViewController: IBaseView {
     }
 
     func setupAppearance() {
-        view.backgroundColor = .background
+        view.backgroundColor = Pallete.background
         collectionView.backgroundColor = .clear
     }
 }
@@ -91,8 +93,8 @@ extension RecipesViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.create(cell: RecipeCell.self, at: indexPath),
               let cards = recipes[indexPath.section] else {
-                  return UICollectionViewCell()
-              }
+            return UICollectionViewCell()
+        }
         cell.configure(model: cards[indexPath.row])
         return cell
     }
@@ -112,8 +114,10 @@ extension RecipesViewController: UICollectionViewDataSource {
                                                                           for: indexPath) as? RecipesHeaderView else {
                 return RecipesHeaderView()
             }
-            headerView.configure(model: CoffeeStrength(rawValue: indexPath.section)?.title ?? "")
+
+            headerView.configure(model: ^CoffeeStrength.allCases[indexPath.section].rawValue)
             return headerView
+
         default:
             let footerKind = UICollectionView.elementKindSectionFooter
             let identifier = RecipesFooterView.reuseIdentifier
@@ -164,10 +168,10 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: LayoutConstants.topInset,
-                            left: LayoutConstants.leftRightInset,
-                            bottom: LayoutConstants.bottomInset,
-                            right: LayoutConstants.leftRightInset)
+        return UIEdgeInsets(            top: LayoutConstants.topInset,
+            left: LayoutConstants.leftRightInset,
+            bottom: LayoutConstants.bottomInset,
+            right: LayoutConstants.leftRightInset)
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -195,7 +199,7 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension RecipesViewController: RecipesFooterDelegate {
+extension RecipesViewController: IRecipesFooterDelegate {
     func sectionFooterButtonTapped() {
         coordinator?.showFullInfoRecipeScreen()
     }

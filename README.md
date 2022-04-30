@@ -9,6 +9,7 @@
 Информацию про внутреннюю инфраструктуру и организацию Nephew-Ustas можно найти [тут](https://github.com/Nephew-Ustas/Nephew-Ustas#readme).
 
 ## Локализация
+Модуль `Localize`
 
 [Интерфейс](https://github.com/Nephew-Ustas/TheBean/blob/11cbecabf6beee338b9b0e12d3f28feb8a37a52d/TheBean/Localization/ILocalizable.swift#L10) локализации - `ILocalizable`.
 
@@ -33,8 +34,10 @@
 "name" = "Зе рно";
 ```
 
-## Assets
-[Интерфейс]() `IAssetsManager` позволяет использовать в коде файлы из папки Assets.
+## Ресурсы
+Модуль `AssetsManager`
+
+[Интерфейс]() `IAssetsManager` позволяет использовать в коде файлы из папки Assets
 
 Например, для получения картинок реализован [класс]() `ImageManager`:
 ```swift
@@ -45,8 +48,12 @@ class ImageManager: IAssetsManager {
 }
 ```
 
-Тогда в коде следует использовать `ImageManager.latte`.
-## Combine
+Тогда в коде следует использовать `ImageManager.latte`
+## Реактив
+Модуль `Reactive`
+
+Модуль позволяет просто создавать и использовать реактивщину в приложении. Все публикации и подписки сделаны на базе `Combine`
+
 Класс [`Publisher`](https://github.com/Nephew-Ustas/TheBean/blob/5275158b6fc56e4e2840b4c1425f202a1adffeef/TheBean/Model/Account/Notifications.swift#L15) позволяет создавать публикации изменений и подписываться на них.
 
 Чтобы создать публикацию используется метод `publishPost<T>(with:, for:)`.
@@ -70,3 +77,15 @@ extension Notification.Name {
     static let usernamePost = Notification.Name("usernamePost")
 }
 ```
+
+## Графика
+Модуль `AdvancedGraphics`
+
+Модуль позволяет добавлять графические элементы в приложение
+
+Объекты реализованы как расширения классов, например `UIBezierPath`
+
+## Утилиты
+Модуль [`Utils`](https://github.com/Nephew-Ustas/TheBean/tree/main/LocalPods/Utils)
+
+Модуль добавляет функциональность, необходимую для приложения. Это могут быть расширения или классы для упрощения разработки - для избежания дублирования кода.

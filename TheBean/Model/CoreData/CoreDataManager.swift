@@ -5,20 +5,10 @@
 //  Created by Daniel Pustotin on 02.04.2022.
 //
 
-import UIKit
 import CoreData
+import Account
 
-enum CoreDataError: LocalizedError {
-    case fetchingError(String)
-
-    var errorDescription: String? {
-        switch self {
-        case let .fetchingError(type):
-            return "Failed to fetch entity of type \(type)"
-        }
-    }
-}
-
+/// Provides functionality for work with CoreData
 class CoreDataManager {
 
     static let appDelegate: AppDelegate = UIApplication.shared.delegate as? AppDelegate ?? AppDelegate()
@@ -32,16 +22,14 @@ class CoreDataManager {
         }
     }
 
-    static func fetchAccount() throws -> Account {
-        var account: Account
+    static func fetch() throws -> Account {
         do {
-            guard let acc = try? managedContext.fetch(Account.fetchRequest()).first else {
-                throw CoreDataError.fetchingError("Account")
+            guard let object = try? managedContext.fetch(Account.fetchRequest()).first else {
+                throw CoreDataError.fetchingError(Account.self)
             }
-            account = acc
+            return object
         } catch {
-            throw CoreDataError.fetchingError("Account")
+            throw CoreDataError.fetchingError(Account.self)
         }
-        return account
     }
 }

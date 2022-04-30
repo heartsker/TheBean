@@ -2,12 +2,12 @@
 //  BaseCardView.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 05.04.2022.
+//  Created by Ilya Chub on 05.04.2022.
 //
 
-import UIKit
 import SnapKit
 
+/// Basic view for all cards
 class BaseCardView: UIView, ICardRepresentable {
 
     // MARK: - Properties

@@ -5,7 +5,9 @@
 //  Created by Daniel Pustotin on 25.03.2022.
 //
 
-import UIKit
+import Localize
+import Utils
+import AssetsManager
 
 class AccountViewController: UIViewController {
 
@@ -35,8 +37,13 @@ class AccountViewController: UIViewController {
 // MARK: - Setup methods
 extension AccountViewController {
     private func setup() {
+        setupAppearance()
         setupSubviews()
         setupConstraints()
+    }
+
+    func setupAppearance() {
+        view.backgroundColor = Pallete.background
     }
 
     func setupSubviews() {

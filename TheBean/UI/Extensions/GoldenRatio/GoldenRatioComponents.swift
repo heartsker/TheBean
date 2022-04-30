@@ -2,10 +2,9 @@
 //  CGFloatExtension.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 17.03.2022.
+//  Created by Ilya Chub on 17.03.2022.
 //
-
-import UIKit
+import CoreGraphics
 
 extension CGFloat {
     static func goldenRatioMultiplier(trailing: Bool = false) -> CGFloat {

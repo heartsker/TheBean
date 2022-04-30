@@ -1,0 +1,12 @@
+/* 
+  Coffee.strings
+  Localize
+
+  Created by Daniel Pustotin on 27.03.2022.
+  
+*/
+
+"coffee" = "кофе";
+"latte" = "латте";
+"flatwhite" = "флэт вайт";
+"americano" = "американо";

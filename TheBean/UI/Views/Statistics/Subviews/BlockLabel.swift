@@ -2,11 +2,12 @@
 //  BlockLabel.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 15.03.2022.
+//  Created by Ilya Chub on 15.03.2022.
 //
 
-import UIKit
+import AssetsManager
 
+/// Statistics block label
 class BlockLabel: UILabel {
 
     // MARK: - Initializators
@@ -29,7 +30,7 @@ extension BlockLabel {
     }
 
     private func setupAppearance() {
-        textColor = .materialHeavy
-        font = .bold(18)
+        textColor = Pallete.materialHeavy
+        font = FontManager.bold(18)
     }
 }

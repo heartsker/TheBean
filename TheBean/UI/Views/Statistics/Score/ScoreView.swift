@@ -2,17 +2,21 @@
 //  ScoreView.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 11.04.2022.
+//  Created by Ilya Chub on 11.04.2022.
 //
 
-import UIKit
 import SnapKit
+import Localize
+import Utils
+import AssetsManager
+import Account
 
+/// Score view
 class ScoreView: BaseCardView {
 
     // MARK: - Init
     init() {
-        super.init(backgroundColor: .highlightPrimary, heightWidthRatio: 0.673)
+        super.init(backgroundColor: Pallete.highlightPrimary, heightWidthRatio: 0.673)
         setup()
     }
 
@@ -24,21 +28,21 @@ class ScoreView: BaseCardView {
     private lazy var usernameLabel: UILabel = {
         let label = UILabel(text: Account.shared.username,
                             color: .black,
-                            font: .bold(24))
+                            font: FontManager.bold(24))
         label.numberOfLines = 1
         return label
     }()
 
     private lazy var userimageView: UIImageView = {
-        let imageview = UIImageView(image: Account.shared.userimage)
+        let imageview = UIImageView(image: Account.shared.image)
         imageview.layer.cornerRadius = .screenWidth * 0.144 / 2
         imageview.clipsToBounds = true
         return imageview
     }()
 
     private lazy var scoreLabel: UILabel = UILabel(text: ^StatsLocalization.scoreLabel,
-                                                   color: .materialMedium,
-                                                   font: .bold(18))
+                                                   color: Pallete.materialMedium,
+                                                   font: FontManager.bold(18))
     private lazy var statsStackView = StatsStackView()
     private lazy var scoreView = ScoreLevelView()
 }
@@ -119,11 +123,11 @@ extension ScoreView {
 
         private func setupSubviews() {
             addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreCupsDrunk,
-                                           rightString: "\(Account.shared.cupsDrunk)"))
+                                        rightString: "\(Account.shared.cupsCount)"))
             addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreRecipesMastered,
-                                           rightString: "\(Account.shared.recipesMastered)"))
+                                        rightString: "\(Account.shared.recipesCount)"))
             addArrangedSubview(RowStack(leftString: ^StatsLocalization.scoreHealthScore,
-                                           rightString: "\(Account.shared.healthScore)"))
+                                        rightString: "\(Account.shared.healthScore)"))
         }
     }
 }
@@ -150,14 +154,14 @@ extension ScoreView {
         // MARK: - Subviews
         private lazy var leftLabel = {
             UILabel(text: leftString,
-                    color: .materialMedium,
-                    font: .light(13))
+                    color: Pallete.materialMedium,
+                    font: FontManager.light(13))
         }()
 
         private lazy var rightLabel = {
             UILabel(text: rightString,
-                    color: .materialMedium,
-                    font: .light(13))
+                    color: Pallete.materialMedium,
+                    font: FontManager.light(13))
         }()
 
         // MARK: - Setup methods
@@ -197,7 +201,7 @@ extension ScoreView {
         private lazy var label: UILabel = {
             UILabel(text: "\(Account.shared.level)",
                     color: .black,
-                    font: .regular(36))
+                    font: FontManager.regular(36))
         }()
 
         // MARK: - Setup methods
@@ -208,7 +212,7 @@ extension ScoreView {
         }
 
         private func setupAppearence() {
-            backgroundColor = .highlightPrimary
+            backgroundColor = Pallete.highlightPrimary
         }
 
         private func setupSubviews() {
@@ -227,7 +231,7 @@ extension ScoreView {
                                                    width: rect.width-5,
                                                    height: rect.height-5))
             path.lineWidth = 5
-            UIColor.accentColor.setStroke()
+            Pallete.accentColor.setStroke()
             path.stroke()
         }
     }

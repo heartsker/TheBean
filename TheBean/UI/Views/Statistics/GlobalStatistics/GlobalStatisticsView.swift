@@ -2,18 +2,20 @@
 //  GlobalStatisticsView.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 15.03.2022.
+//  Created by Ilya Chub on 15.03.2022.
 //
 
-import UIKit
+import Localize
+import Utils
 
+/// Global statistics view
 class GlobalStatisticsView: UIStackView {
 
     // MARK: - Properties
     private let globalStatisticsCards: [ICardRepresentable] = [
         MostPopularDrinkCard(value: CoffeeLocalization.latte),
         AverageNumberCupsCard(value: 4),
-        RecipesNumberCard(value: 129)
+        RecipesNumberCard(count: 129)
     ]
 
     // MARK: - Initializators

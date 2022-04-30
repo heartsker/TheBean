@@ -5,11 +5,12 @@
 //  Created by Ilya Buldin on 13.04.2022.
 //
 
-import UIKit
+import AssetsManager
+import Utils
 
 final class RecipesHeaderView: UICollectionReusableView {
 
-    private(set) lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         return label
     }()
@@ -25,9 +26,9 @@ final class RecipesHeaderView: UICollectionReusableView {
     }
 }
 
-extension RecipesHeaderView: ReuseIdentifyingProtocol { }
+extension RecipesHeaderView: IReuseIdentifiable { }
 
-extension RecipesHeaderView: ConfigurationProtocol {
+extension RecipesHeaderView: IConfigurationWithModel {
     func configure(model: String) {
         titleLabel.text = model
     }
@@ -35,7 +36,7 @@ extension RecipesHeaderView: ConfigurationProtocol {
 
 extension RecipesHeaderView: IBaseView {
     func setupAppearance() {
-        titleLabel.font = .bold(18)
+        titleLabel.font = FontManager.bold(18)
     }
 
     func setupSubviews() {

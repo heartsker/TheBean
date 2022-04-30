@@ -2,18 +2,20 @@
 //  CoffeeBlockView.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 15.03.2022.
+//  Created by Ilya Chub on 15.03.2022.
 //
 
-import UIKit
+import AssetsManager
+import Utils
+import Localize
 
 class CoffeeBlockView: UIStackView {
 
     // MARK: - Properties
-    private var recomendation: CoffeeRecomendation
+    private var recomendation: CoffeeRecommendation
 
     // MARK: - Initialization
-    init(_ recomendation: CoffeeRecomendation) {
+    init(_ recomendation: CoffeeRecommendation) {
         self.recomendation = recomendation
         super.init(frame: .zero)
         setup()
@@ -25,16 +27,16 @@ class CoffeeBlockView: UIStackView {
 
     // MARK: - Subviews
     private lazy var imageView: UIImageView = {
-        let imageView = UIImageView(image: recomendation.image)
+        let imageView = UIImageView(image: ImageManager.asset(id: .id(of: recomendation.drinkKind)))
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
     private lazy var labelView: UILabel = {
-        let label = UILabel(text: recomendation.text,
-                            color: .materialHeavy,
-                            font: .regular(14))
+        let label = UILabel(text: CoffeeLocalization.loc(id: .id(of: recomendation.drinkKind)),
+                            color: Pallete.materialHeavy,
+                            font: FontManager.regular(14))
         label.textAlignment = .center
         return label
     }()

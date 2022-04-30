@@ -5,8 +5,9 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
-import UIKit
 import SnapKit
+import AssetsManager
+import Utils
 
 final class RecipeCell: UICollectionViewCell {
 
@@ -16,22 +17,22 @@ final class RecipeCell: UICollectionViewCell {
         return container
     }()
 
-    private(set) lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         return label
     }()
 
-    private(set) lazy var imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
     }()
 
-    private(set) lazy var volumeLabel: UILabel = {
+    private lazy var volumeLabel: UILabel = {
         let label = UILabel()
         return label
     }()
 
-    private(set) lazy var cookingTimeLabel: UILabel = {
+    private lazy var cookingTimeLabel: UILabel = {
         let label = UILabel()
         return label
     }()
@@ -58,12 +59,12 @@ final class RecipeCell: UICollectionViewCell {
     }
 }
 
-extension RecipeCell: ConfigurationProtocol {
+extension RecipeCell: IConfigurationWithModel {
 
     // MARK: - Cell Configuration
-    func configure(model: RecipeCardModel) {
+    func configure(model: MockRecipeCard) {
         titleLabel.text = model.title
-        imageView.image = model.drinkKind.imageName
+        imageView.image = ImageManager.asset(id: .id(of: model.drinkKind))
         volumeLabel.text = "\(model.volume) ml"
         cookingTimeLabel.text = "\(model.cookingTime) min"
     }
@@ -78,14 +79,14 @@ extension RecipeCell: IBaseView {
         contentView.layer.borderWidth = 1
         setCellBorderColorByAppearanceMode()
 
-        containerView.backgroundColor = .highlightPrimary
+        containerView.backgroundColor = Pallete.highlightPrimary
         containerView.layer.cornerRadius = 20
 
-        titleLabel.font = .medium()
+        titleLabel.font = FontManager.medium()
         titleLabel.textAlignment = .center
 
-        [volumeLabel, cookingTimeLabel].forEach { $0.font = .regular(12) }
-        [volumeLabel, cookingTimeLabel, titleLabel].forEach { $0.textColor = .materialMedium }
+        [volumeLabel, cookingTimeLabel].forEach { $0.font = FontManager.regular(12) }
+        [volumeLabel, cookingTimeLabel, titleLabel].forEach { $0.textColor = Pallete.materialMedium }
 
         imageView.contentMode = .scaleAspectFit
     }
@@ -146,7 +147,7 @@ extension RecipeCell {
         contentView.layer.borderColor = borderColorCondition ? darkModeBorderColor : lightModeBorderColor
     }
 
-    // CGColor не умеет в динамический цвет, поэтому приходится пергружать этот метод
+    // CGColor cannot use dynamic color, so we need to override this method
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         setCellBorderColorByAppearanceMode()
     }

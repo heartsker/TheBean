@@ -2,10 +2,12 @@
 //  MostPopularDrinkCard.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 16.03.2022.
+//  Created by Ilya Chub on 16.03.2022.
 //
 
-import UIKit
+import Localize
+import AssetsManager
+import Utils
 
 class MostPopularDrinkCard: BaseCardView {
 
@@ -18,7 +20,7 @@ class MostPopularDrinkCard: BaseCardView {
     // MARK: - Initialization
     required init(value: String) {
         self.value = value
-        super.init(backgroundColor: .highlightPrimary)
+        super.init(backgroundColor: Pallete.highlightPrimary)
         setup()
     }
 

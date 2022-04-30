@@ -2,11 +2,13 @@
 //  CardsLabel.swift
 //  TheBean
 //
-//  Created by Илья Чуб on 22.03.2022.
+//  Created by Ilya Chub on 22.03.2022.
 //
 
-import UIKit
+import Utils
+import AssetsManager
 
+/// Card label
 class CardLabel: UILabel {
 
     // MARK: - Properties
@@ -37,8 +39,8 @@ extension CardLabel {
         guard let text = super.text else { return }
 
         let textSize: CGFloat = 16
-        let color: UIColor = isWhite ? .white : .materialMedium
-        let font: UIFont = .medium(textSize)
+        let color: UIColor = isWhite ? .white : Pallete.materialMedium
+        let font: UIFont = FontManager.medium(textSize)
 
         let string = NSMutableAttributedString(string: text)
         string.addAttribute(.foregroundColor,
@@ -52,7 +54,7 @@ extension CardLabel {
         let appNameIndexRanges = text.ranges(of: "The Bean")
         for range in appNameIndexRanges {
             string.addAttribute(.font,
-                                value: UIFont.bold(textSize),
+                                value: FontManager.bold(textSize),
                                 range: NSRange(range, in: text))
         }
 
