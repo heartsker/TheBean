@@ -10,27 +10,59 @@ on:
       - dev
 
 jobs:
-  LintAndBuild:
+  Setup:
     runs-on: macOS-latest
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - uses: actions/cache@v1
+        uses: actions/checkout@v1
+      - name: Determine cache directory
+        id: cache-dir
+        run: |
+          pwd
+      - name: Cache
+        uses: actions/cache@v1
         with:
-          path: Pods
-          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-pods-
+          path: ./
+          key: ${{ runner.os }}-cache-${{ github.run_id }}
+
       - name: Xcodegen
         run: |
           brew upgrade xcodegen || brew install xcodegen
           xcodegen
+
       - name: CocoaPod Install
-        run: pod install
+        run: |
+          pod install
+        
+  Lint:
+    runs-on: macOS-latest
+    needs: Setup
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Cache
+        uses: actions/cache@v1
+        with:
+          path: ./
+          key: ${{ runner.os }}-cache-${{ github.run_id }}
       - name: Linter
         run: |
           swiftlint --fix
           swiftlint
+
+  Build:
+    runs-on: macOS-latest
+    needs: Lint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Cache
+        uses: actions/cache@v1
+        with:
+          path: ./
+          key: ${{ runner.os }}-cache-${{ github.run_id }}
       - name: Build
         run: |
           xcodebuild -scheme "TheBean" -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max' -workspace TheBean.xcworkspace -quiet
