@@ -4,50 +4,32 @@ on:
     branches:
       - main
       - dev
-      - TIC-CI
   push:
     branches:
       - main
       - dev
-      - TIC-CI
 
 jobs:
-
-  Preinstall:
+  Setup:
     runs-on: macOS-latest
-
-    steps:
-      - name: Cache
-        uses: actions/cache@v1
-        with:
-          path: /opt/homebrew/Cellar/xcodegen/2.28.0/bin/
-          key: ${{ runner.os }}-cache-xcodegen
-      - name: Xcodegen
-        run: |
-          brew install xcodegen
-          brew info xcodegen
-
-  Install:
-    runs-on: macOS-latest
-    needs: Preinstall
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: Determine cache directory
+        id: cache-dir
+        run: |
+          pwd
       - name: Cache
         uses: actions/cache@v1
         with:
           path: ./
           key: ${{ runner.os }}-cache-${{ github.run_id }}
 
-      - name: Cache
-        uses: actions/cache@v1
-        with:
-          path: /usr/local/Cellar/xcodegen/2.28.0/bin/
-          key: ${{ runner.os }}-cache-xcodegen
       - name: Xcodegen
         run: |
-          /opt/homebrew/Cellar/xcodegen/2.28.0/bin/xcodegen
+          brew upgrade xcodegen || brew install xcodegen
+          xcodegen
 
       - name: CocoaPod Install
         run: |
@@ -55,7 +37,7 @@ jobs:
         
   Lint:
     runs-on: macOS-latest
-    needs: Install
+    needs: Setup
 
     steps:
       - name: Checkout
@@ -73,7 +55,6 @@ jobs:
   Build:
     runs-on: macOS-latest
     needs: Lint
-
     steps:
       - name: Checkout
         uses: actions/checkout@v1
