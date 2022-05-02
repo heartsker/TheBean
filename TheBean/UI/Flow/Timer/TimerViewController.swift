@@ -11,7 +11,6 @@ import AssetsManager
 
 class TimerViewController: UIViewController {
     // MARK: - Properties
-
     private lazy var label: UILabel = {
         UILabel(text: "That is timer", color: Pallete.materialHeavy, font: FontManager.bold(30))
     }()

@@ -5,11 +5,13 @@
 //  Created by Daniel Pustotin on 24.04.2022.
 //
 
+// swiftlint:disable missing_docs
+
 import CoreData
 
 extension Account {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Account> {
-        return NSFetchRequest<Account>(entityName: "Account")
+        NSFetchRequest<Account>(entityName: "Account")
     }
 
     @NSManaged public var cupsCount: Int64

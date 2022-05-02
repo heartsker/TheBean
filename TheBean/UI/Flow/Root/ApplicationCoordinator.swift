@@ -5,12 +5,16 @@
 //  Created by Ilya Buldin on 30.04.2022.
 //
 
-import Foundation
+import Utils
 
 /// ApplicationCoordinator - instance of this class is stored in SceneDelegate
 /// Provides logic for choosing which flow should be started
 /// That is why you have to define `finishFlow` callback
-final class ApplicationCoordinator: BaseCoordinator {
+final class ApplicationCoordinator: ICoordinator {
+    // MARK: - Properties
+    var childCoordinators: [ICoordinator] = []
+
+    var finishFlow: VoidClosure?
 
     private let coordinatorFactory: ICoordinatorFactory
     private let router: IRouter
@@ -18,12 +22,14 @@ final class ApplicationCoordinator: BaseCoordinator {
     private var isFirstLaunch = false
     private var isSignedIn = true
 
+    // MARK: - Initialization
     init(router: IRouter, coordinatorFactory: ICoordinatorFactory) {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
     }
 
-    override func start() {
+    // MARK: - Public methods
+    func start() {
         if isFirstLaunch {
             runStartFlow()
             isFirstLaunch = false
@@ -37,18 +43,18 @@ final class ApplicationCoordinator: BaseCoordinator {
         }
     }
 
+    // MARK: - Private methods
     private func runStartFlow() {}
 
     private func runMainFlow() {
         let coordinator = coordinatorFactory.makeTabBarCoordinator(router: router)
         coordinator.finishFlow = { [weak self, weak coordinator] in
             self?.start()
-            self?.removeChildCoordinator(coordinator)
+            self?.removeChild(coordinator: coordinator)
         }
-        self.addChildCoordinator(coordinator)
+        self.addChild(coordinator: coordinator)
         coordinator.start()
     }
 
     private func runSignUpFlow() {}
-
 }

@@ -10,8 +10,14 @@ public typealias Json = [String: Any]
 
 /// `FileManager` provides functionality to work with files in app
 public class FileManager {
-    public static func json(from file: String, in bundle: Bundle, localize: Bool = false) -> Json? {
-        let filename = file + (localize ? "-" + Locale.currentLocale : "")
+    /// Extracts raw json data from the file
+    /// - Parameters:
+    ///   - file: File to extract data from
+    ///   - bundle: Bundle with the file
+    ///   - localized: Defines whether the file is localized or not
+    /// - Returns: File contents as `Json`
+    public static func json(from file: String, in bundle: Bundle, localized: Bool = false) -> Json? {
+        let filename = file + (localized ? "-" + Locale.currentLocale : "")
         do {
             guard let path = bundle.path(forResource: filename, ofType: "json"),
                   let jsonData = try String(contentsOfFile: path).data(using: .utf8),
@@ -28,6 +34,7 @@ public class FileManager {
 
 /// Extends `FileManager` with getting module name of object method
 public extension FileManager {
+    // swiftlint:disable:next missing_docs
     static func module(of object: AnyObject) -> String {
         String(String(reflecting: object.self).prefix { $0 != "." })
     }

@@ -9,16 +9,16 @@
 public class StatsLocalization: ILocalizable {
     public static let table: String = "Stats"
 
-    public static let scoreLabel = StatsLocalization.localize("score.label")
-    public static let scoreCupsDrunk = StatsLocalization.localize("score.cupsDrunk")
-    public static let scoreRecipesMastered = StatsLocalization.localize("score.recipesMastered")
-    public static let scoreHealthScore = StatsLocalization.localize("score.healthScore")
+    public static let scoreLabel = StatsLocalization.localize(id: "score.label")
+    public static let scoreCupsDrunk = StatsLocalization.localize(id: "score.cupsDrunk")
+    public static let scoreRecipesMastered = StatsLocalization.localize(id: "score.recipesMastered")
+    public static let scoreHealthScore = StatsLocalization.localize(id: "score.healthScore")
 
-    public static let personalRecomendations = StatsLocalization.localize("personal.recomendations")
+    public static let personalRecomendations = StatsLocalization.localize(id: "personal.recomendations")
 
-    public static let globalStatistics = StatsLocalization.localize("global.statistics")
-    public static let mostPopularDrinkSuffix = StatsLocalization.localize("most.popular.drink.suffix")
-    public static let averageCupsPerDay = StatsLocalization.localize("average.cups.per.day")
+    public static let globalStatistics = StatsLocalization.localize(id: "global.statistics")
+    public static let mostPopularDrinkSuffix = StatsLocalization.localize(id: "most.popular.drink.suffix")
+    public static let averageCupsPerDay = StatsLocalization.localize(id: "average.cups.per.day")
 
     public static func masteredRecipes(value: UInt) -> String {
         let formatString: String = NSLocalizedString("mastered recipes", tableName: table, comment: "")

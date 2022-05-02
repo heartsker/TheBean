@@ -10,12 +10,11 @@ import Foundation
 /// Defines interface for coordinator factory
 /// Implementation of this protocol provide an interface objects without specifying their concrete classes
 protocol ICoordinatorFactory {
-
     func makeApplicationCoordinator(router: IRouter) -> ApplicationCoordinator
 
     func makeTabBarCoordinator(router: IRouter) -> TabBarCoordinator
 
-    func makeTestsCoordinator(router: IRouter) -> TestsCoordinator
+    func makeTestCoordinator(router: IRouter) -> TestCoordinator
 
     func makeRecipesCoordinator(router: IRouter) -> RecipesCoordinator
 
@@ -29,31 +28,31 @@ protocol ICoordinatorFactory {
 /// ICoordinatorFactory implementations
 final class CoordinatorFactory: ICoordinatorFactory {
     func makeApplicationCoordinator(router: IRouter) -> ApplicationCoordinator {
-        return ApplicationCoordinator(router: router, coordinatorFactory: self)
+        ApplicationCoordinator(router: router, coordinatorFactory: self)
     }
 
     func makeTabBarCoordinator(router: IRouter) -> TabBarCoordinator {
-        return TabBarCoordinator(router: router, coordinatorFactory: self)
+        TabBarCoordinator(router: router, coordinatorFactory: self)
     }
 
-    func makeTestsCoordinator(router: IRouter) -> TestsCoordinator {
-        return TestsCoordinator(router: router)
+    func makeTestCoordinator(router: IRouter) -> TestCoordinator {
+        TestCoordinator(router: router)
     }
 
     func makeRecipesCoordinator(router: IRouter) -> RecipesCoordinator {
-        return RecipesCoordinator(router: router)
+        RecipesCoordinator(router: router)
     }
 
     func makeStatisticsCoordinator(router: IRouter) -> StatisticsCoordinator {
-        return StatisticsCoordinator(router: router)
+        StatisticsCoordinator(router: router)
     }
 
     func makeTimerCoordinator(router: IRouter) -> TimerCoordinator {
-        return TimerCoordinator(router: router)
+        TimerCoordinator(router: router)
     }
 
     func makeAccountCoordinator(router: IRouter) -> AccountCoordinator {
-        return AccountCoordinator(router: router)
+        AccountCoordinator(router: router)
     }
 
 }

@@ -7,6 +7,7 @@
 
 /// Class for recipe
 public class Recipe {
+    // swiftlint:disable missing_docs
     public let title: String
     public let info: String
     public let preparation: String
@@ -15,6 +16,7 @@ public class Recipe {
     public let ingredients: [String]
     public let nutrition: RecipeNutrition
     public let steps: [RecipeStep]
+    // swiftlint:enable missing_docs
 
     init(title: String,
          info: String,

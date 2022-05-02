@@ -11,12 +11,12 @@ import Utils
 public class CoffeeLocalization: ILocalizable {
     public static let table: String = "Coffee"
 
-    public static let coffee = CoffeeLocalization.localize("coffee")
-    public static let latte = CoffeeLocalization.localize("latte")
-    public static let flatwhite = CoffeeLocalization.localize("flatwhite")
-    public static let americano = CoffeeLocalization.localize("americano")
+    public static let coffee = CoffeeLocalization.localize(id: "coffee")
+    public static let latte = CoffeeLocalization.localize(id: "latte")
+    public static let flatwhite = CoffeeLocalization.localize(id: "flatwhite")
+    public static let americano = CoffeeLocalization.localize(id: "americano")
 
-    public static let strengthDesert = CoffeeLocalization.localize("coffee.strength.desert")
-    public static let strengthRegular = CoffeeLocalization.localize("coffee.strength.regular")
-    public static let strengthStrong = CoffeeLocalization.localize("coffee.strength.strong")
+    public static let strengthDesert = CoffeeLocalization.localize(id: "coffee.strength.desert")
+    public static let strengthRegular = CoffeeLocalization.localize(id: "coffee.strength.regular")
+    public static let strengthStrong = CoffeeLocalization.localize(id: "coffee.strength.strong")
  }

@@ -12,21 +12,20 @@ public protocol ILocalizable: AnyObject {
     static var resourcesBundle: Bundle { get }
     static var table: String { get }
 
-    static func localize(_ string: String) -> String
-    static func loc(id: String) -> String
+    static func localize(id: String) -> String
 }
 
 /// Extends `ILocalizable` with default values
 public extension ILocalizable {
+    // swiftlint:disable:next missing_docs
     static var resourcesBundle: Bundle {
-        Utils.resourcesBundle(of: Self.self)
+        Bundle.resources(for: Self.self)
     }
 
-    static func localize(_ string: String) -> String {
-        resourcesBundle.localizedString(forKey: string, value: "", table: table)
-    }
-
-    static func loc(id: String) -> String {
-        Self.localize(id)
+    /// Localizes the string
+    /// - Parameter string: String id to localize
+    /// - Returns: Localized string
+    static func localize(id: String) -> String {
+        resourcesBundle.localizedString(forKey: id, value: "", table: table)
     }
 }

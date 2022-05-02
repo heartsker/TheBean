@@ -5,6 +5,8 @@
 //  Created by Daniel Pustotin on 25.04.2022.
 //
 
+// swiftlint:disable missing_docs
+
 /// Provides id getter for basic types
 public extension String {
     static func id(of drinkKind: DrinkKind) -> String {

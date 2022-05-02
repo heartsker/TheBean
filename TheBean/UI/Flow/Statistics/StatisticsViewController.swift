@@ -12,8 +12,18 @@ import AssetsManager
 
 /// Statistics View Controller
 class StatisticsViewController: UIViewController {
-    // MARK: - Initialization
+    // MARK: - Properties
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView(frame: view.bounds)
+        scrollView.backgroundColor = Pallete.background
+        return scrollView
+    }()
 
+    private lazy var statisticsContentView = {
+        StatisticsContentView()
+    }()
+    
+    // MARK: - Initialization
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setupTabBar(^ControllerLocalization.statistics, image: "chart.bar.xaxis")
@@ -28,17 +38,6 @@ class StatisticsViewController: UIViewController {
 
         setup()
     }
-
-    // MARK: - Subviews
-    private lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView(frame: view.bounds)
-        scrollView.backgroundColor = Pallete.background
-        return scrollView
-    }()
-
-    private lazy var statisticsContentView = {
-        StatisticsContentView()
-    }()
 }
 
 // MARK: - Setup methods
