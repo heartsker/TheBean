@@ -57,6 +57,7 @@ class TestViewController: UIViewController {
         textField.keyboardType = .emailAddress
 
         Publisher.subscribe(textField, keyPath: \.placeholder, for: .emailPost)
+        textField.delegate = self
         return textField
     }()
 
@@ -83,6 +84,8 @@ class TestViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setupTabBar(^ControllerLocalization.test, image: "wrench.and.screwdriver")
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view,
+                                                              action: #selector(UIView.endEditing(_:))))
     }
 
     required init?(coder: NSCoder) {
@@ -94,6 +97,14 @@ class TestViewController: UIViewController {
         super.viewDidLoad()
 
         setup()
+    }
+}
+
+extension TestViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.view.endEditing(true)
+        return true
     }
 }
 
@@ -119,7 +130,8 @@ extension TestViewController {
 
     private func setupConstraints() {
         usernameLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().dividedBy(2)
             make.width.equalToSuperview()
             make.height.equalTo(100)
         }

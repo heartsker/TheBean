@@ -22,7 +22,7 @@ class StatisticsViewController: UIViewController {
     private lazy var statisticsContentView = {
         StatisticsContentView()
     }()
-    
+
     // MARK: - Initialization
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
