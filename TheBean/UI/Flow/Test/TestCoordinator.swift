@@ -1,23 +1,27 @@
 //
-//  TestsCoordinator.swift
+//  TestCoordinator.swift
 //  TheBean
 //
 //  Created by Ilya Buldin on 30.04.2022.
 //
 
-import UIKit
+import class UIKit.UINavigationController
+import Utils
 
-final class TestsCoordinator: BaseCoordinator {
-    typealias VoidClosure = () -> Void
+final class TestCoordinator: ICoordinator {
+    // MARK: - Properties
+    var childCoordinators: [ICoordinator] = []
 
     var finishFlow: VoidClosure?
     private let router: IRouter
 
+    // MARK: - Initialization
     init(router: IRouter) {
         self.router = router
     }
 
-    override func start() {
+    // MARK: - Public methods
+    func start() {
         let testsViewController = UINavigationController(rootViewController: TestViewController())
         router.addTabBarModule(testsViewController)
     }

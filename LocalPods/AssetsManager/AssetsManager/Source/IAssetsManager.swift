@@ -21,10 +21,14 @@ public protocol IAssetsManager: AnyObject {
 
 /// Extends `IAssetsManager` with default values
 public extension IAssetsManager {
+    // swiftlint:disable:next missing_docs
     static var resourcesBundle: Bundle {
-        Utils.resourcesBundle(of: Self.self)
+        Bundle.resources(for: Self.self)
     }
 
+    /// Finds the asset by given id
+    /// - Parameter id: ID of asset
+    /// - Returns: Asset with given ID
     static func asset(id: String) -> Asset {
         asset(for: id)
     }

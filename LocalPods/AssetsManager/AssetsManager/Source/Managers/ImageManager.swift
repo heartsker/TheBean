@@ -7,17 +7,20 @@
 
 /// Provides IAssetsManager with default init
 public extension IAssetsManager where Asset: UIImage {
+    /// Default asset to use if another does not exist
     static var defaultAsset: Asset {
         // swiftlint:disable:next force_unwrapping
         Asset(systemName: "questionmark.app.dashed")!
     }
 
+    /// Image asset by name
     static func asset(for string: String) -> Asset {
         Asset(named: string, in: resourcesBundle, compatibleWith: nil) ?? defaultAsset
     }
 
+    /// System image asset by name
     static func system(name: String) -> Asset {
-        return Asset(systemName: name) ?? defaultAsset
+        Asset(systemName: name) ?? defaultAsset
     }
 }
 

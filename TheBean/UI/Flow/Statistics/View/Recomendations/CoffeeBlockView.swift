@@ -34,7 +34,7 @@ class CoffeeBlockView: UIStackView {
     }()
 
     private lazy var labelView: UILabel = {
-        let label = UILabel(text: CoffeeLocalization.loc(id: .id(of: recomendation.drinkKind)),
+        let label = UILabel(text: CoffeeLocalization.localize(id: .id(of: recomendation.drinkKind)),
                             color: Pallete.materialHeavy,
                             font: FontManager.regular(14))
         label.textAlignment = .center

@@ -11,13 +11,12 @@ import Utils
 import AssetsManager
 
 final class RecipesViewController: UIViewController {
-
     // MARK: - Properties
     var coordinator: RecipesCoordinator?
 
     var recipes: [Int: [MockRecipeCard]] = {
         var items: [Int: [MockRecipeCard]] = [:]
-        CoffeeStrength.allCases.forEach { items[$0.sectionProvider] = MockRecipeCard.makeCards($0) }
+        CoffeeStrength.allCases.forEach { items[$0.sectionNumber] = MockRecipeCard.makeCards($0) }
         return items
     }()
 
@@ -35,7 +34,6 @@ final class RecipesViewController: UIViewController {
     }()
 
     // MARK: - Initialization
-
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setupTabBar(^ControllerLocalization.recipes, image: "book")
@@ -79,7 +77,7 @@ extension RecipesViewController: IBaseView {
 extension RecipesViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return CoffeeStrength.allCases.count
+        CoffeeStrength.allCases.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -168,7 +166,7 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(            top: LayoutConstants.topInset,
+        UIEdgeInsets(            top: LayoutConstants.topInset,
             left: LayoutConstants.leftRightInset,
             bottom: LayoutConstants.bottomInset,
             right: LayoutConstants.leftRightInset)
@@ -177,25 +175,25 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        10
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        10
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: 250, height: 40)
+        CGSize(width: 250, height: 40)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: 100, height: 30)
+        CGSize(width: 100, height: 30)
     }
 }
 

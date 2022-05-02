@@ -13,9 +13,9 @@ public class RecipeManager {
     /// Loads recipes from file `Recipes.json`
     /// - Returns: Array of `Recipe` or `nil` if failed to load
     public static func loadRecipes() -> [Recipe]? {
-        guard let json = FileManager.json(            from: "Recipes",
-                                                      in: resourcesBundle(of: RecipeManager.self),
-                                                      localize: true) else {
+        guard let json = FileManager.json(from: "Recipes",
+                                          in: Bundle.resources(for: RecipeManager.self),
+                                          localized: true) else {
             return nil
         }
 

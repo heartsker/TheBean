@@ -9,5 +9,5 @@
 public class AppLocalization: ILocalizable {
      public static let table: String = "App"
 
-     public static let name = AppLocalization.localize("name")
+     public static let name = AppLocalization.localize(id: "name")
  }

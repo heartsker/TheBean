@@ -6,14 +6,17 @@
 //
 
 extension IAssetsManager where Asset: UIColor {
+    /// Default asset to use if another does not exist
     public static var defaultAsset: UIColor {
         UIColor.clear
     }
 
+    /// Color  asset by name
     public static func asset(for string: String) -> UIColor {
-        return UIColor(named: string, in: resourcesBundle, compatibleWith: nil) ?? defaultAsset
+        UIColor(named: string, in: resourcesBundle, compatibleWith: nil) ?? defaultAsset
     }
 
+    /// System color  asset by name
     public static func system(name: String) -> UIColor {
         UIColor(named: name) ?? defaultAsset
     }

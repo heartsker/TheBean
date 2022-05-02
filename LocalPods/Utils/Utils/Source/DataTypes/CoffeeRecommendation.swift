@@ -7,8 +7,10 @@
 
 /// CoffeeRecommendation
 public class CoffeeRecommendation {
+    // swiftlint:disable:next missing_docs
     public let drinkKind: DrinkKind
 
+    // swiftlint:disable:next missing_docs
     public init(drinkKind: DrinkKind) {
         self.drinkKind = drinkKind
     }

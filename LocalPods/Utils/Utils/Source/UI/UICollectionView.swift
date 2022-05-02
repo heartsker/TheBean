@@ -5,26 +5,27 @@
 //  Created by Ilya Buldin on 11.04.2022.
 //
 
+// swiftlint:disable missing_docs
+// TODO: (IB) - Add missing docs
+
 /// Provides all UIView's reuseIdentifier to simplify working with tableView or collectionView
 public protocol IReuseIdentifiable: UIView {
     static var reuseIdentifier: String { get }
 }
 
-/// Extends IReuseIdentifiable with default implementation of reuseIdentifier computing var
+/// Extends IReuseIdentifiable with default implementation of reuseIdentifier computed property
 public extension IReuseIdentifiable {
-
     static var reuseIdentifier: String {
-        return String(describing: Self.self)
+        String(describing: Self.self)
     }
 }
 
 extension UICollectionViewCell: IReuseIdentifiable {}
 
-/// Extents UICollectionViewCell with functionality which simplifies with dequeueReusableCell method
+/// Extends UICollectionViewCell with functionality which simplifies with dequeueReusableCell method
 public extension UICollectionView {
-
     func create<A: IReuseIdentifiable>(cell: A.Type, at index: IndexPath) -> A? {
-        return self.dequeueReusableCell(withReuseIdentifier: cell.reuseIdentifier, for: index) as? A
+        self.dequeueReusableCell(withReuseIdentifier: cell.reuseIdentifier, for: index) as? A
     }
 
     func register<A: IReuseIdentifiable>(classXIB: A.Type) {

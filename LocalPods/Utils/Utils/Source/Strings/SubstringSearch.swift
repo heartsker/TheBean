@@ -9,11 +9,11 @@
 public extension StringProtocol where Index == String.Index {
 
     private func index(of string: Self, options: String.CompareOptions = []) -> Index? {
-        return range(of: string, options: options)?.lowerBound
+        range(of: string, options: options)?.lowerBound
     }
 
     private func endIndex(of string: Self, options: String.CompareOptions = []) -> Index? {
-        return range(of: string, options: options)?.upperBound
+        range(of: string, options: options)?.upperBound
     }
 
     private func indexes(of string: Self, options: String.CompareOptions = []) -> [Index] {
@@ -28,6 +28,11 @@ public extension StringProtocol where Index == String.Index {
         return result
     }
 
+    /// Finds ranges of given substrings in the string
+    /// - Parameters:
+    ///   - string: String to analize
+    ///   - options: String complarison options
+    /// - Returns: Array of ranges of the given substrings
     func ranges(of string: Self, options: String.CompareOptions = []) -> [Range<Index>] {
         var result: [Range<Index>] = []
         var start = startIndex

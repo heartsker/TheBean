@@ -6,6 +6,7 @@
 //
 
 extension IAssetsManager where Asset: UIFont {
+    /// Default asset to use if another does not exist
     public static var defaultAsset: UIFont {
         UIFont()
     }
@@ -14,14 +15,17 @@ extension IAssetsManager where Asset: UIFont {
         16
     }
 
+    /// Font asset by name with default size
     public static func asset(for string: String) -> UIFont {
         UIFont(name: string, size: defaultFontSize) ?? defaultAsset
     }
 
+    /// Font asset by name and size
     static func asset(for string: String, size: CGFloat) -> UIFont {
         UIFont(name: string, size: size) ?? defaultAsset
     }
 
+    /// System font with default size
     public static func system(name: String) -> UIFont {
         UIFont.systemFont(ofSize: defaultFontSize)
     }

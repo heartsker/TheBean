@@ -15,7 +15,6 @@ import Account
 /// View Controller for testing
 class TestViewController: UIViewController {
     // MARK: - Properties
-
     lazy private var usernameLabel: UILabel = {
         let label = UILabel(text: Account.shared.email, color: Pallete.materialLight, font: FontManager.bold(30))
         label.textAlignment = .center
@@ -80,6 +79,7 @@ class TestViewController: UIViewController {
         CoreDataManager.save()
     }
 
+    // MARK: - Initialization
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setupTabBar(^ControllerLocalization.test, image: "wrench.and.screwdriver")

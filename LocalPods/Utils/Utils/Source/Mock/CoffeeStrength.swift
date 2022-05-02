@@ -14,7 +14,8 @@ public enum CoffeeStrength: String, CaseIterable {
 
 /// Extends model with mock for RecipesViewController
 public extension CoffeeStrength {
-    var sectionProvider: Int {
+    /// Number of the section
+    var sectionNumber: Int {
         switch self {
         case .regular: return 0
         case .strong: return 1

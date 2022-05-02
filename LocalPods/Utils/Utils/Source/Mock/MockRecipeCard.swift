@@ -5,6 +5,8 @@
 //  Created by Daniel Pustotin on 25.04.2022.
 //
 
+// swiftlint:disable missing_docs
+
 /// Model to mock RecipesViewController
 public struct MockRecipeCard {
     public let title: String
