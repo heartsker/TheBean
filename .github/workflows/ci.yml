@@ -11,10 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Determine cache directory
-        id: cache-dir
-        run: |
-          pwd
       - name: Cache
         uses: actions/cache@v1
         with:
