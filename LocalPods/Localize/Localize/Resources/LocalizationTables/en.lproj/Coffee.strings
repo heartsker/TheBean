@@ -7,6 +7,6 @@
 */
 
 "coffee" = "coffee";
-"latte" = "latte";
-"flatwhite" = "flat white";
-"americano" = "americano";
+"coffee.latte" = "latte";
+"coffee.flatwhite" = "flat white";
+"coffee.americano" = "americano";

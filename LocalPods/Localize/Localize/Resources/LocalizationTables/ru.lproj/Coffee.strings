@@ -7,6 +7,6 @@
 */
 
 "coffee" = "кофе";
-"latte" = "латте";
-"flatwhite" = "флэт вайт";
-"americano" = "американо";
+"coffee.latte" = "латте";
+"coffee.flatwhite" = "флэт вайт";
+"coffee.americano" = "американо";
