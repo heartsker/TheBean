@@ -1,21 +1,9 @@
-//
-//  AccountViewController.swift
-//  TheBean
-//
-//  Created by Daniel Pustotin on 25.03.2022.
-//
-
+import UIKit
 import Localize
 import Utils
-import AssetsManager
 
-class AccountViewController: UIViewController {
-    // MARK: - Properties
-    private lazy var content: UIView = {
-        AccountContentView()
-    }()
+final class AccountViewController<View: AccountView>: BaseViewController<View> {
 
-    // MARK: - Initializators
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setupTabBar(^ControllerLocalization.account, image: "person")
@@ -28,29 +16,6 @@ class AccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
-    }
-}
 
-// MARK: - Setup methods
-extension AccountViewController {
-    private func setup() {
-        setupAppearance()
-        setupSubviews()
-        setupConstraints()
-    }
-
-    func setupAppearance() {
-        view.backgroundColor = Pallete.background
-    }
-
-    func setupSubviews() {
-        view.addSubview(content)
-    }
-
-    func setupConstraints() {
-        content.translatesAutoresizingMaskIntoConstraints = false
-        content.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        content.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }

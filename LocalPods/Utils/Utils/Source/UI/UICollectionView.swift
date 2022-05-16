@@ -37,3 +37,20 @@ public extension UICollectionView {
         self.register(classCell.self, forCellWithReuseIdentifier: classCell.reuseIdentifier)
     }
 }
+
+extension UITableViewCell: IReuseIdentifiable {}
+
+public extension UITableView {
+    func register<A: IReuseIdentifiable>(classCell: A.Type) {
+        self.register(classCell.self, forCellReuseIdentifier: classCell.reuseIdentifier)
+    }
+
+    func register<A: IReuseIdentifiable>(classXIB: A.Type) {
+        let cell = UINib(nibName: classXIB.reuseIdentifier, bundle: nil)
+        self.register(cell, forCellReuseIdentifier: classXIB.reuseIdentifier)
+    }
+
+    func create<A: IReuseIdentifiable>(cell: A.Type, at index: IndexPath) -> A? {
+        self.dequeueReusableCell(withIdentifier: cell.reuseIdentifier, for: index) as? A
+    }
+}
