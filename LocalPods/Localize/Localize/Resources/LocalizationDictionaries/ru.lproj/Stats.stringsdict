@@ -14,10 +14,14 @@
 			<string>d</string>
 			<key>one</key>
 			<string>%d рецепт был создан пользователями The Bean</string>
+			<key>two</key>
+			<string>%d рецепта было создано пользователями The Bean</string>
+			<key>three</key>
+			<string>%d рецепта было создано пользователями The Bean</string>
+			<key>four</key>
+			<string>%d рецепта было создано пользователями The Bean</string>
 			<key>many</key>
 			<string>%d рецептов было создано пользователями The Bean</string>
-			<key>other</key>
-			<string>%d рецепта было создано пользователями The Bean</string>
 		</dict>
 	</dict>
 </dict>
