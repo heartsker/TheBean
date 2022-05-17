@@ -53,10 +53,6 @@ extension MostPopularDrinkCard {
     }
 
     private func setupConstraints() {
-        snp.makeConstraints { make in
-            make.height.equalTo(snp.width).multipliedBy(Card.heigthPercent)
-        }
-
         imageView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(Image.left)
             make.centerY.equalToSuperview()
@@ -74,10 +70,6 @@ extension MostPopularDrinkCard {
 
 // MARK: - Constraint constants
 private extension MostPopularDrinkCard {
-    enum Card {
-        static let heigthPercent: CGFloat = 0.565
-    }
-
     enum Image {
         static let left: CGFloat = 20
         static let heigthPercent: CGFloat = 0.8594
