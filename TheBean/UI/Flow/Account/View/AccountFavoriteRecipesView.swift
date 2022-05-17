@@ -22,9 +22,6 @@ final class AccountFavoriteRecipesView: UITableViewCell {
         collectionViewLayout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.register(classCell: RecipeCell.self)
-//        collectionView.register(RecipesHeaderView.self,
-//                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-//                                withReuseIdentifier: RecipesHeaderView.reuseIdentifier)
 
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
@@ -65,24 +62,6 @@ extension AccountFavoriteRecipesView: UICollectionViewDelegate, UICollectionView
         return cell
     }
 
-//    func collectionView(_ collectionView: UICollectionView,
-//                        viewForSupplementaryElementOfKind kind: String,
-//                        at indexPath: IndexPath) -> UICollectionReusableView {
-//
-//            let headerKind = UICollectionView.elementKindSectionHeader
-//            let identifier = RecipesHeaderView.reuseIdentifier
-//            let cView = collectionView
-//
-//            guard let headerView = cView.dequeueReusableSupplementaryView(ofKind: headerKind,
-//                                                                          withReuseIdentifier: identifier,
-//                                                                          for: indexPath) as? RecipesHeaderView else {
-//                return RecipesHeaderView()
-//            }
-//
-//            headerView.configure(model: "Favorite recipes")
-//            return headerView
-//
-//    }
 }
 
 extension AccountFavoriteRecipesView: UICollectionViewDelegateFlowLayout {
@@ -95,7 +74,7 @@ extension AccountFavoriteRecipesView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 36, left: 30, bottom: 0, right: 0)
+        UIEdgeInsets(top: 18, left: 30, bottom: 0, right: 0)
     }
 
 }
