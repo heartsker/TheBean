@@ -64,11 +64,8 @@ extension AverageNumberCupsCard {
         addSubview(label)
         addSubview(cupsStackView)
     }
-    private func setupConstraints() {
-        snp.makeConstraints { make in
-            make.height.equalTo(snp.width).multipliedBy(Card.heigthPercent)
-        }
 
+    private func setupConstraints() {
         secondBackground.snp.makeConstraints { make in
             make.height.equalToSuperview().multipliedBy(SecondBackground.heigthPercent)
             make.leading.trailing.equalToSuperview()
@@ -76,32 +73,30 @@ extension AverageNumberCupsCard {
         }
 
         label.snp.makeConstraints { make in
-            make.width.equalToSuperview().multipliedBy(Label.widthPercent)
-            make.centerX.equalToSuperview()
+            make.left.right.equalToSuperview().inset(Label.padding)
             make.top.equalToSuperview().offset(Label.top)
         }
 
         cupsStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(21)
-            make.bottom.equalToSuperview().inset(.screenWidth*0.015)
-            make.height.equalTo(.screenWidth*0.25)
+            make.leading.trailing.equalToSuperview().inset(CupsStack.padding)
+            make.bottom.equalToSuperview().inset(UIScreen.main.bounds.width*0.015)
+            make.height.equalTo(UIScreen.main.bounds.width*0.25)
         }
-
         layoutIfNeeded()
     }
 }
 
 // MARK: - Constraint constants
 private extension AverageNumberCupsCard {
-    enum Card {
-        static let heigthPercent: CGFloat = 0.565
-    }
-
     enum SecondBackground {
         static let heigthPercent: CGFloat = 0.3906
     }
     enum Label {
-        static let widthPercent: CGFloat = 0.5714
+        static let padding: CGFloat = 63
         static let top: CGFloat = 27
+    }
+
+    enum CupsStack {
+        static let padding: CGFloat = 21
     }
 }
