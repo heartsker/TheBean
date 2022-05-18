@@ -64,29 +64,46 @@ extension RecipesNumberCard {
 
     private func setupConstraints() {
         label.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(64)
-            make.top.equalToSuperview().inset(28)
+            make.left.right.equalToSuperview().inset(Label.padding)
+            make.top.equalToSuperview().inset(Label.top)
         }
 
         imageViewLeft.snp.makeConstraints { make in
             make.left.equalToSuperview()
-            make.bottom.equalToSuperview().inset(10)
+            make.bottom.equalToSuperview().inset(ImageLeft.bottom)
             make.width.equalTo(.screenWidth*0.3333)
-            make.height.equalTo(imageViewRight.snp.width).multipliedBy(0.944)
+            make.height.equalTo(imageViewRight.snp.width).multipliedBy(ImageLeft.heightPercent)
         }
 
         imageViewRight.snp.makeConstraints { make in
             make.right.equalToSuperview()
-            make.bottom.equalToSuperview().inset(10)
-            make.width.equalTo(.screenWidth*0.3333)
-            make.height.equalTo(imageViewRight.snp.width).multipliedBy(0.944)
+            make.bottom.equalTo(imageViewLeft.snp.bottom)
+            make.width.equalTo(imageViewLeft.snp.width)
+            make.height.equalTo(imageViewLeft.snp.height)
         }
 
         arrowView.snp.makeConstraints { make in
-            make.leading.equalTo(imageViewLeft.snp.trailing).offset(10)
-            make.trailing.equalTo(imageViewRight.snp.leading).inset(-10)
+            make.centerX.equalToSuperview()
             make.centerY.equalTo(imageViewLeft.snp.centerY)
             make.height.equalTo(imageViewLeft.snp.height)
+            make.width.equalToSuperview().multipliedBy(Arrow.widthPercent)
         }
+    }
+}
+
+// MARK: - Constraint constants
+private extension RecipesNumberCard {
+    enum Label {
+        static let padding: CGFloat = 63
+        static let top: CGFloat = 28
+    }
+
+    enum ImageLeft {
+        static let bottom: CGFloat = 10
+        static let heightPercent: CGFloat = 0.944
+    }
+
+    enum Arrow {
+        static let widthPercent: CGFloat = 0.1492
     }
 }
