@@ -40,6 +40,7 @@ final class AccountView: UIView, IBaseView {
 
     func setupAppearance() {
         backgroundColor = Pallete.background
+        tableView.backgroundColor = .clear
     }
 
     func setupSubviews() {

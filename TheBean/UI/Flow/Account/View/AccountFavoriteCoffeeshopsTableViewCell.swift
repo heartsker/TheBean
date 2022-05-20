@@ -15,6 +15,7 @@ final class AccountFavoriteCoffeeshopsTableViewCell: UITableViewCell {
         layout.sectionInset = .init(top: 0, left: 30, bottom: 0, right: 30)
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
         collectionView.register(classCell: FavoriteCoffeeShopCollectionViewCell.self)
         return collectionView
     }()
@@ -30,6 +31,7 @@ final class AccountFavoriteCoffeeshopsTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         collectionView.frame = contentView.bounds
+        backgroundColor = .clear
     }
 
     required init?(coder: NSCoder) {

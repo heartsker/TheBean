@@ -34,6 +34,7 @@ final class UserInfoHeadingCell: UITableViewCell {
         [avatarImageView, userNameLabel, emailLabel].forEach {
             contentView.addSubview($0)
         }
+        backgroundColor = .clear
         setupConstrainsts()
     }
 

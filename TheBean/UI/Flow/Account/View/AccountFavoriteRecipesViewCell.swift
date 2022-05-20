@@ -22,7 +22,7 @@ final class AccountFavoriteRecipesViewCell: UITableViewCell {
         collectionViewLayout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collectionView.register(classCell: RecipeCell.self)
-
+        collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
@@ -32,6 +32,7 @@ final class AccountFavoriteRecipesViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         contentView.clipsToBounds = true
+        backgroundColor = .clear
         addSubview(collectionView)
 
     }
