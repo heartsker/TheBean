@@ -67,6 +67,7 @@ final class UserInfoHeadingCell: UITableViewCell {
     private func makeImageViewRounded() {
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
         avatarImageView.clipsToBounds = true
+
     }
 }
 

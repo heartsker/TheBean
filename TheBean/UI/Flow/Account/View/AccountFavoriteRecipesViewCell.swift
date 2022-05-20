@@ -8,7 +8,7 @@
 import UIKit
 import Utils
 
-final class AccountFavoriteRecipesView: UITableViewCell {
+final class AccountFavoriteRecipesViewCell: UITableViewCell {
 
     var recipes: [MockRecipeCard] = {
         var items: [MockRecipeCard] = CoffeeStrength.allCases.flatMap {
@@ -47,7 +47,7 @@ final class AccountFavoriteRecipesView: UITableViewCell {
 
 }
 
-extension AccountFavoriteRecipesView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AccountFavoriteRecipesViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         recipes.count
     }
@@ -64,7 +64,7 @@ extension AccountFavoriteRecipesView: UICollectionViewDelegate, UICollectionView
 
 }
 
-extension AccountFavoriteRecipesView: UICollectionViewDelegateFlowLayout {
+extension AccountFavoriteRecipesViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

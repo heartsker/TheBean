@@ -141,10 +141,9 @@ extension RecipeCell: IBaseView {
 extension RecipeCell {
 
     private func setCellBorderColorByAppearanceMode() {
-        let borderColorCondition = traitCollection.userInterfaceStyle == .dark
         let darkModeBorderColor: CGColor = .init(red: 0.384, green: 0.337, blue: 0.416, alpha: 1)
         let lightModeBorderColor: CGColor = .init(red: 0.858, green: 0.758, blue: 0.669, alpha: 1)
-        contentView.layer.borderColor = borderColorCondition ? darkModeBorderColor : lightModeBorderColor
+        setCellBorderColorByAppearanceMode(colorInLightMode: lightModeBorderColor, colorInDarkMode: darkModeBorderColor)
     }
 
     // CGColor cannot use dynamic color, so we need to override this method

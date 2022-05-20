@@ -35,4 +35,5 @@ public class Pallete: IAssetsManager {
     public static let materialLight       = Pallete.asset(for: "MaterialLight")
     public static let accentColor         = Pallete.asset(for: "AccentColor")
     public static let strokeColor         = Pallete.asset(for: "Stroke")
+    public static let materialStrong      = Pallete.asset(for: "MaterialStrong")
 }

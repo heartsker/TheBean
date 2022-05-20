@@ -14,7 +14,8 @@ final class AccountView: UIView, IBaseView {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(classCell: UserInfoHeadingCell.self)
-        tableView.register(classCell: AccountFavoriteRecipesView.self)
+        tableView.register(classCell: AccountFavoriteRecipesViewCell.self)
+        tableView.register(classCell: AccountFavoriteCoffeeshopsTableViewCell.self)
 
         tableView.register(RecipesTableHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: RecipesTableHeaderView.reuseIdentifier)
@@ -69,7 +70,12 @@ extension AccountView: UITableViewDelegate, UITableViewDataSource {
             cell.configure(model: model)
             return cell
         } else if indexPath.section == 1 {
-            guard let cell = tableView.create(cell: AccountFavoriteRecipesView.self, at: indexPath) else {
+            guard let cell = tableView.create(cell: AccountFavoriteRecipesViewCell.self, at: indexPath) else {
+                return UITableViewCell()
+            }
+            return cell
+        } else if indexPath.section == 2 {
+            guard let cell = tableView.create(cell: AccountFavoriteCoffeeshopsTableViewCell.self, at: indexPath) else {
                 return UITableViewCell()
             }
             return cell
